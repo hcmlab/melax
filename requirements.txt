@@ -1,1 +1,6 @@
 PySide6
+openai-whisper
+numpy
+soundfile
+torch --index-url https://download.pytorch.org/whl/cu124
+mediapipe

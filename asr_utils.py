@@ -68,33 +68,48 @@ def listen_in_background(audio_queue, stop_event, language, sample_rate, noise_r
         except Exception as e:
             logger.error(f"Error while listening: {e}")
             time.sleep(0.1)
+
+        # Check for termination signal in the queue
+        if not audio_queue.empty() and audio_queue.get() is None:
+            break
     logger.info("Listening thread stopped")
 
 
-def recognize_speech(audio_queue, response_queue, stop_event):
+def recognize_speech(audio_queue, response_queue, stop_event, recognizer_type, api_keys=None):
     """
-    Processes audio from the audio queue and transcribes it into text.
-
-    Parameters:
-        audio_queue (Queue): Queue containing the audio data.
-        response_queue (Queue): Queue to store the transcribed text.
-        stop_event (threading.Event): Event to signal the thread to stop processing.
+    Processes audio and recognizes speech using the selected recognizer.
     """
     recognizer = sr.Recognizer()
 
-    logger.info("Recognition thread started")
+    logger.info(f"Recognition thread started using {recognizer_type}")
     while not stop_event.is_set():
         try:
             if not audio_queue.empty():
-                audio, language = audio_queue.get()  # Retrieve audio and language
-                logger.info("Recognizing speech...")
-                text = recognizer.recognize_google(audio, language=language)
+                audio, language = audio_queue.get()
+
+                if recognizer_type == "Google Web Speech API":
+                    text = recognizer.recognize_google(audio, language=language)
+                elif recognizer_type == "Google Cloud Speech API":
+                    text = recognizer.recognize_google_cloud(
+                        audio, credentials_json=api_keys.get("google_cloud")
+                    )
+                elif recognizer_type == "Whisper":
+                    try:
+                        result = recognizer.recognize_whisper(audio)
+                        print(f"Whisper ASR recognized: {result}")
+                    except sr.UnknownValueError:
+                        print("Whisper ASR could not understand the audio.")
+                    except sr.RequestError as e:
+                        print(f"Whisper ASR request failed: {e}")
+                elif recognizer_type == "Whisper API":
+                    text = recognizer.recognize_whisper_api(audio, api_key=api_keys.get("openai"))
+                else:
+                    raise ValueError(f"Unsupported recognizer: {recognizer_type}")
+
                 logger.info(f"Recognized speech: {text}")
                 response_queue.put(text)
         except sr.UnknownValueError:
-            logger.warning("Failed to understand audio")
+            logger.warning(f"{recognizer_type} could not understand audio")
         except sr.RequestError as e:
-            logger.error(f"Recognition service error: {e}")
-        except Exception as e:
-            logger.error(f"Unexpected error during recognition: {e}")
+            logger.error(f"Request error from {recognizer_type}: {e}")
     logger.info("Recognition thread stopped")

@@ -1,13 +1,12 @@
 import sys
 import threading
 import queue
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QInputDialog, QMessageBox
 from PySide6.QtCore import Signal, QObject
 from ui_form import Ui_MainWindow
 import asr_utils  # Utility module containing ASR functions
 
 
-# Signal class for communication between threads and GUI
 class WorkerSignals(QObject):
     update_text = Signal(str)
 
@@ -30,6 +29,9 @@ class MainWindow(QMainWindow):
         # Event for stopping threads
         self.stop_event = threading.Event()
 
+        # Store API keys
+        self.api_keys = {}
+
         # Connect signals
         self.signals.update_text.connect(self.update_transcribed_text)
 
@@ -46,31 +48,61 @@ class MainWindow(QMainWindow):
         self.ui.samplerateMBOX.addItems(["16000", "22050", "44100"])  # Sample rate options
         self.ui.noisereductionMBOX.addItems(["Enabled", "Disabled"])  # Noise reduction options
         self.ui.sensitivityMBOX.addItems(["Low", "Medium", "High"])  # Sensitivity options
+        self.ui.recognizerMBOX.addItems([
+                    "Google Web Speech API",
+                    "Google Cloud Speech API",
+                    "Whisper",
+                    "Whisper API"
+                ])
 
-        # Connect buttons
+        # Connect buttons and dropdowns
         self.ui.StartListening.clicked.connect(self.start_listening)
         self.ui.StopandClearListening.clicked.connect(self.stop_and_clear)
+        self.ui.recognizerMBOX.currentTextChanged.connect(self.handle_recognizer_selection)
+
+    def process_responses(self):
+           """
+           Continuously monitors the response queue and updates the GUI with recognized text.
+           """
+           while True:
+               if not self.response_queue.empty():
+                   text = self.response_queue.get()  # Retrieve the recognized text
+                   self.signals.update_text.emit(text)  # Emit a signal to update the text in the GUI
+
+
+    def handle_recognizer_selection(self, recognizer_type):
+       if recognizer_type in ["Google Cloud Speech API", "Whisper API"]:
+           api_key_description = "Google Cloud JSON Credentials" if recognizer_type == "Google Cloud Speech API" else "OpenAI API Key"
+           api_key, ok = QInputDialog.getText(
+               self, f"API Key Required for {recognizer_type}", f"Enter your {api_key_description}:"
+           )
+           if ok and api_key:
+               key_name = "google_cloud" if recognizer_type == "Google Cloud Speech API" else "openai"
+               self.api_keys[key_name] = api_key
+
+    def prompt_for_api_key(self, recognizer_type, api_key_description):
+        if recognizer_type in ["Wit.ai", "Bing Speech API", "Azure Speech API"]:
+            api_key, ok = QInputDialog.getText(
+                self,
+                f"API Key Required for {recognizer_type}",
+                f"Enter your {api_key_description}:",
+            )
+            if ok and api_key:
+                self.api_keys[recognizer_type] = api_key
 
     def start_listening(self):
-        """
-        Starts listening for audio input.
-        """
         if self.listening_thread and self.listening_thread.is_alive():
             self.ui.statusbar.showMessage("Already listening...")
             return
 
-        # Gather options from UI
         language = self.ui.languageMBOX.currentText()
         sample_rate = int(self.ui.samplerateMBOX.currentText())
         noise_reduction = self.ui.noisereductionMBOX.currentText()
         sensitivity = self.ui.sensitivityMBOX.currentText()
+        recognizer_type = self.ui.recognizerMBOX.currentText()
 
-        # Clear stop event
         self.stop_event.clear()
 
-        self.ui.statusbar.showMessage("Listening...")
-
-        # Start background listening thread
         self.listening_thread = threading.Thread(
             target=asr_utils.listen_in_background,
             args=(self.audio_queue, self.stop_event, language, sample_rate, noise_reduction, sensitivity),
@@ -78,11 +110,10 @@ class MainWindow(QMainWindow):
         )
         self.listening_thread.start()
 
-        # Start recognition thread if not already running
         if not self.recognition_thread or not self.recognition_thread.is_alive():
             self.recognition_thread = threading.Thread(
                 target=asr_utils.recognize_speech,
-                args=(self.audio_queue, self.response_queue, self.stop_event),
+                args=(self.audio_queue, self.response_queue, self.stop_event, recognizer_type, self.api_keys),
                 daemon=True,
             )
             self.recognition_thread.start()
@@ -91,8 +122,10 @@ class MainWindow(QMainWindow):
         """
         Stops listening and clears the transcribed text.
         """
-        self.stop_event.set()  # Signal threads to stop
-        self.ui.statusbar.showMessage("Stopped.")
+        self.stop_event.set()  # Signal the thread to stop
+
+        # Send termination signal to audio queue
+        self.audio_queue.put(None)
 
         # Wait for the listening thread to finish
         if self.listening_thread:
@@ -106,30 +139,17 @@ class MainWindow(QMainWindow):
 
         # Clear the transcribed text
         self.ui.asrTextBrowser.clear()
+        self.ui.statusbar.showMessage("Stopped and cleared.")
 
     def update_transcribed_text(self, text):
-        """
-        Updates the transcribed text in the QTextBrowser.
-        """
         self.ui.asrTextBrowser.append(text)
 
-    def process_responses(self):
-        """
-        Process responses from the ASR response queue and update the GUI.
-        """
-        while True:
-            if not self.response_queue.empty():
-                text = self.response_queue.get()
-                self.signals.update_text.emit(text)  # Emit signal to update GUI
 
-
-# Main application entry point
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     widget = MainWindow()
     widget.show()
 
-    # Start response processing thread
     response_thread = threading.Thread(
         target=widget.process_responses,
         daemon=True,
