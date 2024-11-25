@@ -2,6 +2,6 @@
     "files": [
         "mainwindow.py",
         "form.ui",
-        "asr_functions.py"
+        "asr_utils.py"
     ]
 }
