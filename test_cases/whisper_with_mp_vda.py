@@ -26,8 +26,8 @@ def download_model_if_not_exists(url, file_name):
 
 # Real-Time Audio Classification and Transcription
 class RealTimeSpeakingTranscriber:
-    def __init__(self, model_name="base", audio_model_path="classifier.tflite", device="cuda"):
-        self.language = "en"
+    def __init__(self, model_name="base",language="en", audio_model_path="classifier.tflite", device="cuda"):
+        self.language = language
         self.device = device
         self.transcription_model = whisper.load_model(model_name, device=device)
 

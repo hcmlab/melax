@@ -12,6 +12,19 @@ import time
 from scipy.io.wavfile import write
 import urllib.request
 
+def download_model_if_not_exists(url, file_name):
+    """
+    Downloads a model file from the given URL if it doesn't already exist.
+
+    :param url: The URL to download the model from.
+    :param file_name: The name to save the model file as.
+    """
+    if not os.path.exists(file_name):
+        print(f"{file_name} not found. Downloading...")
+        urllib.request.urlretrieve(url, file_name)
+        print(f"Downloaded {file_name}.")
+    else:
+        print(f"{file_name} already exists. Skipping download.")
 # OutputParser class
 class OutputParser:
     def __init__(self, *, show_all: bool, with_confidence: bool) -> None:
@@ -19,6 +32,7 @@ class OutputParser:
         self.with_confidence = with_confidence
 
     def parse(self, response_text: str):
+        print(response_text)
         actual_result = self.convert_to_result(response_text)
         if self.show_all:
             return actual_result
@@ -57,9 +71,10 @@ class OutputParser:
 
 # Real-Time Audio Classification and Transcription
 class RealTimeSpeakingTranscriberGoogleAPI:
-    def __init__(self, api_key, endpoint, audio_model_path="classifier.tflite"):
+    def __init__(self, api_key, endpoint, language="en-US", audio_model_path="classifier.tflite"):
         self.api_key = api_key
         self.endpoint = endpoint
+        self.language = language
         self.sample_rate = 16000  # MediaPipe and Google ASR require 16kHz
         self.audio_queue = queue.Queue()
         self.running = False
@@ -74,7 +89,7 @@ class RealTimeSpeakingTranscriberGoogleAPI:
         )
 
         # Initialize OutputParser
-        self.parser = OutputParser(show_all=False, with_confidence=True)
+        self.parser = OutputParser(show_all=True, with_confidence=True)
 
     def _audio_callback(self, indata, frames, time, status):
         """Callback function to handle incoming audio data."""
@@ -135,7 +150,7 @@ class RealTimeSpeakingTranscriberGoogleAPI:
                 params = {
                     "key": self.api_key,
                     "output": "json",
-                    "lang": "en-US",  # Specify the language
+                    "lang": self.language,
                 }
                 response = requests.post(
                     self.endpoint, params=params, headers=headers, data=audio_file

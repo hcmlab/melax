@@ -2,7 +2,18 @@ import time
 import logging
 import speech_recognition as sr
 import threading
-
+import sounddevice as sd
+from file_utils import download_model_if_not_exists
+import mediapipe as mp
+from mediapipe.tasks import python
+from mediapipe.tasks.python import audio
+AudioClassifier = mp.tasks.audio.AudioClassifier
+AudioClassifierOptions = mp.tasks.audio.AudioClassifierOptions
+AudioClassifierResult = mp.tasks.audio.AudioClassifierResult
+AudioRunningMode = mp.tasks.audio.RunningMode
+BaseOptions = mp.tasks.BaseOptions
+AudioData = mp.tasks.components.containers.AudioData
+import numpy as np
 # Logger setup
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -33,7 +44,7 @@ def populate_microphone_list(combo_box):
         logger.error(f"Error: {e}")
 
 
-def listen_in_background(audio_queue, stop_event, language, sample_rate, noise_reduction, sensitivity):
+def listen_in_background_with_sr(audio_queue, stop_event, language, sample_rate, noise_reduction, sensitivity):
     """
     Listens to the microphone in the background and puts audio data into the queue.
 
@@ -74,6 +85,68 @@ def listen_in_background(audio_queue, stop_event, language, sample_rate, noise_r
             break
     logger.info("Listening thread stopped")
 
+
+
+def listen_in_background(audio_queue, stop_event, language, sample_rate, noise_reduction, sensitivity):
+    """
+    Streams audio data in real-time and pushes it into the audio queue using MediaPipe's AUDIO_STREAM mode.
+    """
+    model_url = "https://storage.googleapis.com/mediapipe-models/audio_classifier/yamnet/float32/1/yamnet.tflite"
+    model_file_name = "classifier.tflite"
+    download_model_if_not_exists(model_url, model_file_name)
+
+    # Define the callback to handle classification results
+    def result_callback(result, timestamp_ms):
+        for classification in result.classifications:
+            top_category = classification.categories[0]
+            if top_category.category_name == "Speech" and top_category.score > 0.5:
+                print(f"Speech detected at {timestamp_ms} ms with confidence {top_category.score:.2f}")
+                audio_queue.put("Speech detected")  # Optionally, push some info to the queue
+
+    # Configure MediaPipe AudioClassifier in AUDIO_STREAM mode
+    options = AudioClassifierOptions(
+        base_options=BaseOptions(model_asset_path=model_file_name),
+        running_mode=AudioRunningMode.AUDIO_STREAM,
+        max_results=5,
+        result_callback=result_callback,  # Specify the callback here
+    )
+
+    # Create the classifier
+    with AudioClassifier.create_from_options(options) as classifier:
+        # Define the audio callback
+        def audio_callback(indata, frames, time, status):
+            if status:
+                print(f"Audio stream status: {status}")
+
+            # Normalize audio data
+            buffer = indata.flatten()
+            normalized_buffer = buffer.astype(float) / np.iinfo(np.int16).max
+
+            # Create AudioData
+            audio_data = AudioData.create_from_array(normalized_buffer, sample_rate)
+
+            # Classify asynchronously
+            classifier.classify_async(audio_data, int(time.currentTime * 1000))
+
+        # Initialize and start the audio stream
+        stream = sd.InputStream(
+            samplerate=sample_rate,
+            channels=1,
+            dtype="int16",
+            callback=audio_callback,
+        )
+
+        stream.start()
+        print("Audio streaming started.")
+        try:
+            while not stop_event.is_set():
+                threading.Event().wait(0.1)  # Keep the thread alive
+        except KeyboardInterrupt:
+            print("Stopping audio streaming...")
+        finally:
+            stream.stop()
+            stream.close()
+            print("Audio streaming stopped.")
 
 def recognize_speech(audio_queue, response_queue, stop_event, recognizer_type, api_keys=None):
     """
