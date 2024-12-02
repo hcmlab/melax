@@ -1,0 +1,9 @@
+2024-12-02 19:23:00,783 - MainThread - INFO - Starting Google ASR Transcription
+2024-12-02 19:23:00,784 - Dummy-2 - INFO - Starting Google ASR Transcription Thread
+2024-12-02 19:23:33,718 - MainThread - DEBUG - Stopping Google ASR Transcription Thread
+2024-12-02 19:23:34,607 - Dummy-2 - INFO - Google ASR Transcription Thread Stopped
+2024-12-02 19:23:42,798 - MainThread - INFO - Starting Google ASR Transcription
+2024-12-02 19:23:42,799 - Dummy-4 - INFO - Starting Google ASR Transcription Thread
+2024-12-02 19:24:05,648 - MainThread - DEBUG - Stopping Google ASR Transcription Thread
+2024-12-02 19:24:06,400 - Dummy-4 - INFO - Google ASR Transcription Thread Stopped
+2024-12-02 19:24:11,656 - MainThread - INFO - Application closing, stopping transcription thread.

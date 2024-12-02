@@ -4,7 +4,9 @@ import numpy as np
 import sounddevice as sd
 import whisperx
 import time
-
+import torch
+torch.backends.cuda.matmul.allow_tf32 = True
+torch.backends.cudnn.allow_tf32 = True
 class RealTimeSpeakingTranscriberWhisperX:
     def __init__(self, model_name="base", language="en", device="cuda"):
         """
@@ -53,17 +55,17 @@ class RealTimeSpeakingTranscriberWhisperX:
         """
         Transcribe audio using WhisperX.
         """
-        try:
-            # Normalize audio to WhisperX's expected input format
-            audio_data = audio_data / np.max(np.abs(audio_data))
+        #try:
+        # Normalize audio to WhisperX's expected input format
+        audio_data = audio_data / np.max(np.abs(audio_data))
 
-            # Transcribe using WhisperX
-            transcription = self.transcription_model.transcribe(audio_data, language=self.language)
+        # Transcribe using WhisperX
+        transcription = self.transcription_model.transcribe(audio_data, language=self.language)
 
-            # Output the transcription
-            print(f"Transcription: {transcription['text']}")
-        except Exception as e:
-            print(f"Error during transcription: {e}")
+        # Output the transcription
+        print(f"Transcription: {transcription['text']}")
+        #except Exception as e:
+            #print(f"Error during transcription: {e}")
 
     def start(self):
         """

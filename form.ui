@@ -54,14 +54,14 @@
       <rect>
        <x>10</x>
        <y>290</y>
-       <width>271</width>
+       <width>351</width>
        <height>61</height>
       </rect>
      </property>
      <property name="title">
       <string/>
      </property>
-     <widget class="QPushButton" name="StartListening">
+     <widget class="QPushButton" name="startASR">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -71,20 +71,33 @@
        </rect>
       </property>
       <property name="text">
-       <string>Start Listening</string>
+       <string>Start</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="StopandClearListening">
+     <widget class="QPushButton" name="clearASR">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>120</x>
         <y>30</y>
         <width>101</width>
         <height>24</height>
        </rect>
       </property>
       <property name="text">
-       <string>Stop and Clear</string>
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopASR">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>30</y>
+        <width>101</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Stop</string>
       </property>
      </widget>
     </widget>
@@ -125,7 +138,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>110</y>
+       <y>100</y>
        <width>421</width>
        <height>171</height>
       </rect>
