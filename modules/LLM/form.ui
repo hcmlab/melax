@@ -17,41 +17,22 @@
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>120</y>
-      <width>491</width>
-      <height>641</height>
+      <x>160</x>
+      <y>50</y>
+      <width>511</width>
+      <height>701</height>
      </rect>
     </property>
     <property name="title">
      <string>Large Language Model</string>
     </property>
-    <widget class="QSplitter" name="splitter_4">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>221</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>LLM</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="llmMBOX"/>
-    </widget>
     <widget class="QGroupBox" name="groupBox_4">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>90</y>
-       <width>471</width>
-       <height>521</height>
+       <y>60</y>
+       <width>481</width>
+       <height>641</height>
       </rect>
      </property>
      <property name="title">
@@ -61,9 +42,9 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>30</y>
+        <y>40</y>
         <width>341</width>
-        <height>24</height>
+        <height>22</height>
        </rect>
       </property>
       <property name="orientation">
@@ -74,15 +55,15 @@
         <string>API Key</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="openaiAPIKey"/>
      </widget>
      <widget class="QSplitter" name="splitter_2">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>60</y>
+        <y>140</y>
         <width>151</width>
-        <height>16</height>
+        <height>12</height>
        </rect>
       </property>
       <property name="orientation">
@@ -93,7 +74,7 @@
         <string>Temperature</string>
        </property>
       </widget>
-      <widget class="QSlider" name="horizontalSlider">
+      <widget class="QSlider" name="temperatureOpenAI">
        <property name="maximum">
         <number>100</number>
        </property>
@@ -112,9 +93,9 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>80</y>
+        <y>160</y>
         <width>171</width>
-        <height>25</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="orientation">
@@ -125,7 +106,7 @@
         <string>Max-tokens</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox">
+      <widget class="QSpinBox" name="maxTokenOpenAI">
        <property name="minimum">
         <number>1</number>
        </property>
@@ -137,11 +118,11 @@
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="resetContextButton">
+     <widget class="QPushButton" name="resetContextOpenAI">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>480</y>
+        <x>250</x>
+        <y>600</y>
         <width>171</width>
         <height>25</height>
        </rect>
@@ -153,8 +134,8 @@
      <widget class="QPushButton" name="testConnectionOpenAI">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>300</y>
+        <x>40</x>
+        <y>280</y>
         <width>171</width>
         <height>25</height>
        </rect>
@@ -166,8 +147,8 @@
      <widget class="QPushButton" name="resetDefaultsOpenAI">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>300</y>
+        <x>70</x>
+        <y>600</y>
         <width>171</width>
         <height>25</height>
        </rect>
@@ -180,7 +161,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>110</y>
+        <y>190</y>
         <width>401</width>
         <height>81</height>
        </rect>
@@ -195,30 +176,11 @@
       </widget>
       <widget class="QTextEdit" name="systemPromptEdit"/>
      </widget>
-     <widget class="QSplitter" name="splitter_9">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>200</y>
-        <width>401</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Orientation::Horizontal</enum>
-      </property>
-      <widget class="QLabel" name="label_20">
-       <property name="text">
-        <string>User Input</string>
-       </property>
-      </widget>
-      <widget class="QTextEdit" name="systemPromptEdit_2"/>
-     </widget>
      <widget class="QSplitter" name="splitter_10">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>330</y>
+        <y>480</y>
         <width>401</width>
         <height>111</height>
        </rect>
@@ -231,17 +193,117 @@
         <string>Context</string>
        </property>
       </widget>
-      <widget class="QTextBrowser" name="contextTextBrowser"/>
+      <widget class="QTextBrowser" name="contextBrowserOpenAI"/>
      </widget>
+     <widget class="QCheckBox" name="chatModeOpenAI">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>280</y>
+        <width>141</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Activate Chat Mode</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxChat">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>330</y>
+        <width>461</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QSplitter" name="splitter_9">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>401</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <widget class="QLabel" name="label_20">
+        <property name="text">
+         <string>User Input</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="userInputOpenAI"/>
+      </widget>
+      <widget class="QPushButton" name="sendUserInputOpenAI">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>110</y>
+         <width>91</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Send</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QComboBox" name="llmMBOX">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>70</y>
+        <width>164</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Model</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QSplitter" name="splitter_4">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>221</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>LLM</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="LLMChocie"/>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_5">
     <property name="geometry">
      <rect>
-      <x>1230</x>
-      <y>250</y>
-      <width>431</width>
-      <height>311</height>
+      <x>740</x>
+      <y>170</y>
+      <width>671</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="title">
@@ -266,7 +328,7 @@
        <x>30</x>
        <y>60</y>
        <width>151</width>
-       <height>16</height>
+       <height>12</height>
       </rect>
      </property>
      <property name="orientation">
@@ -298,7 +360,7 @@
        <x>30</x>
        <y>80</y>
        <width>171</width>
-       <height>25</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="orientation">
@@ -347,8 +409,8 @@
     <widget class="QPushButton" name="testConnectionLlama">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>190</y>
+       <x>20</x>
+       <y>310</y>
        <width>171</width>
        <height>25</height>
       </rect>
@@ -360,14 +422,46 @@
     <widget class="QPushButton" name="resetDefaultsLlama">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>190</y>
+       <x>240</x>
+       <y>310</y>
        <width>171</width>
        <height>25</height>
       </rect>
      </property>
      <property name="text">
       <string>Reset Defaults</string>
+     </property>
+    </widget>
+    <widget class="QSplitter" name="splitter_11">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>210</y>
+       <width>401</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <widget class="QLabel" name="label_21">
+      <property name="text">
+       <string>User Input</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="userInputLlama"/>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>180</y>
+       <width>141</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activate Chat Mode</string>
      </property>
     </widget>
    </widget>
