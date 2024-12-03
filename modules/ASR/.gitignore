@@ -72,10 +72,3 @@ CMakeLists.txt.user*
 *.dll
 *.exe
 
-/.qtcreator/
-/.ropeproject/
-/.idea/
-/modules/ASR/.idea/
-/modules/ASR/.qtcreator/
-/modules/LLM/.idea/
-/modules/LLM/.qtcreator/

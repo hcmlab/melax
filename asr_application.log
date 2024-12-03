@@ -7,3 +7,10 @@
 2024-12-02 19:24:05,648 - MainThread - DEBUG - Stopping Google ASR Transcription Thread
 2024-12-02 19:24:06,400 - Dummy-4 - INFO - Google ASR Transcription Thread Stopped
 2024-12-02 19:24:11,656 - MainThread - INFO - Application closing, stopping transcription thread.
+2024-12-03 17:09:38,520 - MainThread - INFO - Application closing, stopping transcription thread.
+2024-12-03 17:10:19,990 - MainThread - INFO - Application closing, stopping transcription thread.
+2024-12-03 17:12:09,644 - MainThread - INFO - Application closing, stopping transcription thread.
+2024-12-03 17:12:59,117 - MainThread - INFO - Application closing, stopping transcription thread.
+2024-12-03 17:36:08,880 - MainThread - INFO - Application closing, stopping transcription thread.
+2024-12-03 17:36:35,511 - MainThread - INFO - Application closing, stopping transcription thread.
+2024-12-03 17:37:37,328 - MainThread - INFO - Application closing, stopping transcription thread.

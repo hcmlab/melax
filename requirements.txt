@@ -5,4 +5,4 @@ soundfile
 torch --index-url https://download.pytorch.org/whl/cu124
 mediapipe
 git+https://github.com/m-bain/whisperx
-
+openai

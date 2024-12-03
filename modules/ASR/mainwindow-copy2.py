@@ -10,9 +10,6 @@ from PySide6.QtCore import QThread, Signal
 from ui_form import Ui_MainWindow  # Import your UI file
 from local_logger import ThreadSafeLogger
 import json
-import openai
-from queue import Queue
-from threading import Lock
 class WhisperTranscriptionThread(QThread):
     transcription_signal = Signal(str)
 
@@ -158,64 +155,6 @@ class GoogleASRTranscriptionThread(QThread):
     def stop(self):
         self.logger.log_debug("Stopping Google ASR Transcription Thread")
         self.running = False
-        self.quit()
-        self.wait()
-
-class RealTimeAnswerThread(QThread):
-    answer_signal = Signal(str)
-    processing_complete_signal = Signal()
-
-    def __init__(self, api_key, logger=None, parent=None):
-        super().__init__(parent)
-        self.api_key = api_key
-        self.prompt_queue = Queue()
-        self.processing = False
-        self.lock = Lock()  # Lock to control processing state
-        self.logger = logger
-
-    def run(self):
-        try:
-            openai.api_key = self.api_key
-            self.logger.log_info("Starting Real-Time Answer Thread")
-
-            while True:
-                # Wait for a prompt from the queue
-                prompt = self.prompt_queue.get()
-                if prompt is None:  # Exit signal
-                    break
-
-                # Process the prompt
-                with self.lock:
-                    self.processing = True
-
-                try:
-                    response = openai.ChatCompletion.create(
-                        model="gpt-4",
-                        messages=[{"role": "user", "content": prompt}]
-                    )
-                    answer = response['choices'][0]['message']['content'].strip()
-                    self.answer_signal.emit(answer)
-                except Exception as e:
-                    self.logger.log_error(f"Error in Real-Time Answer Thread: {e}")
-                    self.answer_signal.emit(f"Error: {e}")
-                finally:
-                    with self.lock:
-                        self.processing = False
-
-                    self.processing_complete_signal.emit()
-        except Exception as e:
-            self.logger.log_error(f"Error in Real-Time Answer Thread: {e}")
-
-    def enqueue_prompt(self, prompt):
-        """
-        Adds a prompt to the queue for processing.
-        If currently processing, the new prompt is queued.
-        """
-        self.prompt_queue.put(prompt)
-
-    def stop(self):
-        """Stop the thread gracefully."""
-        self.prompt_queue.put(None)  # Signal to exit the thread
         self.quit()
         self.wait()
 
