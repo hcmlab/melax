@@ -2,7 +2,7 @@ import sys
 from openai import  OpenAI, OpenAIError
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_form import Ui_MainWindow  # Assuming the UI file is converted to a Python file named `ui_form.py`
-
+import os
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -10,7 +10,8 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         # Initialize OpenAI settings
-        self.api_key = "enter your api"
+        self.API_MESSAGE = "Enter here or set as OPENAI_API_KEY variable"
+        self.api_key = self.API_MESSAGE
         self.context = [{"role": "system", "content": "You are a helpful assistant."}]
         self.models = ["gpt-4o-mini", "gpt-3.5-turbo"]  # Add more models as required
 
@@ -20,6 +21,9 @@ class MainWindow(QMainWindow):
 
         # Set default API key placeholder
         self.ui.openaiAPIKey.setText(self.api_key)
+        self.ui.systemPromptEdit.setText("You are a helpful assistant")
+        self.system_prompt = None
+        self.context = None
 
         # Hide chat-related widgets initially
         self.ui.groupBoxChat.hide()
@@ -32,26 +36,44 @@ class MainWindow(QMainWindow):
         self.ui.sendUserInputOpenAI.clicked.connect(self.send_user_input)
         self.ui.chatModeOpenAI.stateChanged.connect(self.toggle_chat_mode)
 
+
+
+
+    def initialise_openai(self):
+        self.api_key = self.ui.openaiAPIKey.text().strip()
+
+        if not self.api_key or self.api_key == self.API_MESSAGE:
+            if not os.getenv('OPENAI_API_KEY') is None:
+                self.api_key = os.getenv('OPENAI_API_KEY')
+                #QMessageBox.information(self, "OPENAI_API_KEY", "Found it in env variables")
+            else:
+                QMessageBox.warning(self, "API Key Missing", "Please enter your key here or set OPENAI_API_KEY as env variable .")
+                return
+
+        self.openai_client = OpenAI(api_key=self.api_key)
+
+
+        if self.context is None:
+            self.system_prompt = self.ui.systemPromptEdit.toPlainText().strip()
+            self.context = [{"role": "system", "content": self.system_prompt}]
+
+
+
+
     def test_connection(self):
         """
         Test the connection to OpenAI using the provided API key.
         """
-        self.api_key = self.ui.openaiAPIKey.text().strip()
-
-        if not self.api_key or self.api_key == "enter your api":
-            QMessageBox.warning(self, "API Key Missing", "Please enter your OpenAI API key.")
-            return
-
+        self.initialise_openai()
 
         model = self.ui.llmMBOX.currentText()
-        system_prompt = self.ui.systemPromptEdit.toPlainText().strip() or "You are a helpful assistant."
-
         try:
-            self.openai_client = OpenAI(api_key=self.api_key)
+
             # Test connection with a simple "Hello"
+            self.context.append({"role": "user", "content": "Hello"})
             response = self.openai_client.chat.completions.create(
                 model=model,
-                messages=[{"role": "system", "content": system_prompt}, {"role": "user", "content": "Hello"}],
+                messages= self.context,
                 max_tokens=10
             )
             assistant_message = response.choices[0].message.content.strip()
@@ -64,9 +86,9 @@ class MainWindow(QMainWindow):
         Reset all OpenAI-related settings to their default values.
         """
         self.api_key = "enter your api"
-        self.context = [{"role": "system", "content": "You are a helpful assistant."}]
         self.ui.openaiAPIKey.setText(self.api_key)
-        self.ui.systemPromptEdit.clear()
+        self.ui.systemPromptEdit.setText("You are a helpful assistant")
+        self.context = [{"role": "system", "content": self.system_prompt}]
         self.ui.temperatureOpenAI.setValue(70)
         self.ui.maxTokenOpenAI.setValue(1024)
         self.ui.contextBrowserOpenAI.clear()
@@ -77,8 +99,11 @@ class MainWindow(QMainWindow):
         """
         Reset the conversation context.
         """
-        self.context = [{"role": "system", "content": "You are a helpful assistant."}]
-        self.ui.contextBrowserOpenAI.clear()
+        if self.system_prompt is None:
+            self.initialise_openai()
+        else:
+            self.context = [{"role": "system", "content": self.system_prompt}]
+            self.ui.contextBrowserOpenAI.clear()
         QMessageBox.information(self, "Context Reset", "Conversation context has been reset.")
 
     def toggle_chat_mode(self, state):
@@ -87,10 +112,9 @@ class MainWindow(QMainWindow):
         """
         if state == 2:  # Checkbox checked
             self.ui.groupBoxChat.show()
-            #self.ui.contextTextBrowser.show()
         else:
             self.ui.groupBoxChat.hide()
-            #self.ui.contextTextBrowser.hide()
+
 
     def update_context_browser(self):
         """
@@ -105,6 +129,7 @@ class MainWindow(QMainWindow):
         """
         Handle user input, send it to OpenAI, and display the response.
         """
+        self.initialise_openai()
         user_input = self.ui.userInputOpenAI.toPlainText().strip()
         if not user_input:
             QMessageBox.warning(self, "Input Missing", "Please enter a message to send.")
