@@ -10,21 +10,17 @@ import numpy as np
 from pathlib import Path
 from PySide6.QtCore import QObject
 from openai import OpenAI, OpenAIError
-from PySide6.QtCore import QMetaObject, Qt
 import os
-from queue import Queue
-import torch
+
 
 class WhisperTranscriptionThread(QThread):
     transcription_signal = Signal(str)
 
-    def __init__(self, model="medium", device="cpu", language="en", energy_threshold=1000, record_timeout=2.0, parent=None, logger=None):
+    def __init__(self, model="medium", device="cpu", language="en", logger=None, parent=None):
         super().__init__(parent)
         self.model_name = model
         self.device = device
         self.language = language
-        self.energy_threshold = energy_threshold
-        self.record_timeout = record_timeout
         self.running = True
         self.logger = logger
 
@@ -32,13 +28,8 @@ class WhisperTranscriptionThread(QThread):
         try:
             self.logger.log_info("Starting Whisper Transcription Thread")
             recorder = sr.Recognizer()
-            recorder.energy_threshold = self.energy_threshold
-            recorder.dynamic_energy_threshold = False
-
             source = sr.Microphone(sample_rate=16000)
             audio_model = whisper.load_model(self.model_name, device=self.device)
-
-            transcription_buffer = ""
 
             def record_callback(_, audio: sr.AudioData):
                 if not self.running:
@@ -46,14 +37,13 @@ class WhisperTranscriptionThread(QThread):
 
                 data = audio.get_raw_data()
                 audio_np = np.frombuffer(data, dtype=np.int16).astype(np.float32) / 32768.0
-                result = audio_model.transcribe(audio_np, language=self.language, fp16=torch.cuda.is_available())
+                result = audio_model.transcribe(audio_np, language=self.language)
                 text = result['text'].strip()
-                if text:
-                    self.transcription_signal.emit(text)
+                self.transcription_signal.emit(text)
 
             with source:
                 recorder.adjust_for_ambient_noise(source)
-            stop_listening = recorder.listen_in_background(source, record_callback, phrase_time_limit=self.record_timeout)
+            stop_listening = recorder.listen_in_background(source, record_callback)
 
             while self.running:
                 self.msleep(100)
@@ -69,6 +59,7 @@ class WhisperTranscriptionThread(QThread):
         self.quit()
         self.wait()
 
+
 class OpenAIWorker(QObject):
     responseReady = Signal(str)
     errorOccurred = Signal(str)
@@ -76,58 +67,21 @@ class OpenAIWorker(QObject):
     def __init__(self, api_key, parent=None):
         super(OpenAIWorker, self).__init__(parent)
         self.api_key = api_key
-        openai.api_key = self.api_key
         self.openai_client = OpenAI(api_key=self.api_key)
-        self.request_queue = Queue()
-        self.is_processing = False
-        self.should_exit = False  # Shutdown flag
 
-    @Slot()
-    def process_queue(self):
-        if self.is_processing or self.should_exit:
-            return
-        if self.request_queue.empty():
-            return
-
-        self.is_processing = True
-        model, context, max_tokens, temperature = self.request_queue.get()
-        self._process_request(model, context, max_tokens, temperature)
-
-    def _process_request(self, model, context, max_tokens, temperature):
+    @Slot(str)
+    def process_request(self, model, context, max_tokens, temperature):
         try:
-            if self.should_exit:
-                return
             response = self.openai_client.chat.completions.create(
                 model=model,
                 messages=context,
                 max_tokens=max_tokens,
                 temperature=temperature,
-                timeout=10  # Timeout in seconds
             )
-            if self.should_exit:
-                return
-            assistant_message = response.choices[0].message.content.strip()
+            assistant_message = response.choices[0]["message"]["content"].strip()
             self.responseReady.emit(assistant_message)
         except Exception as e:
-            if not self.should_exit:
-                self.errorOccurred.emit(str(e))
-        finally:
-            self.is_processing = False
-            QMetaObject.invokeMethod(self, "process_queue", Qt.QueuedConnection)
-
-    @Slot(str, list, int, float)
-    def add_request(self, model, context, max_tokens, temperature):
-        if self.should_exit:
-            return
-        self.request_queue.put((model, context, max_tokens, temperature))
-        QMetaObject.invokeMethod(self, "process_queue", Qt.QueuedConnection)
-
-    def stop(self):
-        self.should_exit = True
-        # Clear the request queue
-        with self.request_queue.mutex:
-            self.request_queue.queue.clear()
-
+            self.errorOccurred.emit(str(e))
 
 
 class MainWindow(QMainWindow):
@@ -135,7 +89,6 @@ class MainWindow(QMainWindow):
     API_MESSAGE_FOUND_ENV = "Found it in env variables"
     API_MESSAGE_MISSING = "Please enter your key here or set OPENAI_API_KEY as an environment variable."
     transcription_signal = Signal(str)
-    openai_request_signal = Signal(str, object, int, float)
 
     def __init__(self):
         super().__init__()
@@ -143,44 +96,28 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         # Logger
-        self.logger = ThreadSafeLogger("interactive_gui.log")
+        self.logger = ThreadSafeLogger("../interactive_gui.log")
 
         # ASR Thread
         self.transcription_thread = None
-        # common asr
-        self.populate_languages()
+
         # OpenAI Worker
         self.api_key = os.getenv('OPENAI_API_KEY')
-        self.ui.openaiAPIKey.setText(self.api_key if self.api_key else "")
-        self.openai_worker = OpenAIWorker(api_key=self.api_key)
+        self.ui.openaiAPIKey
+        self.openai_worker = OpenAIWorker(api_key="your-openai-api-key")
         self.openai_worker_thread = QThread()
         self.openai_worker.moveToThread(self.openai_worker_thread)
         self.openai_worker.responseReady.connect(self.display_openai_response)
         self.openai_worker.errorOccurred.connect(self.display_openai_error)
         self.openai_worker_thread.start()
 
-        # Connect the signal to the worker's slot
-        self.openai_request_signal.connect(self.openai_worker.add_request)
-
-        # google
-        self.ui.googleAPI.setText("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw")
-        self.ui.googleEndPoint.setText("http://www.google.com/speech-api/v2/recognize")
         # UI Setup
         self.setup_ui()
         self.populate_microphones()
         self.populate_languages()
 
         # Signal-Slot Connections
-        self.transcription_signal.connect(self.handle_transcription)
-
-        # OpenAI context initialization
-        system_prompt_text = self.ui.systemPromptEdit.toPlainText().strip()
-        if not system_prompt_text:
-            system_prompt_text = "You are a helpful assistant."
-            self.ui.systemPromptEdit.setText(system_prompt_text)
-        self.context = [{"role": "system", "content": system_prompt_text}]
-
-
+        self.transcription_signal.connect(self.send_to_openai)
 
     def setup_ui(self):
         self.stylesheets_folder = Path(__file__).parent / "stylesheets"
@@ -189,32 +126,12 @@ class MainWindow(QMainWindow):
         # Populate ASR models
         self.ui.whisperModel.addItems(["tiny", "base", "small", "medium", "large"])
         self.ui.whisperDevice.addItems(["CPU", "GPU"])
-        self.ui.recognizerMBOX.addItems(["Google", "Whisper"])
-
-        # Populate LLM models
-        self.ui.LLMChocie.addItems(["OpenAI", "LLAMA"])
-        self.models = ["gpt-4o-mini", "gpt-3.5-turbo"]
-        self.ui.llmMBOX.addItems(self.models)
+        self.ui.recognizerMBOX.addItems(["Whisper"])
 
         # Connect UI actions
         self.ui.startASR.clicked.connect(self.start_transcription)
         self.ui.stopASR.clicked.connect(self.stop_transcription)
         self.ui.clearASR.clicked.connect(self.clear_transcription)
-
-        # Connect OpenAI API key update
-        self.ui.openaiAPIKey.textChanged.connect(self.update_api_key)
-
-        # Connect system prompt update
-        self.ui.systemPromptEdit.textChanged.connect(self.update_system_prompt)
-
-        # Set default values for temperature and max tokens if not already set
-        if not self.ui.temperatureOpenAI.value():
-            self.ui.temperatureOpenAI.setValue(70)
-        if not self.ui.maxTokenOpenAI.value():
-            self.ui.maxTokenOpenAI.setValue(1024)
-
-        self.ui.recognizerMBOX.currentTextChanged.connect(self.toggle_asr_options)
-        self.toggle_asr_options("Google")
 
     def populate_microphones(self):
         try:
@@ -224,24 +141,9 @@ class MainWindow(QMainWindow):
             self.ui.microphoneMBox.addItem(f"Error: {e}")
 
     def populate_languages(self):
-        """Populate both Whisper and Google language options."""
         from whisper.tokenizer import LANGUAGES
         for lang_name, lang_key in LANGUAGES.items():
             self.ui.whisperLanguage.addItem(lang_name, lang_key)
-
-        google_languages = ["en-US", "es-ES", "fr-FR", "de-DE"]
-        self.ui.googleLanguage.addItems(google_languages)
-
-    def toggle_asr_options(self, recognizer_type):
-        """
-        Show or hide specific ASR options based on the selected recognizer type.
-        """
-        if recognizer_type == "Google":
-            self.ui.googleGroupBox.setVisible(True)
-            self.ui.whisperGroupBox.setVisible(False)
-        elif recognizer_type == "Whisper":
-            self.ui.googleGroupBox.setVisible(False)
-            self.ui.whisperGroupBox.setVisible(True)
 
     def setup_theme_selection(self):
         self.ui.themeComboBox.clear()
@@ -292,62 +194,18 @@ class MainWindow(QMainWindow):
 
     def clear_transcription(self):
         self.ui.asrTextBrowser.clear()
-        self.ui.contextBrowserOpenAI.clear()
-        self.context = [{"role": "system", "content": self.ui.systemPromptEdit.toPlainText().strip()}]
 
-    def update_api_key(self, text):
-        self.api_key = text.strip()
-        openai.api_key = self.api_key
-
-    def update_system_prompt(self):
-        system_prompt_text = self.ui.systemPromptEdit.toPlainText().strip()
-        if system_prompt_text:
-            # Update the system prompt in the context
-            self.context[0] = {"role": "system", "content": system_prompt_text}
-        else:
-            # Reset to default if empty
-            self.context[0] = {"role": "system", "content": "You are a helpful assistant."}
 
     @Slot(str)
-    def handle_transcription(self, user_input):
-        # Display the ASR transcription
-        #self.ui.asrTextBrowser.append(user_input)
-
-        # Proceed to send to OpenAI
-        self.send_to_openai(user_input)
-
     def send_to_openai(self, user_input):
-        # Append user's message to context
-        self.context.append({"role": "user", "content": user_input})
-
-        # Display user's message in contextBrowserOpenAI
-        self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {user_input}")
-
-        # Make a copy of the context to avoid threading issues
-        context_copy = self.context.copy()
-
-        # Read parameters from GUI
-        max_tokens = self.ui.maxTokenOpenAI.value()
-        temperature = self.ui.temperatureOpenAI.value() / 100  # Assuming the GUI provides values from 0 to 100
-
-        # Read the selected model from GUI
-        selected_model = self.ui.llmMBOX.currentText()
-
-        # Emit signal to OpenAIWorker
-        self.openai_request_signal.emit(
-            selected_model,
-            context_copy,
-            max_tokens,
-            temperature
-        )
+        context = [{"role": "system", "content": "You are a helpful assistant."},
+                   {"role": "user", "content": user_input}]
+        self.ui.asrTextBrowser.append(f"User: {user_input}")
+        self.openai_worker.process_request("gpt-3.5-turbo", context, max_tokens=150, temperature=0.7)
 
     @Slot(str)
     def display_openai_response(self, response):
-        # Append assistant's message to context
-        self.context.append({"role": "assistant", "content": response})
-
-        # Display assistant's message in contextBrowserOpenAI
-        self.ui.contextBrowserOpenAI.append(f"<b>Assistant:</b> {response}")
+        self.ui.asrTextBrowser.append(f"Assistant: {response}")
 
     @Slot(str)
     def display_openai_error(self, error_message):

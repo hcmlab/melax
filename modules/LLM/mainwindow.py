@@ -3,15 +3,28 @@ from openai import  OpenAI, OpenAIError
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_form import Ui_MainWindow  # Assuming the UI file is converted to a Python file named `ui_form.py`
 import os
+from PySide6.QtCore import QFile, QIODevice
+from pathlib import Path
+from PySide6.QtGui import QFont
 class MainWindow(QMainWindow):
+    # macros
+    API_MESSAGE_DEFAULT = "Enter here or set as OPENAI_API_KEY variable"
+    API_MESSAGE_FOUND_ENV = "Found it in env variables"
+    API_MESSAGE_MISSING = "lease enter your key here or set OPENAI_API_KEY as an environment variable."
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        #self.apply_stylesheet()
+        #self.apply_stylesheet_file()
+        self.stylesheets_folder = Path(__file__).parent / "stylesheets"
+        self.setup_theme_selection()
+
+
 
         # Initialize OpenAI settings
-        self.API_MESSAGE = "Enter here or set as OPENAI_API_KEY variable"
-        self.api_key = self.API_MESSAGE
+        #self.API_MESSAGE = "Enter here or set as OPENAI_API_KEY variable"
+        self.api_key = self.API_MESSAGE_DEFAULT
         self.context = [{"role": "system", "content": "You are a helpful assistant."}]
         self.models = ["gpt-4o-mini", "gpt-3.5-turbo"]  # Add more models as required
 
@@ -36,18 +49,62 @@ class MainWindow(QMainWindow):
         self.ui.sendUserInputOpenAI.clicked.connect(self.send_user_input)
         self.ui.chatModeOpenAI.stateChanged.connect(self.toggle_chat_mode)
 
+    def setup_theme_selection(self):
+        """
+        Setup theme selection combobox and populate it with available stylesheets.
+        """
+        self.ui.themeComboBox.clear()
+        themes = self.get_available_themes()
+        self.ui.themeComboBox.addItems(themes)
 
+        # Connect the combo box selection event to apply the selected theme
+        self.ui.themeComboBox.currentIndexChanged.connect(self.apply_selected_theme)
 
+        # Apply the default or first theme
+        if themes:
+            self.apply_stylesheet_file(themes[0])
+
+    def get_available_themes(self):
+        """
+        Get a list of available themes (QSS files) from the stylesheets folder.
+        """
+        if self.stylesheets_folder.exists():
+            return [f.name for f in self.stylesheets_folder.glob("*.qss")]
+        return []
+
+    def apply_stylesheet_file(self, theme_name):
+        """
+        Apply the selected stylesheet.
+        """
+        stylesheet_path = self.stylesheets_folder / theme_name
+
+        if stylesheet_path.exists():
+            try:
+                with stylesheet_path.open("r", encoding="utf-8") as file:
+                    stylesheet = file.read()
+                    self.setStyleSheet(stylesheet)
+            except Exception as e:
+                QMessageBox.warning(self, "Error", f"Failed to apply theme {theme_name}. Error: {e}")
+        else:
+            QMessageBox.warning(self, "Error", f"Stylesheet file not found: {stylesheet_path}")
+
+    def apply_selected_theme(self):
+        """
+        Apply the theme selected in the combo box.
+        """
+        selected_theme = self.ui.themeComboBox.currentText()
+        self.apply_stylesheet_file(selected_theme)
 
     def initialise_openai(self):
         self.api_key = self.ui.openaiAPIKey.text().strip()
 
-        if not self.api_key or self.api_key == self.API_MESSAGE:
-            if not os.getenv('OPENAI_API_KEY') is None:
-                self.api_key = os.getenv('OPENAI_API_KEY')
-                #QMessageBox.information(self, "OPENAI_API_KEY", "Found it in env variables")
+        if not self.api_key or self.api_key in [self.API_MESSAGE_DEFAULT, self.API_MESSAGE_FOUND_ENV]:
+            env_api_key = os.getenv('OPENAI_API_KEY')
+            if env_api_key:
+                self.api_key = env_api_key
+                self.ui.openaiAPIKey.setText(self.API_MESSAGE_FOUND_ENV)
             else:
-                QMessageBox.warning(self, "API Key Missing", "Please enter your key here or set OPENAI_API_KEY as env variable .")
+                QMessageBox.warning(self, "API Key Missing", self.API_MESSAGE_MISSING)
                 return
 
         self.openai_client = OpenAI(api_key=self.api_key)
@@ -56,9 +113,6 @@ class MainWindow(QMainWindow):
         if self.context is None:
             self.system_prompt = self.ui.systemPromptEdit.toPlainText().strip()
             self.context = [{"role": "system", "content": self.system_prompt}]
-
-
-
 
     def test_connection(self):
         """
@@ -85,14 +139,16 @@ class MainWindow(QMainWindow):
         """
         Reset all OpenAI-related settings to their default values.
         """
-        self.api_key = "enter your api"
-        self.ui.openaiAPIKey.setText(self.api_key)
-        self.ui.systemPromptEdit.setText("You are a helpful assistant")
-        self.context = [{"role": "system", "content": self.system_prompt}]
+        #self.api_key = os.getenv('OPENAI_API_KEY') or "enter your api"
+
+        #self.ui.systemPromptEdit.setText("You are a helpful assistant")
+        #self.context = [{"role": "system", "content": self.system_prompt}]
         self.ui.temperatureOpenAI.setValue(70)
         self.ui.maxTokenOpenAI.setValue(1024)
         self.ui.contextBrowserOpenAI.clear()
         self.ui.llmMBOX.setCurrentText("gpt-4o-mini")
+        self.context = [{"role": "system", "content": self.system_prompt}]
+
         QMessageBox.information(self, "Defaults Reset", "All settings have been reset to defaults.")
 
     def reset_context(self):

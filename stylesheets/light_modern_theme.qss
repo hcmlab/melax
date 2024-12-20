@@ -1,0 +1,90 @@
+QMainWindow {
+    background-color: #FAFAFA;  /* Light background */
+    color: #333333;            /* Dark gray text color */
+}
+QPushButton {
+    border: 2px solid #0078D7;       /* Light blue border */
+    border-radius: 12px;             /* Rounded corners */
+    background-color: #FFFFFF;       /* White button background */
+    color: #0078D7;                  /* Blue text */
+    padding: 8px;                    /* Padding for modern look */
+    font-size: 14px;                 /* Modern font size */
+    transition: all 0.3s ease;       /* Smooth transition for hover/pressed states */
+}
+
+QPushButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,  /* Gradient direction */
+        stop: 0 #D0EBFC,             /* Brighter blue at top-left */
+        stop: 1 #0078D7              /* Vivid blue at bottom-right */
+    );
+    border-color: #005BB5;           /* Darker blue border on hover */
+    transform: scale(1.1);           /* Enlarge more for hover effect */
+    font-weight: bold;               /* Make text bold */
+    color: #005BB5;                  /* Slightly darker blue text */
+    text-shadow: 1px 1px 2px #BBDDF2; /* Subtle glow effect for the text */
+}
+
+QPushButton:pressed {
+    background: qradialgradient(
+        cx: 0.5, cy: 0.5, radius: 0.6,
+        fx: 0.5, fy: 0.5,
+        stop: 0 #A0D1F2,            /* Brighter blue at the center */
+        stop: 1 #005BB5             /* Dark blue edges */
+    );
+    border-color: #005BB5;          /* Darker blue border on press */
+    transform: scale(0.95);         /* Slightly shrink for pressed effect */
+    color: #FFFFFF;                 /* White text for contrast */
+}
+
+QLabel {
+    color: #333333;            /* Dark gray text for labels */
+    font-size: 14px;           /* Modern font size */
+}
+QLineEdit, QTextEdit {
+    background-color: #FFFFFF; /* White input field */
+    border: 1px solid #CCCCCC; /* Light gray border */
+    border-radius: 5px;        /* Rounded corners */
+    color: #333333;            /* Dark gray text */
+    padding: 4px;
+    font-size: 14px;           /* Modern font size */
+}
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #0078D7; /* Blue border on focus */
+}
+QGroupBox {
+    border: 1px solid #CCCCCC; /* Light gray border for group box */
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #0078D7;            /* Blue text for group box title */
+    font-size: 14px;           /* Modern font size */
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 4px 10px;
+    background-color: #F0F0F0; /* Light gray background for title */
+    border-radius: 5px;
+    color: #0078D7;            /* Blue text */
+}
+QMessageBox {
+    background-color: #FAFAFA; /* Light gray background */
+    border: 1px solid #0078D7; /* Blue border */
+    color: #333333;            /* Dark gray text */
+}
+QMessageBox QLabel {
+    color: #0078D7;            /* Blue text for the message content */
+}
+QMessageBox QPushButton {
+    border: 1px solid #0078D7; /* Blue border for buttons */
+    background-color: #FFFFFF; /* White button background */
+    color: #0078D7;            /* Blue text */
+    border-radius: 6px;        /* Rounded corners */
+    padding: 6px;
+}
+QMessageBox QPushButton:hover {
+    background-color: #E5F1FB; /* Light blue when hovered */
+}
+QMessageBox QPushButton:pressed {
+    background-color: #CDE7F9; /* Slightly darker blue when pressed */
+}

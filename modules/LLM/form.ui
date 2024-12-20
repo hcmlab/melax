@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1984</width>
+    <width>831</width>
     <height>1036</height>
    </rect>
   </property>
@@ -18,10 +18,15 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>50</y>
-      <width>511</width>
-      <height>701</height>
+      <y>40</y>
+      <width>621</width>
+      <height>871</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="title">
      <string>Large Language Model</string>
@@ -30,316 +35,408 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>60</y>
-       <width>481</width>
-       <height>641</height>
+       <y>100</y>
+       <width>601</width>
+       <height>761</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
      </property>
      <property name="title">
       <string>OpenAI Options</string>
      </property>
-     <widget class="QSplitter" name="splitter">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>40</y>
-        <width>341</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Orientation::Horizontal</enum>
-      </property>
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>API Key</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="openaiAPIKey"/>
-     </widget>
-     <widget class="QSplitter" name="splitter_2">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>140</y>
-        <width>151</width>
-        <height>12</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Orientation::Horizontal</enum>
-      </property>
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string>Temperature</string>
-       </property>
-      </widget>
-      <widget class="QSlider" name="temperatureOpenAI">
-       <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="singleStep">
-        <number>1</number>
-       </property>
-       <property name="value">
-        <number>70</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QSplitter" name="splitter_3">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>160</y>
-        <width>171</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Orientation::Horizontal</enum>
-      </property>
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string>Max-tokens</string>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="maxTokenOpenAI">
-       <property name="minimum">
-        <number>1</number>
-       </property>
-       <property name="maximum">
-        <number>4096</number>
-       </property>
-       <property name="value">
-        <number>1024</number>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QPushButton" name="resetContextOpenAI">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>600</y>
-        <width>171</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Reset Context</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="testConnectionOpenAI">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>280</y>
-        <width>171</width>
-        <height>25</height>
+        <x>370</x>
+        <y>340</y>
+        <width>81</width>
+        <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>Test Connection</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::Phone"/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="shortcut">
+       <string notr="true"/>
       </property>
      </widget>
      <widget class="QPushButton" name="resetDefaultsOpenAI">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>600</y>
-        <width>171</width>
-        <height>25</height>
+        <x>450</x>
+        <y>340</y>
+        <width>81</width>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
       </property>
       <property name="text">
-       <string>Reset Defaults</string>
+       <string/>
       </property>
-     </widget>
-     <widget class="QSplitter" name="splitter_8">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>190</y>
-        <width>401</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Orientation::Horizontal</enum>
-      </property>
-      <widget class="QLabel" name="label_18">
-       <property name="text">
-        <string>System Prompt</string>
-       </property>
-      </widget>
-      <widget class="QTextEdit" name="systemPromptEdit"/>
-     </widget>
-     <widget class="QSplitter" name="splitter_10">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>480</y>
-        <width>401</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Orientation::Horizontal</enum>
-      </property>
-      <widget class="QLabel" name="label_context">
-       <property name="text">
-        <string>Context</string>
-       </property>
-      </widget>
-      <widget class="QTextBrowser" name="contextBrowserOpenAI"/>
-     </widget>
-     <widget class="QCheckBox" name="chatModeOpenAI">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>280</y>
-        <width>141</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Activate Chat Mode</string>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::DocumentRevert"/>
       </property>
      </widget>
      <widget class="QGroupBox" name="groupBoxChat">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>330</y>
-        <width>461</width>
-        <height>141</height>
+        <x>10</x>
+        <y>360</y>
+        <width>571</width>
+        <height>391</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
       </property>
       <property name="title">
        <string/>
       </property>
-      <widget class="QSplitter" name="splitter_9">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>20</y>
-         <width>401</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_20">
-        <property name="text">
-         <string>User Input</string>
-        </property>
-       </widget>
-       <widget class="QTextEdit" name="userInputOpenAI"/>
-      </widget>
       <widget class="QPushButton" name="sendUserInputOpenAI">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>110</y>
-         <width>91</width>
-         <height>25</height>
+         <x>360</x>
+         <y>170</y>
+         <width>71</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>Send</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::DocumentSend"/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
       </widget>
+      <widget class="QPushButton" name="resetContextOpenAI">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>350</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::EditUndo"/>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="contextBrowserOpenAI">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>210</y>
+         <width>381</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_context">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>230</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Context</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>111</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>User Input</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="userInputOpenAI">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>30</y>
+         <width>381</width>
+         <height>132</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>250</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>System Prompt</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="systemPromptEdit">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>240</y>
+        <width>381</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chatModeOpenAI">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>350</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>350</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Activate Chat Mode</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="maxTokenOpenAI">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>180</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>4096</number>
+      </property>
+      <property name="value">
+       <number>1024</number>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="openaiAPIKey">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>411</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>81</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>API Key</string>
+      </property>
      </widget>
      <widget class="QComboBox" name="llmMBOX">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>70</y>
-        <width>164</width>
-        <height>24</height>
+        <x>170</x>
+        <y>80</y>
+        <width>181</width>
+        <height>34</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>170</y>
+        <width>99</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Max-tokens</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>130</y>
+        <width>106</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Temperature</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>70</y>
-        <width>91</width>
-        <height>22</height>
+        <x>31</x>
+        <y>82</y>
+        <width>54</width>
+        <height>26</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Model</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QSplitter" name="splitter_4">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>30</y>
-       <width>221</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>LLM</string>
+     <widget class="QSlider" name="temperatureOpenAI">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>130</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
       </property>
-     </widget>
-     <widget class="QComboBox" name="LLMChocie"/>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_5">
-    <property name="geometry">
-     <rect>
-      <x>740</x>
-      <y>170</y>
-      <width>671</width>
-      <height>451</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>LLAMA Options</string>
-    </property>
-    <widget class="QSplitter" name="splitter_5">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>30</y>
-       <width>341</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QSplitter" name="splitter_6">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>60</y>
-       <width>151</width>
-       <height>12</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="label_16">
-      <property name="text">
-       <string>Temperature</string>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
       </property>
-     </widget>
-     <widget class="QSlider" name="horizontalSlider_2">
       <property name="maximum">
        <number>100</number>
       </property>
@@ -354,116 +451,72 @@
       </property>
      </widget>
     </widget>
-    <widget class="QSplitter" name="splitter_7">
+    <widget class="QComboBox" name="LLMChocie">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>80</y>
-       <width>171</width>
-       <height>21</height>
+       <x>110</x>
+       <y>50</y>
+       <width>211</width>
+       <height>24</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="label_17">
-      <property name="text">
-       <string>Max-tokens</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="spinBox_2">
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>4096</number>
-      </property>
-      <property name="value">
-       <number>1024</number>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_19">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>110</y>
-       <width>100</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>System Prompt</string>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
      </property>
     </widget>
-    <widget class="QTextEdit" name="systemPromptEditLlama">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>110</y>
-       <width>301</width>
-       <height>70</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="testConnectionLlama">
+    <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>310</y>
-       <width>171</width>
-       <height>25</height>
+       <y>50</y>
+       <width>51</width>
+       <height>21</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
      </property>
      <property name="text">
-      <string>Test Connection</string>
+      <string>LLM</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="resetDefaultsLlama">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>310</y>
-       <width>171</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Reset Defaults</string>
-     </property>
-    </widget>
-    <widget class="QSplitter" name="splitter_11">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>210</y>
-       <width>401</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="label_21">
-      <property name="text">
-       <string>User Input</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="userInputLlama"/>
-    </widget>
-    <widget class="QCheckBox" name="checkBox_2">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>180</y>
-       <width>141</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Activate Chat Mode</string>
-     </property>
-    </widget>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>10</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>GUI theme</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="themeComboBox">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>10</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -471,13 +524,29 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1984</width>
+     <width>831</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>themeComboBox</tabstop>
+  <tabstop>LLMChocie</tabstop>
+  <tabstop>openaiAPIKey</tabstop>
+  <tabstop>llmMBOX</tabstop>
+  <tabstop>temperatureOpenAI</tabstop>
+  <tabstop>maxTokenOpenAI</tabstop>
+  <tabstop>systemPromptEdit</tabstop>
+  <tabstop>testConnectionOpenAI</tabstop>
+  <tabstop>resetDefaultsOpenAI</tabstop>
+  <tabstop>chatModeOpenAI</tabstop>
+  <tabstop>userInputOpenAI</tabstop>
+  <tabstop>sendUserInputOpenAI</tabstop>
+  <tabstop>contextBrowserOpenAI</tabstop>
+  <tabstop>resetContextOpenAI</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

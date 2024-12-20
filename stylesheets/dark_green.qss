@@ -1,0 +1,104 @@
+QMainWindow {
+    background-color: #121212;  /* Dark background */
+    color: #00FF00;            /* Green text color */
+}
+QPushButton {
+    border: 2px solid #00FF00;       /* Green border */
+    border-radius: 12px;             /* Rounded corners */
+    background-color: #333;          /* Dark button background */
+    color: #00FF00;                  /* Green text */
+    padding: 8px;                    /* Padding for modern look */
+    font-size: 14px;                 /* Clean font size */
+    transition: all 0.3s ease;       /* Smooth transition effect */
+}
+
+QPushButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,  /* Gradient direction */
+        stop: 0 #90EE90,             /* Light green at the top-left */
+        stop: 1 #32CD32              /* Lime green at the bottom-right */
+    );
+    border-color: #32CD32;           /* Change border to lime green */
+    transform: scale(1.05);          /* Slightly enlarge the button */
+    font-weight: bold;               /* Make text bold */
+    color: #FFFFFF;                  /* White text for better contrast */
+}
+
+QPushButton:pressed {
+    background: qradialgradient(
+        cx: 0.5, cy: 0.5, radius: 0.6,
+        fx: 0.5, fy: 0.5,
+        stop: 0 #228B22,            /* Forest green center */
+        stop: 1 #006400             /* Dark green edges */
+    );
+    border-color: #228B22;          /* Darker green border */
+    transform: scale(0.95);         /* Slightly smaller for tactile feedback */
+    color: #FFFFFF;                 /* Keep white text */
+}
+QLabel {
+    color: #FFFFFF;            /* White text for labels */
+}
+QLineEdit, QTextEdit {
+    background-color: #222;    /* Dark input field */
+    border: 1px solid #FFFFFF; /* White border */
+    border-radius: 5px;        /* Rounded corners */
+    color: #00FF00;            /* Green text */
+    padding: 4px;
+}
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #FFFFFF; /* White border on focus */
+}
+QGroupBox {
+    border: 1px solid #FFFFFF; /* White border for group box */
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #00FF00;            /* Green text for group box */
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 4px 10px;
+    background-color: #1E1E1E; /* Darker background for title */
+    border-radius: 5px;
+    color: #00FF00;            /* Green text */
+}
+QMessageBox {   background-color: #121212; /* Black background */
+                border: 1px solid #00FF00; /* Green border */
+                color: #FFFFFF;            /* White text */
+            }
+QMessageBox QLabel {
+    color: #00FF00;            /* Green text for the message content */
+}
+QMessageBox QPushButton {
+    border: 2px solid #00FF00;       /* Green border */
+    border-radius: 6px;             /* Rounded corners */
+    background-color: #333;         /* Dark button background */
+    color: #00FF00;                 /* Green text */
+    padding: 8px;                   /* Padding for modern look */
+    font-size: 14px;                /* Clean font size */
+    transition: all 0.3s ease;      /* Smooth transition effect */
+}
+
+QMessageBox QPushButton:hover {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,  /* Gradient direction */
+        stop: 0 #90EE90,             /* Light green at the top-left */
+        stop: 1 #32CD32              /* Lime green at the bottom-right */
+    );
+    border-color: #32CD32;          /* Change border to lime green */
+    transform: scale(1.1);          /* Slightly enlarge the button */
+    font-weight: bold;              /* Make text bold */
+    color: #FFFFFF;                 /* White text for better contrast */
+}
+
+QMessageBox QPushButton:pressed {
+    background: qradialgradient(
+        cx: 0.5, cy: 0.5, radius: 0.6,
+        fx: 0.5, fy: 0.5,
+        stop: 0 #228B22,            /* Forest green center */
+        stop: 1 #006400             /* Dark green edges */
+    );
+    border-color: #228B22;          /* Darker green border */
+    transform: scale(1.05);         /* Slightly smaller than hover state */
+    color: #FFFFFF;                 /* Keep white text */
+}

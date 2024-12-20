@@ -1,0 +1,65 @@
+"""QMainWindow {
+    background-color: #121212;  /* Dark background */
+    color: #00FF00;            /* Green text color */
+}
+QPushButton {
+    border: 2px solid #00FF00; /* Green border */
+    border-radius: 12px;       /* Rounded corners */
+    background-color: #333;    /* Dark button background */
+    color: #00FF00;            /* Green text */
+    padding: 8px;              /* Padding for modern look */
+}
+QPushButton:hover {
+    background-color: #444;    /* Slightly lighter when hovered */
+}
+QPushButton:pressed {
+    background-color: #222;    /* Darker when pressed */
+    border-color: #00CC00;     /* Darker green border */
+}
+QLabel {
+    color: #FFFFFF;            /* White text for labels */
+}
+QLineEdit, QTextEdit {
+    background-color: #222;    /* Dark input field */
+    border: 1px solid #FFFFFF; /* White border */
+    border-radius: 5px;        /* Rounded corners */
+    color: #00FF00;            /* Green text */
+    padding: 4px;
+}
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #FFFFFF; /* White border on focus */
+}
+QGroupBox {
+    border: 1px solid #FFFFFF; /* White border for group box */
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #00FF00;            /* Green text for group box */
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 4px 10px;
+    background-color: #1E1E1E; /* Darker background for title */
+    border-radius: 5px;
+    color: #00FF00;            /* Green text */
+}
+QMessageBox {   background-color: #121212; /* Black background */
+                border: 1px solid #00FF00; /* Green border */
+                color: #FFFFFF;            /* White text */
+            }
+QMessageBox QLabel {
+    color: #00FF00;            /* Green text for the message content */
+}
+QMessageBox QPushButton {
+    border: 1px solid #00FF00; /* Green border for buttons */
+    background-color: #333;    /* Dark button background */
+    color: #00FF00;            /* Green text */
+    border-radius: 6px;        /* Rounded corners */
+    padding: 6px;
+}
+QMessageBox QPushButton:hover {
+    background-color: #444;    /* Slightly lighter when hovered */
+}
+QMessageBox QPushButton:pressed {
+    background-color: #222;    /* Darker when pressed */
+} """
