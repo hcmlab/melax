@@ -2,7 +2,8 @@ import sys
 import speech_recognition as sr
 import whisper
 import openai
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton
+from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PySide6.QtCore import QThread, Signal, Slot
 from ui_form import Ui_MainWindow
 from local_logger import ThreadSafeLogger
@@ -14,6 +15,7 @@ from PySide6.QtCore import QMetaObject, Qt
 import os
 from queue import Queue
 import torch
+from gtts import gTTS
 
 class WhisperTranscriptionThread(QThread):
     transcription_signal = Signal(str)
@@ -128,6 +130,53 @@ class OpenAIWorker(QObject):
         with self.request_queue.mutex:
             self.request_queue.queue.clear()
 
+class TTSWorker(QThread):
+    ttsFinished = Signal(str)
+    ttsError = Signal(str)
+
+    def __init__(self, parent=None):
+        super(TTSWorker, self).__init__(parent)
+        self.request_queue = Queue()
+        self.is_processing = False
+        self.should_exit = False
+
+    def run(self):
+        while not self.should_exit:
+            if self.is_processing:
+                self.msleep(100)
+                continue
+            if self.request_queue.empty():
+                self.msleep(100)
+                continue
+            self.is_processing = True
+            text, filename = self.request_queue.get()
+            self._process_request(text, filename)
+            self.is_processing = False
+
+    def _process_request(self, text, filename):
+        try:
+            if self.should_exit:
+                return
+            # Use gTTS to create an MP3 file
+            tts = gTTS(text=text, lang='en')
+            tts.save(filename)
+            if self.should_exit:
+                return
+            self.ttsFinished.emit(filename)
+        except Exception as e:
+            if not self.should_exit:
+                self.ttsError.emit(str(e))
+
+    @Slot(str, str)
+    def add_request(self, text, filename):
+        if self.should_exit:
+            return
+        self.request_queue.put((text, filename))
+
+    def stop(self):
+        self.should_exit = True
+        with self.request_queue.mutex:
+            self.request_queue.queue.clear()
 
 
 class MainWindow(QMainWindow):
@@ -136,6 +185,7 @@ class MainWindow(QMainWindow):
     API_MESSAGE_MISSING = "Please enter your key here or set OPENAI_API_KEY as an environment variable."
     transcription_signal = Signal(str)
     openai_request_signal = Signal(str, object, int, float)
+    tts_request_signal = Signal(str, str)
 
     def __init__(self):
         super().__init__()
@@ -144,11 +194,13 @@ class MainWindow(QMainWindow):
 
         # Logger
         self.logger = ThreadSafeLogger("interactive_gui.log")
+        self.context = []
 
         # ASR Thread
         self.transcription_thread = None
-        # common asr
+        # populate languages
         self.populate_languages()
+
         # OpenAI Worker
         self.api_key = os.getenv('OPENAI_API_KEY')
         self.ui.openaiAPIKey.setText(self.api_key if self.api_key else "")
@@ -161,6 +213,15 @@ class MainWindow(QMainWindow):
 
         # Connect the signal to the worker's slot
         self.openai_request_signal.connect(self.openai_worker.add_request)
+
+        # Setup TTS Worker
+        self.tts_worker = TTSWorker()
+        self.tts_worker.ttsFinished.connect(self.handle_tts_finished)
+        self.tts_worker.ttsError.connect(self.handle_tts_error)
+        self.tts_worker.start()
+
+        # Connect the signal to the TTS worker's slot
+        self.tts_request_signal.connect(self.tts_worker.add_request)
 
         # google
         self.ui.googleAPI.setText("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw")
@@ -180,7 +241,10 @@ class MainWindow(QMainWindow):
             self.ui.systemPromptEdit.setText(system_prompt_text)
         self.context = [{"role": "system", "content": system_prompt_text}]
 
-
+        # Setup Audio Player for TTS
+        self.audio_player = QMediaPlayer(self)
+        self.audio_output = QAudioOutput(self)
+        self.audio_player.setAudioOutput(self.audio_output)
 
     def setup_ui(self):
         self.stylesheets_folder = Path(__file__).parent / "stylesheets"
@@ -226,9 +290,13 @@ class MainWindow(QMainWindow):
     def populate_languages(self):
         """Populate both Whisper and Google language options."""
         from whisper.tokenizer import LANGUAGES
+        # Clear existing items to avoid duplicates
+        self.ui.whisperLanguage.clear()
         for lang_name, lang_key in LANGUAGES.items():
             self.ui.whisperLanguage.addItem(lang_name, lang_key)
 
+        # Clear and populate google languages
+        self.ui.googleLanguage.clear()
         google_languages = ["en-US", "es-ES", "fr-FR", "de-DE"]
         self.ui.googleLanguage.addItems(google_languages)
 
@@ -291,9 +359,8 @@ class MainWindow(QMainWindow):
             self.transcription_thread = None
 
     def clear_transcription(self):
-        self.ui.asrTextBrowser.clear()
         self.ui.contextBrowserOpenAI.clear()
-        self.context = [{"role": "system", "content": self.ui.systemPromptEdit.toPlainText().strip()}]
+        self.context.append({"role": "system", "content": self.ui.systemPromptEdit.toPlainText().strip()})
 
     def update_api_key(self, text):
         self.api_key = text.strip()
@@ -303,10 +370,10 @@ class MainWindow(QMainWindow):
         system_prompt_text = self.ui.systemPromptEdit.toPlainText().strip()
         if system_prompt_text:
             # Update the system prompt in the context
-            self.context[0] = {"role": "system", "content": system_prompt_text}
+            self.context.append({"role": "system", "content": system_prompt_text})
         else:
             # Reset to default if empty
-            self.context[0] = {"role": "system", "content": "You are a helpful assistant."}
+            self.context.append({"role": "system", "content": "You are a helpful assistant."})
 
     @Slot(str)
     def handle_transcription(self, user_input):
@@ -328,7 +395,7 @@ class MainWindow(QMainWindow):
 
         # Read parameters from GUI
         max_tokens = self.ui.maxTokenOpenAI.value()
-        temperature = self.ui.temperatureOpenAI.value() / 100  # Assuming the GUI provides values from 0 to 100
+        temperature = self.ui.temperatureOpenAI.value() / 100
 
         # Read the selected model from GUI
         selected_model = self.ui.llmMBOX.currentText()
@@ -349,15 +416,41 @@ class MainWindow(QMainWindow):
         # Display assistant's message in contextBrowserOpenAI
         self.ui.contextBrowserOpenAI.append(f"<b>Assistant:</b> {response}")
 
+        # Automatically trigger TTS for the assistant response
+        audio_filename = "assistant_response.mp3"
+        self.tts_request_signal.emit(response, audio_filename)
+
     @Slot(str)
     def display_openai_error(self, error_message):
         QMessageBox.critical(self, "OpenAI Error", error_message)
 
+    @Slot(str)
+    def handle_tts_finished(self, filename):
+        # Once TTS is done, we can play the file
+        self.play_audio(filename)
+
+    @Slot(str)
+    def handle_tts_error(self, error_message):
+        QMessageBox.critical(self, "TTS Error", error_message)
+
+    def play_audio(self, filename):
+        if os.path.exists(filename):
+            self.audio_player.setSource(filename)
+            self.audio_player.play()
+        else:
+            QMessageBox.warning(self, "Audio Error", f"File {filename} not found.")
+
     def closeEvent(self, event):
         self.logger.log_info("Application closing, stopping threads.")
         self.stop_transcription()
+
+        self.tts_worker.stop()
+        self.tts_worker = None
+
+        self.openai_worker.stop()
         self.openai_worker_thread.quit()
         self.openai_worker_thread.wait()
+
         event.accept()
 
 
