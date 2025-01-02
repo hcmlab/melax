@@ -1,182 +1,18 @@
 import sys
+import os
 import speech_recognition as sr
-import whisper
 import openai
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton
 from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PySide6.QtCore import QThread, Signal, Slot
 from ui_form import Ui_MainWindow
 from local_logger import ThreadSafeLogger
-import numpy as np
 from pathlib import Path
-from PySide6.QtCore import QObject
-from openai import OpenAI, OpenAIError
-from PySide6.QtCore import QMetaObject, Qt
-import os
-from queue import Queue
-import torch
-from gtts import gTTS
 
-class WhisperTranscriptionThread(QThread):
-    transcription_signal = Signal(str)
+from llm_modules import OpenAIWorker
+from tts_modules import TTSWorker
+from asr_vad_modules import WhisperTranscriptionThread
 
-    def __init__(self, model="medium", device="cpu", language="en", energy_threshold=1000, record_timeout=2.0, parent=None, logger=None):
-        super().__init__(parent)
-        self.model_name = model
-        self.device = device
-        self.language = language
-        self.energy_threshold = energy_threshold
-        self.record_timeout = record_timeout
-        self.running = True
-        self.logger = logger
-
-    def run(self):
-        try:
-            self.logger.log_info("Starting Whisper Transcription Thread")
-            recorder = sr.Recognizer()
-            recorder.energy_threshold = self.energy_threshold
-            recorder.dynamic_energy_threshold = False
-
-            source = sr.Microphone(sample_rate=16000)
-            audio_model = whisper.load_model(self.model_name, device=self.device)
-
-            transcription_buffer = ""
-
-            def record_callback(_, audio: sr.AudioData):
-                if not self.running:
-                    return
-
-                data = audio.get_raw_data()
-                audio_np = np.frombuffer(data, dtype=np.int16).astype(np.float32) / 32768.0
-                result = audio_model.transcribe(audio_np, language=self.language, fp16=torch.cuda.is_available())
-                text = result['text'].strip()
-                if text:
-                    self.transcription_signal.emit(text)
-
-            with source:
-                recorder.adjust_for_ambient_noise(source)
-            stop_listening = recorder.listen_in_background(source, record_callback, phrase_time_limit=self.record_timeout)
-
-            while self.running:
-                self.msleep(100)
-
-            stop_listening()
-            self.logger.log_info("Whisper Transcription Thread Stopped")
-        except Exception as e:
-            self.logger.log_error(f"Error in Whisper Transcription Thread: {e}")
-            self.transcription_signal.emit(f"Error: {e}")
-
-    def stop(self):
-        self.running = False
-        self.quit()
-        self.wait()
-
-class OpenAIWorker(QObject):
-    responseReady = Signal(str)
-    errorOccurred = Signal(str)
-
-    def __init__(self, api_key, parent=None):
-        super(OpenAIWorker, self).__init__(parent)
-        self.api_key = api_key
-        openai.api_key = self.api_key
-        self.openai_client = OpenAI(api_key=self.api_key)
-        self.request_queue = Queue()
-        self.is_processing = False
-        self.should_exit = False  # Shutdown flag
-
-    @Slot()
-    def process_queue(self):
-        if self.is_processing or self.should_exit:
-            return
-        if self.request_queue.empty():
-            return
-
-        self.is_processing = True
-        model, context, max_tokens, temperature = self.request_queue.get()
-        self._process_request(model, context, max_tokens, temperature)
-
-    def _process_request(self, model, context, max_tokens, temperature):
-        try:
-            if self.should_exit:
-                return
-            response = self.openai_client.chat.completions.create(
-                model=model,
-                messages=context,
-                max_tokens=max_tokens,
-                temperature=temperature,
-                timeout=10  # Timeout in seconds
-            )
-            if self.should_exit:
-                return
-            assistant_message = response.choices[0].message.content.strip()
-            self.responseReady.emit(assistant_message)
-        except Exception as e:
-            if not self.should_exit:
-                self.errorOccurred.emit(str(e))
-        finally:
-            self.is_processing = False
-            QMetaObject.invokeMethod(self, "process_queue", Qt.QueuedConnection)
-
-    @Slot(str, list, int, float)
-    def add_request(self, model, context, max_tokens, temperature):
-        if self.should_exit:
-            return
-        self.request_queue.put((model, context, max_tokens, temperature))
-        QMetaObject.invokeMethod(self, "process_queue", Qt.QueuedConnection)
-
-    def stop(self):
-        self.should_exit = True
-        # Clear the request queue
-        with self.request_queue.mutex:
-            self.request_queue.queue.clear()
-
-class TTSWorker(QThread):
-    ttsFinished = Signal(str)
-    ttsError = Signal(str)
-
-    def __init__(self, parent=None):
-        super(TTSWorker, self).__init__(parent)
-        self.request_queue = Queue()
-        self.is_processing = False
-        self.should_exit = False
-
-    def run(self):
-        while not self.should_exit:
-            if self.is_processing:
-                self.msleep(100)
-                continue
-            if self.request_queue.empty():
-                self.msleep(100)
-                continue
-            self.is_processing = True
-            text, filename = self.request_queue.get()
-            self._process_request(text, filename)
-            self.is_processing = False
-
-    def _process_request(self, text, filename):
-        try:
-            if self.should_exit:
-                return
-            # Use gTTS to create an MP3 file
-            tts = gTTS(text=text, lang='en')
-            tts.save(filename)
-            if self.should_exit:
-                return
-            self.ttsFinished.emit(filename)
-        except Exception as e:
-            if not self.should_exit:
-                self.ttsError.emit(str(e))
-
-    @Slot(str, str)
-    def add_request(self, text, filename):
-        if self.should_exit:
-            return
-        self.request_queue.put((text, filename))
-
-    def stop(self):
-        self.should_exit = True
-        with self.request_queue.mutex:
-            self.request_queue.queue.clear()
 
 
 class MainWindow(QMainWindow):
@@ -206,6 +42,7 @@ class MainWindow(QMainWindow):
         self.ui.openaiAPIKey.setText(self.api_key if self.api_key else "")
         self.openai_worker = OpenAIWorker(api_key=self.api_key)
         self.openai_worker_thread = QThread()
+
         self.openai_worker.moveToThread(self.openai_worker_thread)
         self.openai_worker.responseReady.connect(self.display_openai_response)
         self.openai_worker.errorOccurred.connect(self.display_openai_error)
@@ -215,7 +52,10 @@ class MainWindow(QMainWindow):
         self.openai_request_signal.connect(self.openai_worker.add_request)
 
         # Setup TTS Worker
-        self.tts_worker = TTSWorker()
+        self.tts_worker = TTSWorker(
+            url="localhost:50051",
+            instance_name="/World/audio2face/PlayerStreaming"
+        )
         self.tts_worker.ttsFinished.connect(self.handle_tts_finished)
         self.tts_worker.ttsError.connect(self.handle_tts_error)
         self.tts_worker.start()
@@ -425,9 +265,8 @@ class MainWindow(QMainWindow):
         QMessageBox.critical(self, "OpenAI Error", error_message)
 
     @Slot(str)
-    def handle_tts_finished(self, filename):
-        # Once TTS is done, we can play the file
-        self.play_audio(filename)
+    def handle_tts_finished(self, message: str):
+        self.logger.log_info(f"TTS completed:{message}")
 
     @Slot(str)
     def handle_tts_error(self, error_message):

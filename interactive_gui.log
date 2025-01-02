@@ -146,3 +146,24 @@
 2024-12-20 18:41:31,438 - Dummy-2 - INFO - Starting Whisper Transcription Thread
 2024-12-20 18:41:49,272 - MainThread - INFO - Application closing, stopping threads.
 2024-12-20 18:41:49,674 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2024-12-23 10:48:01,113 - MainThread - INFO - Application closing, stopping threads.
+2024-12-23 11:06:44,070 - MainThread - INFO - Application closing, stopping threads.
+2024-12-23 11:10:01,766 - MainThread - INFO - Application closing, stopping threads.
+2025-01-02 10:20:01,652 - MainThread - INFO - Application closing, stopping threads.
+2025-01-02 13:44:07,558 - MainThread - INFO - Application closing, stopping threads.
+2025-01-02 14:34:34,112 - MainThread - INFO - Application closing, stopping threads.
+2025-01-02 18:21:11,522 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-02 18:21:25,962 - MainThread - INFO - Application closing, stopping threads.
+2025-01-02 18:21:26,411 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2025-01-02 18:22:38,474 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-02 18:24:59,656 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-02 18:25:07,883 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-02 18:25:17,920 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-02 18:25:27,835 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-02 18:25:38,407 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-02 18:25:47,661 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-02 18:25:59,997 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-02 18:26:11,066 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-02 18:26:25,236 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-02 18:26:31,086 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2025-01-02 18:26:32,186 - MainThread - INFO - Application closing, stopping threads.
