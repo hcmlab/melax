@@ -79,3 +79,5 @@ CMakeLists.txt.user*
 /modules/ASR/.qtcreator/
 /modules/LLM/.idea/
 /modules/LLM/.qtcreator/
+assistant_response.mp3
+assistant_response.mp3

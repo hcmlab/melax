@@ -12,8 +12,7 @@ gRPC protocol details could be find in audio2face.proto
 import sys
 import time
 
-import audio2face_pb2
-import audio2face_pb2_grpc
+from streaming_server.proto.old import audio2face_pb2_grpc, audio2face_pb2
 import grpc
 import numpy as np
 import soundfile

@@ -129,9 +129,9 @@ class MainWindow(QMainWindow):
         self.ui.recognizerMBOX.addItems(["Whisper"])
 
         # Connect UI actions
-        self.ui.startASR.clicked.connect(self.start_transcription)
-        self.ui.stopASR.clicked.connect(self.stop_transcription)
-        self.ui.clearASR.clicked.connect(self.clear_transcription)
+        self.ui.startAll.clicked.connect(self.start_transcription)
+        self.ui.stopAll.clicked.connect(self.stop_transcription)
+        self.ui.clearAll.clicked.connect(self.clear_transcription)
 
     def populate_microphones(self):
         try:

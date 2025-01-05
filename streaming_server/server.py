@@ -29,17 +29,16 @@ logger.addHandler(ch)
 # --------------------------------------------------------------------------------
 
 # Use this only during development, this helps to hot-reload grpc/protobuf properly
-os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
-from google.protobuf.internal import api_implementation
-logger.warning(
-    "DEV MODE (turn it off in production): api_implementation.Type() == {}".format(api_implementation.Type())
-)
+# os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+# from google.protobuf.internal import api_implementation
+# logger.warning(
+#      "DEV MODE (turn it off in production): api_implementation.Type() == {}".format(api_implementation.Type())
+#  )
 
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT_DIR)
-import audio2face_pb2
-import audio2face_pb2_grpc
+from streaming_server.proto.old import audio2face_pb2_grpc, audio2face_pb2
 
 
 class Audio2FaceServicer(audio2face_pb2_grpc.Audio2FaceServicer):

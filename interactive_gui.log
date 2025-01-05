@@ -167,3 +167,678 @@
 2025-01-02 18:26:25,236 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
 2025-01-02 18:26:31,086 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
 2025-01-02 18:26:32,186 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 10:11:35,117 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-03 10:13:08,946 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2025-01-03 10:13:12,120 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 10:14:39,893 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-03 10:14:55,096 - MainThread - INFO - TTS error:<_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-01-03T09:14:49.01382+00:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)"}"
+>
+2025-01-03 11:09:52,779 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-03 11:10:14,566 - MainThread - INFO - TTS error:<_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)", grpc_status:14, created_time:"2025-01-03T10:10:09.3030432+00:00"}"
+>
+2025-01-03 11:10:15,530 - MainThread - INFO - TTS error:<_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)", grpc_status:14, created_time:"2025-01-03T10:10:05.8029353+00:00"}"
+>
+2025-01-03 11:13:43,412 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-03 11:13:57,389 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:15:03,275 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-03 11:15:23,963 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:15:38,059 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:15:54,452 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:16:14,505 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:16:28,154 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:16:41,738 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:17:05,692 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:17:36,549 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:17:47,226 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2025-01-03 11:19:08,163 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-03 11:19:18,409 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:19:45,607 - MainThread - INFO - TTS completed:Successfully pushed TTS audio to /World/audio2face/PlayerStreaming
+2025-01-03 11:22:30,299 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 11:22:31,124 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2025-01-03 23:14:29,094 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 23:23:55,533 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 23:24:54,253 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 23:26:21,604 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 23:27:17,572 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 23:39:57,654 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-03 23:40:52,506 - MainThread - INFO - TTS error:<_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-01-03T22:40:51.1354305+00:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)"}"
+>
+2025-01-03 23:41:03,360 - MainThread - INFO - Application closing, stopping threads.
+2025-01-03 23:41:03,530 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2025-01-04 11:13:53,402 - MainThread - INFO - Application closing, stopping threads.
+2025-01-04 19:10:43,694 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 12:43:46,738 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 14:17:45,631 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 15:11:00,795 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 15:13:00,700 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 15:16:36,139 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 15:21:17,028 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 16:19:06,508 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 16:30:06,906 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 16:34:13,375 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 17:34:55,352 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-05 17:35:07,926 - MainThread - INFO - TTS error:<_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-01-05T16:35:05.6337605+00:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)"}"
+>
+2025-01-05 17:35:22,121 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 17:35:22,743 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2025-01-05 17:45:13,645 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 17:56:56,794 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 17:57:12,161 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 18:46:47,046 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 18:47:48,417 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 18:50:01,637 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 18:50:44,837 - MainThread - INFO - Application closing, stopping threads.
+2025-01-05 19:38:10,256 - MainThread - INFO - allStart clicked.
+2025-01-05 19:38:10,256 - MainThread - INFO - allStop clicked.
+2025-01-05 19:38:10,256 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:38:10,256 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:38:10,256 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:38:10,256 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 19:38:10,256 - MainThread - INFO - start_llm() called.
+2025-01-05 19:38:10,256 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:38:10,424 - MainThread - INFO - OpenAI worker started.
+2025-01-05 19:38:10,424 - MainThread - INFO - start_asr() called.
+2025-01-05 19:38:10,424 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:38:10,424 - MainThread - INFO - Google ASR not implemented here. Add logic if needed.
+2025-01-05 19:38:10,424 - MainThread - INFO - start_tts() called.
+2025-01-05 19:38:10,424 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:38:33,722 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 19:38:33,722 - MainThread - INFO - allStop clicked.
+2025-01-05 19:38:33,722 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:38:33,722 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:38:33,722 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:38:33,722 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 19:44:36,382 - MainThread - INFO - allStart clicked.
+2025-01-05 19:44:36,383 - MainThread - INFO - allStop clicked.
+2025-01-05 19:44:36,383 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:44:36,383 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:44:36,383 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:44:36,383 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 19:44:36,383 - MainThread - INFO - start_llm() called.
+2025-01-05 19:44:36,383 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:44:36,552 - MainThread - INFO - OpenAI worker started.
+2025-01-05 19:44:36,552 - MainThread - INFO - start_asr() called.
+2025-01-05 19:44:36,552 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:44:36,552 - MainThread - INFO - Google ASR not implemented here. Add logic if needed.
+2025-01-05 19:44:36,552 - MainThread - INFO - start_tts() called.
+2025-01-05 19:44:36,552 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:44:36,552 - MainThread - INFO - TTS worker started.
+2025-01-05 19:44:36,552 - MainThread - INFO - allStart - all modules started.
+2025-01-05 19:45:32,280 - MainThread - INFO - allStart clicked.
+2025-01-05 19:45:32,280 - MainThread - INFO - allStop clicked.
+2025-01-05 19:45:32,280 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:45:32,280 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:45:32,293 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:45:32,293 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 19:45:32,293 - MainThread - INFO - start_llm() called.
+2025-01-05 19:45:32,293 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:45:32,455 - MainThread - INFO - OpenAI worker started.
+2025-01-05 19:45:32,455 - MainThread - INFO - start_asr() called.
+2025-01-05 19:45:32,455 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:45:32,455 - MainThread - INFO - Google ASR not implemented here. Add logic if needed.
+2025-01-05 19:45:32,455 - MainThread - INFO - start_tts() called.
+2025-01-05 19:45:32,455 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:45:32,455 - MainThread - INFO - TTS worker started.
+2025-01-05 19:45:32,455 - MainThread - INFO - allStart - all modules started.
+2025-01-05 19:45:54,410 - MainThread - INFO - allStart clicked.
+2025-01-05 19:45:54,410 - MainThread - INFO - allStop clicked.
+2025-01-05 19:45:54,410 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:45:54,410 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:45:54,424 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:45:54,424 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 19:45:54,424 - MainThread - INFO - start_llm() called.
+2025-01-05 19:45:54,424 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:45:54,586 - MainThread - INFO - OpenAI worker started.
+2025-01-05 19:45:54,586 - MainThread - INFO - start_asr() called.
+2025-01-05 19:45:54,586 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:45:54,586 - MainThread - INFO - Whisper ASR started with model=tiny, device=cpu
+2025-01-05 19:45:54,586 - MainThread - INFO - start_tts() called.
+2025-01-05 19:45:54,586 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:45:54,586 - MainThread - INFO - TTS worker started.
+2025-01-05 19:45:54,586 - MainThread - INFO - allStart - all modules started.
+2025-01-05 19:45:54,590 - Dummy-2 - INFO - Starting Whisper Transcription Thread
+2025-01-05 19:46:07,290 - MainThread - INFO - ASR recognized: Hello.
+2025-01-05 19:46:36,760 - MainThread - INFO - allStart clicked.
+2025-01-05 19:46:36,760 - MainThread - INFO - allStop clicked.
+2025-01-05 19:46:36,760 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:46:37,597 - Dummy-2 - INFO - Whisper Transcription Thread Stopped
+2025-01-05 19:46:37,601 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:46:37,695 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:46:37,696 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 19:46:37,696 - MainThread - INFO - start_llm() called.
+2025-01-05 19:46:37,696 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:46:37,869 - MainThread - INFO - OpenAI worker started.
+2025-01-05 19:46:37,869 - MainThread - INFO - start_asr() called.
+2025-01-05 19:46:37,869 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:46:37,869 - MainThread - INFO - Google ASR not implemented here. Add logic if needed.
+2025-01-05 19:46:37,869 - MainThread - INFO - start_tts() called.
+2025-01-05 19:46:37,869 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:46:37,869 - MainThread - INFO - TTS worker started.
+2025-01-05 19:46:37,869 - MainThread - INFO - allStart - all modules started.
+2025-01-05 19:46:57,622 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 19:46:57,622 - MainThread - INFO - allStop clicked.
+2025-01-05 19:46:57,622 - MainThread - INFO - stop_asr() called.
+2025-01-05 19:46:57,623 - MainThread - INFO - stop_tts() called.
+2025-01-05 19:46:57,679 - MainThread - INFO - stop_llm() called.
+2025-01-05 19:46:57,679 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 20:37:22,357 - MainThread - INFO - allStart clicked.
+2025-01-05 20:37:22,358 - MainThread - INFO - allStop clicked.
+2025-01-05 20:37:22,358 - MainThread - INFO - stop_asr() called.
+2025-01-05 20:37:22,358 - MainThread - INFO - stop_tts() called.
+2025-01-05 20:37:22,358 - MainThread - INFO - stop_llm() called.
+2025-01-05 20:37:22,358 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 20:37:22,358 - MainThread - INFO - start_llm() called.
+2025-01-05 20:37:22,358 - MainThread - INFO - stop_llm() called.
+2025-01-05 20:37:22,522 - MainThread - INFO - OpenAI worker started.
+2025-01-05 20:37:22,522 - MainThread - INFO - start_asr() called.
+2025-01-05 20:37:22,522 - MainThread - INFO - stop_asr() called.
+2025-01-05 20:37:22,522 - MainThread - INFO - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+2025-01-05 20:37:22,522 - MainThread - INFO - start_tts() called.
+2025-01-05 20:37:22,522 - MainThread - INFO - stop_tts() called.
+2025-01-05 20:37:22,523 - MainThread - INFO - TTS worker started.
+2025-01-05 20:37:22,523 - MainThread - INFO - allStart - all modules started.
+2025-01-05 20:37:22,526 - Dummy-2 - INFO - Starting Google ASR Transcription Thread
+2025-01-05 20:37:28,857 - Thread-3 (threaded_listen) - ERROR - Error during Google ASR request: name 'requests' is not defined
+2025-01-05 20:37:34,817 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 20:37:34,817 - MainThread - INFO - allStop clicked.
+2025-01-05 20:37:34,817 - MainThread - INFO - stop_asr() called.
+2025-01-05 20:37:34,817 - MainThread - DEBUG - Stopping Google ASR Transcription Thread
+2025-01-05 20:37:35,690 - Dummy-2 - INFO - Google ASR Transcription Thread Stopped
+2025-01-05 20:37:35,693 - MainThread - INFO - stop_tts() called.
+2025-01-05 20:37:35,801 - MainThread - INFO - stop_llm() called.
+2025-01-05 20:37:35,801 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 20:38:32,519 - MainThread - INFO - allStart clicked.
+2025-01-05 20:38:32,519 - MainThread - INFO - allStop clicked.
+2025-01-05 20:38:32,519 - MainThread - INFO - stop_asr() called.
+2025-01-05 20:38:32,519 - MainThread - INFO - stop_tts() called.
+2025-01-05 20:38:32,520 - MainThread - INFO - stop_llm() called.
+2025-01-05 20:38:32,520 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 20:38:32,520 - MainThread - INFO - start_llm() called.
+2025-01-05 20:38:32,520 - MainThread - INFO - stop_llm() called.
+2025-01-05 20:38:32,683 - MainThread - INFO - OpenAI worker started.
+2025-01-05 20:38:32,683 - MainThread - INFO - start_asr() called.
+2025-01-05 20:38:32,683 - MainThread - INFO - stop_asr() called.
+2025-01-05 20:38:32,684 - MainThread - INFO - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+2025-01-05 20:38:32,684 - MainThread - INFO - start_tts() called.
+2025-01-05 20:38:32,684 - MainThread - INFO - stop_tts() called.
+2025-01-05 20:38:32,684 - MainThread - INFO - TTS worker started.
+2025-01-05 20:38:32,684 - MainThread - INFO - allStart - all modules started.
+2025-01-05 20:38:32,685 - Dummy-2 - INFO - Starting Google ASR Transcription Thread
+2025-01-05 20:38:38,844 - MainThread - INFO - ASR recognized: hello 
+2025-01-05 20:38:42,853 - MainThread - INFO - ASR recognized: hello do you hear me 
+2025-01-05 20:38:48,513 - MainThread - INFO - ASR recognized: hello do you hear me how are you 
+2025-01-05 20:38:59,751 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 20:38:59,751 - MainThread - INFO - allStop clicked.
+2025-01-05 20:38:59,751 - MainThread - INFO - stop_asr() called.
+2025-01-05 20:38:59,751 - MainThread - DEBUG - Stopping Google ASR Transcription Thread
+2025-01-05 20:38:59,954 - Dummy-2 - INFO - Google ASR Transcription Thread Stopped
+2025-01-05 20:38:59,956 - MainThread - INFO - stop_tts() called.
+2025-01-05 20:39:00,021 - MainThread - INFO - stop_llm() called.
+2025-01-05 20:39:00,022 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 20:40:09,736 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 20:40:09,737 - MainThread - INFO - allStop clicked.
+2025-01-05 20:40:09,737 - MainThread - INFO - stop_asr() called.
+2025-01-05 20:40:09,737 - MainThread - INFO - stop_tts() called.
+2025-01-05 20:40:09,737 - MainThread - INFO - stop_llm() called.
+2025-01-05 20:40:09,737 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 20:48:34,188 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 20:48:34,189 - MainThread - INFO - allStop clicked.
+2025-01-05 20:48:34,189 - MainThread - INFO - stop_asr() called.
+2025-01-05 20:48:34,189 - MainThread - INFO - stop_tts() called.
+2025-01-05 20:48:34,189 - MainThread - INFO - stop_llm() called.
+2025-01-05 20:48:34,189 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 21:40:08,977 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 21:40:08,978 - MainThread - INFO - allStop clicked.
+2025-01-05 21:40:08,978 - MainThread - INFO - stop_asr() called.
+2025-01-05 21:40:08,978 - MainThread - INFO - stop_tts() called.
+2025-01-05 21:40:08,978 - MainThread - INFO - stop_llm() called.
+2025-01-05 21:40:08,978 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 21:43:35,631 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 21:43:35,632 - MainThread - INFO - allStop clicked.
+2025-01-05 21:43:35,632 - MainThread - INFO - stop_asr() called.
+2025-01-05 21:43:35,632 - MainThread - INFO - stop_tts() called.
+2025-01-05 21:43:35,632 - MainThread - INFO - stop_llm() called.
+2025-01-05 21:43:35,632 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 21:56:22,910 - MainThread - INFO - allStart clicked.
+2025-01-05 21:56:22,910 - MainThread - INFO - allStop clicked.
+2025-01-05 21:56:22,910 - MainThread - INFO - stop_asr() called.
+2025-01-05 21:56:22,910 - MainThread - INFO - stop_tts() called.
+2025-01-05 21:56:22,910 - MainThread - INFO - stop_llm() called.
+2025-01-05 21:56:22,910 - MainThread - INFO - allStop - all modules stopped.
+2025-01-05 21:56:22,910 - MainThread - INFO - start_llm() called.
+2025-01-05 21:56:22,910 - MainThread - INFO - stop_llm() called.
+2025-01-05 21:56:23,078 - MainThread - INFO - OpenAI worker started.
+2025-01-05 21:56:23,078 - MainThread - INFO - start_asr() called.
+2025-01-05 21:56:23,078 - MainThread - INFO - stop_asr() called.
+2025-01-05 21:56:23,079 - MainThread - INFO - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+2025-01-05 21:56:23,079 - MainThread - INFO - start_tts() called.
+2025-01-05 21:56:23,079 - MainThread - INFO - stop_tts() called.
+2025-01-05 21:56:23,079 - MainThread - INFO - TTS worker started.
+2025-01-05 21:56:23,079 - MainThread - INFO - allStart - all modules started.
+2025-01-05 21:56:23,080 - Dummy-2 - INFO - Starting Google ASR Transcription Thread
+2025-01-05 21:56:30,100 - MainThread - INFO - ASR recognized: hello 
+2025-01-05 21:56:58,828 - MainThread - INFO - TTS error: Failed to connect. Probable cause: Host 'https://translate.google.en/' is not reachable
+2025-01-05 21:57:14,303 - MainThread - INFO - Application closing; stopping threads.
+2025-01-05 21:57:14,303 - MainThread - INFO - allStop clicked.
+2025-01-05 21:57:14,303 - MainThread - INFO - stop_asr() called.
+2025-01-05 21:57:14,304 - MainThread - DEBUG - Stopping Google ASR Transcription Thread
+2025-01-05 21:57:14,766 - Dummy-2 - INFO - Google ASR Transcription Thread Stopped
+2025-01-05 21:57:14,767 - MainThread - INFO - stop_tts() called.
+2025-01-05 21:57:14,877 - MainThread - INFO - stop_llm() called.
+2025-01-05 21:57:14,878 - MainThread - INFO - allStop - all modules stopped.
+[INFO] 2025-01-05 22:01:47 - allStart clicked.
+[INFO] 2025-01-05 22:01:47 - allStop clicked.
+[INFO] 2025-01-05 22:01:47 - stop_asr() called.
+[INFO] 2025-01-05 22:01:47 - stop_tts() called.
+[INFO] 2025-01-05 22:01:47 - stop_llm() called.
+[INFO] 2025-01-05 22:01:47 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:01:47 - start_llm() called.
+[INFO] 2025-01-05 22:01:47 - stop_llm() called.
+[INFO] 2025-01-05 22:01:47 - OpenAI worker started.
+[INFO] 2025-01-05 22:01:47 - start_asr() called.
+[INFO] 2025-01-05 22:01:47 - stop_asr() called.
+[INFO] 2025-01-05 22:01:47 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-05 22:01:47 - start_tts() called.
+[INFO] 2025-01-05 22:01:47 - stop_tts() called.
+[INFO] 2025-01-05 22:01:47 - TTS worker started.
+[INFO] 2025-01-05 22:01:47 - allStart - all modules started.
+[INFO] 2025-01-05 22:01:47 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-05 22:01:52 - ASR recognized: hello 
+[INFO] 2025-01-05 22:02:02 - ASR recognized: hello how are you 
+[INFO] 2025-01-05 22:02:06 - TTS error: Failed to connect. Probable cause: Host 'https://translate.google.en/' is not reachable
+[INFO] 2025-01-05 22:02:07 - TTS error: Failed to connect. Probable cause: Host 'https://translate.google.en/' is not reachable
+[INFO] 2025-01-05 22:02:09 - allStop clicked.
+[INFO] 2025-01-05 22:02:09 - stop_asr() called.
+[DEBUG] 2025-01-05 22:02:09 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-05 22:02:10 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-05 22:02:10 - stop_tts() called.
+[INFO] 2025-01-05 22:02:10 - stop_llm() called.
+[INFO] 2025-01-05 22:02:10 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:02:51 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:02:51 - allStop clicked.
+[INFO] 2025-01-05 22:02:51 - stop_asr() called.
+[INFO] 2025-01-05 22:02:51 - stop_tts() called.
+[INFO] 2025-01-05 22:02:51 - stop_llm() called.
+[INFO] 2025-01-05 22:02:51 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:14:16 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:14:16 - allStop clicked.
+[INFO] 2025-01-05 22:14:16 - stop_asr() called.
+[INFO] 2025-01-05 22:14:16 - stop_tts() called.
+[INFO] 2025-01-05 22:14:16 - stop_llm() called.
+[INFO] 2025-01-05 22:14:16 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:40:10 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:40:10 - allStop clicked.
+[INFO] 2025-01-05 22:40:10 - stop_asr() called.
+[INFO] 2025-01-05 22:40:10 - stop_tts() called.
+[INFO] 2025-01-05 22:40:10 - stop_llm() called.
+[INFO] 2025-01-05 22:40:10 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:41:21 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:41:21 - allStop clicked.
+[INFO] 2025-01-05 22:41:21 - stop_asr() called.
+[INFO] 2025-01-05 22:41:21 - stop_tts() called.
+[INFO] 2025-01-05 22:41:21 - stop_llm() called.
+[INFO] 2025-01-05 22:41:21 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:51:55 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:51:55 - allStop clicked.
+[INFO] 2025-01-05 22:51:55 - stop_asr() called.
+[INFO] 2025-01-05 22:51:55 - stop_tts() called.
+[INFO] 2025-01-05 22:51:55 - stop_llm() called.
+[INFO] 2025-01-05 22:51:55 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:53:11 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:53:11 - allStop clicked.
+[INFO] 2025-01-05 22:53:11 - stop_asr() called.
+[INFO] 2025-01-05 22:53:11 - stop_tts() called.
+[INFO] 2025-01-05 22:53:11 - stop_llm() called.
+[INFO] 2025-01-05 22:53:11 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:54:52 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:54:52 - allStop clicked.
+[INFO] 2025-01-05 22:54:52 - stop_asr() called.
+[INFO] 2025-01-05 22:54:52 - stop_tts() called.
+[INFO] 2025-01-05 22:54:52 - stop_llm() called.
+[INFO] 2025-01-05 22:54:52 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:55:45 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:55:45 - allStop clicked.
+[INFO] 2025-01-05 22:55:45 - stop_asr() called.
+[INFO] 2025-01-05 22:55:45 - stop_tts() called.
+[INFO] 2025-01-05 22:55:45 - stop_llm() called.
+[INFO] 2025-01-05 22:55:45 - allStop - all modules stopped.
+[INFO] 2025-01-05 22:56:30 - Application closing; stopping threads.
+[INFO] 2025-01-05 22:56:30 - allStop clicked.
+[INFO] 2025-01-05 22:56:30 - stop_asr() called.
+[INFO] 2025-01-05 22:56:30 - stop_tts() called.
+[INFO] 2025-01-05 22:56:30 - stop_llm() called.
+[INFO] 2025-01-05 22:56:30 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:09:42 - Application closing; stopping threads.
+[INFO] 2025-01-05 23:09:42 - allStop clicked.
+[INFO] 2025-01-05 23:09:42 - stop_asr() called.
+[INFO] 2025-01-05 23:09:42 - stop_tts() called.
+[INFO] 2025-01-05 23:09:42 - stop_llm() called.
+[INFO] 2025-01-05 23:09:42 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:33:22 - Application closing; stopping threads.
+[INFO] 2025-01-05 23:33:22 - allStop clicked.
+[INFO] 2025-01-05 23:33:22 - stop_asr() called.
+[INFO] 2025-01-05 23:33:22 - stop_tts() called.
+[INFO] 2025-01-05 23:33:22 - stop_llm() called.
+[INFO] 2025-01-05 23:33:22 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:37:12 - allStart clicked.
+[INFO] 2025-01-05 23:37:12 - allStop clicked.
+[INFO] 2025-01-05 23:37:12 - stop_asr() called.
+[INFO] 2025-01-05 23:37:12 - stop_tts() called.
+[INFO] 2025-01-05 23:37:12 - stop_llm() called.
+[INFO] 2025-01-05 23:37:12 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:37:12 - start_llm() called.
+[INFO] 2025-01-05 23:37:12 - stop_llm() called.
+[INFO] 2025-01-05 23:37:12 - OpenAI worker started.
+[INFO] 2025-01-05 23:37:12 - start_asr() called.
+[INFO] 2025-01-05 23:37:12 - stop_asr() called.
+[INFO] 2025-01-05 23:37:12 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-05 23:37:12 - start_tts() called.
+[INFO] 2025-01-05 23:37:12 - stop_tts() called.
+[INFO] 2025-01-05 23:37:12 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-05 23:37:12 - TTS worker started.
+[INFO] 2025-01-05 23:37:12 - allStart - all modules started.
+[INFO] 2025-01-05 23:37:18 - ASR recognized: hello 
+[INFO] 2025-01-05 23:38:26 - TTS error: Failed to connect. Probable cause: Host 'https://translate.google.en/' is not reachable
+[INFO] 2025-01-05 23:38:30 - Application closing; stopping threads.
+[INFO] 2025-01-05 23:38:30 - allStop clicked.
+[INFO] 2025-01-05 23:38:30 - stop_asr() called.
+[DEBUG] 2025-01-05 23:38:30 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-05 23:38:31 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-05 23:38:31 - stop_tts() called.
+[INFO] 2025-01-05 23:38:31 - stop_llm() called.
+[INFO] 2025-01-05 23:38:31 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:50:06 - allStart clicked.
+[INFO] 2025-01-05 23:50:06 - allStop clicked.
+[INFO] 2025-01-05 23:50:06 - stop_asr() called.
+[INFO] 2025-01-05 23:50:06 - stop_tts() called.
+[INFO] 2025-01-05 23:50:06 - stop_llm() called.
+[INFO] 2025-01-05 23:50:06 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:50:06 - start_llm() called.
+[INFO] 2025-01-05 23:50:06 - stop_llm() called.
+[INFO] 2025-01-05 23:50:07 - OpenAI worker started.
+[INFO] 2025-01-05 23:50:07 - start_asr() called.
+[INFO] 2025-01-05 23:50:07 - stop_asr() called.
+[INFO] 2025-01-05 23:50:07 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-05 23:50:07 - start_tts() called.
+[INFO] 2025-01-05 23:50:07 - stop_tts() called.
+[INFO] 2025-01-05 23:50:07 - TTS worker started.
+[INFO] 2025-01-05 23:50:07 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-05 23:50:07 - allStart - all modules started.
+[INFO] 2025-01-05 23:50:12 - ASR recognized: hello 
+[INFO] 2025-01-05 23:50:16 - TTS error: 'dict' object has no attribute 'language'
+[INFO] 2025-01-05 23:50:17 - Application closing; stopping threads.
+[INFO] 2025-01-05 23:50:17 - allStop clicked.
+[INFO] 2025-01-05 23:50:17 - stop_asr() called.
+[DEBUG] 2025-01-05 23:50:17 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-05 23:50:18 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-05 23:50:18 - stop_tts() called.
+[INFO] 2025-01-05 23:50:18 - stop_llm() called.
+[INFO] 2025-01-05 23:50:18 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:52:07 - allStart clicked.
+[INFO] 2025-01-05 23:52:07 - allStop clicked.
+[INFO] 2025-01-05 23:52:07 - stop_asr() called.
+[INFO] 2025-01-05 23:52:07 - stop_tts() called.
+[INFO] 2025-01-05 23:52:07 - stop_llm() called.
+[INFO] 2025-01-05 23:52:07 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:52:07 - start_llm() called.
+[INFO] 2025-01-05 23:52:07 - stop_llm() called.
+[INFO] 2025-01-05 23:52:07 - OpenAI worker started.
+[INFO] 2025-01-05 23:52:07 - start_asr() called.
+[INFO] 2025-01-05 23:52:07 - stop_asr() called.
+[INFO] 2025-01-05 23:52:07 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-05 23:52:07 - start_tts() called.
+[INFO] 2025-01-05 23:52:07 - stop_tts() called.
+[INFO] 2025-01-05 23:52:07 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-05 23:52:07 - TTS worker started.
+[INFO] 2025-01-05 23:52:07 - allStart - all modules started.
+[INFO] 2025-01-05 23:52:14 - ASR recognized: hello 
+[INFO] 2025-01-05 23:52:26 - TTS error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-01-05T22:52:24.217937+00:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)"}"
+>
+[INFO] 2025-01-05 23:52:27 - Application closing; stopping threads.
+[INFO] 2025-01-05 23:52:27 - allStop clicked.
+[INFO] 2025-01-05 23:52:27 - stop_asr() called.
+[DEBUG] 2025-01-05 23:52:27 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-05 23:52:28 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-05 23:52:28 - stop_tts() called.
+[INFO] 2025-01-05 23:52:28 - stop_llm() called.
+[INFO] 2025-01-05 23:52:28 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:53:23 - allStart clicked.
+[INFO] 2025-01-05 23:53:23 - allStop clicked.
+[INFO] 2025-01-05 23:53:23 - stop_asr() called.
+[INFO] 2025-01-05 23:53:23 - stop_tts() called.
+[INFO] 2025-01-05 23:53:23 - stop_llm() called.
+[INFO] 2025-01-05 23:53:23 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:53:23 - start_llm() called.
+[INFO] 2025-01-05 23:53:23 - stop_llm() called.
+[INFO] 2025-01-05 23:53:24 - OpenAI worker started.
+[INFO] 2025-01-05 23:53:24 - start_asr() called.
+[INFO] 2025-01-05 23:53:24 - stop_asr() called.
+[INFO] 2025-01-05 23:53:24 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-05 23:53:24 - start_tts() called.
+[INFO] 2025-01-05 23:53:24 - stop_tts() called.
+[INFO] 2025-01-05 23:53:24 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-05 23:53:32 - TTS worker started.
+[INFO] 2025-01-05 23:53:32 - allStart - all modules started.
+[INFO] 2025-01-05 23:53:32 - ASR recognized: hello 
+[INFO] 2025-01-05 23:53:41 - TTS error: 'list' object has no attribute 'astype'
+[INFO] 2025-01-05 23:53:42 - Application closing; stopping threads.
+[INFO] 2025-01-05 23:53:42 - allStop clicked.
+[INFO] 2025-01-05 23:53:42 - stop_asr() called.
+[DEBUG] 2025-01-05 23:53:42 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-05 23:53:43 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-05 23:53:43 - stop_tts() called.
+[INFO] 2025-01-05 23:53:43 - stop_llm() called.
+[INFO] 2025-01-05 23:53:43 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:55:16 - allStart clicked.
+[INFO] 2025-01-05 23:55:16 - allStop clicked.
+[INFO] 2025-01-05 23:55:16 - stop_asr() called.
+[INFO] 2025-01-05 23:55:16 - stop_tts() called.
+[INFO] 2025-01-05 23:55:16 - stop_llm() called.
+[INFO] 2025-01-05 23:55:16 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:55:16 - start_llm() called.
+[INFO] 2025-01-05 23:55:16 - stop_llm() called.
+[INFO] 2025-01-05 23:55:16 - OpenAI worker started.
+[INFO] 2025-01-05 23:55:16 - start_asr() called.
+[INFO] 2025-01-05 23:55:16 - stop_asr() called.
+[INFO] 2025-01-05 23:55:16 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-05 23:55:16 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-05 23:55:16 - start_tts() called.
+[INFO] 2025-01-05 23:55:16 - stop_tts() called.
+[INFO] 2025-01-05 23:55:18 - TTS worker started.
+[INFO] 2025-01-05 23:55:18 - allStart - all modules started.
+[INFO] 2025-01-05 23:55:24 - ASR recognized: hello 
+[INFO] 2025-01-05 23:56:54 - allStart clicked.
+[INFO] 2025-01-05 23:56:54 - allStop clicked.
+[INFO] 2025-01-05 23:56:54 - stop_asr() called.
+[INFO] 2025-01-05 23:56:54 - stop_tts() called.
+[INFO] 2025-01-05 23:56:54 - stop_llm() called.
+[INFO] 2025-01-05 23:56:54 - allStop - all modules stopped.
+[INFO] 2025-01-05 23:56:54 - start_llm() called.
+[INFO] 2025-01-05 23:56:54 - stop_llm() called.
+[INFO] 2025-01-05 23:56:55 - OpenAI worker started.
+[INFO] 2025-01-05 23:56:55 - start_asr() called.
+[INFO] 2025-01-05 23:56:55 - stop_asr() called.
+[INFO] 2025-01-05 23:56:55 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-05 23:56:55 - start_tts() called.
+[INFO] 2025-01-05 23:56:55 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-05 23:56:55 - stop_tts() called.
+[INFO] 2025-01-05 23:56:56 - TTS worker started.
+[INFO] 2025-01-05 23:56:56 - allStart - all modules started.
+[INFO] 2025-01-05 23:56:59 - ASR recognized: hello 
+[INFO] 2025-01-05 23:59:29 - Application closing; stopping threads.
+[INFO] 2025-01-05 23:59:29 - allStop clicked.
+[INFO] 2025-01-05 23:59:29 - stop_asr() called.
+[DEBUG] 2025-01-05 23:59:29 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-05 23:59:29 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-05 23:59:29 - stop_tts() called.
+[INFO] 2025-01-06 00:02:21 - allStart clicked.
+[INFO] 2025-01-06 00:02:21 - allStop clicked.
+[INFO] 2025-01-06 00:02:21 - stop_asr() called.
+[INFO] 2025-01-06 00:02:21 - stop_tts() called.
+[INFO] 2025-01-06 00:02:21 - stop_llm() called.
+[INFO] 2025-01-06 00:02:21 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:02:21 - start_llm() called.
+[INFO] 2025-01-06 00:02:21 - stop_llm() called.
+[INFO] 2025-01-06 00:02:21 - OpenAI worker started.
+[INFO] 2025-01-06 00:02:21 - start_asr() called.
+[INFO] 2025-01-06 00:02:21 - stop_asr() called.
+[INFO] 2025-01-06 00:02:21 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 00:02:21 - start_tts() called.
+[INFO] 2025-01-06 00:02:21 - stop_tts() called.
+[INFO] 2025-01-06 00:02:21 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 00:02:23 - TTS worker started.
+[INFO] 2025-01-06 00:02:23 - allStart - all modules started.
+[INFO] 2025-01-06 00:02:40 - ASR recognized: hello 
+[INFO] 2025-01-06 00:03:02 - TTS error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50051: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)", grpc_status:14, created_time:"2025-01-05T23:02:44.2841878+00:00"}"
+>
+[INFO] 2025-01-06 00:03:04 - Application closing; stopping threads.
+[INFO] 2025-01-06 00:03:04 - allStop clicked.
+[INFO] 2025-01-06 00:03:04 - stop_asr() called.
+[DEBUG] 2025-01-06 00:03:04 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 00:03:05 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 00:03:05 - stop_tts() called.
+[INFO] 2025-01-06 00:03:05 - stop_llm() called.
+[INFO] 2025-01-06 00:03:05 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:04:51 - allStart clicked.
+[INFO] 2025-01-06 00:04:51 - allStop clicked.
+[INFO] 2025-01-06 00:04:51 - stop_asr() called.
+[INFO] 2025-01-06 00:04:51 - stop_tts() called.
+[INFO] 2025-01-06 00:04:51 - stop_llm() called.
+[INFO] 2025-01-06 00:04:51 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:04:51 - start_llm() called.
+[INFO] 2025-01-06 00:04:51 - stop_llm() called.
+[INFO] 2025-01-06 00:04:51 - OpenAI worker started.
+[INFO] 2025-01-06 00:04:51 - start_asr() called.
+[INFO] 2025-01-06 00:04:51 - stop_asr() called.
+[INFO] 2025-01-06 00:04:51 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 00:04:51 - start_tts() called.
+[INFO] 2025-01-06 00:04:51 - stop_tts() called.
+[INFO] 2025-01-06 00:04:51 - TTS worker started.
+[INFO] 2025-01-06 00:04:51 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 00:04:51 - allStart - all modules started.
+[INFO] 2025-01-06 00:04:57 - ASR recognized: hello 
+[INFO] 2025-01-06 00:05:45 - allStart clicked.
+[INFO] 2025-01-06 00:05:45 - allStop clicked.
+[INFO] 2025-01-06 00:05:45 - stop_asr() called.
+[DEBUG] 2025-01-06 00:05:45 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 00:05:46 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 00:05:46 - stop_tts() called.
+[INFO] 2025-01-06 00:07:13 - stop_llm() called.
+[INFO] 2025-01-06 00:07:13 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:07:13 - start_llm() called.
+[INFO] 2025-01-06 00:07:13 - stop_llm() called.
+[INFO] 2025-01-06 00:07:14 - OpenAI worker started.
+[INFO] 2025-01-06 00:07:14 - start_asr() called.
+[INFO] 2025-01-06 00:07:14 - stop_asr() called.
+[INFO] 2025-01-06 00:07:14 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 00:07:14 - start_tts() called.
+[INFO] 2025-01-06 00:07:14 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 00:07:14 - stop_tts() called.
+[INFO] 2025-01-06 00:07:14 - TTS worker started.
+[INFO] 2025-01-06 00:07:14 - allStart - all modules started.
+[INFO] 2025-01-06 00:07:14 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-06 00:07:59 - allStart clicked.
+[INFO] 2025-01-06 00:07:59 - allStop clicked.
+[INFO] 2025-01-06 00:07:59 - stop_asr() called.
+[DEBUG] 2025-01-06 00:07:59 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 00:07:59 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 00:07:59 - stop_tts() called.
+[INFO] 2025-01-06 00:07:59 - stop_llm() called.
+[INFO] 2025-01-06 00:07:59 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:07:59 - start_llm() called.
+[INFO] 2025-01-06 00:07:59 - stop_llm() called.
+[INFO] 2025-01-06 00:07:59 - OpenAI worker started.
+[INFO] 2025-01-06 00:07:59 - start_asr() called.
+[INFO] 2025-01-06 00:07:59 - stop_asr() called.
+[INFO] 2025-01-06 00:07:59 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 00:07:59 - start_tts() called.
+[INFO] 2025-01-06 00:07:59 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 00:07:59 - stop_tts() called.
+[INFO] 2025-01-06 00:08:00 - TTS worker started.
+[INFO] 2025-01-06 00:08:00 - allStart - all modules started.
+[INFO] 2025-01-06 00:08:25 - allClear clicked.
+[INFO] 2025-01-06 00:08:25 - allStop clicked.
+[INFO] 2025-01-06 00:08:25 - stop_asr() called.
+[DEBUG] 2025-01-06 00:08:25 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 00:08:26 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 00:08:26 - stop_tts() called.
+[INFO] 2025-01-06 00:08:26 - stop_llm() called.
+[INFO] 2025-01-06 00:08:26 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:08:26 - allClear - all settings & context reset to defaults.
+[INFO] 2025-01-06 00:08:33 - allStop clicked.
+[INFO] 2025-01-06 00:08:33 - stop_asr() called.
+[INFO] 2025-01-06 00:08:33 - stop_tts() called.
+[INFO] 2025-01-06 00:08:33 - stop_llm() called.
+[INFO] 2025-01-06 00:08:33 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:08:53 - Application closing; stopping threads.
+[INFO] 2025-01-06 00:08:53 - allStop clicked.
+[INFO] 2025-01-06 00:08:53 - stop_asr() called.
+[INFO] 2025-01-06 00:08:53 - stop_tts() called.
+[INFO] 2025-01-06 00:08:53 - stop_llm() called.
+[INFO] 2025-01-06 00:08:53 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:09:16 - allStart clicked.
+[INFO] 2025-01-06 00:09:16 - allStop clicked.
+[INFO] 2025-01-06 00:09:16 - stop_asr() called.
+[INFO] 2025-01-06 00:09:16 - stop_tts() called.
+[INFO] 2025-01-06 00:09:16 - stop_llm() called.
+[INFO] 2025-01-06 00:09:16 - allStop - all modules stopped.
+[INFO] 2025-01-06 00:09:16 - start_llm() called.
+[INFO] 2025-01-06 00:09:16 - stop_llm() called.
+[INFO] 2025-01-06 00:09:17 - OpenAI worker started.
+[INFO] 2025-01-06 00:09:17 - start_asr() called.
+[INFO] 2025-01-06 00:09:17 - stop_asr() called.
+[INFO] 2025-01-06 00:09:17 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 00:09:17 - start_tts() called.
+[INFO] 2025-01-06 00:09:17 - stop_tts() called.
+[INFO] 2025-01-06 00:09:17 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 00:09:18 - TTS worker started.
+[INFO] 2025-01-06 00:09:18 - allStart - all modules started.
+[INFO] 2025-01-06 00:09:23 - ASR recognized: hello 
+[INFO] 2025-01-06 00:09:29 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-06 00:09:38 - ASR recognized: hello what can you do for me 
+[INFO] 2025-01-06 00:11:07 - TTS finished: TTS done for text: Hello! I can help you with a variety of tasks, including:
+
+1. **Answering Questions**: I can provide information on a wide range of topics, from science and history to pop culture and technology.
+2. **Writing Assistance**: I can help you draft emails, essays, reports, or creative writing pieces.
+3. **Learning and Study Help**: I can explain concepts or help you with study tips and resources.
+4. **Problem Solving**: I can assist with math problems, programming, or other technical issues.
+5. **General Advice**: I can offer advice on various topics, including personal development, productivity, and more.
+6. **Recommendations**: I can suggest books, movies, or other resources based on your interests.
+
+Let me know what you need help with!
+[INFO] 2025-01-06 00:11:37 - Application closing; stopping threads.
+[INFO] 2025-01-06 00:11:37 - allStop clicked.
+[INFO] 2025-01-06 00:11:37 - stop_asr() called.
+[DEBUG] 2025-01-06 00:11:37 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 00:11:38 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 00:11:38 - stop_tts() called.
+[INFO] 2025-01-06 00:11:38 - stop_llm() called.
+[INFO] 2025-01-06 00:11:38 - allStop - all modules stopped.
