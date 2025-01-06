@@ -8,11 +8,12 @@ from PySide6.QtCore import QThread, Signal, Slot
 from ui_form import Ui_MainWindow
 from local_logger import ThreadSafeLogger
 from pathlib import Path
-
+import requests
+import json
 from llm_modules import OpenAIWorker
 from tts_modules import TTSWorker, GoogleTTSEngine, CoquiTTSEngine
 from asr_vad_modules import WhisperTranscriptionThread, GoogleASRTranscriptionThread
-
+from behaviour_module import Audio2FaceHeadlessThread
 
 
 
@@ -74,15 +75,24 @@ class MainWindow(QMainWindow):
         self.context = [{"role": "system", "content": system_prompt_text}]
 
         # ----------------------------------------------------
-        # Audio player for local TTS playback if needed
+        # Audio2Face
         # ----------------------------------------------------
-        # self.audio_player = QMediaPlayer(self)
-        # self.audio_output = QAudioOutput(self)
-        # self.audio_player.setAudioOutput(self.audio_output)
+        # Initialize the headless server URL from QLineEdit
+        self.ui.a2fUrl_headless.setText("http://localhost:8011/")
+        self.headless_server_url = self.ui.a2fUrl_headless.text().strip()
+        self.check_server_status()
+
+        # load usd
+        self.usd_folder_path = os.path.join(os.getcwd(), "usd")
+        self.populate_usd_list()
+        self.load_selected_usd()
+
+        #self.ui.loadUSDButton.clicked.connect(self.load_usd_to_server)
+        #self.ui.checkServerButton.clicked.connect(self.check_server_status)
 
         # ----------------------------------------------------
         # Connect ASR transcription signal to handle_transcription
-        # (We'll create the actual ASR thread in start_asr().)
+        # (create the actual ASR thread in start_asr().)
         # ----------------------------------------------------
         self.transcription_signal.connect(self.handle_transcription)
 
@@ -146,7 +156,7 @@ class MainWindow(QMainWindow):
         self.ui.a2fInstanceName.setText("/World/audio2face/PlayerStreaming")
 
         self.ui.ttsSentenceSplit.addItems(["Regex", "NLP"])
-        self.ui.ttsPlayback.addItems(["Stream", "SinglePush"])
+        self.ui.ttsPlayback.addItems(["SinglePush", "Stream"])
         self.ui.blockUntilFinish.setChecked(True)
 
         # Connect chunk slider and dial signals to local slots
@@ -176,6 +186,7 @@ class MainWindow(QMainWindow):
         # name tabs
         self.ui.chatOutpuTab.setTabText(0,"Conversation")  # Rename first tab
         self.ui.chatOutpuTab.setTabText(1,"Log Terminal")  # Rename second tab
+        self.ui.chatOutpuTab.setTabText(3,"Behaviour Log")
 
     def setup_theme_selection(self):
         """
@@ -268,6 +279,8 @@ class MainWindow(QMainWindow):
         self.start_asr()
         # Start TTS
         self.start_tts()
+        # audio2face
+
 
         self.logger.log_info("allStart - all modules started.")
 
@@ -279,6 +292,7 @@ class MainWindow(QMainWindow):
         self.stop_asr()
         self.stop_tts()
         self.stop_llm()
+        #self.stop_audio2face_headless()
         self.logger.log_info("allStop - all modules stopped.")
 
     def allClear(self):
@@ -512,6 +526,92 @@ class MainWindow(QMainWindow):
         self.ui.delayLable.setText(f"value: {value}")
 
     # ----------------------------------------------------
+    # Behaviour streaming
+    # ----------------------------------------------------
+    def populate_usd_list(self):
+        """
+        Populates the USD ComboBox with the names of .usd files in the specified folder.
+        """
+        if not os.path.exists(self.usd_folder_path):
+            self.ui.usdCombo.addItem("No USD folder found")
+            self.ui.usdCombo.setEnabled(False)
+            return
+
+        usd_files = [f for f in os.listdir(self.usd_folder_path) if f.endswith((".usd", ".usda", ".usdc"))]
+        if usd_files:
+            self.ui.usdCombo.addItems(usd_files)
+            self.ui.usdCombo.setEnabled(True)
+        else:
+            self.ui.usdCombo.addItem("No USD files available")
+            self.ui.usdCombo.setEnabled(False)
+
+    def check_server_status(self):
+        """
+        Sends a GET request to check the status of the headless server.
+        If the server responds with "OK", updates the server status label to green "connected".
+        """
+        try:
+            response = requests.get(f"{self.headless_server_url}/status", headers={"accept": "application/json"})
+            if response.status_code == 200:
+                try:
+                    response_json = json.loads(response.text)
+                    if response_json == "OK":
+                        self.update_server_status(True)
+                    else:
+                        self.update_server_status(False)
+                except ValueError as e:
+                    print(f"Error parsing JSON response: {e}")
+                    self.update_server_status(False)
+            else:
+                self.update_server_status(False)
+        except requests.exceptions.RequestException as e:
+            print(f"Error checking server status: {e}")
+            self.update_server_status(False)
+
+    def load_selected_usd(self):
+        """
+        Loads the selected USD from the combo box to the server.
+        """
+        selected_usd = self.ui.usdCombo.currentText()
+        if not selected_usd or selected_usd in ["No USD files available", "No USD folder found"]:
+            self.ui.usdPathLable.setStyleSheet("color: red;")
+            self.ui.usdPathLable.setText("Invalid USD selection.")
+            return
+
+        usd_path = os.path.join(self.usd_folder_path, selected_usd)
+        try:
+            payload = {"file_name": usd_path}
+            response = requests.post(
+                f"{self.headless_server_url}/A2F/USD/Load",
+                headers={
+                    "accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                json=payload
+            )
+            if response.status_code == 200 and response.json().get("status") == "OK":
+                self.ui.usdPathLable.setStyleSheet("color: green;")
+                self.ui.usdPathLable.setText("USD Loaded Successfully!")
+            else:
+                self.ui.usdPathLable.setStyleSheet("color: red;")
+                self.ui.usdPathLable.setText("Failed to Load USD.")
+        except requests.exceptions.RequestException as e:
+            print(f"Error loading USD: {e}")
+            self.ui.usdPathLable.setStyleSheet("color: red;")
+            self.ui.usdPathLable.setText("Error Loading USD.")
+
+    def update_server_status(self, connected: bool):
+        """
+        Updates the server status label based on the connection status.
+        """
+        if connected:
+            self.ui.headlessServerStatus.setStyleSheet("color: green;")
+            self.ui.headlessServerStatus.setText("Connected")
+        else:
+            self.ui.headlessServerStatus.setStyleSheet("color: red;")
+            self.ui.headlessServerStatus.setText("Disconnected")
+
+    # ----------------------------------------------------
     # Updating OpenAI / System Prompt
     # ----------------------------------------------------
     def update_api_key(self, text):
@@ -569,13 +669,6 @@ class MainWindow(QMainWindow):
     def handle_tts_error(self, error_message):
         QMessageBox.critical(self, "TTS Error", error_message)
         self.logger.log_info(f"TTS error: {error_message}")
-
-    def play_audio(self, filename):
-        if os.path.exists(filename):
-            self.audio_player.setSource(filename)
-            self.audio_player.play()
-        else:
-            QMessageBox.warning(self, "Audio Error", f"File {filename} not found.")
 
     # ----------------------------------------------------
     # Logger
