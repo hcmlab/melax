@@ -20,7 +20,7 @@
       <x>10</x>
       <y>10</y>
       <width>491</width>
-      <height>471</height>
+      <height>491</height>
      </rect>
     </property>
     <property name="font">
@@ -29,7 +29,7 @@
      </font>
     </property>
     <property name="title">
-     <string>Automatic Speech Recognition</string>
+     <string>Audio Classification and Speech to Text</string>
     </property>
     <widget class="QGroupBox" name="googleGroupBox">
      <property name="geometry">
@@ -305,7 +305,7 @@
       <x>520</x>
       <y>10</y>
       <width>431</width>
-      <height>471</height>
+      <height>491</height>
      </rect>
     </property>
     <property name="font">
@@ -314,7 +314,7 @@
      </font>
     </property>
     <property name="title">
-     <string>Large Language Model</string>
+     <string>Conversation Orchestrator</string>
     </property>
     <widget class="QWidget" name="formLayoutWidget_4">
      <property name="geometry">
@@ -355,10 +355,19 @@
        <x>10</x>
        <y>310</y>
        <width>411</width>
-       <height>121</height>
+       <height>151</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_7">
+      <item row="0" column="1">
+       <widget class="QTextEdit" name="systemPromptEdit">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label_18">
         <property name="font">
@@ -368,16 +377,7 @@
          </font>
         </property>
         <property name="text">
-         <string>System Prompt</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QTextEdit" name="systemPromptEdit">
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-         </font>
+         <string>Assistant Persona</string>
         </property>
        </widget>
       </item>
@@ -553,87 +553,6 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>480</y>
-      <width>391</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <widget class="QPushButton" name="startAll">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset theme="QIcon::ThemeIcon::MediaPlaybackStart"/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="stopAll">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>50</y>
-       <width>111</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset theme="QIcon::ThemeIcon::MediaPlaybackStop"/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="clearAll">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>50</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset theme="QIcon::ThemeIcon::ViewRestore"/>
-     </property>
-    </widget>
-   </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
@@ -649,7 +568,7 @@
      </font>
     </property>
     <property name="title">
-     <string>Text to Speech </string>
+     <string>Voice Synthesis</string>
     </property>
     <widget class="QWidget" name="formLayoutWidget_9">
      <property name="geometry">
@@ -760,7 +679,7 @@
       <x>970</x>
       <y>160</y>
       <width>391</width>
-      <height>321</height>
+      <height>341</height>
      </rect>
     </property>
     <property name="font">
@@ -769,7 +688,7 @@
      </font>
     </property>
     <property name="title">
-     <string>Behaviour Streaming</string>
+     <string>Behavior Generator</string>
     </property>
     <widget class="QWidget" name="formLayoutWidget_8">
      <property name="geometry">
@@ -777,76 +696,69 @@
        <x>10</x>
        <y>150</y>
        <width>241</width>
-       <height>156</height>
+       <height>183</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_8">
-      <item row="1" column="1">
-       <widget class="QComboBox" name="ttsPlayback">
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-         </font>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_10">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_26">
         <property name="font">
          <font>
           <pointsize>9</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Block Until finish</string>
+         <string>Emotion</string>
         </property>
        </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QCheckBox" name="blockUntilFinish">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_11">
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Chunk Duration</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QSlider" name="ttsChunkDuration">
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_15">
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Delay Between Chunks</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QDial" name="ttsDelayBetweenChunks"/>
       </item>
       <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <item>
+         <property name="text">
+          <string>Neutral</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Happy</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sad</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Angry</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Disgust</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Sentence Split</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
        <widget class="QComboBox" name="ttsSentenceSplit">
         <property name="font">
          <font>
@@ -855,7 +767,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="2" column="0">
        <widget class="QLabel" name="label_9">
         <property name="font">
          <font>
@@ -867,15 +779,68 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_8">
+      <item row="2" column="1">
+       <widget class="QComboBox" name="ttsPlayback">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_10">
         <property name="font">
          <font>
           <pointsize>9</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Sentence Split</string>
+         <string>Block Until Finish</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="blockUntilFinish">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_15">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Delay Between Chunks</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QDial" name="ttsDelayBetweenChunks"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Chunk Duration</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QSlider" name="ttsChunkDuration">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
        </widget>
       </item>
@@ -1076,6 +1041,69 @@
       </font>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="startAll">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>540</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset theme="QIcon::ThemeIcon::MediaPlaybackStart"/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stopAll">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>540</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset theme="QIcon::ThemeIcon::MediaPlaybackStop"/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clearAll">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>540</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset theme="QIcon::ThemeIcon::ViewRestore"/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

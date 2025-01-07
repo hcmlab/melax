@@ -13,7 +13,7 @@ import json
 from llm_modules import OpenAIWorker
 from tts_modules import TTSWorker, GoogleTTSEngine, CoquiTTSEngine
 from asr_vad_modules import WhisperTranscriptionThread, GoogleASRTranscriptionThread
-from behaviour_module import Audio2FaceHeadlessThread
+#from behaviour_module import Audio2FaceHeadlessThread
 
 
 
@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
     # Custom signals
     transcription_signal = Signal(str)                 # ASR -> GUI
     openai_request_signal = Signal(str, object, int, float)  # LLM request
-    tts_request_signal = Signal(str, str)              # TTS request (text, filename)
+    tts_request_signal = Signal(str)              # TTS request (text)
 
     API_MESSAGE_DEFAULT = "Enter here or set as OPENAI_API_KEY variable"
     API_MESSAGE_FOUND_ENV = "Found it in env variables"
@@ -40,8 +40,11 @@ class MainWindow(QMainWindow):
         # ----------------------------------------------------
         # UI Setup
         # ----------------------------------------------------
+
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        self.setWindowTitle("MeLaX-Engine")
 
         # Logger
         self.logger = ThreadSafeLogger("interactive_gui.log")
@@ -59,6 +62,7 @@ class MainWindow(QMainWindow):
         self.openai_worker_thread = None
         self.transcription_thread = None
         self.tts_worker = None
+        self.MAX_CONTEXT_LENGTH = 50
 
         # ----------------------------------------------------
         # Setup UI
@@ -68,24 +72,20 @@ class MainWindow(QMainWindow):
         self.populate_languages()
 
         # Initialize system prompt if empty
-        system_prompt_text = self.ui.systemPromptEdit.toPlainText().strip()
-        if not system_prompt_text:
-            system_prompt_text = "You are a helpful assistant."
-            self.ui.systemPromptEdit.setText(system_prompt_text)
-        self.context = [{"role": "system", "content": system_prompt_text}]
+        # system_prompt_text = self.ui.systemPromptEdit.toPlainText().strip()
+        # if not system_prompt_text:
+        #     system_prompt_text = "You are a helpful assistant."
+        #     self.ui.systemPromptEdit.setText(system_prompt_text)
+        # self.context = [{"role": "system", "content": system_prompt_text}]
 
         # ----------------------------------------------------
         # Audio2Face
         # ----------------------------------------------------
-        # Initialize the headless server URL from QLineEdit
-        self.ui.a2fUrl_headless.setText("http://localhost:8011/")
-        self.headless_server_url = self.ui.a2fUrl_headless.text().strip()
-        self.check_server_status()
-
         # load usd
         self.usd_folder_path = os.path.join(os.getcwd(), "usd")
         self.populate_usd_list()
         self.load_selected_usd()
+        self.headless_server_url = None
 
         #self.ui.loadUSDButton.clicked.connect(self.load_usd_to_server)
         #self.ui.checkServerButton.clicked.connect(self.check_server_status)
@@ -136,6 +136,7 @@ class MainWindow(QMainWindow):
         self.ui.openaiAPIKey.textChanged.connect(self.update_api_key)
 
         # Connect system prompt update
+        self.update_system_prompt()
         self.ui.systemPromptEdit.textChanged.connect(self.update_system_prompt)
 
         # If temperature/max tokens aren't set, set defaults
@@ -187,6 +188,13 @@ class MainWindow(QMainWindow):
         self.ui.chatOutpuTab.setTabText(0,"Conversation")  # Rename first tab
         self.ui.chatOutpuTab.setTabText(1,"Log Terminal")  # Rename second tab
         self.ui.chatOutpuTab.setTabText(3,"Behaviour Log")
+
+
+        # Initialize the headless server URL from QLineEdit
+        self.ui.a2fUrl_headless.setText("http://localhost:8011/")
+        self.headless_server_url = self.ui.a2fUrl_headless.text().strip()
+        self.check_server_status()
+
 
     def setup_theme_selection(self):
         """
@@ -619,11 +627,43 @@ class MainWindow(QMainWindow):
         openai.api_key = self.api_key
 
     def update_system_prompt(self):
-        sp = self.ui.systemPromptEdit.toPlainText().strip()
-        if sp:
-            self.context.append({"role": "system", "content": sp})
+        """
+        Updates the system prompt as a developer role and resets the context.
+        """
+        new_prompt = self.ui.systemPromptEdit.toPlainText().strip()
+
+        if new_prompt:
+            # Log the prompt update
+            self.logger.log_info(f"System prompt updated: {new_prompt}")
+
+            # Reset the context with the new developer message
+            self.context = [
+                {
+                    "role": "developer",
+                    "content": [{"type": "text", "text": new_prompt}]
+                }
+            ]
+
+            # Clear UI to reflect the reset
+            self.ui.contextBrowserOpenAI.clear()
+            self.ui.contextBrowserOpenAI.append(f"<b>Developer:</b> {new_prompt}")
         else:
-            self.context.append({"role": "system", "content": "You are a helpful assistant."})
+            # Default prompt in case the field is empty
+            default_prompt = "You are a helpful assistant."
+            self.ui.systemPromptEdit.setText(default_prompt)
+            self.logger.log_info("System prompt was empty. Resetting to default.")
+
+            self.context = [
+                {
+                    "role": "developer",
+                    "content": [{"type": "text", "text": default_prompt}]
+                }
+            ]
+
+            # Update UI
+            self.ui.contextBrowserOpenAI.clear()
+            self.ui.contextBrowserOpenAI.append(f"<b>Developer:</b> {default_prompt}")
+
 
     # ----------------------------------------------------
     # ASR -> LLM -> TTS Pipeline
@@ -635,24 +675,48 @@ class MainWindow(QMainWindow):
         self.send_to_openai(user_input)
 
     def send_to_openai(self, user_input):
-        self.context.append({"role": "user", "content": user_input})
+        """
+        Sends user input to OpenAI API after appending it to the context.
+        Truncates the context if it exceeds the maximum allowed length.
+        """
         self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {user_input}")
 
+        # Append the user message to the context
+        self.context.append({
+            "role": "user",
+            "content": [{"type": "text", "text": user_input}]
+        })
+
+
+        # Truncate the context if it exceeds MAX_CONTEXT_LENGTH
+        if len(self.context) > self.MAX_CONTEXT_LENGTH + 1:  # +1 for the developer role
+            self.context = self.context[:1] + self.context[-self.MAX_CONTEXT_LENGTH:]
+
+        # Prepare parameters for OpenAI request
         context_copy = self.context.copy()
         max_tokens = self.ui.maxTokenOpenAI.value()
         temperature = self.ui.temperatureOpenAI.value() / 100
         selected_model = self.ui.llmMBOX.currentText()
 
+        # Emit the OpenAI request signal
         self.openai_request_signal.emit(selected_model, context_copy, max_tokens, temperature)
 
     @Slot(str)
     def display_openai_response(self, response):
-        self.context.append({"role": "assistant", "content": response})
+        """
+        Handles the response from OpenAI and appends it to the context.
+        """
+        # Append the assistant's response to the context
+        self.context.append({
+            "role": "assistant",
+            "content": [{"type": "text", "text": response}]
+        })
+
+        # Display the response in the UI
         self.ui.contextBrowserOpenAI.append(f"<b>Assistant:</b> {response}")
 
-        # Trigger TTS
-        filename = "assistant_response.mp3"
-        self.tts_request_signal.emit(response, filename)
+        # Automatically trigger TTS for the assistant response
+        self.tts_request_signal.emit(response)
 
     @Slot(str)
     def display_openai_error(self, error_message):

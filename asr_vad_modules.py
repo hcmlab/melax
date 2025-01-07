@@ -116,9 +116,10 @@ class GoogleASRTranscriptionThread(QThread):
                                         # {"result":[{"alternative":[{"transcript":"hello","confidence":0.95212841}],"final":true}],"result_index":0}
                                         if "result" in response_json and len(response_json["result"]) > 0:
                                             text = response_json["result"][0]["alternative"][0]["transcript"]
-                                            nonlocal transcription_buffer
-                                            transcription_buffer += text + " "
-                                            self.transcription_signal.emit(transcription_buffer)
+                                            #nonlocal transcription_buffer
+                                            #transcription_buffer += text + " "
+                                            if text:
+                                                self.transcription_signal.emit(text)
                                     except json.JSONDecodeError as e:
                                         self.logger.log_error(f"JSONDecodeError: {e} | Line: {line}")
                         except Exception as e:

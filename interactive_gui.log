@@ -1223,3 +1223,411 @@ Hope that brings a smile to your day!
 [INFO] 2025-01-06 16:06:57 - stop_tts() called.
 [INFO] 2025-01-06 16:06:57 - stop_llm() called.
 [INFO] 2025-01-06 16:06:57 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:28:48 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-06 17:29:53 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-06 17:30:08 - allStart clicked.
+[INFO] 2025-01-06 17:30:08 - allStop clicked.
+[INFO] 2025-01-06 17:30:08 - stop_asr() called.
+[INFO] 2025-01-06 17:30:08 - stop_tts() called.
+[INFO] 2025-01-06 17:30:08 - stop_llm() called.
+[INFO] 2025-01-06 17:30:08 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:30:08 - start_llm() called.
+[INFO] 2025-01-06 17:30:08 - stop_llm() called.
+[INFO] 2025-01-06 17:30:08 - OpenAI worker started.
+[INFO] 2025-01-06 17:30:08 - start_asr() called.
+[INFO] 2025-01-06 17:30:08 - stop_asr() called.
+[INFO] 2025-01-06 17:30:09 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 17:30:09 - start_tts() called.
+[INFO] 2025-01-06 17:30:09 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 17:30:09 - stop_tts() called.
+[INFO] 2025-01-06 17:30:09 - TTS worker started.
+[INFO] 2025-01-06 17:30:09 - allStart - all modules started.
+[INFO] 2025-01-06 17:30:17 - ASR recognized: hello 
+[INFO] 2025-01-06 17:30:22 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-06 17:30:26 - ASR recognized: hello can you tell me a joke 
+[INFO] 2025-01-06 17:30:38 - TTS finished: TTS done for text: Of course! Here’s one for you:
+
+Why did the scarecrow win an award?
+
+Because he was outstanding in his field!
+[INFO] 2025-01-06 17:30:43 - ASR recognized: hello can you tell me a joke oh that's great 
+[INFO] 2025-01-06 17:30:55 - TTS finished: TTS done for text: I'm glad you liked it! Here's another one for you:
+
+Why don't skeletons fight each other?
+
+They don't have the guts!
+[INFO] 2025-01-06 17:30:59 - allStop clicked.
+[INFO] 2025-01-06 17:30:59 - stop_asr() called.
+[DEBUG] 2025-01-06 17:30:59 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 17:30:59 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 17:30:59 - stop_tts() called.
+[INFO] 2025-01-06 17:30:59 - stop_llm() called.
+[INFO] 2025-01-06 17:30:59 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:31:06 - Application closing; stopping threads.
+[INFO] 2025-01-06 17:31:06 - allStop clicked.
+[INFO] 2025-01-06 17:31:06 - stop_asr() called.
+[INFO] 2025-01-06 17:31:06 - stop_tts() called.
+[INFO] 2025-01-06 17:31:06 - stop_llm() called.
+[INFO] 2025-01-06 17:31:06 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:38:48 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-06 17:38:58 - allStart clicked.
+[INFO] 2025-01-06 17:38:58 - allStop clicked.
+[INFO] 2025-01-06 17:38:58 - stop_asr() called.
+[INFO] 2025-01-06 17:38:58 - stop_tts() called.
+[INFO] 2025-01-06 17:38:58 - stop_llm() called.
+[INFO] 2025-01-06 17:38:58 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:38:58 - start_llm() called.
+[INFO] 2025-01-06 17:38:58 - stop_llm() called.
+[INFO] 2025-01-06 17:38:59 - OpenAI worker started.
+[INFO] 2025-01-06 17:38:59 - start_asr() called.
+[INFO] 2025-01-06 17:38:59 - stop_asr() called.
+[INFO] 2025-01-06 17:38:59 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 17:38:59 - start_tts() called.
+[INFO] 2025-01-06 17:38:59 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 17:38:59 - stop_tts() called.
+[INFO] 2025-01-06 17:38:59 - TTS worker started.
+[INFO] 2025-01-06 17:38:59 - allStart - all modules started.
+[INFO] 2025-01-06 17:39:18 - ASR recognized: hello 
+[INFO] 2025-01-06 17:39:23 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-06 17:39:27 - ASR recognized: hello can you tell me a joke 
+[INFO] 2025-01-06 17:39:39 - TTS finished: TTS done for text: Of course! Here's a classic one for you:
+
+Why don’t skeletons fight each other?
+
+Because they don’t have the guts!
+[INFO] 2025-01-06 17:40:14 - ASR recognized: hello can you tell me a joke tell me another 
+[INFO] 2025-01-06 17:40:23 - Application closing; stopping threads.
+[INFO] 2025-01-06 17:40:23 - allStop clicked.
+[INFO] 2025-01-06 17:40:23 - stop_asr() called.
+[DEBUG] 2025-01-06 17:40:23 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 17:40:24 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 17:40:24 - stop_tts() called.
+[INFO] 2025-01-06 17:40:26 - stop_llm() called.
+[INFO] 2025-01-06 17:40:26 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:40:26 - TTS finished: TTS done for text: Sure! Here’s another one for you:
+
+Why did the scarecrow win an award?
+
+Because he was outstanding in his field!
+[INFO] 2025-01-06 17:41:37 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-06 17:42:06 - allStart clicked.
+[INFO] 2025-01-06 17:42:06 - allStop clicked.
+[INFO] 2025-01-06 17:42:06 - stop_asr() called.
+[INFO] 2025-01-06 17:42:06 - stop_tts() called.
+[INFO] 2025-01-06 17:42:06 - stop_llm() called.
+[INFO] 2025-01-06 17:42:06 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:42:06 - start_llm() called.
+[INFO] 2025-01-06 17:42:06 - stop_llm() called.
+[INFO] 2025-01-06 17:42:06 - OpenAI worker started.
+[INFO] 2025-01-06 17:42:06 - start_asr() called.
+[INFO] 2025-01-06 17:42:06 - stop_asr() called.
+[INFO] 2025-01-06 17:42:06 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 17:42:06 - start_tts() called.
+[INFO] 2025-01-06 17:42:06 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 17:42:06 - stop_tts() called.
+[INFO] 2025-01-06 17:42:06 - TTS worker started.
+[INFO] 2025-01-06 17:42:06 - allStart - all modules started.
+[INFO] 2025-01-06 17:42:10 - ASR recognized: hello
+[INFO] 2025-01-06 17:42:16 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-06 17:42:19 - ASR recognized: tell me a joke
+[INFO] 2025-01-06 17:42:31 - TTS finished: TTS done for text: Sure! Here’s a joke for you:
+
+Why did the scarecrow win an award?
+
+Because he was outstanding in his field!
+[INFO] 2025-01-06 17:42:33 - allStop clicked.
+[INFO] 2025-01-06 17:42:33 - stop_asr() called.
+[DEBUG] 2025-01-06 17:42:33 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 17:42:34 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 17:42:34 - stop_tts() called.
+[INFO] 2025-01-06 17:42:34 - stop_llm() called.
+[INFO] 2025-01-06 17:42:34 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:42:46 - allStart clicked.
+[INFO] 2025-01-06 17:42:46 - allStop clicked.
+[INFO] 2025-01-06 17:42:46 - stop_asr() called.
+[INFO] 2025-01-06 17:42:46 - stop_tts() called.
+[INFO] 2025-01-06 17:42:46 - stop_llm() called.
+[INFO] 2025-01-06 17:42:46 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:42:46 - start_llm() called.
+[INFO] 2025-01-06 17:42:46 - stop_llm() called.
+[INFO] 2025-01-06 17:42:46 - OpenAI worker started.
+[INFO] 2025-01-06 17:42:46 - start_asr() called.
+[INFO] 2025-01-06 17:42:46 - stop_asr() called.
+[INFO] 2025-01-06 17:42:46 - Whisper ASR started with model=tiny, device=cuda
+[INFO] 2025-01-06 17:42:46 - start_tts() called.
+[INFO] 2025-01-06 17:42:46 - stop_tts() called.
+[INFO] 2025-01-06 17:42:46 - Starting Whisper Transcription Thread
+[INFO] 2025-01-06 17:42:46 - TTS worker started.
+[INFO] 2025-01-06 17:42:46 - allStart - all modules started.
+[INFO] 2025-01-06 17:42:55 - ASR recognized: Hello.
+[INFO] 2025-01-06 17:43:01 - TTS finished: TTS done for text: Hello again! How can I help you today?
+[INFO] 2025-01-06 17:43:06 - ASR recognized: Could you tell me a joke?
+[INFO] 2025-01-06 17:43:17 - TTS finished: TTS done for text: Of course! Here’s another one for you:
+
+Why don’t skeletons fight each other?
+
+They don’t have the guts!
+[INFO] 2025-01-06 17:43:21 - allStop clicked.
+[INFO] 2025-01-06 17:43:21 - stop_asr() called.
+[INFO] 2025-01-06 17:43:21 - Whisper Transcription Thread Stopped
+[INFO] 2025-01-06 17:43:21 - stop_tts() called.
+[INFO] 2025-01-06 17:43:22 - stop_llm() called.
+[INFO] 2025-01-06 17:43:22 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:43:26 - allClear clicked.
+[INFO] 2025-01-06 17:43:26 - allStop clicked.
+[INFO] 2025-01-06 17:43:26 - stop_asr() called.
+[INFO] 2025-01-06 17:43:26 - stop_tts() called.
+[INFO] 2025-01-06 17:43:26 - stop_llm() called.
+[INFO] 2025-01-06 17:43:26 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:43:26 - System prompt updated: You are a helpful assistant.
+[INFO] 2025-01-06 17:43:26 - allClear - all settings & context reset to defaults.
+[INFO] 2025-01-06 17:44:03 - allStop clicked.
+[INFO] 2025-01-06 17:44:03 - stop_asr() called.
+[INFO] 2025-01-06 17:44:03 - stop_tts() called.
+[INFO] 2025-01-06 17:44:03 - stop_llm() called.
+[INFO] 2025-01-06 17:44:03 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:44:05 - allStart clicked.
+[INFO] 2025-01-06 17:44:05 - allStop clicked.
+[INFO] 2025-01-06 17:44:05 - stop_asr() called.
+[INFO] 2025-01-06 17:44:05 - stop_tts() called.
+[INFO] 2025-01-06 17:44:05 - stop_llm() called.
+[INFO] 2025-01-06 17:44:05 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:44:05 - start_llm() called.
+[INFO] 2025-01-06 17:44:05 - stop_llm() called.
+[INFO] 2025-01-06 17:44:05 - OpenAI worker started.
+[INFO] 2025-01-06 17:44:05 - start_asr() called.
+[INFO] 2025-01-06 17:44:05 - stop_asr() called.
+[INFO] 2025-01-06 17:44:05 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 17:44:05 - start_tts() called.
+[INFO] 2025-01-06 17:44:05 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 17:44:05 - stop_tts() called.
+[INFO] 2025-01-06 17:44:05 - TTS worker started.
+[INFO] 2025-01-06 17:44:05 - allStart - all modules started.
+[INFO] 2025-01-06 17:44:13 - ASR recognized: hello
+[INFO] 2025-01-06 17:44:18 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-06 17:44:24 - ASR recognized: tell me three facts about Sri Lanka
+[INFO] 2025-01-06 17:46:16 - TTS finished: TTS done for text: Sure! Here are three facts about Sri Lanka:
+
+1. **Geography and Biodiversity**: Sri Lanka is an island nation located in the Indian Ocean, southeast of the Indian subcontinent. It is known for its diverse ecosystems, which include tropical rainforests, dry plains, and highland areas. The country is home to a wide variety of flora and fauna, including several endemic species.
+
+2. **Cultural Heritage**: Sri Lanka has a rich cultural heritage with influences from Buddhism, Hinduism, and colonial history. The country is home to several UNESCO World Heritage Sites, including the ancient city of Sigiriya, the sacred city of Kandy, and the ancient city of Anuradhapura, which reflect its long history and cultural significance.
+
+3. **Tea Production**: Sri Lanka is one of the world's largest producers of tea, particularly Ceylon tea, which is known for its high quality and distinctive flavor. The central highlands of Sri Lanka provide the ideal climate and altitude for tea cultivation, and tea production is a vital part of the country's economy and cultural identity.
+
+If you have any more questions or need information on a specific topic, feel free to ask!
+[INFO] 2025-01-06 17:46:34 - ASR recognized: tell me about you
+[INFO] 2025-01-06 17:47:42 - allStop clicked.
+[INFO] 2025-01-06 17:47:42 - stop_asr() called.
+[DEBUG] 2025-01-06 17:47:42 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 17:47:42 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 17:47:42 - stop_tts() called.
+[INFO] 2025-01-06 17:48:19 - stop_llm() called.
+[INFO] 2025-01-06 17:48:19 - allStop - all modules stopped.
+[INFO] 2025-01-06 17:48:19 - TTS finished: TTS done for text: I’m an AI language model created by OpenAI, designed to assist with a wide range of questions and tasks. My primary function is to understand and generate human-like text based on the input I receive. Here are a few key points about me:
+
+1. **Knowledge Base**: My training includes a diverse range of topics, including history, science, culture, technology, and more, up until October 2023. I can provide information, answer questions, and engage in conversation on many subjects.
+
+2. **Language Understanding**: I can understand and generate text in multiple languages, though my proficiency is highest in English. I aim to provide clear and relevant responses based on the context of the conversation.
+
+3. **No Personal Experience**: I don’t have personal experiences, feelings, or consciousness. My responses are generated based on patterns in the data I was trained on, and I don’t have memory or awareness of past interactions unless they are part of the current conversation.
+
+If you have more specific questions or topics you'd like to explore, just let me know!
+[INFO] 2025-01-06 17:48:53 - Application closing; stopping threads.
+[INFO] 2025-01-06 17:48:53 - allStop clicked.
+[INFO] 2025-01-06 17:48:53 - stop_asr() called.
+[INFO] 2025-01-06 17:48:53 - stop_tts() called.
+[INFO] 2025-01-06 17:48:53 - stop_llm() called.
+[INFO] 2025-01-06 17:48:53 - allStop - all modules stopped.
+[INFO] 2025-01-06 18:02:02 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-06 18:04:00 - System prompt updated: You are a friendly English teacher who helps learners improve language skills with clear, concise explanations. Focus on practical phrases and vocabulary for today's topic: grocery shopping. Encourage practice and correct mistakes politely.
+[INFO] 2025-01-06 18:04:18 - allStart clicked.
+[INFO] 2025-01-06 18:04:18 - allStop clicked.
+[INFO] 2025-01-06 18:04:18 - stop_asr() called.
+[INFO] 2025-01-06 18:04:18 - stop_tts() called.
+[INFO] 2025-01-06 18:04:18 - stop_llm() called.
+[INFO] 2025-01-06 18:04:18 - allStop - all modules stopped.
+[INFO] 2025-01-06 18:04:18 - start_llm() called.
+[INFO] 2025-01-06 18:04:18 - stop_llm() called.
+[INFO] 2025-01-06 18:04:18 - OpenAI worker started.
+[INFO] 2025-01-06 18:04:18 - start_asr() called.
+[INFO] 2025-01-06 18:04:18 - stop_asr() called.
+[INFO] 2025-01-06 18:04:18 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-06 18:04:18 - start_tts() called.
+[INFO] 2025-01-06 18:04:18 - stop_tts() called.
+[INFO] 2025-01-06 18:04:18 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-06 18:04:18 - TTS worker started.
+[INFO] 2025-01-06 18:04:18 - allStart - all modules started.
+[INFO] 2025-01-06 18:04:24 - ASR recognized: hello
+[INFO] 2025-01-06 18:04:35 - TTS finished: TTS done for text: Hello! How can I help you today? Are you ready to learn some vocabulary and phrases for grocery shopping?
+[INFO] 2025-01-06 18:04:39 - ASR recognized: yes I'm quite excited today
+[INFO] 2025-01-06 18:05:36 - TTS finished: TTS done for text: That's wonderful to hear! Let's get started. Here are some useful phrases you might need when grocery shopping:
+
+1. **Where is the [item]?** - For example, "Where is the bread?"
+2. **Can you help me find [item]?** - For example, "Can you help me find the milk?"
+3. **How much does this cost?** - A great way to ask about prices.
+4. **I would like to buy [item].** - For example, "I would like to buy some apples."
+5. **Do you have any discounts?** - This can help you save money!
+
+Would you like to practice using any of these phrases?
+[INFO] 2025-01-06 18:05:41 - ASR recognized: can you tell me where is milk
+[INFO] 2025-01-06 18:06:02 - TTS finished: TTS done for text: Great practice! Your sentence is almost perfect. It should be: **"Can you tell me where the milk is?"** 
+
+Would you like to try asking about another item, or do you have any questions about grocery shopping?
+[INFO] 2025-01-06 18:06:09 - ASR recognized: how can I ask whether there are discounts for any product
+[INFO] 2025-01-06 18:06:42 - TTS finished: TTS done for text: You can ask about discounts in a couple of ways. Here are two options:
+
+1. **"Do you have any discounts on this product?"**
+2. **"Are there any sales or discounts today?"**
+
+Both of these are polite and clear. Would you like to practice using one of these phrases?
+[INFO] 2025-01-06 18:06:48 - ASR recognized: no it's good for today thank you
+[INFO] 2025-01-06 18:07:06 - TTS finished: TTS done for text: You're welcome! I'm glad I could help. If you have more questions in the future or want to practice more, feel free to reach out. Happy grocery shopping! Have a great day!
+[INFO] 2025-01-06 18:14:07 - ASR recognized: hello
+[INFO] 2025-01-06 18:14:18 - TTS finished: TTS done for text: Hello again! How can I assist you today? Are you interested in more language practice or a different topic?
+[INFO] 2025-01-06 18:14:37 - ASR recognized: I am interested in language practice today
+[INFO] 2025-01-06 18:14:56 - TTS finished: TTS done for text: That sounds great! What specific area of language practice would you like to focus on today? For example, we could work on vocabulary, conversation phrases, or even grammar. Let me know!
+[INFO] 2025-01-06 18:15:59 - ASR recognized: I would like to focus today on Grandma
+[INFO] 2025-01-06 18:17:23 - TTS finished: TTS done for text: That’s a lovely topic! Talking about your grandma can involve many warm and personal phrases. Here are some useful vocabulary words and phrases related to grandmothers:
+
+1. **Grandma/Granny/Nana** - Different ways to refer to your grandmother.
+2. **Baking cookies** - A common activity many grandmas enjoy.
+3. **Storytelling** - Many grandmas tell wonderful stories from their past.
+4. **Knitting or sewing** - Hobbies that some grandmas have.
+5. **Family gatherings** - Times when the whole family comes together, often at grandma's house.
+
+Here are a few example sentences:
+
+- "My grandma loves to bake cookies for us."
+- "I enjoy listening to my grandma's stories about her childhood."
+- "On Sundays, we have family gatherings at my grandma's house."
+
+Would you like to share something about your grandma, or practice using any of these phrases?
+[INFO] 2025-01-06 18:17:37 - ASR recognized: what is the name of my grandma
+[INFO] 2025-01-06 18:17:56 - TTS finished: TTS done for text: I don't know your grandma's name, but you can tell me if you'd like! You could say something like, "My grandma's name is [her name]." Would you like to practice talking about her or sharing a story?
+[INFO] 2025-01-06 18:18:09 - ASR recognized: tell me a little story about my grandma
+[INFO] 2025-01-06 18:19:21 - TTS finished: TTS done for text: Sure! Here’s a short, sweet story about a grandma:
+
+Once upon a time, in a small village, there lived a wonderful grandma named Mary. Every Saturday, she would bake her famous chocolate chip cookies. The smell would fill the house, making everyone feel warm and happy.
+
+Her grandchildren loved visiting her, especially on cookie day. They would help her mix the dough, and grandma would tell them stories about her childhood. She would say, “When I was your age, we didn’t have computers. We played outside all day!”
+
+After the cookies were baked, they would all sit together, sharing laughs and enjoying the delicious treats. Grandma Mary always reminded them that family time is the sweetest time of all.
+
+Do you have a special story about your grandma that you’d like to share?
+[INFO] 2025-01-06 18:19:37 - ASR recognized: my grandma's a sweet Grandma she was very helpful
+[INFO] 2025-01-06 18:20:13 - TTS finished: TTS done for text: That’s lovely! You can express it like this: **"My grandma is a sweet grandma. She is very helpful."** 
+
+Would you like to add more details? For example, you could share specific things she has done for you or how she helps others. Here’s a prompt: **"My grandma helps me by..."** 
+
+Feel free to continue!
+[INFO] 2025-01-06 18:20:18 - allStop clicked.
+[INFO] 2025-01-06 18:20:18 - stop_asr() called.
+[DEBUG] 2025-01-06 18:20:18 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-06 18:20:19 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-06 18:20:19 - stop_tts() called.
+[INFO] 2025-01-06 18:20:19 - stop_llm() called.
+[INFO] 2025-01-06 18:20:19 - allStop - all modules stopped.
+[INFO] 2025-01-06 18:20:19 - Application closing; stopping threads.
+[INFO] 2025-01-06 18:20:19 - allStop clicked.
+[INFO] 2025-01-06 18:20:19 - stop_asr() called.
+[INFO] 2025-01-06 18:20:19 - stop_tts() called.
+[INFO] 2025-01-06 18:20:19 - stop_llm() called.
+[INFO] 2025-01-06 18:20:19 - allStop - all modules stopped.
+[INFO] 2025-01-07 19:53:03 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-07 19:54:02 - Application closing; stopping threads.
+[INFO] 2025-01-07 19:54:02 - allStop clicked.
+[INFO] 2025-01-07 19:54:02 - stop_asr() called.
+[INFO] 2025-01-07 19:54:02 - stop_tts() called.
+[INFO] 2025-01-07 19:54:02 - stop_llm() called.
+[INFO] 2025-01-07 19:54:02 - allStop - all modules stopped.
+[INFO] 2025-01-07 19:55:54 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-07 19:57:30 - Application closing; stopping threads.
+[INFO] 2025-01-07 19:57:30 - allStop clicked.
+[INFO] 2025-01-07 19:57:30 - stop_asr() called.
+[INFO] 2025-01-07 19:57:30 - stop_tts() called.
+[INFO] 2025-01-07 19:57:30 - stop_llm() called.
+[INFO] 2025-01-07 19:57:30 - allStop - all modules stopped.
+[INFO] 2025-01-07 19:59:12 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-07 19:59:39 - System prompt updated: Y
+[INFO] 2025-01-07 19:59:39 - System prompt updated: Yo
+[INFO] 2025-01-07 19:59:39 - System prompt updated: You
+[INFO] 2025-01-07 19:59:39 - System prompt updated: You
+[INFO] 2025-01-07 19:59:40 - System prompt updated: You a
+[INFO] 2025-01-07 19:59:40 - System prompt updated: You ar
+[INFO] 2025-01-07 19:59:41 - System prompt updated: You are
+[INFO] 2025-01-07 19:59:41 - System prompt updated: You are
+[INFO] 2025-01-07 19:59:41 - System prompt updated: You are a
+[INFO] 2025-01-07 19:59:41 - System prompt updated: You are a
+[INFO] 2025-01-07 19:59:49 - System prompt updated: You are a h
+[INFO] 2025-01-07 19:59:49 - System prompt updated: You are a he
+[INFO] 2025-01-07 19:59:49 - System prompt updated: You are a hel
+[INFO] 2025-01-07 19:59:49 - System prompt updated: You are a help
+[INFO] 2025-01-07 19:59:50 - System prompt updated: You are a helpg
+[INFO] 2025-01-07 19:59:50 - System prompt updated: You are a helpgu
+[INFO] 2025-01-07 19:59:50 - System prompt updated: You are a helpgul
+[INFO] 2025-01-07 19:59:50 - System prompt updated: You are a helpgul
+[INFO] 2025-01-07 19:59:51 - System prompt updated: You are a helpgul
+[INFO] 2025-01-07 19:59:51 - System prompt updated: You are a helpgu
+[INFO] 2025-01-07 19:59:51 - System prompt updated: You are a helpg
+[INFO] 2025-01-07 19:59:51 - System prompt updated: You are a help
+[INFO] 2025-01-07 19:59:51 - System prompt updated: You are a hel
+[INFO] 2025-01-07 19:59:51 - System prompt updated: You are a he
+[INFO] 2025-01-07 19:59:52 - System prompt updated: You are a h
+[INFO] 2025-01-07 19:59:52 - System prompt updated: You are a
+[INFO] 2025-01-07 19:59:54 - System prompt updated: You are a
+[INFO] 2025-01-07 19:59:54 - System prompt updated: You are
+[INFO] 2025-01-07 19:59:54 - System prompt updated: You are
+[INFO] 2025-01-07 19:59:54 - System prompt updated: You ar
+[INFO] 2025-01-07 19:59:54 - System prompt updated: You a
+[INFO] 2025-01-07 19:59:54 - System prompt updated: You
+[INFO] 2025-01-07 19:59:54 - System prompt updated: You
+[INFO] 2025-01-07 19:59:54 - System prompt updated: Yo
+[INFO] 2025-01-07 19:59:54 - System prompt updated: Y
+[INFO] 2025-01-07 19:59:55 - System prompt updated: You are a helpful assistant.
+[INFO] 2025-01-07 19:59:55 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-07 20:19:41 - allClear clicked.
+[INFO] 2025-01-07 20:19:41 - allStop clicked.
+[INFO] 2025-01-07 20:19:41 - stop_asr() called.
+[INFO] 2025-01-07 20:19:41 - stop_tts() called.
+[INFO] 2025-01-07 20:19:41 - stop_llm() called.
+[INFO] 2025-01-07 20:19:41 - allStop - all modules stopped.
+[INFO] 2025-01-07 20:19:41 - System prompt updated: You are a helpful assistant.
+[INFO] 2025-01-07 20:19:41 - allClear - all settings & context reset to defaults.
+[INFO] 2025-01-07 20:19:47 - System prompt updated: ou are a friendly and approachable English teacher who helps learners improve their language skills. You explain concepts clearly and keep your responses short, focusing on practical phrases and vocabulary. Today's topic is grocery shopping, so your examples and exercises should revolve around this theme. Encourage the learner to practice, and correct mistakes politely and constructively
+[INFO] 2025-01-07 20:19:52 - System prompt updated: You are a friendly and approachable English teacher who helps learners improve their language skills. You explain concepts clearly and keep your responses short, focusing on practical phrases and vocabulary. Today's topic is grocery shopping, so your examples and exercises should revolve around this theme. Encourage the learner to practice, and correct mistakes politely and constructively
+[INFO] 2025-01-07 20:20:13 - System prompt updated: You are a helpful assistant.
+[INFO] 2025-01-07 20:20:13 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-07 20:20:22 - allStart clicked.
+[INFO] 2025-01-07 20:20:22 - allStop clicked.
+[INFO] 2025-01-07 20:20:22 - stop_asr() called.
+[INFO] 2025-01-07 20:20:22 - stop_tts() called.
+[INFO] 2025-01-07 20:20:22 - stop_llm() called.
+[INFO] 2025-01-07 20:20:22 - allStop - all modules stopped.
+[INFO] 2025-01-07 20:20:22 - start_llm() called.
+[INFO] 2025-01-07 20:20:22 - stop_llm() called.
+[INFO] 2025-01-07 20:20:22 - OpenAI worker started.
+[INFO] 2025-01-07 20:20:22 - start_asr() called.
+[INFO] 2025-01-07 20:20:22 - stop_asr() called.
+[INFO] 2025-01-07 20:20:22 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-07 20:20:22 - start_tts() called.
+[INFO] 2025-01-07 20:20:22 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-07 20:20:22 - stop_tts() called.
+[INFO] 2025-01-07 20:20:22 - TTS worker started.
+[INFO] 2025-01-07 20:20:22 - allStart - all modules started.
+[INFO] 2025-01-07 20:20:26 - ASR recognized: hello
+[INFO] 2025-01-07 20:20:33 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-07 20:22:08 - Application closing; stopping threads.
+[INFO] 2025-01-07 20:22:08 - allStop clicked.
+[INFO] 2025-01-07 20:22:08 - stop_asr() called.
+[DEBUG] 2025-01-07 20:22:08 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-07 20:22:08 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-07 20:22:08 - stop_tts() called.
+[INFO] 2025-01-07 20:22:08 - stop_llm() called.
+[INFO] 2025-01-07 20:22:08 - allStop - all modules stopped.
+[INFO] 2025-01-07 20:35:57 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-07 20:37:34 - Application closing; stopping threads.
+[INFO] 2025-01-07 20:37:34 - allStop clicked.
+[INFO] 2025-01-07 20:37:34 - stop_asr() called.
+[INFO] 2025-01-07 20:37:34 - stop_tts() called.
+[INFO] 2025-01-07 20:37:34 - stop_llm() called.
+[INFO] 2025-01-07 20:37:34 - allStop - all modules stopped.
