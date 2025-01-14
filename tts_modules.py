@@ -94,18 +94,31 @@ def nlp_sentence_split(text: str):
     """
     return sent_tokenize(text)
 
+
 def regex_sentence_split(text: str):
     """
     A simple regex-based sentence splitter: splits on '.', '?', '!'
     but retains punctuation at the end of each chunk.
+    Cleans the text to remove any '#' and '*' characters before splitting.
+
+    Args:
+        text (str): The input text to be processed.
+
+    Returns:
+        list: A list of sentences with punctuation retained.
     """
-    parts = re.split(r'([.!?])', text)
+    # Remove '#' and '*' from the text
+    cleaned_text = re.sub(r'[\#\*]', '', text)
+
+    # Split the cleaned text into sentences
+    parts = re.split(r'([.!?])', cleaned_text)
     sentences = []
     for i in range(0, len(parts) - 1, 2):
         sentence = parts[i].strip()
         punctuation = parts[i + 1].strip()
         if sentence:
             sentences.append(f"{sentence}{punctuation}")
+
     return sentences
 
 def push_audio_track(url, audio_data, samplerate, instance_name, block_until_playback_is_finished=True):

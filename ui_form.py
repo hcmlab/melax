@@ -141,22 +141,36 @@ class Ui_MainWindow(object):
 
         self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.whisperLanguage)
 
-        self.microphoneMBox = QComboBox(self.groupBox)
-        self.microphoneMBox.setObjectName(u"microphoneMBox")
-        self.microphoneMBox.setGeometry(QRect(80, 70, 241, 22))
-        self.microphoneMBox.setFont(font1)
-        self.label = QLabel(self.groupBox)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(20, 60, 71, 31))
-        self.label.setFont(font1)
-        self.recognizerMBOX = QComboBox(self.groupBox)
-        self.recognizerMBOX.setObjectName(u"recognizerMBOX")
-        self.recognizerMBOX.setGeometry(QRect(80, 30, 138, 22))
-        self.recognizerMBOX.setFont(font1)
-        self.label_6 = QLabel(self.groupBox)
+        self.formLayoutWidget_11 = QWidget(self.groupBox)
+        self.formLayoutWidget_11.setObjectName(u"formLayoutWidget_11")
+        self.formLayoutWidget_11.setGeometry(QRect(10, 40, 281, 61))
+        self.formLayout_11 = QFormLayout(self.formLayoutWidget_11)
+        self.formLayout_11.setObjectName(u"formLayout_11")
+        self.formLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.label_6 = QLabel(self.formLayoutWidget_11)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(20, 30, 61, 21))
         self.label_6.setFont(font1)
+
+        self.formLayout_11.setWidget(0, QFormLayout.LabelRole, self.label_6)
+
+        self.recognizerMBOX = QComboBox(self.formLayoutWidget_11)
+        self.recognizerMBOX.setObjectName(u"recognizerMBOX")
+        self.recognizerMBOX.setFont(font1)
+
+        self.formLayout_11.setWidget(0, QFormLayout.FieldRole, self.recognizerMBOX)
+
+        self.label_27 = QLabel(self.formLayoutWidget_11)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setFont(font1)
+
+        self.formLayout_11.setWidget(1, QFormLayout.LabelRole, self.label_27)
+
+        self.microphoneMBox = QComboBox(self.formLayoutWidget_11)
+        self.microphoneMBox.setObjectName(u"microphoneMBox")
+        self.microphoneMBox.setFont(font1)
+
+        self.formLayout_11.setWidget(1, QFormLayout.FieldRole, self.microphoneMBox)
+
         self.groupBox_6 = QGroupBox(self.centralwidget)
         self.groupBox_6.setObjectName(u"groupBox_6")
         self.groupBox_6.setGeometry(QRect(520, 10, 431, 491))
@@ -547,8 +561,8 @@ class Ui_MainWindow(object):
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Model", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Device", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Language", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Microphone", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"ASR", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"Microphone", None))
         self.groupBox_6.setTitle(QCoreApplication.translate("MainWindow", u"Conversation Orchestrator", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"LLM", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Assistant Persona", None))

@@ -3,7 +3,6 @@ import os
 import speech_recognition as sr
 import openai
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton, QLineEdit, QFileDialog
-from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PySide6.QtCore import QThread, Signal, Slot
 from ui_form import Ui_MainWindow
 from local_logger import ThreadSafeLogger
@@ -115,7 +114,7 @@ class MainWindow(QMainWindow):
         self.ui.recognizerMBOX.addItems(["Google", "Whisper"])
 
         # Populate combos for LLM
-        self.ui.LLMChocie.addItems(["OpenAI", "LLAMA"])
+        self.ui.LLMChocie.addItems(["OpenAI", "LLAMA", "Gemini"])
         self.models = ["gpt-4o-mini", "gpt-3.5-turbo"]
         self.ui.llmMBOX.addItems(self.models)
 
@@ -151,7 +150,7 @@ class MainWindow(QMainWindow):
         self.toggle_asr_options("Google")
 
         # TTS combos
-        self.ui.ttsEngineCombo.addItems(["Google", "Coqui"])
+        self.ui.ttsEngineCombo.addItems(["Google", "Coqui", "VoiceX"])
         self.ui.ttslanguage.addItems(["en", "en-US", "en-GB", "es", "fr"])
         self.ui.a2fUrl.setText("localhost:50051")
         self.ui.a2fInstanceName.setText("/World/audio2face/PlayerStreaming")
