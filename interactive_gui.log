@@ -2023,3 +2023,267 @@ Would you like to practice saying it or try using it in a conversation?
 [INFO] 2025-01-14 18:26:07 - stop_tts() called.
 [INFO] 2025-01-14 18:26:07 - stop_llm() called.
 [INFO] 2025-01-14 18:26:07 - allStop - all modules stopped.
+[INFO] 2025-01-14 18:55:13 - Application closing; stopping threads.
+[INFO] 2025-01-14 18:55:13 - allStop clicked.
+[INFO] 2025-01-14 18:55:13 - stop_asr() called.
+[INFO] 2025-01-14 18:55:13 - stop_tts() called.
+[INFO] 2025-01-14 18:55:13 - stop_llm() called.
+[INFO] 2025-01-14 18:55:13 - allStop - all modules stopped.
+[INFO] 2025-01-14 18:56:01 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 19:01:07 - Application closing; stopping threads.
+[INFO] 2025-01-14 19:01:07 - allStop clicked.
+[INFO] 2025-01-14 19:01:07 - stop_asr() called.
+[INFO] 2025-01-14 19:01:07 - stop_tts() called.
+[INFO] 2025-01-14 19:01:07 - stop_llm() called.
+[INFO] 2025-01-14 19:01:07 - allStop - all modules stopped.
+[INFO] 2025-01-14 19:01:18 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 19:08:01 - allStart clicked.
+[INFO] 2025-01-14 19:08:01 - allStop clicked.
+[INFO] 2025-01-14 19:08:01 - stop_asr() called.
+[INFO] 2025-01-14 19:08:01 - stop_tts() called.
+[INFO] 2025-01-14 19:08:01 - stop_llm() called.
+[INFO] 2025-01-14 19:08:01 - allStop - all modules stopped.
+[INFO] 2025-01-14 19:08:01 - start_llm() called.
+[INFO] 2025-01-14 19:08:01 - stop_llm() called.
+[INFO] 2025-01-14 19:08:01 - OpenAI worker started.
+[INFO] 2025-01-14 19:08:01 - start_asr() called.
+[INFO] 2025-01-14 19:08:01 - stop_asr() called.
+[INFO] 2025-01-14 19:08:01 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-14 19:08:01 - start_tts() called.
+[INFO] 2025-01-14 19:08:01 - stop_tts() called.
+[INFO] 2025-01-14 19:08:01 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-14 19:08:01 - TTS worker started.
+[INFO] 2025-01-14 19:08:01 - allStart - all modules started.
+[INFO] 2025-01-14 19:08:36 - ASR recognized: hello
+[INFO] 2025-01-14 19:08:38 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-14 19:09:25 - Application closing; stopping threads.
+[INFO] 2025-01-14 19:09:25 - allStop clicked.
+[INFO] 2025-01-14 19:09:25 - stop_asr() called.
+[DEBUG] 2025-01-14 19:09:25 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-14 19:09:26 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-14 19:09:26 - stop_tts() called.
+[INFO] 2025-01-14 19:09:26 - stop_llm() called.
+[INFO] 2025-01-14 19:09:26 - allStop - all modules stopped.
+[INFO] 2025-01-14 19:13:17 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 19:15:03 - Application closing; stopping threads.
+[INFO] 2025-01-14 19:15:03 - allStop clicked.
+[INFO] 2025-01-14 19:15:03 - stop_asr() called.
+[INFO] 2025-01-14 19:15:03 - stop_tts() called.
+[INFO] 2025-01-14 19:15:03 - stop_llm() called.
+[INFO] 2025-01-14 19:15:03 - allStop - all modules stopped.
+[INFO] 2025-01-14 19:15:13 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 19:16:48 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 19:19:20 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 19:20:18 - allClear clicked.
+[INFO] 2025-01-14 19:20:18 - allStop clicked.
+[INFO] 2025-01-14 19:20:18 - stop_asr() called.
+[INFO] 2025-01-14 19:20:18 - stop_tts() called.
+[INFO] 2025-01-14 19:20:18 - stop_llm() called.
+[INFO] 2025-01-14 19:20:18 - allStop - all modules stopped.
+[INFO] 2025-01-14 19:20:18 - System prompt updated: You are a helpful assistant.
+[INFO] 2025-01-14 19:20:18 - allClear - all settings & context reset to defaults.
+[INFO] 2025-01-14 19:20:19 - allStart clicked.
+[INFO] 2025-01-14 19:20:19 - allStop clicked.
+[INFO] 2025-01-14 19:20:19 - stop_asr() called.
+[INFO] 2025-01-14 19:20:19 - stop_tts() called.
+[INFO] 2025-01-14 19:20:19 - stop_llm() called.
+[INFO] 2025-01-14 19:20:19 - allStop - all modules stopped.
+[INFO] 2025-01-14 19:20:19 - start_llm() called.
+[INFO] 2025-01-14 19:20:19 - stop_llm() called.
+[INFO] 2025-01-14 19:20:20 - OpenAI worker started.
+[INFO] 2025-01-14 19:20:20 - start_asr() called.
+[INFO] 2025-01-14 19:20:20 - stop_asr() called.
+[INFO] 2025-01-14 19:20:20 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-14 19:20:20 - start_tts() called.
+[INFO] 2025-01-14 19:20:20 - stop_tts() called.
+[INFO] 2025-01-14 19:20:20 - TTS worker started.
+[INFO] 2025-01-14 19:20:20 - allStart - all modules started.
+[INFO] 2025-01-14 19:20:20 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-14 19:20:24 - Application closing; stopping threads.
+[INFO] 2025-01-14 19:20:24 - allStop clicked.
+[INFO] 2025-01-14 19:20:24 - stop_asr() called.
+[DEBUG] 2025-01-14 19:20:24 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-14 19:20:24 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-14 19:20:24 - stop_tts() called.
+[INFO] 2025-01-14 19:20:24 - stop_llm() called.
+[INFO] 2025-01-14 19:20:24 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:07:47 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 20:17:46 - System prompt was empty. Resetting to default.
+[ERROR] 2025-01-14 20:17:51 - Failed to load USD.
+[ERROR] 2025-01-14 20:18:00 - Unable to connect to headless server.
+[ERROR] 2025-01-14 20:18:02 - Server not connected, cannot load USD.
+[ERROR] 2025-01-14 20:18:19 - Unable to connect to headless server.
+[ERROR] 2025-01-14 20:18:21 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:18:27 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:18:27 - allStop clicked.
+[INFO] 2025-01-14 20:18:27 - stop_asr() called.
+[INFO] 2025-01-14 20:18:27 - stop_tts() called.
+[INFO] 2025-01-14 20:18:27 - stop_llm() called.
+[INFO] 2025-01-14 20:18:27 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:19:51 - System prompt was empty. Resetting to default.
+[ERROR] 2025-01-14 20:19:54 - Failed to load USD.
+[INFO] 2025-01-14 20:19:56 - Checking status: http://localhost:8011//status
+[ERROR] 2025-01-14 20:19:58 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:20:06 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:20:06 - allStop clicked.
+[INFO] 2025-01-14 20:20:06 - stop_asr() called.
+[INFO] 2025-01-14 20:20:06 - stop_tts() called.
+[INFO] 2025-01-14 20:20:06 - stop_llm() called.
+[INFO] 2025-01-14 20:20:06 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:21:01 - System prompt was empty. Resetting to default.
+[ERROR] 2025-01-14 20:21:04 - Failed to load USD.
+[INFO] 2025-01-14 20:21:10 - Checking status: http://localhost:8011//status
+[ERROR] 2025-01-14 20:21:12 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:22:10 - Checking status: http://localhost:8011//status
+[ERROR] 2025-01-14 20:22:12 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:22:12 - Checking status: http://localhost:8011//status
+[ERROR] 2025-01-14 20:22:14 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:23:14 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:23:14 - allStop clicked.
+[INFO] 2025-01-14 20:23:14 - stop_asr() called.
+[INFO] 2025-01-14 20:23:14 - stop_tts() called.
+[INFO] 2025-01-14 20:23:14 - stop_llm() called.
+[INFO] 2025-01-14 20:23:14 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:23:47 - System prompt was empty. Resetting to default.
+[ERROR] 2025-01-14 20:23:49 - Failed to load USD.
+[INFO] 2025-01-14 20:23:51 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:23:53 - Checking status: response <Response [404]>
+[ERROR] 2025-01-14 20:23:53 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:24:13 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:24:13 - allStop clicked.
+[INFO] 2025-01-14 20:24:13 - stop_asr() called.
+[INFO] 2025-01-14 20:24:13 - stop_tts() called.
+[INFO] 2025-01-14 20:24:13 - stop_llm() called.
+[INFO] 2025-01-14 20:24:13 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:25:13 - System prompt was empty. Resetting to default.
+[ERROR] 2025-01-14 20:25:16 - Failed to load USD.
+[INFO] 2025-01-14 20:25:17 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:25:19 - Checking status: response <Response [404]>
+[ERROR] 2025-01-14 20:25:19 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:25:58 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:26:00 - Checking status: response <Response [404]>
+[ERROR] 2025-01-14 20:26:00 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:26:03 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:26:03 - allStop clicked.
+[INFO] 2025-01-14 20:26:03 - stop_asr() called.
+[INFO] 2025-01-14 20:26:03 - stop_tts() called.
+[INFO] 2025-01-14 20:26:03 - stop_llm() called.
+[INFO] 2025-01-14 20:26:03 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:26:18 - System prompt was empty. Resetting to default.
+[ERROR] 2025-01-14 20:26:21 - Failed to load USD.
+[INFO] 2025-01-14 20:26:28 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:26:30 - Checking status: response <Response [404]>
+[ERROR] 2025-01-14 20:26:30 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:26:41 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:26:43 - Checking status: response <Response [404]>
+[ERROR] 2025-01-14 20:26:43 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:29:28 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:29:28 - allStop clicked.
+[INFO] 2025-01-14 20:29:28 - stop_asr() called.
+[INFO] 2025-01-14 20:29:28 - stop_tts() called.
+[INFO] 2025-01-14 20:29:28 - stop_llm() called.
+[INFO] 2025-01-14 20:29:28 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:29:53 - System prompt was empty. Resetting to default.
+[ERROR] 2025-01-14 20:29:56 - Failed to load USD.
+[INFO] 2025-01-14 20:29:57 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:29:59 - Status check response text: {"detail":"Not Found"}
+[ERROR] 2025-01-14 20:29:59 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:30:14 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:30:16 - Status check response text: {"detail":"Not Found"}
+[ERROR] 2025-01-14 20:30:16 - Server not connected, cannot load USD.
+[INFO] 2025-01-14 20:37:25 - System prompt was empty. Resetting to default.
+[ERROR] 2025-01-14 20:37:28 - Failed to load USD.
+[INFO] 2025-01-14 20:37:40 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:37:42 - Status check response text: {"detail":"Not Found"}
+[ERROR] 2025-01-14 20:37:42 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:38:24 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:38:24 - allStop clicked.
+[INFO] 2025-01-14 20:38:24 - stop_asr() called.
+[INFO] 2025-01-14 20:38:24 - stop_tts() called.
+[INFO] 2025-01-14 20:38:24 - stop_llm() called.
+[INFO] 2025-01-14 20:38:24 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:39:15 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 20:39:33 - Checking status: http://localhost:8011//status
+[ERROR] 2025-01-14 20:39:37 - Error checking server status: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: //status (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000017A9332A110>, 'Connection to localhost timed out. (connect timeout=2)'))
+[ERROR] 2025-01-14 20:39:37 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:40:10 - Checking status: http://localhost:8011//status
+[INFO] 2025-01-14 20:40:12 - Status check response text: ('{"detail":"Not Found"}', 404)
+[ERROR] 2025-01-14 20:40:12 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:40:49 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:40:49 - allStop clicked.
+[INFO] 2025-01-14 20:40:49 - stop_asr() called.
+[INFO] 2025-01-14 20:40:49 - stop_tts() called.
+[INFO] 2025-01-14 20:40:49 - stop_llm() called.
+[INFO] 2025-01-14 20:40:49 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:41:43 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 20:41:50 - Checking status: http://169.254.125.71:8011//status
+[INFO] 2025-01-14 20:41:50 - Status check response text: ('{"detail":"Not Found"}', 404)
+[ERROR] 2025-01-14 20:41:50 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:42:06 - Checking status: http://127.0.0.1:8011//status
+[INFO] 2025-01-14 20:42:06 - Status check response text: ('{"detail":"Not Found"}', 404)
+[ERROR] 2025-01-14 20:42:06 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:42:10 - Checking status: http://127.0.0.1:8011/status
+[INFO] 2025-01-14 20:42:10 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-14 20:42:10 - Headless server connected.
+[INFO] 2025-01-14 20:42:20 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:42:20 - allStop clicked.
+[INFO] 2025-01-14 20:42:20 - stop_asr() called.
+[INFO] 2025-01-14 20:42:20 - stop_tts() called.
+[INFO] 2025-01-14 20:42:20 - stop_llm() called.
+[INFO] 2025-01-14 20:42:20 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:43:26 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 20:43:29 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-14 20:43:31 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-14 20:43:31 - Headless server connected.
+[INFO] 2025-01-14 20:43:33 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-14 20:43:35 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-14 20:43:43 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-14 20:43:44 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:43:44 - allStop clicked.
+[INFO] 2025-01-14 20:43:44 - stop_asr() called.
+[INFO] 2025-01-14 20:43:44 - stop_tts() called.
+[INFO] 2025-01-14 20:43:44 - stop_llm() called.
+[INFO] 2025-01-14 20:43:44 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:46:48 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 20:46:51 - Checking status: http://localhost:8011/status
+[ERROR] 2025-01-14 20:46:56 - Error checking server status: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /status (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000022F92E3A290>, 'Connection to localhost timed out. (connect timeout=2)'))
+[ERROR] 2025-01-14 20:46:56 - Unable to connect to headless server.
+[INFO] 2025-01-14 20:47:14 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-14 20:47:16 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-14 20:47:16 - Headless server connected.
+[INFO] 2025-01-14 20:47:19 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-14 20:47:21 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-14 20:47:29 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-14 20:49:18 - allStart clicked.
+[INFO] 2025-01-14 20:49:18 - allStop clicked.
+[INFO] 2025-01-14 20:49:18 - stop_asr() called.
+[INFO] 2025-01-14 20:49:18 - stop_tts() called.
+[INFO] 2025-01-14 20:49:18 - stop_llm() called.
+[INFO] 2025-01-14 20:49:18 - allStop - all modules stopped.
+[INFO] 2025-01-14 20:49:18 - start_llm() called.
+[INFO] 2025-01-14 20:49:18 - stop_llm() called.
+[INFO] 2025-01-14 20:49:18 - OpenAI worker started.
+[INFO] 2025-01-14 20:49:18 - start_asr() called.
+[INFO] 2025-01-14 20:49:18 - stop_asr() called.
+[INFO] 2025-01-14 20:49:18 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-14 20:49:18 - start_tts() called.
+[INFO] 2025-01-14 20:49:18 - stop_tts() called.
+[INFO] 2025-01-14 20:49:18 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-14 20:49:18 - TTS worker started.
+[INFO] 2025-01-14 20:49:18 - allStart - all modules started.
+[INFO] 2025-01-14 20:49:23 - ASR recognized: hello
+[INFO] 2025-01-14 20:49:29 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-14 20:50:02 - ASR recognized: hello
+[INFO] 2025-01-14 20:50:08 - TTS finished: TTS done for text: Hello again! How can I help you today?
+[INFO] 2025-01-14 20:50:16 - ASR recognized: how are you
+[INFO] 2025-01-14 20:50:26 - TTS finished: TTS done for text: I'm just a program, but I'm here and ready to help you! How about you? How are you doing?
+[INFO] 2025-01-14 20:51:07 - ASR recognized: I'm good
+[INFO] 2025-01-14 20:51:18 - TTS finished: TTS done for text: Glad to hear that! If there's anything specific you want to talk about or any questions you have, feel free to let me know!
+[INFO] 2025-01-14 20:52:21 - Application closing; stopping threads.
+[INFO] 2025-01-14 20:52:21 - allStop clicked.
+[INFO] 2025-01-14 20:52:21 - stop_asr() called.
+[DEBUG] 2025-01-14 20:52:21 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-14 20:52:21 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-14 20:52:21 - stop_tts() called.
+[INFO] 2025-01-14 20:52:21 - stop_llm() called.
+[INFO] 2025-01-14 20:52:21 - allStop - all modules stopped.

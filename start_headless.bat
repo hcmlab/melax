@@ -1,6 +1,9 @@
 @echo off
-:: Define the path to the target batch file
-set TARGET_BATCH="C:\Users\withanda\AppData\Local\ov\pkg\audio2face-2023.1.1\audio2face_headless.bat"
+:: Prompt the user for their username
+set /p USERNAME=Please enter your username:
+
+:: Construct the path using the entered username
+set TARGET_BATCH="C:\Users\%USERNAME%\AppData\Local\ov\pkg\audio2face-2023.1.1\audio2face_headless.bat"
 
 :: Check if the target batch file exists
 if not exist %TARGET_BATCH% (
@@ -14,4 +17,4 @@ start "" %TARGET_BATCH%
 
 :: Optional: Add a message or logs to confirm the batch was launched
 echo Launched Audio2Face headless server.
-
+pause

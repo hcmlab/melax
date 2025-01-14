@@ -77,14 +77,8 @@ class MainWindow(QMainWindow):
         #     self.ui.systemPromptEdit.setText(system_prompt_text)
         # self.context = [{"role": "system", "content": system_prompt_text}]
 
-        # ----------------------------------------------------
-        # Audio2Face
-        # ----------------------------------------------------
-        # load usd
-        self.usd_folder_path = os.path.join(os.getcwd(), "usd")
-        self.populate_usd_list()
-        self.load_selected_usd()
-        self.headless_server_url = None
+
+        #self.load_selected_usd()
 
         #self.ui.loadUSDButton.clicked.connect(self.load_usd_to_server)
         #self.ui.checkServerButton.clicked.connect(self.check_server_status)
@@ -190,9 +184,14 @@ class MainWindow(QMainWindow):
 
 
         # Initialize the headless server URL from QLineEdit
-        self.ui.a2fUrl_headless.setText("http://localhost:8011/")
+        # load usd
+        self.usd_folder_path = os.path.join(os.getcwd(), "usd")
+        self.populate_usd_list()
+        self.ui.a2fUrl_headless.setText("http://localhost:8011")
         self.headless_server_url = self.ui.a2fUrl_headless.text().strip()
-        self.check_server_status()
+        #self.check_server_status()
+        self.ui.connectHeadlessPushbutton.clicked.connect(self.on_connect_button_clicked)
+        self.ui.loadUsdPushbutton.clicked.connect(self.on_load_usd_button_clicked)
 
 
     def setup_theme_selection(self):
@@ -535,6 +534,17 @@ class MainWindow(QMainWindow):
     # ----------------------------------------------------
     # Behaviour streaming
     # ----------------------------------------------------
+    def on_connect_button_clicked(self):
+        # Use the text from a2fUrl_headless
+        self.headless_server_url = self.ui.a2fUrl_headless.text().strip() or "http://localhost:8011"
+        # Attempt to connect:
+        connected = self.check_server_status()  # returns True/False
+        self.update_server_status(connected)
+        if connected:
+            self.logger.log_info("Headless server connected.")
+        else:
+            self.logger.log_error("Unable to connect to headless server.")
+
     def populate_usd_list(self):
         """
         Populates the USD ComboBox with the names of .usd files in the specified folder.
@@ -552,71 +562,76 @@ class MainWindow(QMainWindow):
             self.ui.usdCombo.addItem("No USD files available")
             self.ui.usdCombo.setEnabled(False)
 
-    def check_server_status(self):
-        """
-        Sends a GET request to check the status of the headless server.
-        If the server responds with "OK", updates the server status label to green "connected".
-        """
+    def check_server_status(self) -> bool:
         try:
-            response = requests.get(f"{self.headless_server_url}/status", headers={"accept": "application/json"})
-            if response.status_code == 200:
-                try:
-                    response_json = json.loads(response.text)
-                    if response_json == "OK":
-                        self.update_server_status(True)
-                    else:
-                        self.update_server_status(False)
-                except ValueError as e:
-                    print(f"Error parsing JSON response: {e}")
-                    self.update_server_status(False)
-            else:
-                self.update_server_status(False)
-        except requests.exceptions.RequestException as e:
-            print(f"Error checking server status: {e}")
-            self.update_server_status(False)
+            url = f"{self.headless_server_url}/status"
+            self.logger.log_info(f"Checking status: {url}")
+            response = requests.get(url, timeout=2, headers={"accept": "application/json"})
+            self.logger.log_info(f"Status check response text: {response.text, response.status_code}")
 
-    def load_selected_usd(self):
+            if response.status_code == 200:
+                # Since body is "OK" in JSON form, response.json() will yield the string "OK"
+                data = response.json()  # this should be the literal string "OK"
+                if data == "OK":
+                    return True
+        except requests.exceptions.RequestException as e:
+            self.logger.log_error(f"Error checking server status: {e}")
+
+        return False
+
+    def update_server_status(self, connected: bool):
         """
-        Loads the selected USD from the combo box to the server.
+        Updates the connectHeadlessPushbutton color/icon
+        to indicate connected or disconnected.
         """
-        selected_usd = self.ui.usdCombo.currentText()
-        if not selected_usd or selected_usd in ["No USD files available", "No USD folder found"]:
-            self.ui.usdPathLable.setStyleSheet("color: red;")
-            self.ui.usdPathLable.setText("Invalid USD selection.")
+        if connected:
+            self.ui.connectHeadlessPushbutton.setStyleSheet("QToolButton { background-color: green; }")
+            # or set an icon with self.ui.connectHeadlessPushbutton.setIcon(QIcon("green.png"))
+        else:
+            self.ui.connectHeadlessPushbutton.setStyleSheet("QToolButton { background-color: red; }")
+            # or self.ui.connectHeadlessPushbutton.setIcon(QIcon("red.png"))
+
+    def on_load_usd_button_clicked(self):
+        """
+        Load the selected USD (only if connected).
+        """
+        # Optionally check if the button is green or if the server is connected
+        connected = self.check_server_status()
+        if not connected:
+            self.logger.log_error("Server not connected, cannot load USD.")
             return
+
+        success = self.load_selected_usd()
+        # Optionally color the button based on success/failure
+        if success:
+            self.ui.loadUsdPushbutton.setStyleSheet("QToolButton { background-color: green; }")
+        else:
+            self.ui.loadUsdPushbutton.setStyleSheet("QToolButton { background-color: red; }")
+
+    def load_selected_usd(self) -> bool:
+        selected_usd = self.ui.usdCombo.currentText()
+        if not selected_usd or selected_usd.startswith("No USD"):
+            self.logger.log_error("Invalid USD selection.")
+            return False
 
         usd_path = os.path.join(self.usd_folder_path, selected_usd)
         try:
             payload = {"file_name": usd_path}
             response = requests.post(
                 f"{self.headless_server_url}/A2F/USD/Load",
-                headers={
-                    "accept": "application/json",
-                    "Content-Type": "application/json"
-                },
+                headers={"accept": "application/json", "Content-Type": "application/json"},
                 json=payload
             )
             if response.status_code == 200 and response.json().get("status") == "OK":
-                self.ui.usdPathLable.setStyleSheet("color: green;")
-                self.ui.usdPathLable.setText("USD Loaded Successfully!")
+                self.logger.log_info(f"USD loaded successfully: {usd_path}")
+                return True
             else:
-                self.ui.usdPathLable.setStyleSheet("color: red;")
-                self.ui.usdPathLable.setText("Failed to Load USD.")
+                self.logger.log_error("Failed to load USD.")
         except requests.exceptions.RequestException as e:
-            print(f"Error loading USD: {e}")
-            self.ui.usdPathLable.setStyleSheet("color: red;")
-            self.ui.usdPathLable.setText("Error Loading USD.")
+            self.logger.log_error(f"Error loading USD: {e}")
+        return False
 
-    def update_server_status(self, connected: bool):
-        """
-        Updates the server status label based on the connection status.
-        """
-        if connected:
-            self.ui.headlessServerStatus.setStyleSheet("color: green;")
-            self.ui.headlessServerStatus.setText("Connected")
-        else:
-            self.ui.headlessServerStatus.setStyleSheet("color: red;")
-            self.ui.headlessServerStatus.setText("Disconnected")
+
 
     # ----------------------------------------------------
     # Updating OpenAI / System Prompt

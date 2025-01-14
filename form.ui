@@ -428,7 +428,7 @@
         <x>10</x>
         <y>120</y>
         <width>201</width>
-        <height>70</height>
+        <height>79</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_6">
@@ -684,7 +684,7 @@
        <x>10</x>
        <y>150</y>
        <width>241</width>
-       <height>183</height>
+       <height>186</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_8">
@@ -840,7 +840,7 @@
        <x>10</x>
        <y>90</y>
        <width>351</width>
-       <height>54</height>
+       <height>116</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_10">
@@ -978,42 +978,6 @@
       <string>Load USD</string>
      </property>
     </widget>
-    <widget class="QLabel" name="usdPathLable">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>60</y>
-       <width>111</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>8</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>.</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="headlessServerStatus">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>30</y>
-       <width>111</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>.</string>
-     </property>
-    </widget>
     <widget class="QComboBox" name="usdCombo">
      <property name="geometry">
       <rect>
@@ -1027,6 +991,38 @@
       <font>
        <pointsize>9</pointsize>
       </font>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="connectHeadlessPushbutton">
+     <property name="geometry">
+      <rect>
+       <x>272</x>
+       <y>30</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset theme="QIcon::ThemeIcon::SyncSynchronizing"/>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="loadUsdPushbutton">
+     <property name="geometry">
+      <rect>
+       <x>271</x>
+       <y>60</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset theme="QIcon::ThemeIcon::ListAdd"/>
      </property>
     </widget>
    </widget>
@@ -1100,7 +1096,7 @@
      <x>0</x>
      <y>0</y>
      <width>1374</width>
-     <height>17</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
