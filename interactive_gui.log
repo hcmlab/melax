@@ -2287,3 +2287,112 @@ Would you like to practice saying it or try using it in a conversation?
 [INFO] 2025-01-14 20:52:21 - stop_tts() called.
 [INFO] 2025-01-14 20:52:21 - stop_llm() called.
 [INFO] 2025-01-14 20:52:21 - allStop - all modules stopped.
+[INFO] 2025-01-14 21:45:51 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-14 21:45:59 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-14 21:46:01 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-14 21:46:01 - Headless server connected.
+[INFO] 2025-01-14 21:46:01 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-14 21:46:03 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-14 21:46:08 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-14 21:46:10 - allStart clicked.
+[INFO] 2025-01-14 21:46:10 - allStop clicked.
+[INFO] 2025-01-14 21:46:10 - stop_asr() called.
+[INFO] 2025-01-14 21:46:10 - stop_tts() called.
+[INFO] 2025-01-14 21:46:10 - stop_llm() called.
+[INFO] 2025-01-14 21:46:10 - allStop - all modules stopped.
+[INFO] 2025-01-14 21:46:10 - start_llm() called.
+[INFO] 2025-01-14 21:46:10 - stop_llm() called.
+[INFO] 2025-01-14 21:46:10 - OpenAI worker started.
+[INFO] 2025-01-14 21:46:10 - start_asr() called.
+[INFO] 2025-01-14 21:46:10 - stop_asr() called.
+[INFO] 2025-01-14 21:46:10 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-14 21:46:10 - start_tts() called.
+[INFO] 2025-01-14 21:46:10 - stop_tts() called.
+[INFO] 2025-01-14 21:46:10 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-14 21:46:10 - TTS worker started.
+[INFO] 2025-01-14 21:46:10 - allStart - all modules started.
+[INFO] 2025-01-14 21:46:14 - ASR recognized: hello
+[INFO] 2025-01-14 21:46:20 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-14 21:46:25 - ASR recognized: are you happy
+[INFO] 2025-01-14 21:46:34 - TTS finished: TTS done for text: I don’t have feelings like humans do, but I’m here to help you! How can I assist you today?
+[INFO] 2025-01-14 21:46:39 - ASR recognized: can you tell me a joke
+[INFO] 2025-01-14 21:46:51 - TTS finished: TTS done for text: Sure! Here’s one for you:
+
+Why did the scarecrow win an award?
+
+Because he was outstanding in his field!
+[INFO] 2025-01-14 21:46:58 - ASR recognized: do you understand me
+[INFO] 2025-01-14 21:47:12 - TTS finished: TTS done for text: Yes, I understand you! I'm here to listen and respond to your questions or topics you want to discuss. How can I assist you further?
+[INFO] 2025-01-14 21:47:25 - ASR recognized: you are beautiful
+[INFO] 2025-01-14 21:47:39 - TTS finished: TTS done for text: Thank you! That's very kind of you to say. While I don't have a physical form, I appreciate the sentiment. How can I assist you today?
+[INFO] 2025-01-14 21:47:47 - ASR recognized: can you tell me something about University of Augsburg in Germany
+[INFO] 2025-01-14 21:50:44 - TTS finished: TTS done for text: The University of Augsburg, located in Augsburg, Germany, was established in 1970. It is known for its research and educational programs across a variety of disciplines, including humanities, social sciences, natural sciences, and engineering. Here are some key points about the university:
+
+1. **Academic Programs**: The university offers a wide range of undergraduate and graduate programs. It has faculties in areas such as Business and Economics, Law, Humanities, Social Sciences, and Mathematics, among others.
+
+2. **Research**: The University of Augsburg is involved in various research initiatives and collaborations, both domestically and internationally. It focuses on interdisciplinary research, particularly in areas like environmental sciences, cognitive science, and cultural studies.
+
+3. **Campus**: The campus is known for its modern architecture and green spaces. It provides a conducive environment for students and faculty to engage in academic and extracurricular activities.
+
+4. **International Relations**: The university has various partnerships with institutions around the world, promoting student exchange programs and international research collaborations.
+
+5. **Student Life**: Students at the University of Augsburg can enjoy a vibrant campus life, with numerous student organizations, cultural events, and recreational activities.
+
+6. **Location**: Augsburg is a historic city in Bavaria, known for its rich history and cultural heritage. It is one of the oldest cities in Germany, with beautiful architecture and a variety of attractions.
+
+If you have specific questions or need more detailed information about a particular aspect of the University of Augsburg, feel free to ask!
+[INFO] 2025-01-14 21:51:20 - allStop clicked.
+[INFO] 2025-01-14 21:51:20 - stop_asr() called.
+[DEBUG] 2025-01-14 21:51:20 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-14 21:51:20 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-14 21:51:20 - stop_tts() called.
+[INFO] 2025-01-14 21:51:20 - stop_llm() called.
+[INFO] 2025-01-14 21:51:20 - allStop - all modules stopped.
+[INFO] 2025-01-14 21:51:22 - Application closing; stopping threads.
+[INFO] 2025-01-14 21:51:22 - allStop clicked.
+[INFO] 2025-01-14 21:51:22 - stop_asr() called.
+[INFO] 2025-01-14 21:51:22 - stop_tts() called.
+[INFO] 2025-01-14 21:51:22 - stop_llm() called.
+[INFO] 2025-01-14 21:51:22 - allStop - all modules stopped.
+[INFO] 2025-01-15 12:24:52 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-15 12:26:03 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-15 12:26:05 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-15 12:26:05 - Headless server connected.
+[INFO] 2025-01-15 12:26:12 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-15 12:26:14 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-15 12:26:23 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-15 12:27:48 - allStart clicked.
+[INFO] 2025-01-15 12:27:48 - allStop clicked.
+[INFO] 2025-01-15 12:27:48 - stop_asr() called.
+[INFO] 2025-01-15 12:27:48 - stop_tts() called.
+[INFO] 2025-01-15 12:27:48 - stop_llm() called.
+[INFO] 2025-01-15 12:27:48 - allStop - all modules stopped.
+[INFO] 2025-01-15 12:27:48 - start_llm() called.
+[INFO] 2025-01-15 12:27:48 - stop_llm() called.
+[INFO] 2025-01-15 12:27:49 - OpenAI worker started.
+[INFO] 2025-01-15 12:27:49 - start_asr() called.
+[INFO] 2025-01-15 12:27:49 - stop_asr() called.
+[INFO] 2025-01-15 12:27:49 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-15 12:27:49 - start_tts() called.
+[INFO] 2025-01-15 12:27:49 - stop_tts() called.
+[INFO] 2025-01-15 12:27:49 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-15 12:27:49 - TTS worker started.
+[INFO] 2025-01-15 12:27:49 - allStart - all modules started.
+[INFO] 2025-01-15 12:27:54 - ASR recognized: hello
+[INFO] 2025-01-15 12:27:59 - ASR recognized: hello
+[INFO] 2025-01-15 12:28:01 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-15 12:28:02 - ASR recognized: how can I assist you today
+[INFO] 2025-01-15 12:28:05 - TTS finished: TTS done for text: Hi there! How can I help you today?
+[INFO] 2025-01-15 12:28:07 - ASR recognized: how can I help you today
+[INFO] 2025-01-15 12:28:10 - ASR recognized: you for offering to assist
+[INFO] 2025-01-15 12:28:18 - ASR recognized: if you have any questions or need information on a particular topic feel free to ask
+[INFO] 2025-01-15 12:28:18 - TTS finished: TTS done for text: Thank you for offering to assist! If you have any questions or need information on a particular topic, feel free to ask. I'm here to help!
+[INFO] 2025-01-15 12:28:20 - Application closing; stopping threads.
+[INFO] 2025-01-15 12:28:20 - allStop clicked.
+[INFO] 2025-01-15 12:28:20 - stop_asr() called.
+[DEBUG] 2025-01-15 12:28:20 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-15 12:28:23 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-15 12:28:23 - stop_tts() called.
+[INFO] 2025-01-15 12:28:33 - stop_llm() called.
+[INFO] 2025-01-15 12:28:33 - allStop - all modules stopped.
+[INFO] 2025-01-15 12:28:33 - TTS finished: TTS done for text: I appreciate your willingness to help! If you have any questions or topics you'd like to discuss, please let me know. I'm here to provide information and assistance!

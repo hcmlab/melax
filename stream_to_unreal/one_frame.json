@@ -1,0 +1,5256 @@
+{
+        "Audio2Face": {
+            "Body": [
+                {
+                    "Name": "root",
+                    "ParentName": "None",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "Name": "pelvis",
+                    "ParentName": "root",
+                    "Location": [
+                        0.0,
+                        2.069,
+                        82.898
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.707,
+                        0.001,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "spine_01",
+                    "ParentName": "pelvis",
+                    "Location": [
+                        1.851,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.113,
+                        -0.994
+                    ]
+                },
+                {
+                    "Name": "spine_02",
+                    "ParentName": "spine_01",
+                    "Location": [
+                        3.88,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.067,
+                        -0.998
+                    ]
+                },
+                {
+                    "Name": "spine_03",
+                    "ParentName": "spine_02",
+                    "Location": [
+                        6.339,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.08,
+                        -0.997
+                    ]
+                },
+                {
+                    "Name": "spine_04",
+                    "ParentName": "spine_03",
+                    "Location": [
+                        7.701,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.074,
+                        -0.997
+                    ]
+                },
+                {
+                    "Name": "spine_05",
+                    "ParentName": "spine_04",
+                    "Location": [
+                        14.266,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.025,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "neck_01",
+                    "ParentName": "spine_05",
+                    "Location": [
+                        10.06,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.194,
+                        -0.981
+                    ]
+                },
+                {
+                    "Name": "neck_02",
+                    "ParentName": "neck_01",
+                    "Location": [
+                        4.991,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.011,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "head",
+                    "ParentName": "neck_02",
+                    "Location": [
+                        4.822,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.1,
+                        -0.995
+                    ]
+                },
+                {
+                    "Name": "clavicle_l",
+                    "ParentName": "spine_05",
+                    "Location": [
+                        4.828,
+                        -0.863,
+                        -0.782
+                    ],
+                    "Rotation": [
+                        0.068,
+                        -0.742,
+                        -0.051,
+                        -0.664
+                    ]
+                },
+                {
+                    "Name": "upperarm_l",
+                    "ParentName": "clavicle_l",
+                    "Location": [
+                        12.553,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.028,
+                        -0.391,
+                        -0.007,
+                        -0.92
+                    ]
+                },
+                {
+                    "Name": "lowerarm_l",
+                    "ParentName": "upperarm_l",
+                    "Location": [
+                        22.72,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.314,
+                        -0.949
+                    ]
+                },
+                {
+                    "Name": "lowerarm_twist_02_l",
+                    "ParentName": "lowerarm_l",
+                    "Location": [
+                        7.284,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_twist_01_l",
+                    "ParentName": "lowerarm_l",
+                    "Location": [
+                        14.569,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_correctiveRoot_l",
+                    "ParentName": "lowerarm_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_in_l",
+                    "ParentName": "lowerarm_correctiveRoot_l",
+                    "Location": [
+                        1.254,
+                        -0.21,
+                        -2.235
+                    ],
+                    "Rotation": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_out_l",
+                    "ParentName": "lowerarm_correctiveRoot_l",
+                    "Location": [
+                        0.53,
+                        -0.759,
+                        1.666
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_fwd_l",
+                    "ParentName": "lowerarm_correctiveRoot_l",
+                    "Location": [
+                        1.166,
+                        2.237,
+                        0.512
+                    ],
+                    "Rotation": [
+                        0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "lowerarm_bck_l",
+                    "ParentName": "lowerarm_correctiveRoot_l",
+                    "Location": [
+                        1.265,
+                        -2.999,
+                        -0.999
+                    ],
+                    "Rotation": [
+                        -0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "hand_l",
+                    "ParentName": "lowerarm_l",
+                    "Location": [
+                        21.853,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.593,
+                        -0.056,
+                        0.082,
+                        -0.799
+                    ]
+                },
+                {
+                    "Name": "wrist_inner_l",
+                    "ParentName": "hand_l",
+                    "Location": [
+                        -0.112,
+                        -1.416,
+                        -0.272
+                    ],
+                    "Rotation": [
+                        -0.686,
+                        -0.051,
+                        0.092,
+                        -0.72
+                    ]
+                },
+                {
+                    "Name": "wrist_outer_l",
+                    "ParentName": "hand_l",
+                    "Location": [
+                        -0.021,
+                        1.361,
+                        -0.311
+                    ],
+                    "Rotation": [
+                        0.72,
+                        -0.092,
+                        -0.051,
+                        -0.686
+                    ]
+                },
+                {
+                    "Name": "thumb_01_l",
+                    "ParentName": "hand_l",
+                    "Location": [
+                        2.015,
+                        -1.288,
+                        -2.107
+                    ],
+                    "Rotation": [
+                        0.578,
+                        -0.329,
+                        -0.062,
+                        -0.744
+                    ]
+                },
+                {
+                    "Name": "thumb_02_l",
+                    "ParentName": "thumb_01_l",
+                    "Location": [
+                        3.879,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.054,
+                        0.173,
+                        -0.983
+                    ]
+                },
+                {
+                    "Name": "thumb_03_l",
+                    "ParentName": "thumb_02_l",
+                    "Location": [
+                        2.276,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.081,
+                        -0.997
+                    ]
+                },
+                {
+                    "Name": "thumb_03_half_l",
+                    "ParentName": "thumb_03_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thumb_03_pip_l",
+                    "ParentName": "thumb_03_half_l",
+                    "Location": [
+                        0.028,
+                        0.684,
+                        0.127
+                    ],
+                    "Rotation": [
+                        0.657,
+                        -0.017,
+                        -0.022,
+                        -0.754
+                    ]
+                },
+                {
+                    "Name": "thumb_03_in_l",
+                    "ParentName": "thumb_03_half_l",
+                    "Location": [
+                        0.016,
+                        -0.745,
+                        -0.121
+                    ],
+                    "Rotation": [
+                        -0.729,
+                        -0.057,
+                        -0.019,
+                        -0.682
+                    ]
+                },
+                {
+                    "Name": "thumb_03_side_out_l",
+                    "ParentName": "thumb_03_l",
+                    "Location": [
+                        0.321,
+                        -0.192,
+                        0.714
+                    ],
+                    "Rotation": [
+                        -0.011,
+                        -0.018,
+                        1.0,
+                        -0.001
+                    ]
+                },
+                {
+                    "Name": "thumb_03_side_inn_l",
+                    "ParentName": "thumb_03_l",
+                    "Location": [
+                        0.234,
+                        -0.065,
+                        -0.787
+                    ],
+                    "Rotation": [
+                        0.995,
+                        -0.075,
+                        -0.014,
+                        -0.061
+                    ]
+                },
+                {
+                    "Name": "thumb_03_bulge_l",
+                    "ParentName": "thumb_03_l",
+                    "Location": [
+                        0.815,
+                        -0.878,
+                        -0.128
+                    ],
+                    "Rotation": [
+                        -0.758,
+                        -0.037,
+                        -0.007,
+                        -0.651
+                    ]
+                },
+                {
+                    "Name": "thumb_02_half_l",
+                    "ParentName": "thumb_02_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.002,
+                        0.004,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thumb_02_mcp_l",
+                    "ParentName": "thumb_02_half_l",
+                    "Location": [
+                        -0.491,
+                        0.602,
+                        -0.063
+                    ],
+                    "Rotation": [
+                        0.711,
+                        0.089,
+                        0.001,
+                        -0.697
+                    ]
+                },
+                {
+                    "Name": "thumb_02_in_l",
+                    "ParentName": "thumb_02_half_l",
+                    "Location": [
+                        0.701,
+                        -0.943,
+                        -0.098
+                    ],
+                    "Rotation": [
+                        -0.83,
+                        -0.068,
+                        -0.043,
+                        -0.551
+                    ]
+                },
+                {
+                    "Name": "thumb_02_side_out_l",
+                    "ParentName": "thumb_02_l",
+                    "Location": [
+                        1.011,
+                        -0.238,
+                        0.771
+                    ],
+                    "Rotation": [
+                        0.029,
+                        -0.108,
+                        0.991,
+                        -0.079
+                    ]
+                },
+                {
+                    "Name": "thumb_02_side_inn_l",
+                    "ParentName": "thumb_02_l",
+                    "Location": [
+                        0.918,
+                        0.121,
+                        -0.675
+                    ],
+                    "Rotation": [
+                        0.991,
+                        0.079,
+                        -0.029,
+                        -0.108
+                    ]
+                },
+                {
+                    "Name": "thumb_02_bulge_l",
+                    "ParentName": "thumb_02_l",
+                    "Location": [
+                        1.592,
+                        -0.808,
+                        -0.11
+                    ],
+                    "Rotation": [
+                        -0.744,
+                        -0.025,
+                        0.003,
+                        -0.668
+                    ]
+                },
+                {
+                    "Name": "thumb_01_side_out_l",
+                    "ParentName": "thumb_01_l",
+                    "Location": [
+                        0.56,
+                        0.678,
+                        -1.068
+                    ],
+                    "Rotation": [
+                        0.895,
+                        0.037,
+                        0.069,
+                        -0.44
+                    ]
+                },
+                {
+                    "Name": "thumb_01_side_inn_l",
+                    "ParentName": "thumb_01_l",
+                    "Location": [
+                        3.971,
+                        -1.068,
+                        1.228
+                    ],
+                    "Rotation": [
+                        -0.204,
+                        -0.622,
+                        -0.062,
+                        -0.754
+                    ]
+                },
+                {
+                    "Name": "index_metacarpal_l",
+                    "ParentName": "hand_l",
+                    "Location": [
+                        2.943,
+                        -0.233,
+                        -1.728
+                    ],
+                    "Rotation": [
+                        0.153,
+                        -0.046,
+                        -0.044,
+                        -0.986
+                    ]
+                },
+                {
+                    "Name": "index_01_l",
+                    "ParentName": "index_metacarpal_l",
+                    "Location": [
+                        4.495,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.085,
+                        0.049,
+                        0.162,
+                        -0.982
+                    ]
+                },
+                {
+                    "Name": "index_02_l",
+                    "ParentName": "index_01_l",
+                    "Location": [
+                        3.818,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.106,
+                        -0.994
+                    ]
+                },
+                {
+                    "Name": "index_03_l",
+                    "ParentName": "index_02_l",
+                    "Location": [
+                        1.873,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "index_03_half_l",
+                    "ParentName": "index_03_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "index_03_in_l",
+                    "ParentName": "index_03_half_l",
+                    "Location": [
+                        0.021,
+                        -0.573,
+                        -0.083
+                    ],
+                    "Rotation": [
+                        -0.759,
+                        -0.004,
+                        -0.014,
+                        -0.651
+                    ]
+                },
+                {
+                    "Name": "index_02_dip_l",
+                    "ParentName": "index_03_half_l",
+                    "Location": [
+                        -0.031,
+                        0.494,
+                        0.072
+                    ],
+                    "Rotation": [
+                        0.628,
+                        -0.03,
+                        0.057,
+                        -0.775
+                    ]
+                },
+                {
+                    "Name": "index_03_bulge_l",
+                    "ParentName": "index_03_l",
+                    "Location": [
+                        0.808,
+                        -0.613,
+                        -0.043
+                    ],
+                    "Rotation": [
+                        -0.776,
+                        -0.012,
+                        -0.031,
+                        -0.63
+                    ]
+                },
+                {
+                    "Name": "index_02_side_inn_l",
+                    "ParentName": "index_02_l",
+                    "Location": [
+                        1.187,
+                        -0.035,
+                        -0.686
+                    ],
+                    "Rotation": [
+                        0.7,
+                        0.695,
+                        0.14,
+                        -0.085
+                    ]
+                },
+                {
+                    "Name": "index_02_side_out_l",
+                    "ParentName": "index_02_l",
+                    "Location": [
+                        1.161,
+                        -0.015,
+                        0.601
+                    ],
+                    "Rotation": [
+                        -0.011,
+                        -0.014,
+                        -0.715,
+                        -0.699
+                    ]
+                },
+                {
+                    "Name": "index_02_half_l",
+                    "ParentName": "index_02_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "index_02_in_l",
+                    "ParentName": "index_02_half_l",
+                    "Location": [
+                        0.196,
+                        -0.693,
+                        -0.157
+                    ],
+                    "Rotation": [
+                        -0.721,
+                        0.053,
+                        0.017,
+                        -0.69
+                    ]
+                },
+                {
+                    "Name": "index_02_pip_l",
+                    "ParentName": "index_02_half_l",
+                    "Location": [
+                        0.052,
+                        0.617,
+                        0.027
+                    ],
+                    "Rotation": [
+                        0.699,
+                        0.017,
+                        -0.002,
+                        -0.715
+                    ]
+                },
+                {
+                    "Name": "index_02_bulge_l",
+                    "ParentName": "index_02_l",
+                    "Location": [
+                        1.211,
+                        -0.681,
+                        -0.111
+                    ],
+                    "Rotation": [
+                        -0.725,
+                        -0.006,
+                        -0.037,
+                        -0.688
+                    ]
+                },
+                {
+                    "Name": "index_01_side_out_l",
+                    "ParentName": "index_01_l",
+                    "Location": [
+                        2.618,
+                        0.123,
+                        0.7
+                    ],
+                    "Rotation": [
+                        0.009,
+                        -0.064,
+                        -0.705,
+                        -0.706
+                    ]
+                },
+                {
+                    "Name": "index_01_side_inn_l",
+                    "ParentName": "index_01_l",
+                    "Location": [
+                        2.542,
+                        -0.065,
+                        -0.826
+                    ],
+                    "Rotation": [
+                        -0.706,
+                        -0.706,
+                        0.053,
+                        -0.02
+                    ]
+                },
+                {
+                    "Name": "index_01_half_l",
+                    "ParentName": "index_01_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.003,
+                        0.002,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "index_01_palm_l",
+                    "ParentName": "index_01_half_l",
+                    "Location": [
+                        0.463,
+                        -1.13,
+                        -0.415
+                    ],
+                    "Rotation": [
+                        -0.724,
+                        -0.15,
+                        -0.102,
+                        -0.665
+                    ]
+                },
+                {
+                    "Name": "index_01_mcp_l",
+                    "ParentName": "index_01_half_l",
+                    "Location": [
+                        -0.269,
+                        0.826,
+                        0.127
+                    ],
+                    "Rotation": [
+                        0.717,
+                        -0.011,
+                        -0.02,
+                        -0.697
+                    ]
+                },
+                {
+                    "Name": "index_01_bulge_l",
+                    "ParentName": "index_01_l",
+                    "Location": [
+                        2.57,
+                        -0.811,
+                        -0.215
+                    ],
+                    "Rotation": [
+                        -0.781,
+                        -0.003,
+                        0.009,
+                        -0.625
+                    ]
+                },
+                {
+                    "Name": "index_01_palmMid_l",
+                    "ParentName": "index_01_l",
+                    "Location": [
+                        1.405,
+                        -0.902,
+                        -0.183
+                    ],
+                    "Rotation": [
+                        -0.707,
+                        -0.125,
+                        -0.036,
+                        -0.695
+                    ]
+                },
+                {
+                    "Name": "index_metacarpal_slide_l",
+                    "ParentName": "index_metacarpal_l",
+                    "Location": [
+                        1.972,
+                        0.331,
+                        0.179
+                    ],
+                    "Rotation": [
+                        0.683,
+                        -0.021,
+                        0.053,
+                        -0.728
+                    ]
+                },
+                {
+                    "Name": "pinky_metacarpal_l",
+                    "ParentName": "hand_l",
+                    "Location": [
+                        2.555,
+                        -0.341,
+                        1.501
+                    ],
+                    "Rotation": [
+                        -0.2,
+                        0.199,
+                        0.03,
+                        -0.959
+                    ]
+                },
+                {
+                    "Name": "pinky_01_l",
+                    "ParentName": "pinky_metacarpal_l",
+                    "Location": [
+                        3.949,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.002,
+                        -0.004,
+                        0.102,
+                        -0.995
+                    ]
+                },
+                {
+                    "Name": "pinky_02_l",
+                    "ParentName": "pinky_01_l",
+                    "Location": [
+                        2.432,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.177,
+                        -0.984
+                    ]
+                },
+                {
+                    "Name": "pinky_03_l",
+                    "ParentName": "pinky_02_l",
+                    "Location": [
+                        1.501,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.034,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "pinky_03_half_l",
+                    "ParentName": "pinky_03_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.001,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "pinky_03_in_l",
+                    "ParentName": "pinky_03_half_l",
+                    "Location": [
+                        -0.038,
+                        -0.455,
+                        -0.01
+                    ],
+                    "Rotation": [
+                        -0.703,
+                        0.02,
+                        -0.009,
+                        -0.711
+                    ]
+                },
+                {
+                    "Name": "pinky_02_dip_l",
+                    "ParentName": "pinky_03_half_l",
+                    "Location": [
+                        0.006,
+                        0.534,
+                        0.017
+                    ],
+                    "Rotation": [
+                        0.703,
+                        -0.003,
+                        -0.022,
+                        -0.711
+                    ]
+                },
+                {
+                    "Name": "pinky_03_bulge_l",
+                    "ParentName": "pinky_03_l",
+                    "Location": [
+                        0.576,
+                        -0.505,
+                        -0.04
+                    ],
+                    "Rotation": [
+                        -0.696,
+                        0.015,
+                        0.009,
+                        -0.718
+                    ]
+                },
+                {
+                    "Name": "pinky_02_half_l",
+                    "ParentName": "pinky_02_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.001,
+                        -0.002,
+                        0.003,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "pinky_02_in_l",
+                    "ParentName": "pinky_02_half_l",
+                    "Location": [
+                        0.163,
+                        -0.529,
+                        0.083
+                    ],
+                    "Rotation": [
+                        -0.658,
+                        0.002,
+                        -0.012,
+                        -0.753
+                    ]
+                },
+                {
+                    "Name": "pinky_02_pip_l",
+                    "ParentName": "pinky_02_half_l",
+                    "Location": [
+                        -0.13,
+                        0.547,
+                        0.04
+                    ],
+                    "Rotation": [
+                        0.697,
+                        0.044,
+                        -0.067,
+                        -0.712
+                    ]
+                },
+                {
+                    "Name": "pinky_02_bulge_l",
+                    "ParentName": "pinky_02_l",
+                    "Location": [
+                        0.969,
+                        -0.493,
+                        0.143
+                    ],
+                    "Rotation": [
+                        -0.608,
+                        -0.018,
+                        -0.024,
+                        -0.794
+                    ]
+                },
+                {
+                    "Name": "pinky_02_side_out_l",
+                    "ParentName": "pinky_02_l",
+                    "Location": [
+                        0.995,
+                        -0.048,
+                        0.533
+                    ],
+                    "Rotation": [
+                        0.08,
+                        -0.087,
+                        -0.711,
+                        -0.693
+                    ]
+                },
+                {
+                    "Name": "pinky_02_side_inn_l",
+                    "ParentName": "pinky_02_l",
+                    "Location": [
+                        0.949,
+                        0.006,
+                        -0.553
+                    ],
+                    "Rotation": [
+                        0.717,
+                        0.697,
+                        0.023,
+                        0.003
+                    ]
+                },
+                {
+                    "Name": "pinky_01_side_inn_l",
+                    "ParentName": "pinky_01_l",
+                    "Location": [
+                        1.868,
+                        -0.101,
+                        -0.658
+                    ],
+                    "Rotation": [
+                        0.732,
+                        0.667,
+                        -0.099,
+                        0.095
+                    ]
+                },
+                {
+                    "Name": "pinky_01_side_out_l",
+                    "ParentName": "pinky_01_l",
+                    "Location": [
+                        1.886,
+                        0.153,
+                        0.555
+                    ],
+                    "Rotation": [
+                        0.045,
+                        -0.065,
+                        -0.687,
+                        -0.722
+                    ]
+                },
+                {
+                    "Name": "pinky_01_half_l",
+                    "ParentName": "pinky_01_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.002,
+                        0.003,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "pinky_01_palm_l",
+                    "ParentName": "pinky_01_half_l",
+                    "Location": [
+                        0.427,
+                        -0.685,
+                        0.383
+                    ],
+                    "Rotation": [
+                        -0.564,
+                        -0.106,
+                        -0.021,
+                        -0.818
+                    ]
+                },
+                {
+                    "Name": "pinky_01_mcp_l",
+                    "ParentName": "pinky_01_half_l",
+                    "Location": [
+                        -0.193,
+                        0.774,
+                        -0.015
+                    ],
+                    "Rotation": [
+                        0.724,
+                        -0.098,
+                        -0.029,
+                        -0.682
+                    ]
+                },
+                {
+                    "Name": "pinky_01_bulge_l",
+                    "ParentName": "pinky_01_l",
+                    "Location": [
+                        1.78,
+                        -0.576,
+                        0.032
+                    ],
+                    "Rotation": [
+                        -0.66,
+                        -0.003,
+                        -0.002,
+                        -0.752
+                    ]
+                },
+                {
+                    "Name": "pinky_01_palmMid_l",
+                    "ParentName": "pinky_01_l",
+                    "Location": [
+                        0.869,
+                        -0.599,
+                        0.017
+                    ],
+                    "Rotation": [
+                        -0.64,
+                        -0.031,
+                        -0.037,
+                        -0.767
+                    ]
+                },
+                {
+                    "Name": "pinky_metacarpal_slide_l",
+                    "ParentName": "pinky_metacarpal_l",
+                    "Location": [
+                        1.596,
+                        0.324,
+                        -0.136
+                    ],
+                    "Rotation": [
+                        0.743,
+                        -0.045,
+                        -0.002,
+                        -0.668
+                    ]
+                },
+                {
+                    "Name": "ring_metacarpal_l",
+                    "ParentName": "hand_l",
+                    "Location": [
+                        2.652,
+                        -0.227,
+                        0.579
+                    ],
+                    "Rotation": [
+                        -0.091,
+                        0.116,
+                        -0.041,
+                        -0.988
+                    ]
+                },
+                {
+                    "Name": "ring_01_l",
+                    "ParentName": "ring_metacarpal_l",
+                    "Location": [
+                        4.18,
+                        -0.001,
+                        -0.05
+                    ],
+                    "Rotation": [
+                        0.008,
+                        0.0,
+                        0.155,
+                        -0.988
+                    ]
+                },
+                {
+                    "Name": "ring_02_l",
+                    "ParentName": "ring_01_l",
+                    "Location": [
+                        3.564,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.233,
+                        -0.972
+                    ]
+                },
+                {
+                    "Name": "ring_03_l",
+                    "ParentName": "ring_02_l",
+                    "Location": [
+                        2.703,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.042,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "ring_03_half_l",
+                    "ParentName": "ring_03_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.007,
+                        -0.015,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "ring_03_in_l",
+                    "ParentName": "ring_03_half_l",
+                    "Location": [
+                        -0.212,
+                        -0.559,
+                        -0.016
+                    ],
+                    "Rotation": [
+                        -0.69,
+                        -0.025,
+                        -0.061,
+                        -0.721
+                    ]
+                },
+                {
+                    "Name": "ring_02_dip_l",
+                    "ParentName": "ring_03_half_l",
+                    "Location": [
+                        -0.216,
+                        0.559,
+                        -0.02
+                    ],
+                    "Rotation": [
+                        0.722,
+                        0.048,
+                        0.0,
+                        -0.69
+                    ]
+                },
+                {
+                    "Name": "ring_03_bulge_l",
+                    "ParentName": "ring_03_l",
+                    "Location": [
+                        0.387,
+                        -0.527,
+                        -0.026
+                    ],
+                    "Rotation": [
+                        -0.708,
+                        -0.005,
+                        -0.011,
+                        -0.706
+                    ]
+                },
+                {
+                    "Name": "ring_02_half_l",
+                    "ParentName": "ring_02_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.008,
+                        -0.015,
+                        0.001,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "ring_02_in_l",
+                    "ParentName": "ring_02_half_l",
+                    "Location": [
+                        0.4,
+                        -0.632,
+                        -0.072
+                    ],
+                    "Rotation": [
+                        -0.762,
+                        -0.012,
+                        -0.078,
+                        -0.643
+                    ]
+                },
+                {
+                    "Name": "ring_02_pip_l",
+                    "ParentName": "ring_02_half_l",
+                    "Location": [
+                        0.024,
+                        0.649,
+                        -0.049
+                    ],
+                    "Rotation": [
+                        0.705,
+                        0.063,
+                        -0.053,
+                        -0.705
+                    ]
+                },
+                {
+                    "Name": "ring_02_bulge_l",
+                    "ParentName": "ring_02_l",
+                    "Location": [
+                        1.518,
+                        -0.574,
+                        -0.05
+                    ],
+                    "Rotation": [
+                        -0.688,
+                        -0.006,
+                        -0.012,
+                        -0.726
+                    ]
+                },
+                {
+                    "Name": "ring_02_side_out_l",
+                    "ParentName": "ring_02_l",
+                    "Location": [
+                        1.477,
+                        0.072,
+                        0.54
+                    ],
+                    "Rotation": [
+                        -0.013,
+                        0.04,
+                        -0.704,
+                        -0.709
+                    ]
+                },
+                {
+                    "Name": "ring_02_side_inn_l",
+                    "ParentName": "ring_02_l",
+                    "Location": [
+                        1.531,
+                        0.256,
+                        -0.616
+                    ],
+                    "Rotation": [
+                        0.714,
+                        0.699,
+                        0.036,
+                        -0.033
+                    ]
+                },
+                {
+                    "Name": "ring_01_half_l",
+                    "ParentName": "ring_01_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.014,
+                        -0.01,
+                        0.003,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "ring_01_palm_l",
+                    "ParentName": "ring_01_half_l",
+                    "Location": [
+                        0.593,
+                        -1.233,
+                        -0.148
+                    ],
+                    "Rotation": [
+                        -0.641,
+                        -0.068,
+                        -0.11,
+                        -0.757
+                    ]
+                },
+                {
+                    "Name": "ring_01_mcp_l",
+                    "ParentName": "ring_01_half_l",
+                    "Location": [
+                        0.155,
+                        0.705,
+                        0.198
+                    ],
+                    "Rotation": [
+                        0.68,
+                        -0.013,
+                        0.033,
+                        -0.733
+                    ]
+                },
+                {
+                    "Name": "ring_01_bulge_l",
+                    "ParentName": "ring_01_l",
+                    "Location": [
+                        2.717,
+                        -0.81,
+                        -0.1
+                    ],
+                    "Rotation": [
+                        -0.735,
+                        0.043,
+                        0.022,
+                        -0.676
+                    ]
+                },
+                {
+                    "Name": "ring_01_side_out_l",
+                    "ParentName": "ring_01_l",
+                    "Location": [
+                        2.696,
+                        0.111,
+                        0.618
+                    ],
+                    "Rotation": [
+                        -0.015,
+                        -0.001,
+                        -0.667,
+                        -0.745
+                    ]
+                },
+                {
+                    "Name": "ring_01_side_inn_l",
+                    "ParentName": "ring_01_l",
+                    "Location": [
+                        2.764,
+                        -0.093,
+                        -0.742
+                    ],
+                    "Rotation": [
+                        -0.706,
+                        -0.706,
+                        0.05,
+                        -0.033
+                    ]
+                },
+                {
+                    "Name": "ring_01_palmMid_l",
+                    "ParentName": "ring_01_l",
+                    "Location": [
+                        1.564,
+                        -0.853,
+                        -0.177
+                    ],
+                    "Rotation": [
+                        -0.715,
+                        0.0,
+                        -0.018,
+                        -0.699
+                    ]
+                },
+                {
+                    "Name": "ring_metacarpal_slide_l",
+                    "ParentName": "ring_metacarpal_l",
+                    "Location": [
+                        2.151,
+                        0.383,
+                        -0.022
+                    ],
+                    "Rotation": [
+                        0.722,
+                        0.011,
+                        -0.025,
+                        -0.691
+                    ]
+                },
+                {
+                    "Name": "middle_metacarpal_l",
+                    "ParentName": "hand_l",
+                    "Location": [
+                        2.656,
+                        -0.125,
+                        -0.358
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.017,
+                        -0.068,
+                        -0.998
+                    ]
+                },
+                {
+                    "Name": "middle_01_l",
+                    "ParentName": "middle_metacarpal_l",
+                    "Location": [
+                        4.658,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.024,
+                        0.039,
+                        0.204,
+                        -0.978
+                    ]
+                },
+                {
+                    "Name": "middle_02_l",
+                    "ParentName": "middle_01_l",
+                    "Location": [
+                        4.118,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.175,
+                        -0.985
+                    ]
+                },
+                {
+                    "Name": "middle_03_l",
+                    "ParentName": "middle_02_l",
+                    "Location": [
+                        2.438,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.025,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "middle_03_half_l",
+                    "ParentName": "middle_03_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "middle_03_in_l",
+                    "ParentName": "middle_03_half_l",
+                    "Location": [
+                        -0.016,
+                        -0.517,
+                        -0.06
+                    ],
+                    "Rotation": [
+                        -0.765,
+                        -0.005,
+                        0.002,
+                        -0.644
+                    ]
+                },
+                {
+                    "Name": "middle_02_dip_l",
+                    "ParentName": "middle_03_half_l",
+                    "Location": [
+                        0.022,
+                        0.546,
+                        0.114
+                    ],
+                    "Rotation": [
+                        0.667,
+                        -0.026,
+                        0.015,
+                        -0.745
+                    ]
+                },
+                {
+                    "Name": "middle_03_bulge_l",
+                    "ParentName": "middle_03_l",
+                    "Location": [
+                        0.58,
+                        -0.562,
+                        -0.063
+                    ],
+                    "Rotation": [
+                        -0.77,
+                        -0.006,
+                        -0.027,
+                        -0.637
+                    ]
+                },
+                {
+                    "Name": "middle_02_side_inn_l",
+                    "ParentName": "middle_02_l",
+                    "Location": [
+                        1.225,
+                        0.061,
+                        -0.66
+                    ],
+                    "Rotation": [
+                        -0.684,
+                        -0.729,
+                        -0.032,
+                        0.005
+                    ]
+                },
+                {
+                    "Name": "middle_02_side_out_l",
+                    "ParentName": "middle_02_l",
+                    "Location": [
+                        1.232,
+                        0.049,
+                        0.6
+                    ],
+                    "Rotation": [
+                        -0.009,
+                        0.019,
+                        -0.708,
+                        -0.705
+                    ]
+                },
+                {
+                    "Name": "middle_02_half_l",
+                    "ParentName": "middle_02_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "middle_02_in_l",
+                    "ParentName": "middle_02_half_l",
+                    "Location": [
+                        0.231,
+                        -0.62,
+                        -0.089
+                    ],
+                    "Rotation": [
+                        -0.75,
+                        0.004,
+                        0.014,
+                        -0.661
+                    ]
+                },
+                {
+                    "Name": "middle_02_pip_l",
+                    "ParentName": "middle_02_half_l",
+                    "Location": [
+                        -0.106,
+                        0.668,
+                        0.063
+                    ],
+                    "Rotation": [
+                        0.662,
+                        0.044,
+                        -0.046,
+                        -0.746
+                    ]
+                },
+                {
+                    "Name": "middle_02_bulge_l",
+                    "ParentName": "middle_02_l",
+                    "Location": [
+                        1.278,
+                        -0.614,
+                        -0.096
+                    ],
+                    "Rotation": [
+                        -0.753,
+                        0.019,
+                        0.033,
+                        -0.656
+                    ]
+                },
+                {
+                    "Name": "middle_01_side_inn_l",
+                    "ParentName": "middle_01_l",
+                    "Location": [
+                        2.959,
+                        -0.194,
+                        -0.717
+                    ],
+                    "Rotation": [
+                        -0.686,
+                        -0.716,
+                        0.122,
+                        -0.031
+                    ]
+                },
+                {
+                    "Name": "middle_01_side_out_l",
+                    "ParentName": "middle_01_l",
+                    "Location": [
+                        3.101,
+                        0.062,
+                        0.687
+                    ],
+                    "Rotation": [
+                        -0.015,
+                        -0.033,
+                        -0.704,
+                        -0.709
+                    ]
+                },
+                {
+                    "Name": "middle_01_half_l",
+                    "ParentName": "middle_01_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.002,
+                        0.004,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "middle_01_palm_l",
+                    "ParentName": "middle_01_half_l",
+                    "Location": [
+                        0.618,
+                        -1.403,
+                        -0.258
+                    ],
+                    "Rotation": [
+                        -0.72,
+                        -0.113,
+                        -0.174,
+                        -0.663
+                    ]
+                },
+                {
+                    "Name": "middle_01_mcp_l",
+                    "ParentName": "middle_01_half_l",
+                    "Location": [
+                        0.011,
+                        0.713,
+                        0.114
+                    ],
+                    "Rotation": [
+                        0.705,
+                        -0.013,
+                        -0.035,
+                        -0.709
+                    ]
+                },
+                {
+                    "Name": "middle_01_bulge_l",
+                    "ParentName": "middle_01_l",
+                    "Location": [
+                        3.035,
+                        -0.784,
+                        -0.041
+                    ],
+                    "Rotation": [
+                        -0.703,
+                        -0.008,
+                        -0.015,
+                        -0.711
+                    ]
+                },
+                {
+                    "Name": "middle_01_palmMid_l",
+                    "ParentName": "middle_01_l",
+                    "Location": [
+                        1.592,
+                        -1.04,
+                        -0.126
+                    ],
+                    "Rotation": [
+                        -0.749,
+                        -0.078,
+                        -0.117,
+                        -0.648
+                    ]
+                },
+                {
+                    "Name": "middle_metacarpal_slide_l",
+                    "ParentName": "middle_metacarpal_l",
+                    "Location": [
+                        2.359,
+                        0.271,
+                        -0.006
+                    ],
+                    "Rotation": [
+                        0.719,
+                        -0.007,
+                        0.01,
+                        -0.694
+                    ]
+                },
+                {
+                    "Name": "upperarm_twist_01_l",
+                    "ParentName": "upperarm_l",
+                    "Location": [
+                        7.573,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_twistCor_01_l",
+                    "ParentName": "upperarm_twist_01_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_twist_02_l",
+                    "ParentName": "upperarm_l",
+                    "Location": [
+                        15.146,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_tricep_l",
+                    "ParentName": "upperarm_twist_02_l",
+                    "Location": [
+                        0.118,
+                        -3.952,
+                        -0.102
+                    ],
+                    "Rotation": [
+                        -0.736,
+                        -0.011,
+                        0.032,
+                        -0.676
+                    ]
+                },
+                {
+                    "Name": "upperarm_bicep_l",
+                    "ParentName": "upperarm_twist_02_l",
+                    "Location": [
+                        0.386,
+                        2.624,
+                        -0.058
+                    ],
+                    "Rotation": [
+                        0.676,
+                        -0.032,
+                        -0.011,
+                        -0.736
+                    ]
+                },
+                {
+                    "Name": "upperarm_twistCor_02_l",
+                    "ParentName": "upperarm_twist_02_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.004,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_correctiveRoot_l",
+                    "ParentName": "upperarm_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_bck_l",
+                    "ParentName": "upperarm_correctiveRoot_l",
+                    "Location": [
+                        1.247,
+                        -5.43,
+                        0.611
+                    ],
+                    "Rotation": [
+                        -0.583,
+                        0.0,
+                        0.0,
+                        -0.812
+                    ]
+                },
+                {
+                    "Name": "upperarm_fwd_l",
+                    "ParentName": "upperarm_correctiveRoot_l",
+                    "Location": [
+                        2.667,
+                        5.505,
+                        -0.3
+                    ],
+                    "Rotation": [
+                        0.757,
+                        -0.068,
+                        0.08,
+                        -0.645
+                    ]
+                },
+                {
+                    "Name": "upperarm_in_l",
+                    "ParentName": "upperarm_correctiveRoot_l",
+                    "Location": [
+                        4.753,
+                        1.292,
+                        -3.915
+                    ],
+                    "Rotation": [
+                        0.913,
+                        0.0,
+                        0.408,
+                        0.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_out_l",
+                    "ParentName": "upperarm_correctiveRoot_l",
+                    "Location": [
+                        -0.09,
+                        -0.254,
+                        5.053
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "clavicle_out_l",
+                    "ParentName": "clavicle_l",
+                    "Location": [
+                        9.149,
+                        -0.066,
+                        4.765
+                    ],
+                    "Rotation": [
+                        -0.003,
+                        0.027,
+                        -0.037,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "clavicle_scap_l",
+                    "ParentName": "clavicle_l",
+                    "Location": [
+                        7.14,
+                        -4.935,
+                        -1.748
+                    ],
+                    "Rotation": [
+                        -0.027,
+                        -0.003,
+                        0.999,
+                        -0.037
+                    ]
+                },
+                {
+                    "Name": "clavicle_r",
+                    "ParentName": "spine_05",
+                    "Location": [
+                        4.829,
+                        -0.863,
+                        0.782
+                    ],
+                    "Rotation": [
+                        0.742,
+                        0.068,
+                        -0.664,
+                        0.051
+                    ]
+                },
+                {
+                    "Name": "upperarm_r",
+                    "ParentName": "clavicle_r",
+                    "Location": [
+                        -12.553,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.028,
+                        -0.391,
+                        -0.007,
+                        -0.92
+                    ]
+                },
+                {
+                    "Name": "lowerarm_r",
+                    "ParentName": "upperarm_r",
+                    "Location": [
+                        -22.72,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.314,
+                        -0.949
+                    ]
+                },
+                {
+                    "Name": "lowerarm_twist_02_r",
+                    "ParentName": "lowerarm_r",
+                    "Location": [
+                        -7.284,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_twist_01_r",
+                    "ParentName": "lowerarm_r",
+                    "Location": [
+                        -14.569,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_correctiveRoot_r",
+                    "ParentName": "lowerarm_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_out_r",
+                    "ParentName": "lowerarm_correctiveRoot_r",
+                    "Location": [
+                        -0.557,
+                        1.179,
+                        -1.888
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_in_r",
+                    "ParentName": "lowerarm_correctiveRoot_r",
+                    "Location": [
+                        -1.411,
+                        0.161,
+                        1.799
+                    ],
+                    "Rotation": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "Name": "lowerarm_fwd_r",
+                    "ParentName": "lowerarm_correctiveRoot_r",
+                    "Location": [
+                        -1.225,
+                        -1.971,
+                        -0.58
+                    ],
+                    "Rotation": [
+                        0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "lowerarm_bck_r",
+                    "ParentName": "lowerarm_correctiveRoot_r",
+                    "Location": [
+                        -1.464,
+                        3.059,
+                        0.712
+                    ],
+                    "Rotation": [
+                        -0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "hand_r",
+                    "ParentName": "lowerarm_r",
+                    "Location": [
+                        -21.853,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.593,
+                        -0.056,
+                        0.082,
+                        -0.799
+                    ]
+                },
+                {
+                    "Name": "wrist_inner_r",
+                    "ParentName": "hand_r",
+                    "Location": [
+                        0.112,
+                        1.416,
+                        0.272
+                    ],
+                    "Rotation": [
+                        -0.686,
+                        -0.051,
+                        0.092,
+                        -0.72
+                    ]
+                },
+                {
+                    "Name": "wrist_outer_r",
+                    "ParentName": "hand_r",
+                    "Location": [
+                        0.021,
+                        -1.361,
+                        0.311
+                    ],
+                    "Rotation": [
+                        0.72,
+                        -0.092,
+                        -0.051,
+                        -0.686
+                    ]
+                },
+                {
+                    "Name": "pinky_metacarpal_r",
+                    "ParentName": "hand_r",
+                    "Location": [
+                        -2.555,
+                        0.342,
+                        -1.5
+                    ],
+                    "Rotation": [
+                        -0.2,
+                        0.199,
+                        0.03,
+                        -0.959
+                    ]
+                },
+                {
+                    "Name": "pinky_01_r",
+                    "ParentName": "pinky_metacarpal_r",
+                    "Location": [
+                        -3.949,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.002,
+                        -0.004,
+                        0.102,
+                        -0.995
+                    ]
+                },
+                {
+                    "Name": "pinky_02_r",
+                    "ParentName": "pinky_01_r",
+                    "Location": [
+                        -2.432,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.177,
+                        -0.984
+                    ]
+                },
+                {
+                    "Name": "pinky_03_r",
+                    "ParentName": "pinky_02_r",
+                    "Location": [
+                        -1.501,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.034,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "pinky_03_half_r",
+                    "ParentName": "pinky_03_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.001,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "pinky_03_in_r",
+                    "ParentName": "pinky_03_half_r",
+                    "Location": [
+                        0.038,
+                        0.455,
+                        0.01
+                    ],
+                    "Rotation": [
+                        -0.703,
+                        0.02,
+                        -0.009,
+                        -0.711
+                    ]
+                },
+                {
+                    "Name": "pinky_02_dip_r",
+                    "ParentName": "pinky_03_half_r",
+                    "Location": [
+                        -0.006,
+                        -0.534,
+                        -0.017
+                    ],
+                    "Rotation": [
+                        0.703,
+                        -0.003,
+                        -0.022,
+                        -0.711
+                    ]
+                },
+                {
+                    "Name": "pinky_03_bulge_r",
+                    "ParentName": "pinky_03_r",
+                    "Location": [
+                        -0.576,
+                        0.505,
+                        0.04
+                    ],
+                    "Rotation": [
+                        -0.696,
+                        0.015,
+                        0.009,
+                        -0.718
+                    ]
+                },
+                {
+                    "Name": "pinky_02_half_r",
+                    "ParentName": "pinky_02_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.001,
+                        -0.002,
+                        0.003,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "pinky_02_in_r",
+                    "ParentName": "pinky_02_half_r",
+                    "Location": [
+                        -0.163,
+                        0.529,
+                        -0.083
+                    ],
+                    "Rotation": [
+                        -0.658,
+                        0.002,
+                        -0.012,
+                        -0.753
+                    ]
+                },
+                {
+                    "Name": "pinky_02_pip_r",
+                    "ParentName": "pinky_02_half_r",
+                    "Location": [
+                        0.13,
+                        -0.547,
+                        -0.04
+                    ],
+                    "Rotation": [
+                        0.697,
+                        0.044,
+                        -0.067,
+                        -0.712
+                    ]
+                },
+                {
+                    "Name": "pinky_02_bulge_r",
+                    "ParentName": "pinky_02_r",
+                    "Location": [
+                        -0.969,
+                        0.493,
+                        -0.143
+                    ],
+                    "Rotation": [
+                        -0.608,
+                        -0.018,
+                        -0.024,
+                        -0.794
+                    ]
+                },
+                {
+                    "Name": "pinky_02_side_out_r",
+                    "ParentName": "pinky_02_r",
+                    "Location": [
+                        -0.995,
+                        0.048,
+                        -0.533
+                    ],
+                    "Rotation": [
+                        0.08,
+                        -0.087,
+                        -0.711,
+                        -0.693
+                    ]
+                },
+                {
+                    "Name": "pinky_02_side_inn_r",
+                    "ParentName": "pinky_02_r",
+                    "Location": [
+                        -0.949,
+                        -0.006,
+                        0.553
+                    ],
+                    "Rotation": [
+                        0.717,
+                        0.697,
+                        0.023,
+                        0.003
+                    ]
+                },
+                {
+                    "Name": "pinky_01_side_inn_r",
+                    "ParentName": "pinky_01_r",
+                    "Location": [
+                        -1.868,
+                        0.101,
+                        0.658
+                    ],
+                    "Rotation": [
+                        0.732,
+                        0.667,
+                        -0.099,
+                        0.095
+                    ]
+                },
+                {
+                    "Name": "pinky_01_side_out_r",
+                    "ParentName": "pinky_01_r",
+                    "Location": [
+                        -1.886,
+                        -0.153,
+                        -0.555
+                    ],
+                    "Rotation": [
+                        0.045,
+                        -0.065,
+                        -0.687,
+                        -0.722
+                    ]
+                },
+                {
+                    "Name": "pinky_01_half_r",
+                    "ParentName": "pinky_01_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.002,
+                        0.003,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "pinky_01_palm_r",
+                    "ParentName": "pinky_01_half_r",
+                    "Location": [
+                        -0.427,
+                        0.685,
+                        -0.383
+                    ],
+                    "Rotation": [
+                        -0.564,
+                        -0.106,
+                        -0.021,
+                        -0.818
+                    ]
+                },
+                {
+                    "Name": "pinky_01_mcp_r",
+                    "ParentName": "pinky_01_half_r",
+                    "Location": [
+                        0.193,
+                        -0.775,
+                        0.015
+                    ],
+                    "Rotation": [
+                        0.724,
+                        -0.098,
+                        -0.029,
+                        -0.682
+                    ]
+                },
+                {
+                    "Name": "pinky_01_bulge_r",
+                    "ParentName": "pinky_01_r",
+                    "Location": [
+                        -1.78,
+                        0.576,
+                        -0.032
+                    ],
+                    "Rotation": [
+                        -0.66,
+                        -0.003,
+                        -0.002,
+                        -0.752
+                    ]
+                },
+                {
+                    "Name": "pinky_01_palmMid_r",
+                    "ParentName": "pinky_01_r",
+                    "Location": [
+                        -0.869,
+                        0.599,
+                        -0.017
+                    ],
+                    "Rotation": [
+                        -0.64,
+                        -0.031,
+                        -0.037,
+                        -0.767
+                    ]
+                },
+                {
+                    "Name": "pinky_metacarpal_slide_r",
+                    "ParentName": "pinky_metacarpal_r",
+                    "Location": [
+                        -1.596,
+                        -0.324,
+                        0.136
+                    ],
+                    "Rotation": [
+                        0.743,
+                        -0.045,
+                        -0.002,
+                        -0.668
+                    ]
+                },
+                {
+                    "Name": "ring_metacarpal_r",
+                    "ParentName": "hand_r",
+                    "Location": [
+                        -2.652,
+                        0.227,
+                        -0.579
+                    ],
+                    "Rotation": [
+                        -0.091,
+                        0.116,
+                        -0.041,
+                        -0.988
+                    ]
+                },
+                {
+                    "Name": "ring_01_r",
+                    "ParentName": "ring_metacarpal_r",
+                    "Location": [
+                        -4.18,
+                        0.001,
+                        0.05
+                    ],
+                    "Rotation": [
+                        0.008,
+                        0.0,
+                        0.155,
+                        -0.988
+                    ]
+                },
+                {
+                    "Name": "ring_02_r",
+                    "ParentName": "ring_01_r",
+                    "Location": [
+                        -3.564,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.233,
+                        -0.972
+                    ]
+                },
+                {
+                    "Name": "ring_03_r",
+                    "ParentName": "ring_02_r",
+                    "Location": [
+                        -2.703,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.042,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "ring_03_half_r",
+                    "ParentName": "ring_03_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.007,
+                        -0.015,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "ring_03_in_r",
+                    "ParentName": "ring_03_half_r",
+                    "Location": [
+                        0.212,
+                        0.559,
+                        0.016
+                    ],
+                    "Rotation": [
+                        -0.69,
+                        -0.025,
+                        -0.061,
+                        -0.721
+                    ]
+                },
+                {
+                    "Name": "ring_02_dip_r",
+                    "ParentName": "ring_03_half_r",
+                    "Location": [
+                        0.216,
+                        -0.559,
+                        0.02
+                    ],
+                    "Rotation": [
+                        0.722,
+                        0.048,
+                        0.0,
+                        -0.69
+                    ]
+                },
+                {
+                    "Name": "ring_03_bulge_r",
+                    "ParentName": "ring_03_r",
+                    "Location": [
+                        -0.387,
+                        0.527,
+                        0.026
+                    ],
+                    "Rotation": [
+                        -0.708,
+                        -0.005,
+                        -0.011,
+                        -0.706
+                    ]
+                },
+                {
+                    "Name": "ring_02_half_r",
+                    "ParentName": "ring_02_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.008,
+                        -0.015,
+                        0.001,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "ring_02_in_r",
+                    "ParentName": "ring_02_half_r",
+                    "Location": [
+                        -0.4,
+                        0.632,
+                        0.072
+                    ],
+                    "Rotation": [
+                        -0.762,
+                        -0.012,
+                        -0.078,
+                        -0.643
+                    ]
+                },
+                {
+                    "Name": "ring_02_pip_r",
+                    "ParentName": "ring_02_half_r",
+                    "Location": [
+                        -0.024,
+                        -0.649,
+                        0.049
+                    ],
+                    "Rotation": [
+                        0.705,
+                        0.063,
+                        -0.053,
+                        -0.705
+                    ]
+                },
+                {
+                    "Name": "ring_02_bulge_r",
+                    "ParentName": "ring_02_r",
+                    "Location": [
+                        -1.518,
+                        0.574,
+                        0.05
+                    ],
+                    "Rotation": [
+                        -0.688,
+                        -0.006,
+                        -0.012,
+                        -0.726
+                    ]
+                },
+                {
+                    "Name": "ring_02_side_out_r",
+                    "ParentName": "ring_02_r",
+                    "Location": [
+                        -1.477,
+                        -0.072,
+                        -0.54
+                    ],
+                    "Rotation": [
+                        -0.013,
+                        0.04,
+                        -0.704,
+                        -0.709
+                    ]
+                },
+                {
+                    "Name": "ring_02_side_inn_r",
+                    "ParentName": "ring_02_r",
+                    "Location": [
+                        -1.531,
+                        -0.256,
+                        0.616
+                    ],
+                    "Rotation": [
+                        0.714,
+                        0.699,
+                        0.036,
+                        -0.033
+                    ]
+                },
+                {
+                    "Name": "ring_01_half_r",
+                    "ParentName": "ring_01_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.014,
+                        -0.01,
+                        0.003,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "ring_01_palm_r",
+                    "ParentName": "ring_01_half_r",
+                    "Location": [
+                        -0.593,
+                        1.233,
+                        0.148
+                    ],
+                    "Rotation": [
+                        -0.641,
+                        -0.068,
+                        -0.11,
+                        -0.757
+                    ]
+                },
+                {
+                    "Name": "ring_01_mcp_r",
+                    "ParentName": "ring_01_half_r",
+                    "Location": [
+                        -0.154,
+                        -0.705,
+                        -0.198
+                    ],
+                    "Rotation": [
+                        0.68,
+                        -0.013,
+                        0.033,
+                        -0.733
+                    ]
+                },
+                {
+                    "Name": "ring_01_bulge_r",
+                    "ParentName": "ring_01_r",
+                    "Location": [
+                        -2.717,
+                        0.81,
+                        0.1
+                    ],
+                    "Rotation": [
+                        -0.735,
+                        0.043,
+                        0.022,
+                        -0.676
+                    ]
+                },
+                {
+                    "Name": "ring_01_side_out_r",
+                    "ParentName": "ring_01_r",
+                    "Location": [
+                        -2.696,
+                        -0.111,
+                        -0.618
+                    ],
+                    "Rotation": [
+                        -0.015,
+                        -0.001,
+                        -0.667,
+                        -0.745
+                    ]
+                },
+                {
+                    "Name": "ring_01_side_inn_r",
+                    "ParentName": "ring_01_r",
+                    "Location": [
+                        -2.764,
+                        0.093,
+                        0.742
+                    ],
+                    "Rotation": [
+                        -0.706,
+                        -0.706,
+                        0.05,
+                        -0.033
+                    ]
+                },
+                {
+                    "Name": "ring_01_palmMid_r",
+                    "ParentName": "ring_01_r",
+                    "Location": [
+                        -1.564,
+                        0.853,
+                        0.177
+                    ],
+                    "Rotation": [
+                        -0.715,
+                        0.0,
+                        -0.018,
+                        -0.699
+                    ]
+                },
+                {
+                    "Name": "ring_metacarpal_slide_r",
+                    "ParentName": "ring_metacarpal_r",
+                    "Location": [
+                        -2.151,
+                        -0.383,
+                        0.022
+                    ],
+                    "Rotation": [
+                        0.722,
+                        0.011,
+                        -0.025,
+                        -0.691
+                    ]
+                },
+                {
+                    "Name": "middle_metacarpal_r",
+                    "ParentName": "hand_r",
+                    "Location": [
+                        -2.656,
+                        0.125,
+                        0.358
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.017,
+                        -0.068,
+                        -0.998
+                    ]
+                },
+                {
+                    "Name": "middle_01_r",
+                    "ParentName": "middle_metacarpal_r",
+                    "Location": [
+                        -4.658,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.024,
+                        0.039,
+                        0.204,
+                        -0.978
+                    ]
+                },
+                {
+                    "Name": "middle_02_r",
+                    "ParentName": "middle_01_r",
+                    "Location": [
+                        -4.118,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.175,
+                        -0.985
+                    ]
+                },
+                {
+                    "Name": "middle_03_r",
+                    "ParentName": "middle_02_r",
+                    "Location": [
+                        -2.438,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.025,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "middle_03_half_r",
+                    "ParentName": "middle_03_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "middle_03_in_r",
+                    "ParentName": "middle_03_half_r",
+                    "Location": [
+                        0.016,
+                        0.517,
+                        0.06
+                    ],
+                    "Rotation": [
+                        -0.765,
+                        -0.005,
+                        0.002,
+                        -0.644
+                    ]
+                },
+                {
+                    "Name": "middle_02_dip_r",
+                    "ParentName": "middle_03_half_r",
+                    "Location": [
+                        -0.022,
+                        -0.547,
+                        -0.114
+                    ],
+                    "Rotation": [
+                        0.667,
+                        -0.026,
+                        0.015,
+                        -0.745
+                    ]
+                },
+                {
+                    "Name": "middle_03_bulge_r",
+                    "ParentName": "middle_03_r",
+                    "Location": [
+                        -0.58,
+                        0.562,
+                        0.063
+                    ],
+                    "Rotation": [
+                        -0.77,
+                        -0.006,
+                        -0.027,
+                        -0.637
+                    ]
+                },
+                {
+                    "Name": "middle_02_side_inn_r",
+                    "ParentName": "middle_02_r",
+                    "Location": [
+                        -1.225,
+                        -0.061,
+                        0.66
+                    ],
+                    "Rotation": [
+                        -0.684,
+                        -0.729,
+                        -0.032,
+                        0.005
+                    ]
+                },
+                {
+                    "Name": "middle_02_side_out_r",
+                    "ParentName": "middle_02_r",
+                    "Location": [
+                        -1.232,
+                        -0.049,
+                        -0.6
+                    ],
+                    "Rotation": [
+                        -0.009,
+                        0.019,
+                        -0.708,
+                        -0.705
+                    ]
+                },
+                {
+                    "Name": "middle_02_half_r",
+                    "ParentName": "middle_02_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "middle_02_in_r",
+                    "ParentName": "middle_02_half_r",
+                    "Location": [
+                        -0.231,
+                        0.62,
+                        0.089
+                    ],
+                    "Rotation": [
+                        -0.75,
+                        0.004,
+                        0.014,
+                        -0.661
+                    ]
+                },
+                {
+                    "Name": "middle_02_pip_r",
+                    "ParentName": "middle_02_half_r",
+                    "Location": [
+                        0.106,
+                        -0.668,
+                        -0.063
+                    ],
+                    "Rotation": [
+                        0.662,
+                        0.044,
+                        -0.046,
+                        -0.746
+                    ]
+                },
+                {
+                    "Name": "middle_02_bulge_r",
+                    "ParentName": "middle_02_r",
+                    "Location": [
+                        -1.278,
+                        0.614,
+                        0.096
+                    ],
+                    "Rotation": [
+                        -0.753,
+                        0.019,
+                        0.033,
+                        -0.656
+                    ]
+                },
+                {
+                    "Name": "middle_01_side_inn_r",
+                    "ParentName": "middle_01_r",
+                    "Location": [
+                        -2.959,
+                        0.194,
+                        0.717
+                    ],
+                    "Rotation": [
+                        -0.686,
+                        -0.716,
+                        0.122,
+                        -0.031
+                    ]
+                },
+                {
+                    "Name": "middle_01_side_out_r",
+                    "ParentName": "middle_01_r",
+                    "Location": [
+                        -3.101,
+                        -0.062,
+                        -0.687
+                    ],
+                    "Rotation": [
+                        -0.015,
+                        -0.033,
+                        -0.704,
+                        -0.709
+                    ]
+                },
+                {
+                    "Name": "middle_01_half_r",
+                    "ParentName": "middle_01_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.002,
+                        0.004,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "middle_01_palm_r",
+                    "ParentName": "middle_01_half_r",
+                    "Location": [
+                        -0.618,
+                        1.403,
+                        0.258
+                    ],
+                    "Rotation": [
+                        -0.72,
+                        -0.113,
+                        -0.174,
+                        -0.663
+                    ]
+                },
+                {
+                    "Name": "middle_01_mcp_r",
+                    "ParentName": "middle_01_half_r",
+                    "Location": [
+                        -0.011,
+                        -0.713,
+                        -0.114
+                    ],
+                    "Rotation": [
+                        0.705,
+                        -0.013,
+                        -0.035,
+                        -0.709
+                    ]
+                },
+                {
+                    "Name": "middle_01_bulge_r",
+                    "ParentName": "middle_01_r",
+                    "Location": [
+                        -3.035,
+                        0.784,
+                        0.041
+                    ],
+                    "Rotation": [
+                        -0.703,
+                        -0.008,
+                        -0.015,
+                        -0.711
+                    ]
+                },
+                {
+                    "Name": "middle_01_palmMid_r",
+                    "ParentName": "middle_01_r",
+                    "Location": [
+                        -1.592,
+                        1.04,
+                        0.126
+                    ],
+                    "Rotation": [
+                        -0.749,
+                        -0.078,
+                        -0.117,
+                        -0.648
+                    ]
+                },
+                {
+                    "Name": "middle_metacarpal_slide_r",
+                    "ParentName": "middle_metacarpal_r",
+                    "Location": [
+                        -2.359,
+                        -0.271,
+                        0.006
+                    ],
+                    "Rotation": [
+                        0.719,
+                        -0.007,
+                        0.01,
+                        -0.694
+                    ]
+                },
+                {
+                    "Name": "index_metacarpal_r",
+                    "ParentName": "hand_r",
+                    "Location": [
+                        -2.943,
+                        0.234,
+                        1.728
+                    ],
+                    "Rotation": [
+                        0.153,
+                        -0.046,
+                        -0.044,
+                        -0.986
+                    ]
+                },
+                {
+                    "Name": "index_01_r",
+                    "ParentName": "index_metacarpal_r",
+                    "Location": [
+                        -4.495,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.085,
+                        0.049,
+                        0.162,
+                        -0.982
+                    ]
+                },
+                {
+                    "Name": "index_02_r",
+                    "ParentName": "index_01_r",
+                    "Location": [
+                        -3.818,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.106,
+                        -0.994
+                    ]
+                },
+                {
+                    "Name": "index_03_r",
+                    "ParentName": "index_02_r",
+                    "Location": [
+                        -1.873,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "index_03_half_r",
+                    "ParentName": "index_03_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "index_03_in_r",
+                    "ParentName": "index_03_half_r",
+                    "Location": [
+                        -0.021,
+                        0.572,
+                        0.083
+                    ],
+                    "Rotation": [
+                        -0.759,
+                        -0.004,
+                        -0.014,
+                        -0.651
+                    ]
+                },
+                {
+                    "Name": "index_02_dip_r",
+                    "ParentName": "index_03_half_r",
+                    "Location": [
+                        0.031,
+                        -0.494,
+                        -0.072
+                    ],
+                    "Rotation": [
+                        0.628,
+                        -0.03,
+                        0.057,
+                        -0.775
+                    ]
+                },
+                {
+                    "Name": "index_03_bulge_r",
+                    "ParentName": "index_03_r",
+                    "Location": [
+                        -0.808,
+                        0.613,
+                        0.043
+                    ],
+                    "Rotation": [
+                        -0.776,
+                        -0.012,
+                        -0.031,
+                        -0.63
+                    ]
+                },
+                {
+                    "Name": "index_02_side_inn_r",
+                    "ParentName": "index_02_r",
+                    "Location": [
+                        -1.187,
+                        0.035,
+                        0.686
+                    ],
+                    "Rotation": [
+                        0.7,
+                        0.695,
+                        0.14,
+                        -0.085
+                    ]
+                },
+                {
+                    "Name": "index_02_side_out_r",
+                    "ParentName": "index_02_r",
+                    "Location": [
+                        -1.161,
+                        0.015,
+                        -0.601
+                    ],
+                    "Rotation": [
+                        -0.011,
+                        -0.014,
+                        -0.715,
+                        -0.699
+                    ]
+                },
+                {
+                    "Name": "index_02_half_r",
+                    "ParentName": "index_02_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        -0.001,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "index_02_in_r",
+                    "ParentName": "index_02_half_r",
+                    "Location": [
+                        -0.195,
+                        0.693,
+                        0.157
+                    ],
+                    "Rotation": [
+                        -0.721,
+                        0.053,
+                        0.017,
+                        -0.69
+                    ]
+                },
+                {
+                    "Name": "index_02_pip_r",
+                    "ParentName": "index_02_half_r",
+                    "Location": [
+                        -0.052,
+                        -0.617,
+                        -0.027
+                    ],
+                    "Rotation": [
+                        0.699,
+                        0.017,
+                        -0.002,
+                        -0.715
+                    ]
+                },
+                {
+                    "Name": "index_02_bulge_r",
+                    "ParentName": "index_02_r",
+                    "Location": [
+                        -1.211,
+                        0.681,
+                        0.111
+                    ],
+                    "Rotation": [
+                        -0.725,
+                        -0.006,
+                        -0.037,
+                        -0.688
+                    ]
+                },
+                {
+                    "Name": "index_01_side_out_r",
+                    "ParentName": "index_01_r",
+                    "Location": [
+                        -2.618,
+                        -0.123,
+                        -0.7
+                    ],
+                    "Rotation": [
+                        0.009,
+                        -0.064,
+                        -0.705,
+                        -0.706
+                    ]
+                },
+                {
+                    "Name": "index_01_side_inn_r",
+                    "ParentName": "index_01_r",
+                    "Location": [
+                        -2.542,
+                        0.065,
+                        0.826
+                    ],
+                    "Rotation": [
+                        -0.706,
+                        -0.706,
+                        0.053,
+                        -0.02
+                    ]
+                },
+                {
+                    "Name": "index_01_half_r",
+                    "ParentName": "index_01_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.003,
+                        0.002,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "index_01_palm_r",
+                    "ParentName": "index_01_half_r",
+                    "Location": [
+                        -0.463,
+                        1.13,
+                        0.415
+                    ],
+                    "Rotation": [
+                        -0.724,
+                        -0.15,
+                        -0.102,
+                        -0.665
+                    ]
+                },
+                {
+                    "Name": "index_01_mcp_r",
+                    "ParentName": "index_01_half_r",
+                    "Location": [
+                        0.269,
+                        -0.826,
+                        -0.127
+                    ],
+                    "Rotation": [
+                        0.717,
+                        -0.011,
+                        -0.02,
+                        -0.697
+                    ]
+                },
+                {
+                    "Name": "index_01_bulge_r",
+                    "ParentName": "index_01_r",
+                    "Location": [
+                        -2.57,
+                        0.811,
+                        0.215
+                    ],
+                    "Rotation": [
+                        -0.781,
+                        -0.003,
+                        0.009,
+                        -0.625
+                    ]
+                },
+                {
+                    "Name": "index_01_palmMid_r",
+                    "ParentName": "index_01_r",
+                    "Location": [
+                        -1.405,
+                        0.902,
+                        0.183
+                    ],
+                    "Rotation": [
+                        -0.707,
+                        -0.125,
+                        -0.036,
+                        -0.695
+                    ]
+                },
+                {
+                    "Name": "index_metacarpal_slide_r",
+                    "ParentName": "index_metacarpal_r",
+                    "Location": [
+                        -1.972,
+                        -0.331,
+                        -0.178
+                    ],
+                    "Rotation": [
+                        0.683,
+                        -0.021,
+                        0.053,
+                        -0.728
+                    ]
+                },
+                {
+                    "Name": "thumb_01_r",
+                    "ParentName": "hand_r",
+                    "Location": [
+                        -2.015,
+                        1.289,
+                        2.107
+                    ],
+                    "Rotation": [
+                        0.578,
+                        -0.329,
+                        -0.062,
+                        -0.744
+                    ]
+                },
+                {
+                    "Name": "thumb_02_r",
+                    "ParentName": "thumb_01_r",
+                    "Location": [
+                        -3.879,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.054,
+                        0.173,
+                        -0.983
+                    ]
+                },
+                {
+                    "Name": "thumb_03_r",
+                    "ParentName": "thumb_02_r",
+                    "Location": [
+                        -2.276,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.081,
+                        -0.997
+                    ]
+                },
+                {
+                    "Name": "thumb_03_half_r",
+                    "ParentName": "thumb_03_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thumb_03_pip_r",
+                    "ParentName": "thumb_03_half_r",
+                    "Location": [
+                        -0.028,
+                        -0.684,
+                        -0.127
+                    ],
+                    "Rotation": [
+                        0.657,
+                        -0.017,
+                        -0.022,
+                        -0.754
+                    ]
+                },
+                {
+                    "Name": "thumb_03_in_r",
+                    "ParentName": "thumb_03_half_r",
+                    "Location": [
+                        -0.016,
+                        0.745,
+                        0.121
+                    ],
+                    "Rotation": [
+                        -0.729,
+                        -0.057,
+                        -0.019,
+                        -0.682
+                    ]
+                },
+                {
+                    "Name": "thumb_03_side_out_r",
+                    "ParentName": "thumb_03_r",
+                    "Location": [
+                        -0.321,
+                        0.192,
+                        -0.714
+                    ],
+                    "Rotation": [
+                        -0.011,
+                        -0.018,
+                        1.0,
+                        -0.001
+                    ]
+                },
+                {
+                    "Name": "thumb_03_side_inn_r",
+                    "ParentName": "thumb_03_r",
+                    "Location": [
+                        -0.234,
+                        0.065,
+                        0.787
+                    ],
+                    "Rotation": [
+                        0.995,
+                        -0.075,
+                        -0.014,
+                        -0.061
+                    ]
+                },
+                {
+                    "Name": "thumb_03_bulge_r",
+                    "ParentName": "thumb_03_r",
+                    "Location": [
+                        -0.815,
+                        0.878,
+                        0.127
+                    ],
+                    "Rotation": [
+                        -0.758,
+                        -0.037,
+                        -0.007,
+                        -0.651
+                    ]
+                },
+                {
+                    "Name": "thumb_02_half_r",
+                    "ParentName": "thumb_02_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.002,
+                        0.004,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thumb_02_mcp_r",
+                    "ParentName": "thumb_02_half_r",
+                    "Location": [
+                        0.491,
+                        -0.602,
+                        0.063
+                    ],
+                    "Rotation": [
+                        0.711,
+                        0.089,
+                        0.001,
+                        -0.697
+                    ]
+                },
+                {
+                    "Name": "thumb_02_in_r",
+                    "ParentName": "thumb_02_half_r",
+                    "Location": [
+                        -0.701,
+                        0.943,
+                        0.098
+                    ],
+                    "Rotation": [
+                        -0.83,
+                        -0.068,
+                        -0.043,
+                        -0.551
+                    ]
+                },
+                {
+                    "Name": "thumb_02_side_out_r",
+                    "ParentName": "thumb_02_r",
+                    "Location": [
+                        -1.011,
+                        0.238,
+                        -0.77
+                    ],
+                    "Rotation": [
+                        0.029,
+                        -0.108,
+                        0.991,
+                        -0.079
+                    ]
+                },
+                {
+                    "Name": "thumb_02_side_inn_r",
+                    "ParentName": "thumb_02_r",
+                    "Location": [
+                        -0.918,
+                        -0.121,
+                        0.675
+                    ],
+                    "Rotation": [
+                        0.991,
+                        0.079,
+                        -0.029,
+                        -0.108
+                    ]
+                },
+                {
+                    "Name": "thumb_02_bulge_r",
+                    "ParentName": "thumb_02_r",
+                    "Location": [
+                        -1.592,
+                        0.808,
+                        0.11
+                    ],
+                    "Rotation": [
+                        -0.744,
+                        -0.025,
+                        0.003,
+                        -0.668
+                    ]
+                },
+                {
+                    "Name": "thumb_01_side_out_r",
+                    "ParentName": "thumb_01_r",
+                    "Location": [
+                        -0.56,
+                        -0.678,
+                        1.068
+                    ],
+                    "Rotation": [
+                        0.895,
+                        0.037,
+                        0.069,
+                        -0.44
+                    ]
+                },
+                {
+                    "Name": "thumb_01_side_inn_r",
+                    "ParentName": "thumb_01_r",
+                    "Location": [
+                        -3.971,
+                        1.068,
+                        -1.228
+                    ],
+                    "Rotation": [
+                        -0.204,
+                        -0.622,
+                        -0.062,
+                        -0.754
+                    ]
+                },
+                {
+                    "Name": "upperarm_twist_01_r",
+                    "ParentName": "upperarm_r",
+                    "Location": [
+                        -7.573,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.002,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_twistCor_01_r",
+                    "ParentName": "upperarm_twist_01_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_twist_02_r",
+                    "ParentName": "upperarm_r",
+                    "Location": [
+                        -15.147,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_tricep_r",
+                    "ParentName": "upperarm_twist_02_r",
+                    "Location": [
+                        -0.277,
+                        3.945,
+                        -0.091
+                    ],
+                    "Rotation": [
+                        -0.736,
+                        -0.011,
+                        0.032,
+                        -0.676
+                    ]
+                },
+                {
+                    "Name": "upperarm_bicep_r",
+                    "ParentName": "upperarm_twist_02_r",
+                    "Location": [
+                        -0.528,
+                        -2.63,
+                        -0.125
+                    ],
+                    "Rotation": [
+                        0.676,
+                        -0.032,
+                        -0.011,
+                        -0.736
+                    ]
+                },
+                {
+                    "Name": "upperarm_twistCor_02_r",
+                    "ParentName": "upperarm_twist_02_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.004,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_correctiveRoot_r",
+                    "ParentName": "upperarm_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_bck_r",
+                    "ParentName": "upperarm_correctiveRoot_r",
+                    "Location": [
+                        -1.409,
+                        5.408,
+                        -0.774
+                    ],
+                    "Rotation": [
+                        -0.583,
+                        0.0,
+                        0.0,
+                        -0.812
+                    ]
+                },
+                {
+                    "Name": "upperarm_in_r",
+                    "ParentName": "upperarm_correctiveRoot_r",
+                    "Location": [
+                        -4.457,
+                        -1.115,
+                        3.54
+                    ],
+                    "Rotation": [
+                        0.913,
+                        0.0,
+                        0.408,
+                        0.0
+                    ]
+                },
+                {
+                    "Name": "upperarm_fwd_r",
+                    "ParentName": "upperarm_correctiveRoot_r",
+                    "Location": [
+                        -2.809,
+                        -5.512,
+                        0.117
+                    ],
+                    "Rotation": [
+                        0.757,
+                        -0.068,
+                        0.08,
+                        -0.645
+                    ]
+                },
+                {
+                    "Name": "upperarm_out_r",
+                    "ParentName": "upperarm_correctiveRoot_r",
+                    "Location": [
+                        -0.052,
+                        0.247,
+                        -5.236
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "clavicle_out_r",
+                    "ParentName": "clavicle_r",
+                    "Location": [
+                        -9.39,
+                        -0.153,
+                        -4.77
+                    ],
+                    "Rotation": [
+                        -0.003,
+                        0.027,
+                        -0.037,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "clavicle_scap_r",
+                    "ParentName": "clavicle_r",
+                    "Location": [
+                        -7.369,
+                        4.928,
+                        1.725
+                    ],
+                    "Rotation": [
+                        -0.027,
+                        -0.003,
+                        0.999,
+                        -0.037
+                    ]
+                },
+                {
+                    "Name": "clavicle_pec_r",
+                    "ParentName": "spine_05",
+                    "Location": [
+                        -6.284,
+                        8.974,
+                        8.48
+                    ],
+                    "Rotation": [
+                        0.725,
+                        0.109,
+                        -0.679,
+                        0.021
+                    ]
+                },
+                {
+                    "Name": "spine_04_latissimus_l",
+                    "ParentName": "spine_05",
+                    "Location": [
+                        -6.5,
+                        -2.098,
+                        -9.94
+                    ],
+                    "Rotation": [
+                        0.167,
+                        -0.758,
+                        0.019,
+                        -0.63
+                    ]
+                },
+                {
+                    "Name": "spine_04_latissimus_r",
+                    "ParentName": "spine_05",
+                    "Location": [
+                        -6.506,
+                        -2.097,
+                        9.95
+                    ],
+                    "Rotation": [
+                        0.732,
+                        0.047,
+                        -0.675,
+                        0.079
+                    ]
+                },
+                {
+                    "Name": "clavicle_pec_l",
+                    "ParentName": "spine_05",
+                    "Location": [
+                        -6.292,
+                        8.747,
+                        -8.153
+                    ],
+                    "Rotation": [
+                        0.109,
+                        -0.725,
+                        -0.021,
+                        -0.679
+                    ]
+                },
+                {
+                    "Name": "thigh_r",
+                    "ParentName": "pelvis",
+                    "Location": [
+                        -3.829,
+                        -0.278,
+                        7.886
+                    ],
+                    "Rotation": [
+                        0.04,
+                        -0.073,
+                        0.997,
+                        -0.004
+                    ]
+                },
+                {
+                    "Name": "calf_r",
+                    "ParentName": "thigh_r",
+                    "Location": [
+                        37.439,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.015,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "foot_r",
+                    "ParentName": "calf_r",
+                    "Location": [
+                        34.989,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.04,
+                        -0.001,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "ball_r",
+                    "ParentName": "foot_r",
+                    "Location": [
+                        5.767,
+                        -11.512,
+                        -1.231
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.707,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "bigtoe_01_r",
+                    "ParentName": "ball_r",
+                    "Location": [
+                        -0.44,
+                        1.035,
+                        -2.055
+                    ],
+                    "Rotation": [
+                        -0.002,
+                        -0.037,
+                        -0.028,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "bigtoe_02_r",
+                    "ParentName": "bigtoe_01_r",
+                    "Location": [
+                        -2.516,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "indextoe_01_r",
+                    "ParentName": "ball_r",
+                    "Location": [
+                        -0.439,
+                        1.564,
+                        0.175
+                    ],
+                    "Rotation": [
+                        -0.004,
+                        -0.032,
+                        -0.074,
+                        -0.997
+                    ]
+                },
+                {
+                    "Name": "indextoe_02_r",
+                    "ParentName": "indextoe_01_r",
+                    "Location": [
+                        -2.516,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.105,
+                        -0.995
+                    ]
+                },
+                {
+                    "Name": "middletoe_01_r",
+                    "ParentName": "ball_r",
+                    "Location": [
+                        -0.218,
+                        1.507,
+                        1.786
+                    ],
+                    "Rotation": [
+                        -0.039,
+                        -0.007,
+                        -0.113,
+                        -0.993
+                    ]
+                },
+                {
+                    "Name": "middletoe_02_r",
+                    "ParentName": "middletoe_01_r",
+                    "Location": [
+                        -2.049,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.087,
+                        -0.996
+                    ]
+                },
+                {
+                    "Name": "ringtoe_01_r",
+                    "ParentName": "ball_r",
+                    "Location": [
+                        0.428,
+                        1.315,
+                        3.065
+                    ],
+                    "Rotation": [
+                        -0.039,
+                        -0.007,
+                        -0.113,
+                        -0.993
+                    ]
+                },
+                {
+                    "Name": "ringtoe_02_r",
+                    "ParentName": "ringtoe_01_r",
+                    "Location": [
+                        -1.782,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.087,
+                        -0.996
+                    ]
+                },
+                {
+                    "Name": "littletoe_01_r",
+                    "ParentName": "ball_r",
+                    "Location": [
+                        1.251,
+                        0.822,
+                        4.098
+                    ],
+                    "Rotation": [
+                        -0.039,
+                        -0.007,
+                        -0.113,
+                        -0.993
+                    ]
+                },
+                {
+                    "Name": "littletoe_02_r",
+                    "ParentName": "littletoe_01_r",
+                    "Location": [
+                        -1.228,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.087,
+                        -0.996
+                    ]
+                },
+                {
+                    "Name": "ankle_bck_r",
+                    "ParentName": "foot_r",
+                    "Location": [
+                        -0.518,
+                        3.512,
+                        -0.553
+                    ],
+                    "Rotation": [
+                        -0.702,
+                        -0.006,
+                        -0.05,
+                        -0.71
+                    ]
+                },
+                {
+                    "Name": "ankle_fwd_r",
+                    "ParentName": "foot_r",
+                    "Location": [
+                        -1.404,
+                        -3.684,
+                        -1.459
+                    ],
+                    "Rotation": [
+                        0.71,
+                        0.05,
+                        -0.006,
+                        -0.702
+                    ]
+                },
+                {
+                    "Name": "calf_twist_02_r",
+                    "ParentName": "calf_r",
+                    "Location": [
+                        11.663,
+                        0.0,
+                        -0.348
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.016,
+                        -0.001,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "calf_twistCor_02_r",
+                    "ParentName": "calf_twist_02_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "calf_twist_01_r",
+                    "ParentName": "calf_r",
+                    "Location": [
+                        23.326,
+                        0.0,
+                        -0.696
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.016,
+                        -0.001,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "calf_correctiveRoot_r",
+                    "ParentName": "calf_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.015,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "calf_kneeBack_r",
+                    "ParentName": "calf_correctiveRoot_r",
+                    "Location": [
+                        -0.245,
+                        4.362,
+                        -0.191
+                    ],
+                    "Rotation": [
+                        -0.693,
+                        -0.013,
+                        -0.022,
+                        -0.72
+                    ]
+                },
+                {
+                    "Name": "calf_knee_r",
+                    "ParentName": "calf_correctiveRoot_r",
+                    "Location": [
+                        -0.057,
+                        -3.851,
+                        -0.006
+                    ],
+                    "Rotation": [
+                        0.72,
+                        0.022,
+                        -0.013,
+                        -0.693
+                    ]
+                },
+                {
+                    "Name": "thigh_twist_01_r",
+                    "ParentName": "thigh_r",
+                    "Location": [
+                        12.48,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.016,
+                        -0.007,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_twistCor_01_r",
+                    "ParentName": "thigh_twist_01_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_twist_02_r",
+                    "ParentName": "thigh_r",
+                    "Location": [
+                        24.959,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.016,
+                        -0.007,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_twistCor_02_r",
+                    "ParentName": "thigh_twist_02_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_correctiveRoot_r",
+                    "ParentName": "thigh_r",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_fwd_r",
+                    "ParentName": "thigh_correctiveRoot_r",
+                    "Location": [
+                        -5.471,
+                        -6.972,
+                        0.472
+                    ],
+                    "Rotation": [
+                        0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "thigh_bck_r",
+                    "ParentName": "thigh_correctiveRoot_r",
+                    "Location": [
+                        -4.249,
+                        8.5,
+                        -0.422
+                    ],
+                    "Rotation": [
+                        -0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "thigh_out_r",
+                    "ParentName": "thigh_correctiveRoot_r",
+                    "Location": [
+                        -4.924,
+                        0.535,
+                        4.564
+                    ],
+                    "Rotation": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "Name": "thigh_in_r",
+                    "ParentName": "thigh_correctiveRoot_r",
+                    "Location": [
+                        7.783,
+                        -1.181,
+                        -6.494
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_bck_lwr_r",
+                    "ParentName": "thigh_correctiveRoot_r",
+                    "Location": [
+                        3.81,
+                        8.321,
+                        -0.424
+                    ],
+                    "Rotation": [
+                        -0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "thigh_fwd_lwr_r",
+                    "ParentName": "thigh_correctiveRoot_r",
+                    "Location": [
+                        -0.584,
+                        -6.522,
+                        0.186
+                    ],
+                    "Rotation": [
+                        0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "thigh_l",
+                    "ParentName": "pelvis",
+                    "Location": [
+                        -3.829,
+                        -0.277,
+                        -7.886
+                    ],
+                    "Rotation": [
+                        0.073,
+                        0.04,
+                        -0.004,
+                        -0.997
+                    ]
+                },
+                {
+                    "Name": "calf_l",
+                    "ParentName": "thigh_l",
+                    "Location": [
+                        -37.439,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.015,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "foot_l",
+                    "ParentName": "calf_l",
+                    "Location": [
+                        -34.989,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.04,
+                        -0.001,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "ball_l",
+                    "ParentName": "foot_l",
+                    "Location": [
+                        -5.767,
+                        11.511,
+                        1.231
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.707,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "bigtoe_01_l",
+                    "ParentName": "ball_l",
+                    "Location": [
+                        0.439,
+                        -1.035,
+                        2.055
+                    ],
+                    "Rotation": [
+                        -0.002,
+                        -0.037,
+                        -0.028,
+                        -0.999
+                    ]
+                },
+                {
+                    "Name": "bigtoe_02_l",
+                    "ParentName": "bigtoe_01_l",
+                    "Location": [
+                        2.516,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "indextoe_01_l",
+                    "ParentName": "ball_l",
+                    "Location": [
+                        0.439,
+                        -1.564,
+                        -0.175
+                    ],
+                    "Rotation": [
+                        -0.004,
+                        -0.032,
+                        -0.074,
+                        -0.997
+                    ]
+                },
+                {
+                    "Name": "indextoe_02_l",
+                    "ParentName": "indextoe_01_l",
+                    "Location": [
+                        2.516,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.105,
+                        -0.995
+                    ]
+                },
+                {
+                    "Name": "middletoe_01_l",
+                    "ParentName": "ball_l",
+                    "Location": [
+                        0.217,
+                        -1.507,
+                        -1.786
+                    ],
+                    "Rotation": [
+                        -0.039,
+                        -0.007,
+                        -0.113,
+                        -0.993
+                    ]
+                },
+                {
+                    "Name": "middletoe_02_l",
+                    "ParentName": "middletoe_01_l",
+                    "Location": [
+                        2.049,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.087,
+                        -0.996
+                    ]
+                },
+                {
+                    "Name": "ringtoe_01_l",
+                    "ParentName": "ball_l",
+                    "Location": [
+                        -0.428,
+                        -1.315,
+                        -3.065
+                    ],
+                    "Rotation": [
+                        -0.039,
+                        -0.007,
+                        -0.113,
+                        -0.993
+                    ]
+                },
+                {
+                    "Name": "ringtoe_02_l",
+                    "ParentName": "ringtoe_01_l",
+                    "Location": [
+                        1.782,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.087,
+                        -0.996
+                    ]
+                },
+                {
+                    "Name": "littletoe_01_l",
+                    "ParentName": "ball_l",
+                    "Location": [
+                        -1.251,
+                        -0.822,
+                        -4.098
+                    ],
+                    "Rotation": [
+                        -0.039,
+                        -0.007,
+                        -0.113,
+                        -0.993
+                    ]
+                },
+                {
+                    "Name": "littletoe_02_l",
+                    "ParentName": "littletoe_01_l",
+                    "Location": [
+                        1.228,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        -0.087,
+                        -0.996
+                    ]
+                },
+                {
+                    "Name": "ankle_bck_l",
+                    "ParentName": "foot_l",
+                    "Location": [
+                        0.583,
+                        -2.861,
+                        0.854
+                    ],
+                    "Rotation": [
+                        -0.75,
+                        -0.002,
+                        -0.05,
+                        -0.659
+                    ]
+                },
+                {
+                    "Name": "ankle_fwd_l",
+                    "ParentName": "foot_l",
+                    "Location": [
+                        1.064,
+                        3.258,
+                        0.966
+                    ],
+                    "Rotation": [
+                        0.659,
+                        0.05,
+                        -0.002,
+                        -0.75
+                    ]
+                },
+                {
+                    "Name": "calf_twist_02_l",
+                    "ParentName": "calf_l",
+                    "Location": [
+                        -11.663,
+                        0.0,
+                        0.348
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.016,
+                        -0.001,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "calf_twistCor_02_l",
+                    "ParentName": "calf_twist_02_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "calf_twist_01_l",
+                    "ParentName": "calf_l",
+                    "Location": [
+                        -23.326,
+                        0.0,
+                        0.696
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.016,
+                        -0.001,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "calf_correctiveRoot_l",
+                    "ParentName": "calf_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.015,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "calf_kneeBack_l",
+                    "ParentName": "calf_correctiveRoot_l",
+                    "Location": [
+                        0.242,
+                        -4.357,
+                        0.167
+                    ],
+                    "Rotation": [
+                        -0.693,
+                        -0.013,
+                        -0.022,
+                        -0.72
+                    ]
+                },
+                {
+                    "Name": "calf_knee_l",
+                    "ParentName": "calf_correctiveRoot_l",
+                    "Location": [
+                        0.054,
+                        3.854,
+                        0.003
+                    ],
+                    "Rotation": [
+                        0.72,
+                        0.022,
+                        -0.013,
+                        -0.693
+                    ]
+                },
+                {
+                    "Name": "thigh_twist_01_l",
+                    "ParentName": "thigh_l",
+                    "Location": [
+                        -12.48,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.016,
+                        -0.007,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_twistCor_01_l",
+                    "ParentName": "thigh_twist_01_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_twist_02_l",
+                    "ParentName": "thigh_l",
+                    "Location": [
+                        -24.959,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        -0.016,
+                        -0.007,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_twistCor_02_l",
+                    "ParentName": "thigh_twist_02_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_correctiveRoot_l",
+                    "ParentName": "thigh_l",
+                    "Location": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_bck_l",
+                    "ParentName": "thigh_correctiveRoot_l",
+                    "Location": [
+                        4.246,
+                        -8.494,
+                        0.395
+                    ],
+                    "Rotation": [
+                        -0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "thigh_fwd_l",
+                    "ParentName": "thigh_correctiveRoot_l",
+                    "Location": [
+                        5.475,
+                        6.956,
+                        -0.47
+                    ],
+                    "Rotation": [
+                        0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "thigh_out_l",
+                    "ParentName": "thigh_correctiveRoot_l",
+                    "Location": [
+                        4.921,
+                        -0.521,
+                        -4.577
+                    ],
+                    "Rotation": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "Name": "thigh_bck_lwr_l",
+                    "ParentName": "thigh_correctiveRoot_l",
+                    "Location": [
+                        -3.616,
+                        -8.283,
+                        0.171
+                    ],
+                    "Rotation": [
+                        -0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                },
+                {
+                    "Name": "thigh_in_l",
+                    "ParentName": "thigh_correctiveRoot_l",
+                    "Location": [
+                        -7.724,
+                        1.241,
+                        6.469
+                    ],
+                    "Rotation": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        -1.0
+                    ]
+                },
+                {
+                    "Name": "thigh_fwd_lwr_l",
+                    "ParentName": "thigh_correctiveRoot_l",
+                    "Location": [
+                        0.493,
+                        7.02,
+                        -0.261
+                    ],
+                    "Rotation": [
+                        0.707,
+                        0.0,
+                        0.0,
+                        -0.707
+                    ]
+                }
+            ],
+            "Facial": {
+                "Names": [
+                    "EyeBlinkLeft",
+                    "EyeLookDownLeft",
+                    "EyeLookInLeft",
+                    "EyeLookOutLeft",
+                    "EyeLookUpLeft",
+                    "EyeSquintLeft",
+                    "EyeWideLeft",
+                    "EyeBlinkRight",
+                    "EyeLookDownRight",
+                    "EyeLookInRight",
+                    "EyeLookOutRight",
+                    "EyeLookUpRight",
+                    "EyeSquintRight",
+                    "EyeWideRight",
+                    "JawForward",
+                    "JawLeft",
+                    "JawRight",
+                    "JawOpen",
+                    "MouthClose",
+                    "MouthFunnel",
+                    "MouthPucker",
+                    "MouthLeft",
+                    "MouthRight",
+                    "MouthSmileLeft",
+                    "MouthSmileRight",
+                    "MouthFrownLeft",
+                    "MouthFrownRight",
+                    "MouthDimpleLeft",
+                    "MouthDimpleRight",
+                    "MouthStretchLeft",
+                    "MouthStretchRight",
+                    "MouthRollLower",
+                    "MouthRollUpper",
+                    "MouthShrugLower",
+                    "MouthShrugUpper",
+                    "MouthPressLeft",
+                    "MouthPressRight",
+                    "MouthLowerDownLeft",
+                    "MouthLowerDownRight",
+                    "MouthUpperUpLeft",
+                    "MouthUpperUpRight",
+                    "BrowDownLeft",
+                    "BrowDownRight",
+                    "BrowInnerUp",
+                    "BrowOuterUpLeft",
+                    "BrowOuterUpRight",
+                    "CheekPuff",
+                    "CheekSquintLeft",
+                    "CheekSquintRight",
+                    "NoseSneerLeft",
+                    "NoseSneerRight",
+                    "TongueOut",
+                    "HeadRoll",
+                    "HeadPitch",
+                    "HeadYaw"
+                ],
+                "Weights": [
+                    0.03825629875063896,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.008544313721358776,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.04616798087954521,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.039058294147253036,
+                    0.0,
+                    0.0,
+                    0.03600349277257919,
+                    0.0,
+                    0.0,
+                    0.26348990201950073,
+                    0.25018003582954407,
+                    0.0,
+                    0.0,
+                    0.11538901180028915,
+                    0.15709175169467926,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.1033485010266304,
+                    0.0,
+                    0.0,
+                    0.7168954610824585,
+                    0.6785119771957397,
+                    0.0,
+                    0.0,
+                    0.05699886009097099,
+                    0.06807734817266464,
+                    0.02074607089161873,
+                    0.0,
+                    0.5633651614189148,
+                    0.0,
+                    0.07548518478870392,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "FrameTiming": {
+                "FPS": 30,
+                "Index": 0
+            }
+        }
+    }
