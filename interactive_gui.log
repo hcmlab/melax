@@ -2396,3 +2396,709 @@ If you have specific questions or need more detailed information about a particu
 [INFO] 2025-01-15 12:28:33 - stop_llm() called.
 [INFO] 2025-01-15 12:28:33 - allStop - all modules stopped.
 [INFO] 2025-01-15 12:28:33 - TTS finished: TTS done for text: I appreciate your willingness to help! If you have any questions or topics you'd like to discuss, please let me know. I'm here to provide information and assistance!
+[INFO] 2025-01-27 15:42:54 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 15:49:31 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 15:49:32 - Selected LLM: OpenAI
+[INFO] 2025-01-27 15:49:36 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:49:36 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:49:36 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:49:36 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:49:36 - Ollama Worker started.
+[INFO] 2025-01-27 15:49:38 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 15:49:38 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:49:38 - Selected OpenAI Worker.
+[INFO] 2025-01-27 15:49:38 - Starting OpenAI Worker.
+[INFO] 2025-01-27 15:49:38 - OpenAI Worker started.
+[INFO] 2025-01-27 15:49:40 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:49:40 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:49:40 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:49:40 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:49:40 - Ollama Worker started.
+[INFO] 2025-01-27 15:49:47 - Application closing; stopping threads.
+[INFO] 2025-01-27 15:49:47 - allStop clicked.
+[INFO] 2025-01-27 15:49:47 - stop_asr() called.
+[INFO] 2025-01-27 15:49:47 - stop_tts() called.
+[INFO] 2025-01-27 15:49:47 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:49:47 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:50:47 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 15:50:47 - Selected LLM: OpenAI
+[INFO] 2025-01-27 15:50:54 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:50:54 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:50:54 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:50:54 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:50:54 - Ollama Worker started.
+[INFO] 2025-01-27 15:50:56 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 15:50:56 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:50:56 - Selected OpenAI Worker.
+[INFO] 2025-01-27 15:50:56 - Starting OpenAI Worker.
+[INFO] 2025-01-27 15:50:56 - OpenAI Worker started.
+[INFO] 2025-01-27 15:50:57 - Application closing; stopping threads.
+[INFO] 2025-01-27 15:50:57 - allStop clicked.
+[INFO] 2025-01-27 15:50:57 - stop_asr() called.
+[INFO] 2025-01-27 15:50:57 - stop_tts() called.
+[INFO] 2025-01-27 15:50:57 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:50:57 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:51:13 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 15:51:13 - Selected LLM: OpenAI
+[INFO] 2025-01-27 15:51:35 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:51:35 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:51:35 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:51:35 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:51:35 - Ollama Worker started.
+[INFO] 2025-01-27 15:51:51 - Application closing; stopping threads.
+[INFO] 2025-01-27 15:51:51 - allStop clicked.
+[INFO] 2025-01-27 15:51:51 - stop_asr() called.
+[INFO] 2025-01-27 15:51:51 - stop_tts() called.
+[INFO] 2025-01-27 15:51:51 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:51:51 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:52:10 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 15:52:10 - Selected LLM: OpenAI
+[INFO] 2025-01-27 15:52:14 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:52:14 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:52:14 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:52:14 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:52:14 - Ollama Worker started.
+[INFO] 2025-01-27 15:52:44 - allStart clicked.
+[INFO] 2025-01-27 15:52:44 - allStop clicked.
+[INFO] 2025-01-27 15:52:44 - stop_asr() called.
+[INFO] 2025-01-27 15:52:44 - stop_tts() called.
+[INFO] 2025-01-27 15:52:44 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:52:44 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:52:44 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:52:44 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:52:44 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:52:44 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:52:44 - Ollama Worker started.
+[INFO] 2025-01-27 15:52:44 - start_asr() called.
+[INFO] 2025-01-27 15:52:44 - stop_asr() called.
+[INFO] 2025-01-27 15:52:44 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 15:52:44 - start_tts() called.
+[INFO] 2025-01-27 15:52:44 - stop_tts() called.
+[INFO] 2025-01-27 15:52:44 - TTS worker started.
+[INFO] 2025-01-27 15:52:44 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 15:52:44 - allStart - all modules started.
+[INFO] 2025-01-27 15:52:46 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 15:52:48 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 15:52:48 - Headless server connected.
+[INFO] 2025-01-27 15:52:48 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 15:52:50 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 15:52:59 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 15:52:59 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 15:53:01 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 15:53:07 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 15:53:13 - ASR recognized: hello
+[INFO] 2025-01-27 15:54:00 - allStop clicked.
+[INFO] 2025-01-27 15:54:00 - stop_asr() called.
+[DEBUG] 2025-01-27 15:54:00 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 15:54:01 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 15:54:01 - stop_tts() called.
+[INFO] 2025-01-27 15:54:01 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:54:01 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:54:39 - Application closing; stopping threads.
+[INFO] 2025-01-27 15:54:39 - allStop clicked.
+[INFO] 2025-01-27 15:54:39 - stop_asr() called.
+[INFO] 2025-01-27 15:54:39 - stop_tts() called.
+[INFO] 2025-01-27 15:54:39 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:54:39 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:54:56 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 15:54:56 - Selected LLM: OpenAI
+[INFO] 2025-01-27 15:55:02 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 15:55:04 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 15:55:04 - Headless server connected.
+[INFO] 2025-01-27 15:55:04 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 15:55:06 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 15:55:12 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 15:55:12 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 15:55:14 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 15:55:20 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 15:55:21 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:55:21 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:55:21 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:55:21 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:55:21 - Ollama Worker started.
+[INFO] 2025-01-27 15:55:23 - allStart clicked.
+[INFO] 2025-01-27 15:55:23 - allStop clicked.
+[INFO] 2025-01-27 15:55:23 - stop_asr() called.
+[INFO] 2025-01-27 15:55:23 - stop_tts() called.
+[INFO] 2025-01-27 15:55:23 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:55:23 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:55:23 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:55:23 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:55:23 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:55:23 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:55:23 - Ollama Worker started.
+[INFO] 2025-01-27 15:55:23 - start_asr() called.
+[INFO] 2025-01-27 15:55:23 - stop_asr() called.
+[INFO] 2025-01-27 15:55:23 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 15:55:23 - start_tts() called.
+[INFO] 2025-01-27 15:55:23 - stop_tts() called.
+[INFO] 2025-01-27 15:55:23 - TTS worker started.
+[INFO] 2025-01-27 15:55:23 - allStart - all modules started.
+[INFO] 2025-01-27 15:55:23 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 15:55:33 - ASR recognized: hello
+[INFO] 2025-01-27 15:55:33 - Sending input to LLM: hello
+[INFO] 2025-01-27 15:55:59 - Application closing; stopping threads.
+[INFO] 2025-01-27 15:55:59 - allStop clicked.
+[INFO] 2025-01-27 15:55:59 - stop_asr() called.
+[DEBUG] 2025-01-27 15:55:59 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 15:56:00 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 15:56:00 - stop_tts() called.
+[INFO] 2025-01-27 15:56:00 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:56:00 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:58:52 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 15:58:52 - Selected LLM: OpenAI
+[INFO] 2025-01-27 15:59:30 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:59:30 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:59:30 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:59:30 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:59:30 - Ollama Worker started.
+[INFO] 2025-01-27 15:59:34 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 15:59:36 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 15:59:36 - Headless server connected.
+[INFO] 2025-01-27 15:59:37 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 15:59:39 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 15:59:45 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 15:59:50 - allStart clicked.
+[INFO] 2025-01-27 15:59:50 - allStop clicked.
+[INFO] 2025-01-27 15:59:50 - stop_asr() called.
+[INFO] 2025-01-27 15:59:50 - stop_tts() called.
+[INFO] 2025-01-27 15:59:50 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:59:50 - allStop - all modules stopped.
+[INFO] 2025-01-27 15:59:50 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 15:59:50 - Stopping LLM Worker.
+[INFO] 2025-01-27 15:59:50 - Selected Ollama Worker.
+[INFO] 2025-01-27 15:59:50 - Starting Ollama Worker.
+[INFO] 2025-01-27 15:59:50 - Ollama Worker started.
+[INFO] 2025-01-27 15:59:50 - start_asr() called.
+[INFO] 2025-01-27 15:59:50 - stop_asr() called.
+[INFO] 2025-01-27 15:59:50 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 15:59:50 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 15:59:50 - start_tts() called.
+[INFO] 2025-01-27 15:59:50 - stop_tts() called.
+[INFO] 2025-01-27 15:59:50 - TTS worker started.
+[INFO] 2025-01-27 15:59:50 - allStart - all modules started.
+[INFO] 2025-01-27 15:59:54 - ASR recognized: hello
+[INFO] 2025-01-27 15:59:54 - Sending input to LLM: hello
+[INFO] 2025-01-27 16:00:27 - Application closing; stopping threads.
+[INFO] 2025-01-27 16:00:27 - allStop clicked.
+[INFO] 2025-01-27 16:00:27 - stop_asr() called.
+[DEBUG] 2025-01-27 16:00:27 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 16:00:28 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 16:00:28 - stop_tts() called.
+[INFO] 2025-01-27 16:00:28 - Stopping LLM Worker.
+[INFO] 2025-01-27 16:00:28 - allStop - all modules stopped.
+[INFO] 2025-01-27 17:55:47 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 17:55:48 - Selected LLM: OpenAI
+[INFO] 2025-01-27 17:56:05 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 17:56:07 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 17:56:07 - Headless server connected.
+[INFO] 2025-01-27 17:56:09 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 17:56:11 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 17:56:19 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 17:56:25 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 17:56:25 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:56:25 - Selected Ollama Worker.
+[INFO] 2025-01-27 17:56:25 - Starting Ollama Worker.
+[INFO] 2025-01-27 17:56:25 - Ollama Worker started.
+[INFO] 2025-01-27 17:56:28 - allStart clicked.
+[INFO] 2025-01-27 17:56:28 - allStop clicked.
+[INFO] 2025-01-27 17:56:28 - stop_asr() called.
+[INFO] 2025-01-27 17:56:28 - stop_tts() called.
+[INFO] 2025-01-27 17:56:28 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:56:28 - allStop - all modules stopped.
+[INFO] 2025-01-27 17:56:28 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 17:56:28 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:56:28 - Selected Ollama Worker.
+[INFO] 2025-01-27 17:56:28 - Starting Ollama Worker.
+[INFO] 2025-01-27 17:56:28 - Ollama Worker started.
+[INFO] 2025-01-27 17:56:28 - start_asr() called.
+[INFO] 2025-01-27 17:56:28 - stop_asr() called.
+[INFO] 2025-01-27 17:56:28 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 17:56:28 - start_tts() called.
+[INFO] 2025-01-27 17:56:28 - stop_tts() called.
+[INFO] 2025-01-27 17:56:28 - TTS worker started.
+[INFO] 2025-01-27 17:56:28 - allStart - all modules started.
+[INFO] 2025-01-27 17:56:28 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 17:56:33 - ASR recognized: hello
+[INFO] 2025-01-27 17:56:33 - Sending input to LLM: hello
+[INFO] 2025-01-27 17:56:40 - TTS error: expected string or bytes-like object
+[INFO] 2025-01-27 17:56:47 - Application closing; stopping threads.
+[INFO] 2025-01-27 17:56:47 - allStop clicked.
+[INFO] 2025-01-27 17:56:47 - stop_asr() called.
+[DEBUG] 2025-01-27 17:56:47 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 17:56:48 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 17:56:48 - stop_tts() called.
+[INFO] 2025-01-27 17:56:48 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:56:48 - allStop - all modules stopped.
+[INFO] 2025-01-27 17:58:42 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 17:58:43 - Selected LLM: OpenAI
+[INFO] 2025-01-27 17:58:47 - allStart clicked.
+[INFO] 2025-01-27 17:58:47 - allStop clicked.
+[INFO] 2025-01-27 17:58:47 - stop_asr() called.
+[INFO] 2025-01-27 17:58:47 - stop_tts() called.
+[INFO] 2025-01-27 17:58:47 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:58:47 - allStop - all modules stopped.
+[INFO] 2025-01-27 17:58:47 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 17:58:47 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:58:47 - Selected OpenAI Worker.
+[INFO] 2025-01-27 17:58:47 - Starting OpenAI Worker.
+[INFO] 2025-01-27 17:58:47 - OpenAI Worker started.
+[INFO] 2025-01-27 17:58:47 - start_asr() called.
+[INFO] 2025-01-27 17:58:47 - stop_asr() called.
+[INFO] 2025-01-27 17:58:47 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 17:58:47 - start_tts() called.
+[INFO] 2025-01-27 17:58:47 - stop_tts() called.
+[INFO] 2025-01-27 17:58:47 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 17:58:47 - TTS worker started.
+[INFO] 2025-01-27 17:58:47 - allStart - all modules started.
+[INFO] 2025-01-27 17:59:06 - allStop clicked.
+[INFO] 2025-01-27 17:59:06 - stop_asr() called.
+[DEBUG] 2025-01-27 17:59:06 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 17:59:06 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 17:59:06 - stop_tts() called.
+[INFO] 2025-01-27 17:59:07 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:59:07 - allStop - all modules stopped.
+[INFO] 2025-01-27 17:59:08 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 17:59:11 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 17:59:11 - Headless server connected.
+[INFO] 2025-01-27 17:59:12 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 17:59:14 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 17:59:20 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 17:59:22 - allStart clicked.
+[INFO] 2025-01-27 17:59:22 - allStop clicked.
+[INFO] 2025-01-27 17:59:22 - stop_asr() called.
+[INFO] 2025-01-27 17:59:22 - stop_tts() called.
+[INFO] 2025-01-27 17:59:22 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:59:22 - allStop - all modules stopped.
+[INFO] 2025-01-27 17:59:22 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 17:59:22 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:59:22 - Selected OpenAI Worker.
+[INFO] 2025-01-27 17:59:22 - Starting OpenAI Worker.
+[INFO] 2025-01-27 17:59:23 - OpenAI Worker started.
+[INFO] 2025-01-27 17:59:23 - start_asr() called.
+[INFO] 2025-01-27 17:59:23 - stop_asr() called.
+[INFO] 2025-01-27 17:59:23 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 17:59:23 - start_tts() called.
+[INFO] 2025-01-27 17:59:23 - stop_tts() called.
+[INFO] 2025-01-27 17:59:23 - TTS worker started.
+[INFO] 2025-01-27 17:59:23 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 17:59:23 - allStart - all modules started.
+[INFO] 2025-01-27 17:59:30 - ASR recognized: hello
+[INFO] 2025-01-27 17:59:30 - Sending input to LLM: hello
+[INFO] 2025-01-27 17:59:37 - TTS error: expected string or bytes-like object
+[INFO] 2025-01-27 17:59:52 - allStart clicked.
+[INFO] 2025-01-27 17:59:52 - allStop clicked.
+[INFO] 2025-01-27 17:59:52 - stop_asr() called.
+[DEBUG] 2025-01-27 17:59:52 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 17:59:53 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 17:59:53 - stop_tts() called.
+[INFO] 2025-01-27 17:59:53 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:59:53 - allStop - all modules stopped.
+[INFO] 2025-01-27 17:59:53 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 17:59:53 - Stopping LLM Worker.
+[INFO] 2025-01-27 17:59:53 - Selected OpenAI Worker.
+[INFO] 2025-01-27 17:59:53 - Starting OpenAI Worker.
+[INFO] 2025-01-27 17:59:53 - OpenAI Worker started.
+[INFO] 2025-01-27 17:59:53 - start_asr() called.
+[INFO] 2025-01-27 17:59:53 - stop_asr() called.
+[INFO] 2025-01-27 17:59:53 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 17:59:53 - start_tts() called.
+[INFO] 2025-01-27 17:59:53 - stop_tts() called.
+[INFO] 2025-01-27 17:59:53 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 17:59:53 - TTS worker started.
+[INFO] 2025-01-27 17:59:53 - allStart - all modules started.
+[INFO] 2025-01-27 17:59:59 - ASR recognized: how are you
+[INFO] 2025-01-27 17:59:59 - Sending input to LLM: how are you
+[INFO] 2025-01-27 18:00:02 - TTS error: expected string or bytes-like object
+[INFO] 2025-01-27 18:00:24 - Application closing; stopping threads.
+[INFO] 2025-01-27 18:00:24 - allStop clicked.
+[INFO] 2025-01-27 18:00:24 - stop_asr() called.
+[DEBUG] 2025-01-27 18:00:24 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 18:00:24 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 18:00:24 - stop_tts() called.
+[INFO] 2025-01-27 18:00:24 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:00:24 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:02:36 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 18:02:36 - Selected LLM: OpenAI
+[INFO] 2025-01-27 18:02:42 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:02:44 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:02:50 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 18:02:50 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:02:52 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:02:52 - Headless server connected.
+[INFO] 2025-01-27 18:02:52 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:02:55 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:02:55 - Headless server connected.
+[INFO] 2025-01-27 18:02:58 - allStart clicked.
+[INFO] 2025-01-27 18:02:58 - allStop clicked.
+[INFO] 2025-01-27 18:02:58 - stop_asr() called.
+[INFO] 2025-01-27 18:02:58 - stop_tts() called.
+[INFO] 2025-01-27 18:02:58 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:02:58 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:02:58 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 18:02:58 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:02:58 - Selected OpenAI Worker.
+[INFO] 2025-01-27 18:02:58 - Starting OpenAI Worker.
+[INFO] 2025-01-27 18:02:58 - OpenAI Worker started.
+[INFO] 2025-01-27 18:02:58 - start_asr() called.
+[INFO] 2025-01-27 18:02:58 - stop_asr() called.
+[INFO] 2025-01-27 18:02:58 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 18:02:58 - start_tts() called.
+[INFO] 2025-01-27 18:02:58 - stop_tts() called.
+[INFO] 2025-01-27 18:02:58 - TTS worker started.
+[INFO] 2025-01-27 18:02:58 - allStart - all modules started.
+[INFO] 2025-01-27 18:02:58 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 18:03:01 - ASR recognized: hello
+[INFO] 2025-01-27 18:03:01 - Sending input to LLM: hello
+[INFO] 2025-01-27 18:03:09 - TTS error: expected string or bytes-like object
+[INFO] 2025-01-27 18:03:10 - Application closing; stopping threads.
+[INFO] 2025-01-27 18:03:10 - allStop clicked.
+[INFO] 2025-01-27 18:03:10 - stop_asr() called.
+[DEBUG] 2025-01-27 18:03:10 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 18:03:11 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 18:03:11 - stop_tts() called.
+[INFO] 2025-01-27 18:03:11 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:03:11 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:03:45 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 18:03:45 - Selected LLM: OpenAI
+[INFO] 2025-01-27 18:03:56 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:03:58 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:03:58 - Headless server connected.
+[INFO] 2025-01-27 18:03:59 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:04:01 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:04:07 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 18:04:08 - allStart clicked.
+[INFO] 2025-01-27 18:04:08 - allStop clicked.
+[INFO] 2025-01-27 18:04:08 - stop_asr() called.
+[INFO] 2025-01-27 18:04:08 - stop_tts() called.
+[INFO] 2025-01-27 18:04:08 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:04:08 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:04:08 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 18:04:08 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:04:08 - Selected OpenAI Worker.
+[INFO] 2025-01-27 18:04:08 - Starting OpenAI Worker.
+[INFO] 2025-01-27 18:04:08 - OpenAI Worker started.
+[INFO] 2025-01-27 18:04:08 - start_asr() called.
+[INFO] 2025-01-27 18:04:08 - stop_asr() called.
+[INFO] 2025-01-27 18:04:08 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 18:04:08 - start_tts() called.
+[INFO] 2025-01-27 18:04:08 - stop_tts() called.
+[INFO] 2025-01-27 18:04:08 - TTS worker started.
+[INFO] 2025-01-27 18:04:08 - allStart - all modules started.
+[INFO] 2025-01-27 18:04:08 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 18:04:31 - allStop clicked.
+[INFO] 2025-01-27 18:04:31 - stop_asr() called.
+[DEBUG] 2025-01-27 18:04:31 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 18:04:32 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 18:04:32 - stop_tts() called.
+[INFO] 2025-01-27 18:04:32 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:04:32 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:04:37 - allStart clicked.
+[INFO] 2025-01-27 18:04:37 - allStop clicked.
+[INFO] 2025-01-27 18:04:37 - stop_asr() called.
+[INFO] 2025-01-27 18:04:37 - stop_tts() called.
+[INFO] 2025-01-27 18:04:37 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:04:37 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:04:37 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 18:04:37 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:04:37 - Selected OpenAI Worker.
+[INFO] 2025-01-27 18:04:37 - Starting OpenAI Worker.
+[INFO] 2025-01-27 18:04:37 - OpenAI Worker started.
+[INFO] 2025-01-27 18:04:37 - start_asr() called.
+[INFO] 2025-01-27 18:04:37 - stop_asr() called.
+[INFO] 2025-01-27 18:04:37 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 18:04:37 - start_tts() called.
+[INFO] 2025-01-27 18:04:37 - stop_tts() called.
+[INFO] 2025-01-27 18:04:37 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 18:04:37 - TTS worker started.
+[INFO] 2025-01-27 18:04:37 - allStart - all modules started.
+[INFO] 2025-01-27 18:04:41 - ASR recognized: hello
+[INFO] 2025-01-27 18:04:41 - Sending input to LLM: hello
+[INFO] 2025-01-27 18:06:18 - TTS error: expected string or bytes-like object
+[INFO] 2025-01-27 18:06:22 - ASR recognized: how are you
+[INFO] 2025-01-27 18:06:22 - Sending input to LLM: how are you
+[INFO] 2025-01-27 18:07:04 - TTS error: expected string or bytes-like object
+[INFO] 2025-01-27 18:08:02 - ASR recognized: hello
+[INFO] 2025-01-27 18:08:02 - Sending input to LLM: hello
+[INFO] 2025-01-27 18:08:21 - TTS error: expected string or bytes-like object
+[INFO] 2025-01-27 18:09:19 - Application closing; stopping threads.
+[INFO] 2025-01-27 18:09:19 - allStop clicked.
+[INFO] 2025-01-27 18:09:19 - stop_asr() called.
+[DEBUG] 2025-01-27 18:09:19 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 18:09:19 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 18:09:19 - stop_tts() called.
+[INFO] 2025-01-27 18:09:20 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:09:20 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:10:59 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 18:10:59 - Selected LLM: OpenAI
+[INFO] 2025-01-27 18:11:10 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:11:12 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:11:12 - Headless server connected.
+[INFO] 2025-01-27 18:11:18 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:11:20 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:11:26 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 18:11:26 - allStart clicked.
+[INFO] 2025-01-27 18:11:26 - allStop clicked.
+[INFO] 2025-01-27 18:11:26 - stop_asr() called.
+[INFO] 2025-01-27 18:11:26 - stop_tts() called.
+[INFO] 2025-01-27 18:11:26 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:11:26 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:11:26 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 18:11:26 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:11:26 - Selected OpenAI Worker.
+[INFO] 2025-01-27 18:11:26 - Starting OpenAI Worker.
+[INFO] 2025-01-27 18:11:26 - OpenAI Worker started.
+[INFO] 2025-01-27 18:11:26 - start_asr() called.
+[INFO] 2025-01-27 18:11:26 - stop_asr() called.
+[INFO] 2025-01-27 18:11:26 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 18:11:26 - start_tts() called.
+[INFO] 2025-01-27 18:11:26 - stop_tts() called.
+[INFO] 2025-01-27 18:11:26 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 18:11:26 - TTS worker started.
+[INFO] 2025-01-27 18:11:26 - allStart - all modules started.
+[INFO] 2025-01-27 18:11:33 - ASR recognized: hello
+[INFO] 2025-01-27 18:11:33 - Sending input to LLM: hello
+[INFO] 2025-01-27 18:11:39 - TTS error: expected string or bytes-like object
+[INFO] 2025-01-27 18:11:40 - Application closing; stopping threads.
+[INFO] 2025-01-27 18:11:40 - allStop clicked.
+[INFO] 2025-01-27 18:11:40 - stop_asr() called.
+[DEBUG] 2025-01-27 18:11:40 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 18:11:40 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 18:11:40 - stop_tts() called.
+[INFO] 2025-01-27 18:11:40 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:11:40 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:12:07 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 18:12:07 - Selected LLM: OpenAI
+[INFO] 2025-01-27 18:12:12 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:12:15 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:12:15 - Headless server connected.
+[INFO] 2025-01-27 18:12:16 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:12:18 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:12:24 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 18:12:29 - allStart clicked.
+[INFO] 2025-01-27 18:12:29 - allStop clicked.
+[INFO] 2025-01-27 18:12:29 - stop_asr() called.
+[INFO] 2025-01-27 18:12:29 - stop_tts() called.
+[INFO] 2025-01-27 18:12:29 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:12:29 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:12:29 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 18:12:29 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:12:29 - Selected OpenAI Worker.
+[INFO] 2025-01-27 18:12:29 - Starting OpenAI Worker.
+[INFO] 2025-01-27 18:12:29 - OpenAI Worker started.
+[INFO] 2025-01-27 18:12:29 - start_asr() called.
+[INFO] 2025-01-27 18:12:29 - stop_asr() called.
+[INFO] 2025-01-27 18:12:29 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 18:12:29 - start_tts() called.
+[INFO] 2025-01-27 18:12:29 - stop_tts() called.
+[INFO] 2025-01-27 18:12:29 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 18:12:36 - TTS worker started.
+[INFO] 2025-01-27 18:12:36 - allStart - all modules started.
+[INFO] 2025-01-27 18:12:39 - ASR recognized: hello
+[INFO] 2025-01-27 18:12:39 - Sending input to LLM: hello
+[INFO] 2025-01-27 18:13:57 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 18:13:58 - Selected LLM: OpenAI
+[INFO] 2025-01-27 18:14:01 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 18:14:01 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:14:01 - Selected Ollama Worker.
+[INFO] 2025-01-27 18:14:01 - Starting Ollama Worker.
+[INFO] 2025-01-27 18:14:01 - Ollama Worker started.
+[INFO] 2025-01-27 18:14:05 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:14:07 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:14:07 - Headless server connected.
+[INFO] 2025-01-27 18:14:08 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:14:10 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:14:16 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 18:14:18 - allStart clicked.
+[INFO] 2025-01-27 18:14:18 - allStop clicked.
+[INFO] 2025-01-27 18:14:18 - stop_asr() called.
+[INFO] 2025-01-27 18:14:18 - stop_tts() called.
+[INFO] 2025-01-27 18:14:18 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:14:18 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:14:18 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 18:14:18 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:14:18 - Selected Ollama Worker.
+[INFO] 2025-01-27 18:14:18 - Starting Ollama Worker.
+[INFO] 2025-01-27 18:14:18 - Ollama Worker started.
+[INFO] 2025-01-27 18:14:18 - start_asr() called.
+[INFO] 2025-01-27 18:14:18 - stop_asr() called.
+[INFO] 2025-01-27 18:14:18 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 18:14:18 - start_tts() called.
+[INFO] 2025-01-27 18:14:18 - stop_tts() called.
+[INFO] 2025-01-27 18:14:18 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 18:14:18 - TTS worker started.
+[INFO] 2025-01-27 18:14:18 - allStart - all modules started.
+[INFO] 2025-01-27 18:14:21 - ASR recognized: hello
+[INFO] 2025-01-27 18:14:21 - Sending input to LLM: hello
+[INFO] 2025-01-27 18:14:28 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-27 18:14:32 - ASR recognized: how are you
+[INFO] 2025-01-27 18:14:32 - Sending input to LLM: how are you
+[INFO] 2025-01-27 18:14:52 - TTS finished: TTS done for text: I'm just a language model, so I don't have feelings or emotions like humans do. However, I'm functioning properly and ready to assist you with any questions or tasks you may have! How can I help you today?
+[INFO] 2025-01-27 18:14:55 - ASR recognized: can you tell me a joke
+[INFO] 2025-01-27 18:14:55 - Sending input to LLM: can you tell me a joke
+[INFO] 2025-01-27 18:15:04 - TTS finished: TTS done for text: Here's one:
+
+What do you call a fake noodle?
+
+An impasta!
+[INFO] 2025-01-27 18:15:11 - ASR recognized: can you keep the answers short
+[INFO] 2025-01-27 18:15:11 - Sending input to LLM: can you keep the answers short
+[INFO] 2025-01-27 18:15:17 - TTS finished: TTS done for text: I'll keep my answers concise. Go ahead and ask your question!
+[INFO] 2025-01-27 18:15:22 - ASR recognized: how are you feeling
+[INFO] 2025-01-27 18:15:22 - Sending input to LLM: how are you feeling
+[INFO] 2025-01-27 18:15:41 - TTS finished: TTS done for text: I'm just a language model, I don't have emotions or feelings like humans do. However, I'm functioning properly and ready to assist you with any questions or tasks you may have! How can I help you today?
+[INFO] 2025-01-27 18:15:41 - allStop clicked.
+[INFO] 2025-01-27 18:15:41 - stop_asr() called.
+[DEBUG] 2025-01-27 18:15:41 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 18:15:41 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 18:15:41 - stop_tts() called.
+[INFO] 2025-01-27 18:15:41 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:15:41 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:15:44 - allClear clicked.
+[INFO] 2025-01-27 18:15:44 - allStop clicked.
+[INFO] 2025-01-27 18:15:44 - stop_asr() called.
+[INFO] 2025-01-27 18:15:44 - stop_tts() called.
+[INFO] 2025-01-27 18:15:44 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:15:44 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:15:44 - System prompt updated: You are a helpful assistant.
+[INFO] 2025-01-27 18:15:44 - Switching LLM to: OpenAI
+[INFO] 2025-01-27 18:15:44 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:15:44 - Selected OpenAI Worker.
+[INFO] 2025-01-27 18:15:44 - Starting OpenAI Worker.
+[INFO] 2025-01-27 18:15:44 - OpenAI Worker started.
+[INFO] 2025-01-27 18:15:44 - allClear - all settings & context reset to defaults.
+[INFO] 2025-01-27 18:15:55 - Application closing; stopping threads.
+[INFO] 2025-01-27 18:15:55 - allStop clicked.
+[INFO] 2025-01-27 18:15:55 - stop_asr() called.
+[INFO] 2025-01-27 18:15:55 - stop_tts() called.
+[INFO] 2025-01-27 18:15:55 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:15:56 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:16:35 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-27 18:16:35 - Selected LLM: OpenAI
+[INFO] 2025-01-27 18:16:44 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear.
+[INFO] 2025-01-27 18:16:44 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. W
+[INFO] 2025-01-27 18:16:44 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Wh
+[INFO] 2025-01-27 18:16:45 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Wha
+[INFO] 2025-01-27 18:16:45 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What
+[INFO] 2025-01-27 18:16:45 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What
+[INFO] 2025-01-27 18:16:45 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What a
+[INFO] 2025-01-27 18:16:45 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What ar
+[INFO] 2025-01-27 18:16:45 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are
+[INFO] 2025-01-27 18:16:46 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are
+[INFO] 2025-01-27 18:16:46 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are y
+[INFO] 2025-01-27 18:16:46 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are yo
+[INFO] 2025-01-27 18:16:46 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you
+[INFO] 2025-01-27 18:16:46 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you
+[INFO] 2025-01-27 18:16:47 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you d
+[INFO] 2025-01-27 18:16:47 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you do
+[INFO] 2025-01-27 18:16:47 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you doi
+[INFO] 2025-01-27 18:16:47 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you do
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you d
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are you
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are yo
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are y
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What are
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What ar
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What a
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. What
+[INFO] 2025-01-27 18:16:48 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Wha
+[INFO] 2025-01-27 18:16:49 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Wh
+[INFO] 2025-01-27 18:16:49 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. W
+[INFO] 2025-01-27 18:16:49 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear.
+[INFO] 2025-01-27 18:16:52 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. T
+[INFO] 2025-01-27 18:16:52 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Te
+[INFO] 2025-01-27 18:16:52 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tel
+[INFO] 2025-01-27 18:16:52 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell
+[INFO] 2025-01-27 18:16:52 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell
+[INFO] 2025-01-27 18:16:53 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell a
+[INFO] 2025-01-27 18:16:53 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell al
+[INFO] 2025-01-27 18:16:53 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell als
+[INFO] 2025-01-27 18:16:53 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also
+[INFO] 2025-01-27 18:16:53 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also
+[INFO] 2025-01-27 18:16:54 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also s
+[INFO] 2025-01-27 18:16:54 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also so
+[INFO] 2025-01-27 18:16:55 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also som
+[INFO] 2025-01-27 18:16:55 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also some
+[INFO] 2025-01-27 18:16:55 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also somet
+[INFO] 2025-01-27 18:16:55 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also someth
+[INFO] 2025-01-27 18:16:55 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also somethi
+[INFO] 2025-01-27 18:16:55 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also somethin
+[INFO] 2025-01-27 18:16:55 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also something
+[INFO] 2025-01-27 18:16:56 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also something
+[INFO] 2025-01-27 18:16:56 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also something f
+[INFO] 2025-01-27 18:16:56 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also something fu
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also something f
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also something
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also something
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also somethin
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also somethi
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also someth
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also somet
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also some
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also som
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also so
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also s
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also
+[INFO] 2025-01-27 18:16:57 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell also
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell als
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell al
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell a
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tell
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Tel
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Te
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. T
+[INFO] 2025-01-27 18:16:58 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear.
+[INFO] 2025-01-27 18:16:59 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. B
+[INFO] 2025-01-27 18:16:59 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Be
+[INFO] 2025-01-27 18:16:59 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Be
+[INFO] 2025-01-27 18:16:59 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Be k
+[INFO] 2025-01-27 18:17:00 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Be ki
+[INFO] 2025-01-27 18:17:00 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Be kin
+[INFO] 2025-01-27 18:17:00 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Be ki
+[INFO] 2025-01-27 18:17:01 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Be kin
+[INFO] 2025-01-27 18:17:01 - System prompt updated: You are a helpful and knowledgeable assistant that answers questions short and clear. Be kind
+[INFO] 2025-01-27 18:17:05 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 18:17:05 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:17:05 - Selected Ollama Worker.
+[INFO] 2025-01-27 18:17:05 - Starting Ollama Worker.
+[INFO] 2025-01-27 18:17:05 - Ollama Worker started.
+[INFO] 2025-01-27 18:17:09 - allStart clicked.
+[INFO] 2025-01-27 18:17:09 - allStop clicked.
+[INFO] 2025-01-27 18:17:09 - stop_asr() called.
+[INFO] 2025-01-27 18:17:09 - stop_tts() called.
+[INFO] 2025-01-27 18:17:09 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:17:09 - allStop - all modules stopped.
+[INFO] 2025-01-27 18:17:09 - Switching LLM to: LLAMA
+[INFO] 2025-01-27 18:17:09 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:17:09 - Selected Ollama Worker.
+[INFO] 2025-01-27 18:17:09 - Starting Ollama Worker.
+[INFO] 2025-01-27 18:17:09 - Ollama Worker started.
+[INFO] 2025-01-27 18:17:09 - start_asr() called.
+[INFO] 2025-01-27 18:17:09 - stop_asr() called.
+[INFO] 2025-01-27 18:17:09 - Google ASR started with lang=en-US, endpoint=http://www.google.com/speech-api/v2/recognize
+[INFO] 2025-01-27 18:17:09 - start_tts() called.
+[INFO] 2025-01-27 18:17:09 - stop_tts() called.
+[INFO] 2025-01-27 18:17:09 - TTS worker started.
+[INFO] 2025-01-27 18:17:09 - allStart - all modules started.
+[INFO] 2025-01-27 18:17:09 - Starting Google ASR Transcription Thread
+[INFO] 2025-01-27 18:17:14 - ASR recognized: hello
+[INFO] 2025-01-27 18:17:14 - Sending input to LLM: hello
+[INFO] 2025-01-27 18:17:19 - TTS finished: TTS done for text: Hello! How can I assist you today?
+[INFO] 2025-01-27 18:17:22 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:17:24 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:17:24 - Headless server connected.
+[INFO] 2025-01-27 18:17:25 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-27 18:17:27 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-27 18:17:34 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-27 18:17:36 - Application closing; stopping threads.
+[INFO] 2025-01-27 18:17:36 - allStop clicked.
+[INFO] 2025-01-27 18:17:36 - stop_asr() called.
+[DEBUG] 2025-01-27 18:17:36 - Stopping Google ASR Transcription Thread
+[INFO] 2025-01-27 18:17:36 - Google ASR Transcription Thread Stopped
+[INFO] 2025-01-27 18:17:36 - stop_tts() called.
+[INFO] 2025-01-27 18:17:36 - Stopping LLM Worker.
+[INFO] 2025-01-27 18:17:36 - allStop - all modules stopped.

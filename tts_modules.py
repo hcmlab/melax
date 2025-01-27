@@ -250,6 +250,7 @@ class TTSWorker(QThread):
             try:
                 self._process_text_to_a2f(text)
             except Exception as e:
+                print(e)
                 self.ttsError.emit(str(e))
             finally:
                 self.is_processing = False

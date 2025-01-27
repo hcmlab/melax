@@ -82,3 +82,5 @@ CMakeLists.txt.user*
 assistant_response.mp3
 assistant_response.mp3
 stream_to_unreal/combine_body_face.py
+stream_to_unreal/combined_data.json
+stream_to_unreal/bs_bone_violet.json

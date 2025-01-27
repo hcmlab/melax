@@ -9,7 +9,7 @@ from local_logger import ThreadSafeLogger
 from pathlib import Path
 import requests
 import json
-from llm_modules import OpenAIWorker
+from llm_modules import OpenAIWorker, OllamaWorker
 from tts_modules import TTSWorker, GoogleTTSEngine, CoquiTTSEngine
 from asr_vad_modules import WhisperTranscriptionThread, GoogleASRTranscriptionThread
 #from behaviour_module import Audio2FaceHeadlessThread
@@ -28,7 +28,8 @@ class MainWindow(QMainWindow):
     # Custom signals
     transcription_signal = Signal(str)                 # ASR -> GUI
     openai_request_signal = Signal(str, object, int, float)  # LLM request
-    tts_request_signal = Signal(str)              # TTS request (text)
+    tts_request_signal =  Signal(str)         # TTS request (text)
+    ollama_request_signal = Signal(str, int, float)      # Ollama LLM request (messages)
 
     API_MESSAGE_DEFAULT = "Enter here or set as OPENAI_API_KEY variable"
     API_MESSAGE_FOUND_ENV = "Found it in env variables"
@@ -57,8 +58,10 @@ class MainWindow(QMainWindow):
         # We'll hold references to the workers/threads
         # so we can stop them individually
         # ----------------------------------------------------
-        self.openai_worker = None
-        self.openai_worker_thread = None
+        #self.openai_worker = None
+        #self.openai_worker_thread = None
+        self.llm_worker = None
+        self.llm_worker_thread = None
         self.transcription_thread = None
         self.tts_worker = None
         self.MAX_CONTEXT_LENGTH = 50
@@ -82,6 +85,15 @@ class MainWindow(QMainWindow):
 
         #self.ui.loadUSDButton.clicked.connect(self.load_usd_to_server)
         #self.ui.checkServerButton.clicked.connect(self.check_server_status)
+
+        # ----------------------------------------------------
+        # Connect LLM choice dropdown to dynamically update worker
+        # ----------------------------------------------------
+        self.ui.LLMChocie.currentTextChanged.connect(self.switch_llm_worker)
+
+        # Initialize LLM choice and worker
+        self.current_llm = self.ui.LLMChocie.currentText()
+        self.logger.log_info(f"Selected LLM: {self.current_llm}")
 
         # ----------------------------------------------------
         # Connect ASR transcription signal to handle_transcription
@@ -108,9 +120,14 @@ class MainWindow(QMainWindow):
         self.ui.recognizerMBOX.addItems(["Google", "Whisper"])
 
         # Populate combos for LLM
-        self.ui.LLMChocie.addItems(["OpenAI", "LLAMA", "Gemini"])
+        self.ui.LLMChocie.addItems(["OpenAI", "LLAMA"])
         self.models = ["gpt-4o-mini", "gpt-3.5-turbo"]
         self.ui.llmMBOX.addItems(self.models)
+
+        self.ui.llmMBOX_Llama.addItems(["llama3.2"])
+
+        # Set default visibility
+        self.toggle_llm_group_visibility(self.ui.LLMChocie.currentText())
 
         # Rename Start/Stop/Clear buttons in the .ui to something like startAll, stopAll, clearAll
         self.ui.startAll.setText("allStart")
@@ -132,11 +149,21 @@ class MainWindow(QMainWindow):
         self.update_system_prompt()
         self.ui.systemPromptEdit.textChanged.connect(self.update_system_prompt)
 
-        # If temperature/max tokens aren't set, set defaults
+        # Connect Llama temperature slider to label update
+        self.ui.temperatureLlama.setRange(0, 100)
+        #self.ui.temperatureLlama.valueChanged.connect(self.update_temperature_label)
+        self.ui.temperatureLlama.setValue(70)
+        self.ui.temperatureLlama.valueChanged.connect(self.update_temperature_label_llama)
+
+        # Connect OpenAI temperature slider to label update
         self.ui.temperatureOpenAI.setRange(0, 100)
-        self.ui.temperatureOpenAI.valueChanged.connect(self.update_temperature_label)
+        #self.ui.temperatureOpenAI.valueChanged.connect(self.update_temperature_label)
         self.ui.temperatureOpenAI.setValue(70)
-        self.update_temperature_label(self.ui.temperatureOpenAI.value())
+        self.ui.temperatureOpenAI.valueChanged.connect(self.update_temperature_label_openai)
+
+        # If temperature/max tokens aren't set, set defaults
+
+        #self.update_temperature_label(self.ui.temperatureOpenAI.value())
 
         self.ui.maxTokenOpenAI.setValue(1024)
 
@@ -279,8 +306,8 @@ class MainWindow(QMainWindow):
         # Stop everything first
         self.allStop()
 
-        # Start LLM
-        self.start_llm()
+        # Dynamically start LLM based on selection
+        self.switch_llm_worker(self.ui.LLMChocie.currentText())
         # Start ASR
         self.start_asr()
         # Start TTS
@@ -342,16 +369,86 @@ class MainWindow(QMainWindow):
         self.logger.log_info("allClear - all settings & context reset to defaults.")
 
     # ----------------------------------------------------
-    # LLM (OpenAI)
+    # Dynamic LLM Worker Selection
     # ----------------------------------------------------
-    def start_llm(self):
+
+    def switch_llm_worker(self, llm_choice: str):
+        """
+        Switches the LLM worker based on the selected LLM choice.
+        """
+        self.logger.log_info(f"Switching LLM to: {llm_choice}")
+        self.stop_llm()  # Stop the current worker, if any
+
+        if llm_choice == "OpenAI":
+            self.logger.log_info("Selected OpenAI Worker.")
+            self.ui.openai_group.setVisible(True)
+            self.ui.llama_group.setVisible(False)
+            self.start_llm_openai()
+        elif llm_choice == "LLAMA":
+            self.ui.openai_group.setVisible(False)
+            self.ui.llama_group.setVisible(True)
+            self.logger.log_info("Selected Ollama Worker.")
+            self.start_llm_ollama()
+        else:
+            self.logger.log_error(f"Unsupported LLM choice: {llm_choice}")
+
+    def toggle_llm_group_visibility(self, llm_choice: str):
+        """
+        Toggles the visibility of OpenAI and Llama groups based on the LLM choice.
+        """
+        if llm_choice == "OpenAI":
+            self.ui.openai_group.setVisible(True)
+            self.ui.llama_group.setVisible(False)
+        elif llm_choice == "LLAMA":
+            self.ui.openai_group.setVisible(False)
+            self.ui.llama_group.setVisible(True)
+        else:
+            self.ui.openai_group.setVisible(False)
+            self.ui.llama_group.setVisible(False)
+
+    def get_temperature(self):
+        """
+        Fetch temperature value from the active widget.
+        """
+        if self.ui.openai_group.isVisible():
+            return self.ui.temperatureOpenAI.value() / 100.0  # Scale 0-100 slider to 0.0-1.0
+        elif self.ui.llama_group.isVisible():
+            return self.ui.temperatureLlama.value() / 100.0
+        return 0.7  # Default temperature
+
+    def get_max_tokens(self):
+        """
+        Fetch max tokens value from the active widget.
+        """
+        if self.ui.openai_group.isVisible():
+            return self.ui.maxTokenOpenAI.value()
+        elif self.ui.llama_group.isVisible():
+            return self.ui.maxTokenLlama.value()
+        return 1024  # Default max tokens
+
+    def update_temperature_label_llama(self, value: int):
+        """
+        Update the Llama temperature label when the slider value changes.
+        """
+        temperature = value / 100.0
+        self.ui.TemperatureLablellama.setText(f"{temperature:.2f}")
+
+    def update_temperature_label_openai(self, value: int):
+        """
+        Update the OpenAI temperature label when the slider value changes.
+        """
+        temperature = value / 100.0
+        self.ui.llmTemperatureLable.setText(f"{temperature:.2f}")
+
+
+    # ----------------------------------------------------
+    # OpenAI Worker
+    # ----------------------------------------------------
+    def start_llm_openai(self):
         """
         Create & start OpenAI worker with the current API key.
         """
-        self.logger.log_info("start_llm() called.")
-
-        # Stop existing if any
-        self.stop_llm()
+        self.logger.log_info("Starting OpenAI Worker.")
 
         # Read the key from UI
         self.api_key = self.ui.openaiAPIKey.text().strip()
@@ -361,41 +458,163 @@ class MainWindow(QMainWindow):
         openai.api_key = self.api_key
 
         # Create the worker
-        self.openai_worker = OpenAIWorker(api_key=self.api_key)
-        self.openai_worker_thread = QThread()
-        self.openai_worker.moveToThread(self.openai_worker_thread)
-        self.openai_worker.responseReady.connect(self.display_openai_response)
-        self.openai_worker.errorOccurred.connect(self.display_openai_error)
+        self.llm_worker = OpenAIWorker(api_key=self.api_key)
+        self.llm_worker_thread = QThread()
+        self.llm_worker.moveToThread(self.llm_worker_thread)
+        self.llm_worker.responseReady.connect(self.display_llm_response)
+        self.llm_worker.errorOccurred.connect(self.display_llm_error)
 
-        # Connect LLM request signal to worker
-        self.openai_request_signal.connect(self.openai_worker.add_request)
+        # Connect OpenAI request signal to worker
+        self.openai_request_signal.connect(self.llm_worker.add_request)
 
-        self.openai_worker_thread.start()
-        self.logger.log_info("OpenAI worker started.")
+        self.llm_worker_thread.start()
+        self.logger.log_info("OpenAI Worker started.")
+
+        # ----------------------------------------------------
+        # Ollama Worker
+        # ----------------------------------------------------
+
+    def start_llm_ollama(self):
+        """
+        Create & start Ollama worker.
+        """
+        self.logger.log_info("Starting Ollama Worker.")
+
+        # Create the worker
+        self.llm_worker = OllamaWorker(model_name="llama3.2")
+        self.llm_worker_thread = QThread()
+        self.llm_worker.moveToThread(self.llm_worker_thread)
+        self.llm_worker.responseReady.connect(self.display_llm_response)
+        self.llm_worker.errorOccurred.connect(self.display_llm_error)
+
+        # Connect Ollama request signal to worker
+        self.ollama_request_signal.connect(self.llm_worker.add_request)
+
+        self.llm_worker_thread.start()
+        self.logger.log_info("Ollama Worker started.")
+
+    def send_to_llm(self, user_input: str):
+        """
+        Sends a request to the selected LLM worker.
+        """
+        self.logger.log_info(f"Sending input to LLM: {user_input}")
+        self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {user_input}")
+
+        # Prepare the context and parameters
+        temperature = self.get_temperature()
+        max_tokens = self.get_max_tokens()
+
+        if self.ui.openai_group.isVisible():
+            selected_model = self.ui.llmMBOX.currentText()
+            context = [{"role": "user", "content": user_input}]
+            self.llm_worker.add_request(selected_model, context, max_tokens, temperature)
+        elif self.ui.llama_group.isVisible():
+            #selected_model = self.ui.llmMBOX_Llama.currentText()
+            messages = [{"role": "user", "content": user_input}]
+            self.llm_worker.add_request(messages, max_tokens, temperature)
+
+
 
     def stop_llm(self):
         """
-        Stop the OpenAI worker if running.
+        Stop the current LLM worker, if running.
         """
-        self.logger.log_info("stop_llm() called.")
-        if self.openai_worker:
-            self.openai_worker.stop()
-            self.openai_worker = None
-        if self.openai_worker_thread:
-            self.openai_worker_thread.quit()
-            self.openai_worker_thread.wait()
-            self.openai_worker_thread = None
+        self.logger.log_info("Stopping LLM Worker.")
+        if self.llm_worker:
+            self.llm_worker.stop()
+            self.llm_worker = None
+        if self.llm_worker_thread:
+            self.llm_worker_thread.quit()
+            self.llm_worker_thread.wait()
+            self.llm_worker_thread = None
 
-    @Slot(int)
-    def update_temperature_label(self, slider_value: int):
+        # ----------------------------------------------------
+        # LLM Request Handling
+        # ----------------------------------------------------
+    # def send_to_llm(self, user_input: str):
+    #     """
+    #     Sends user input to the active LLM worker.
+    #     """
+    #     self.logger.log_info(f"Sending input to LLM: {user_input}")
+    #     self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {user_input}")
+    #
+    #     # Append user input to context
+    #     self.context.append({"role": "user", "content": user_input})
+    #
+    #     # Truncate context if it exceeds the maximum length
+    #     if len(self.context) > self.MAX_CONTEXT_LENGTH:
+    #         self.context = self.context[-self.MAX_CONTEXT_LENGTH:]
+    #
+    #     # Prepare parameters
+    #     max_tokens = self.ui.maxTokenOpenAI.value()
+    #     temperature = self.ui.temperatureOpenAI.value() / 100
+    #     messages = self.context
+    #
+    #     # Emit the appropriate signal based on the selected worker
+    #     if self.current_llm == "OpenAI":
+    #         self.openai_request_signal.emit(self.ui.llmMBOX.currentText(), messages, max_tokens, temperature)
+    #     elif self.current_llm == "LLAMA":
+    #         self.ollama_request_signal.emit(messages, max_tokens, temperature)
+    # ----------------------------------------------------
+    # LLM Response Handling
+    # ----------------------------------------------------
+
+    @Slot(str)
+    def display_llm_response(self, response):
         """
-        Convert slider_value (0..200) to a float in 0..2 range
-        and update llmTemperatureLable text accordingly.
+        Handles the response from the LLM (OpenAI or Ollama) and appends it to the context.
         """
-        # Scale the integer to a float between 0..2:
-        temperature = slider_value / 100.0
-        # Update the label:
-        self.ui.llmTemperatureLable.setText(f"value: {temperature:.2f}")
+        self.context.append({"role": "assistant", "content": response})
+        self.ui.contextBrowserOpenAI.append(f"<b>Assistant:</b> {response}")
+
+        # Automatically trigger TTS for the assistant response
+        self.tts_request_signal.emit(response)
+
+    @Slot(str)
+    def display_llm_error(self, error_message):
+        """
+        Displays an error message for the LLM worker.
+        """
+        QMessageBox.critical(self, "LLM Error", error_message)
+        self.logger.log_error(f"LLM Error: {error_message}")
+
+    # def send_to_openai(self, user_input):
+    #     """
+    #     Sends user input to OpenAI API after appending it to the context.
+    #     Truncates the context if it exceeds the maximum allowed length.
+    #     """
+    #     self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {user_input}")
+    #
+    #     # Append the user message to the context
+    #     self.context.append({
+    #         "role": "user",
+    #         "content": [{"type": "text", "text": user_input}]
+    #     })
+    #
+    #
+    #     # Truncate the context if it exceeds MAX_CONTEXT_LENGTH
+    #     if len(self.context) > self.MAX_CONTEXT_LENGTH + 1:  # +1 for the developer role
+    #         self.context = self.context[:1] + self.context[-self.MAX_CONTEXT_LENGTH:]
+    #
+    #     # Prepare parameters for OpenAI request
+    #     context_copy = self.context.copy()
+    #     max_tokens = self.ui.maxTokenOpenAI.value()
+    #     temperature = self.ui.temperatureOpenAI.value() / 100
+    #     selected_model = self.ui.llmMBOX.currentText()
+    #
+    #     # Emit the OpenAI request signal
+    #     self.openai_request_signal.emit(selected_model, context_copy, max_tokens, temperature)
+
+    # @Slot(int)
+    # def update_temperature_label(self, slider_value: int):
+    #     """
+    #     Convert slider_value (0..200) to a float in 0..2 range
+    #     and update llmTemperatureLable text accordingly.
+    #     """
+    #     # Scale the integer to a float between 0..2:
+    #     temperature = slider_value / 100.0
+    #     # Update the label:
+    #     self.ui.llmTemperatureLable.setText(f"value: {temperature:.2f}")
     # ----------------------------------------------------
     # ASR (Whisper or Google)
     # ----------------------------------------------------
@@ -663,7 +882,7 @@ class MainWindow(QMainWindow):
             self.ui.contextBrowserOpenAI.append(f"<b>Developer:</b> {new_prompt}")
         else:
             # Default prompt in case the field is empty
-            default_prompt = "You are a helpful assistant."
+            default_prompt = "You are a helpful and knowledgeable assistant that answers questions short and clear."
             self.ui.systemPromptEdit.setText(default_prompt)
             self.logger.log_info("System prompt was empty. Resetting to default.")
 
@@ -686,34 +905,8 @@ class MainWindow(QMainWindow):
     def handle_transcription(self, user_input):
         self.logger.log_info(f"ASR recognized: {user_input}")
         # Optionally show in some text browser: self.ui.asrTextBrowser.append(user_input)
-        self.send_to_openai(user_input)
+        self.send_to_llm(user_input)
 
-    def send_to_openai(self, user_input):
-        """
-        Sends user input to OpenAI API after appending it to the context.
-        Truncates the context if it exceeds the maximum allowed length.
-        """
-        self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {user_input}")
-
-        # Append the user message to the context
-        self.context.append({
-            "role": "user",
-            "content": [{"type": "text", "text": user_input}]
-        })
-
-
-        # Truncate the context if it exceeds MAX_CONTEXT_LENGTH
-        if len(self.context) > self.MAX_CONTEXT_LENGTH + 1:  # +1 for the developer role
-            self.context = self.context[:1] + self.context[-self.MAX_CONTEXT_LENGTH:]
-
-        # Prepare parameters for OpenAI request
-        context_copy = self.context.copy()
-        max_tokens = self.ui.maxTokenOpenAI.value()
-        temperature = self.ui.temperatureOpenAI.value() / 100
-        selected_model = self.ui.llmMBOX.currentText()
-
-        # Emit the OpenAI request signal
-        self.openai_request_signal.emit(selected_model, context_copy, max_tokens, temperature)
 
     @Slot(str)
     def display_openai_response(self, response):
