@@ -3102,3 +3102,143 @@ An impasta!
 [INFO] 2025-01-27 18:17:36 - stop_tts() called.
 [INFO] 2025-01-27 18:17:36 - Stopping LLM Worker.
 [INFO] 2025-01-27 18:17:36 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:10:47 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:10:47 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:10:59 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:10:59 - allStop clicked.
+[INFO] 2025-01-30 09:10:59 - stop_asr() called.
+[INFO] 2025-01-30 09:10:59 - stop_tts() called.
+[INFO] 2025-01-30 09:10:59 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:10:59 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:25:41 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:25:41 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:25:57 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:25:57 - allStop clicked.
+[INFO] 2025-01-30 09:25:57 - stop_asr() called.
+[INFO] 2025-01-30 09:25:57 - stop_tts() called.
+[INFO] 2025-01-30 09:25:57 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:25:57 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:26:36 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:26:36 - Selected LLM: OpenAI
+[ERROR] 2025-01-30 09:28:52 - Failed to set emotion: Happy, Response: {"detail":"Not Found"}
+[ERROR] 2025-01-30 09:29:00 - Failed to set emotion: Sad, Response: {"detail":"Not Found"}
+[INFO] 2025-01-30 09:29:03 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:29:03 - allStop clicked.
+[INFO] 2025-01-30 09:29:03 - stop_asr() called.
+[INFO] 2025-01-30 09:29:03 - stop_tts() called.
+[INFO] 2025-01-30 09:29:03 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:29:03 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:30:44 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:30:44 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:31:05 - Emotion payload: {'amazement': 0, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0, 'Happy': 1}
+[ERROR] 2025-01-30 09:31:09 - Error setting emotion: HTTPConnectionPool(host='localhost', port=8011): Max retries exceeded with url: /A2F/Behaviour/SetEmotion (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000290137AEBF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+[INFO] 2025-01-30 09:31:44 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-30 09:31:46 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-30 09:31:46 - Headless server connected.
+[INFO] 2025-01-30 09:31:47 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-30 09:31:49 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-30 09:31:54 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-30 09:32:02 - Emotion payload: {'amazement': 0, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0, 'Sad': 1}
+[ERROR] 2025-01-30 09:32:04 - Failed to set emotion: Sad, Response: {"detail":"Not Found"}
+[INFO] 2025-01-30 09:32:49 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:32:49 - allStop clicked.
+[INFO] 2025-01-30 09:32:49 - stop_asr() called.
+[INFO] 2025-01-30 09:32:49 - stop_tts() called.
+[INFO] 2025-01-30 09:32:49 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:32:49 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:33:40 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:33:41 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:33:46 - Emotion payload: {'amazement': 1, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0}
+[ERROR] 2025-01-30 09:33:48 - Failed to set emotion: amazement, Response: {"detail":"Not Found"}
+[INFO] 2025-01-30 09:33:51 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-30 09:33:53 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-30 09:33:55 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-30 09:33:59 - Emotion payload: {'amazement': 0, 'anger': 1, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0}
+[ERROR] 2025-01-30 09:34:01 - Failed to set emotion: anger, Response: {"detail":"Not Found"}
+[INFO] 2025-01-30 09:34:08 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:34:08 - allStop clicked.
+[INFO] 2025-01-30 09:34:08 - stop_asr() called.
+[INFO] 2025-01-30 09:34:08 - stop_tts() called.
+[INFO] 2025-01-30 09:34:08 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:34:08 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:36:12 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:36:12 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:36:21 - Emotion payload: {'amazement': 1, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0, 'a2f_instance': '/World/audio2face/CoreFullface'}
+[ERROR] 2025-01-30 09:36:23 - Failed to set emotion: amazement, Response: {"detail":"Not Found"}
+[INFO] 2025-01-30 09:36:48 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-30 09:36:50 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-30 09:36:53 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[INFO] 2025-01-30 09:36:59 - Emotion payload: {'amazement': 0, 'anger': 1, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0, 'a2f_instance': '/World/audio2face/CoreFullface'}
+[ERROR] 2025-01-30 09:37:01 - Failed to set emotion: anger, Response: {"detail":"Not Found"}
+[INFO] 2025-01-30 09:39:22 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:39:22 - allStop clicked.
+[INFO] 2025-01-30 09:39:22 - stop_asr() called.
+[INFO] 2025-01-30 09:39:22 - stop_tts() called.
+[INFO] 2025-01-30 09:39:22 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:39:22 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:39:41 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:39:41 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:39:44 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-30 09:39:46 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-30 09:39:48 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[ERROR] 2025-01-30 09:39:53 - Failed to set emotion: amazement, Response: {"detail":"Not Found"}
+[INFO] 2025-01-30 09:40:13 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:40:13 - allStop clicked.
+[INFO] 2025-01-30 09:40:13 - stop_asr() called.
+[INFO] 2025-01-30 09:40:13 - stop_tts() called.
+[INFO] 2025-01-30 09:40:13 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:40:13 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:44:36 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:44:37 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:44:39 - Checking status: http://localhost:8011/status
+[INFO] 2025-01-30 09:44:41 - Status check response text: ('"OK"', 200)
+[INFO] 2025-01-30 09:44:43 - USD loaded successfully: D:\GitHub\melax\usd\female.usd
+[ERROR] 2025-01-30 09:44:52 - Failed to set emotion: amazement, Response: {"detail":"Not Found"}
+[INFO] 2025-01-30 09:46:44 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:46:44 - allStop clicked.
+[INFO] 2025-01-30 09:46:44 - stop_asr() called.
+[INFO] 2025-01-30 09:46:44 - stop_tts() called.
+[INFO] 2025-01-30 09:46:44 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:46:44 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:47:05 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:47:05 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:47:08 - Emotion payload: {'a2f_instance': '/World/audio2face/CoreFullface', 'emotions': {'amazement': 1, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0}}
+[INFO] 2025-01-30 09:47:10 - Emotion set successfully: amazement, Message: Succeeded
+[INFO] 2025-01-30 09:47:21 - Emotion payload: {'a2f_instance': '/World/audio2face/CoreFullface', 'emotions': {'amazement': 0, 'anger': 1, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0}}
+[INFO] 2025-01-30 09:47:23 - Emotion set successfully: anger, Message: Succeeded
+[INFO] 2025-01-30 09:47:26 - Emotion payload: {'a2f_instance': '/World/audio2face/CoreFullface', 'emotions': {'amazement': 0, 'anger': 0, 'cheekiness': 0, 'disgust': 1, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0}}
+[INFO] 2025-01-30 09:47:28 - Emotion set successfully: disgust, Message: Succeeded
+[INFO] 2025-01-30 09:47:33 - Emotion payload: {'a2f_instance': '/World/audio2face/CoreFullface', 'emotions': {'amazement': 0, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0}}
+[INFO] 2025-01-30 09:47:35 - Emotion set successfully: neutral, Message: Succeeded
+[INFO] 2025-01-30 09:47:38 - Emotion payload: {'a2f_instance': '/World/audio2face/CoreFullface', 'emotions': {'amazement': 0, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 1, 'outofbreath': 0, 'pain': 0, 'sadness': 0}}
+[INFO] 2025-01-30 09:47:40 - Emotion set successfully: joy, Message: Succeeded
+[INFO] 2025-01-30 09:47:42 - Emotion payload: {'a2f_instance': '/World/audio2face/CoreFullface', 'emotions': {'amazement': 0, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 1, 'pain': 0, 'sadness': 0}}
+[INFO] 2025-01-30 09:47:45 - Emotion set successfully: outofbreath, Message: Succeeded
+[INFO] 2025-01-30 09:47:48 - Emotion payload: {'a2f_instance': '/World/audio2face/CoreFullface', 'emotions': {'amazement': 0, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 1, 'sadness': 0}}
+[INFO] 2025-01-30 09:47:50 - Emotion set successfully: pain, Message: Succeeded
+[INFO] 2025-01-30 09:48:00 - Emotion payload: {'a2f_instance': '/World/audio2face/CoreFullface', 'emotions': {'amazement': 0, 'anger': 0, 'cheekiness': 0, 'disgust': 0, 'fear': 0, 'grief': 0, 'joy': 0, 'outofbreath': 0, 'pain': 0, 'sadness': 0}}
+[INFO] 2025-01-30 09:48:02 - Emotion set successfully: neutral, Message: Succeeded
+[INFO] 2025-01-30 09:56:40 - Application closing; stopping threads.
+[INFO] 2025-01-30 09:56:40 - allStop clicked.
+[INFO] 2025-01-30 09:56:40 - stop_asr() called.
+[INFO] 2025-01-30 09:56:40 - stop_tts() called.
+[INFO] 2025-01-30 09:56:40 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:56:40 - allStop - all modules stopped.
+[INFO] 2025-01-30 09:57:21 - System prompt was empty. Resetting to default.
+[INFO] 2025-01-30 09:57:21 - Selected LLM: OpenAI
+[INFO] 2025-01-30 09:58:34 - Switching LLM to: LLAMA
+[INFO] 2025-01-30 09:58:34 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:58:34 - Selected Ollama Worker.
+[INFO] 2025-01-30 09:58:34 - Starting Ollama Worker.
+[INFO] 2025-01-30 09:58:34 - Ollama Worker started.
+[INFO] 2025-01-30 09:58:36 - Switching LLM to: OpenAI
+[INFO] 2025-01-30 09:58:36 - Stopping LLM Worker.
+[INFO] 2025-01-30 09:58:36 - Selected OpenAI Worker.
+[INFO] 2025-01-30 09:58:36 - Starting OpenAI Worker.
+[INFO] 2025-01-30 09:58:36 - OpenAI Worker started.
+[INFO] 2025-01-30 10:02:38 - Application closing; stopping threads.
+[INFO] 2025-01-30 10:02:38 - allStop clicked.
+[INFO] 2025-01-30 10:02:38 - stop_asr() called.
+[INFO] 2025-01-30 10:02:38 - stop_tts() called.
+[INFO] 2025-01-30 10:02:38 - Stopping LLM Worker.
+[INFO] 2025-01-30 10:02:38 - allStop - all modules stopped.

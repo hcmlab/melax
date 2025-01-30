@@ -216,6 +216,14 @@ class MainWindow(QMainWindow):
         self.populate_usd_list()
         self.ui.a2fUrl_headless.setText("http://localhost:8011")
         self.headless_server_url = self.ui.a2fUrl_headless.text().strip()
+
+        self.ui.emotionsQCombo.addItems([
+            "neutral", "amazement", "anger", "cheekiness", "disgust", "fear",
+            "grief", "joy", "outofbreath", "pain", "sadness"
+        ])
+
+        self.ui.emotionsQCombo.currentTextChanged.connect(self.on_emotion_selected)
+
         #self.check_server_status()
         self.ui.connectHeadlessPushbutton.clicked.connect(self.on_connect_button_clicked)
         self.ui.loadUsdPushbutton.clicked.connect(self.on_load_usd_button_clicked)
@@ -849,6 +857,50 @@ class MainWindow(QMainWindow):
         except requests.exceptions.RequestException as e:
             self.logger.log_error(f"Error loading USD: {e}")
         return False
+
+    def on_emotion_selected(self, emotion: str):
+        """
+        Sends a request to set the selected emotion to 1 and all others to 0.
+        """
+        emotions = [
+            "amazement", "anger", "cheekiness", "disgust", "fear",
+            "grief", "joy", "outofbreath", "pain", "sadness"
+        ]
+
+        # Create the payload with all values set to 0
+        payload = {
+            "a2f_instance": "/World/audio2face/CoreFullface",
+            "emotions": {e: 0 for e in emotions}
+        }
+
+        # If the selected emotion is not "Neutral", set it to 1
+        if emotion != "neutral":
+            payload["emotions"][emotion] = 1
+
+        try:
+            self.logger.log_info(
+                f"Emotion payload: {payload}")
+            response = requests.post(
+                f"{self.headless_server_url}/A2F/A2E/SetEmotionByName",
+                headers={"accept": "application/json", "Content-Type": "application/json"},
+                json=payload
+            )
+
+            if response.status_code == 422:
+                self.logger.log_error(f"Validation error: {response.text}")
+                return
+
+            if response.status_code == 200:
+                response_data = response.json()
+                if response_data.get("status") == "OK":
+                    self.logger.log_info(
+                        f"Emotion set successfully: {emotion}, Message: {response_data.get('message')}")
+                else:
+                    self.logger.log_error(f"Unexpected response: {response.text}")
+            else:
+                self.logger.log_error(f"Failed to set emotion: {emotion}, Response: {response.text}")
+        except requests.exceptions.RequestException as e:
+            self.logger.log_error(f"Error setting emotion: {e}")
 
 
 

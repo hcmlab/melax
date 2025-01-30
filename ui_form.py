@@ -404,7 +404,7 @@ class Ui_MainWindow(object):
         self.groupBox_4.setFont(font)
         self.formLayoutWidget_8 = QWidget(self.groupBox_4)
         self.formLayoutWidget_8.setObjectName(u"formLayoutWidget_8")
-        self.formLayoutWidget_8.setGeometry(QRect(10, 150, 241, 186))
+        self.formLayoutWidget_8.setGeometry(QRect(10, 160, 241, 171))
         self.formLayout_8 = QFormLayout(self.formLayoutWidget_8)
         self.formLayout_8.setObjectName(u"formLayout_8")
         self.formLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -414,16 +414,11 @@ class Ui_MainWindow(object):
 
         self.formLayout_8.setWidget(0, QFormLayout.LabelRole, self.label_26)
 
-        self.comboBox = QComboBox(self.formLayoutWidget_8)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setFont(font1)
+        self.emotionsQCombo = QComboBox(self.formLayoutWidget_8)
+        self.emotionsQCombo.setObjectName(u"emotionsQCombo")
+        self.emotionsQCombo.setFont(font1)
 
-        self.formLayout_8.setWidget(0, QFormLayout.FieldRole, self.comboBox)
+        self.formLayout_8.setWidget(0, QFormLayout.FieldRole, self.emotionsQCombo)
 
         self.label_8 = QLabel(self.formLayoutWidget_8)
         self.label_8.setObjectName(u"label_8")
@@ -486,7 +481,7 @@ class Ui_MainWindow(object):
 
         self.formLayoutWidget_10 = QWidget(self.groupBox_4)
         self.formLayoutWidget_10.setObjectName(u"formLayoutWidget_10")
-        self.formLayoutWidget_10.setGeometry(QRect(10, 90, 351, 116))
+        self.formLayoutWidget_10.setGeometry(QRect(10, 90, 351, 61))
         self.formLayout_10 = QFormLayout(self.formLayoutWidget_10)
         self.formLayout_10.setObjectName(u"formLayout_10")
         self.formLayout_10.setContentsMargins(0, 0, 0, 0)
@@ -643,12 +638,6 @@ class Ui_MainWindow(object):
         self.chatOutpuTab.setTabText(self.chatOutpuTab.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Log", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"Behavior Generator", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"Emotion", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Neutral", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Happy", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Sad", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"Angry", None))
-        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"Disgust", None))
-
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Sentence Split", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Playback Method", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Block Until Finish", None))

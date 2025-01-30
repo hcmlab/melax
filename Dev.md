@@ -1,0 +1,1 @@
+- Ask user to stop the model before changing the models such as whisper
