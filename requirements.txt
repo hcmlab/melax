@@ -13,3 +13,4 @@ ollama
 pydub
 gtts
 protobuf==3.20.0
+PyAudio
