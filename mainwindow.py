@@ -15,7 +15,6 @@ from asr_vad_modules import WhisperTranscriptionThread, GoogleASRTranscriptionTh
 #from behaviour_module import Audio2FaceHeadlessThread
 
 
-
 class MainWindow(QMainWindow):
     """
     A more modular MainWindow that defines:
