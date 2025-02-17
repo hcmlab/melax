@@ -5,6 +5,7 @@ from PySide6.QtCore import QMetaObject, Qt
 from queue import Queue
 import openai
 from ollama import chat
+from ollama import Client
 class OpenAIWorker(QObject):
     responseReady = Signal(str)
     errorOccurred = Signal(str)
@@ -108,9 +109,14 @@ class OllamaWorker(QObject):
             if self.should_exit:
                 return
 
+
             # Stream assistant's response
             response_content = ""
-            stream = chat(model=self.model_name,
+            client = Client(
+                host='http://localhost:11434',
+                headers={'x-some-header': 'some-value'}
+            )
+            stream = client.chat(model=self.model_name,
                           messages=messages,
                           stream=True,
                           options={"temperature":temperature, "num_predict":max_tokens })
