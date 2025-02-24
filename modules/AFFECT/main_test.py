@@ -6,6 +6,6 @@ if __name__ == '__main__':
     affect_worker.bind()
     affect_worker.start()
 
-    time.sleep(10)
+    time.sleep(5)
 
     affect_worker.stop()
