@@ -135,6 +135,12 @@ def push_audio_track(url, audio_data, samplerate, instance_name, block_until_pla
         request.block_until_playback_is_finished = block_until_playback_is_finished
         print("Sending entire audio track...")
         response = stub.PushAudio(request)
+
+        # Abort audio if new words are spoken
+        #if self._should_abort:
+        #    print("Audio playback aborted to respond to new message.")
+        #    return
+
         if response.success:
             print("SUCCESS")
         else:
@@ -205,7 +211,8 @@ class TTSWorker(QThread):
         block_until_playback_is_finished=True,
         chunk_duration=10,
         delay_between_chunks=0.04 ,
-        parent=None
+        parent=None,
+        allow_interruptions=True # Allow user input to stop current answer
     ):
         """
         :param tts_engine: An object implementing BaseTTSEngine
@@ -230,6 +237,9 @@ class TTSWorker(QThread):
         self.request_queue = Queue()
         self.should_exit = False
         self.is_processing = False
+
+        # Logic to support interrupting TTS speech to make the agent seem more fluent in its answering behavior
+        self.allow_interruptions=allow_interruptions
 
     def run(self):
         """
@@ -288,6 +298,15 @@ class TTSWorker(QThread):
         # audio_data, samplerate = self.tts_engine.synthesize(combined_text)
         # and then call push once. But let's do them sentence-by-sentence:
         for idx, sentence in enumerate(sentences, start=1):
+
+            # Do not play sentence if user interruption has occured and interruptions are allowed
+            if self.allow_interruptions and not self.request_queue.empty():
+                delimiter = " "
+                spoken_sentences = delimiter.join(sentences[:idx-1])
+                interrupted_sentences = delimiter.join(sentences[idx-1:])
+                self.ttsFinished.emit(f"User interruption occured. \n Spoken sentences: {spoken_sentences}.\n Interrupted sentences: {interrupted_sentences}")
+                return
+
             # 1) Synthesize
             audio_data, samplerate = self.tts_engine.synthesize(sentence, language=self.language)
 

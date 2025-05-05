@@ -89,7 +89,7 @@ class GoogleASRTranscriptionThread(QThread):
             def record_callback(_, audio: sr.AudioData):
                 if not self.running:
                     return
-
+                
                 audio_data = audio.get_wav_data()
                 headers = {
                     "Content-Type": "audio/l16; rate=16000",

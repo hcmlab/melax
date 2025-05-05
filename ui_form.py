@@ -187,11 +187,11 @@ class Ui_MainWindow(object):
 
         self.formLayout_4.setWidget(0, QFormLayout.LabelRole, self.label_24)
 
-        self.LLMChocie = QComboBox(self.formLayoutWidget_4)
-        self.LLMChocie.setObjectName(u"LLMChocie")
-        self.LLMChocie.setFont(font1)
+        self.LLMChoice = QComboBox(self.formLayoutWidget_4)
+        self.LLMChoice.setObjectName(u"LLMChocie")
+        self.LLMChoice.setFont(font1)
 
-        self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.LLMChocie)
+        self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.LLMChoice)
 
         self.formLayoutWidget_7 = QWidget(self.groupBox_6)
         self.formLayoutWidget_7.setObjectName(u"formLayoutWidget_7")
@@ -453,7 +453,21 @@ class Ui_MainWindow(object):
         self.blockUntilFinish = QCheckBox(self.formLayoutWidget_8)
         self.blockUntilFinish.setObjectName(u"blockUntilFinish")
 
+
         self.formLayout_8.setWidget(3, QFormLayout.FieldRole, self.blockUntilFinish)
+
+        self.label_32 = QLabel(self.formLayoutWidget_8)
+        self.label_32.setObjectName(u"label_32")
+        self.label_32.setFont(font1)
+
+        self.formLayout_8.setWidget(6, QFormLayout.LabelRole, self.label_32)
+        
+        self.allowInterruptions = QCheckBox(self.formLayoutWidget_8)
+        self.allowInterruptions.setObjectName(u"allowIntertuptions")
+
+        self.formLayout_8.setWidget(6, QFormLayout.FieldRole, self.allowInterruptions)
+
+
 
         self.label_15 = QLabel(self.formLayoutWidget_8)
         self.label_15.setObjectName(u"label_15")
@@ -642,6 +656,8 @@ class Ui_MainWindow(object):
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Playback Method", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Block Until Finish", None))
         self.blockUntilFinish.setText("")
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"Allow User Interruptions", None))
+        self.allowInterruptions.setText("")
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Delay Between Chunks", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Chunk Duration", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"Audio2Face Url:", None))
