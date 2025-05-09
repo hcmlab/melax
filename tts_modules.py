@@ -147,7 +147,7 @@ def push_audio_track(url, audio_data, samplerate, instance_name, block_until_pla
             print(f"ERROR: {response.message}")
     print("Closed channel for single push")
 
-def push_audio_track_stream(url, audio_data, samplerate, instance_name, chunk_duration, delay_between_chunks,request_queue ,block_until_playback_is_finished=True, allow_interruptions=True):
+def push_audio_track_stream(url, audio_data, samplerate, instance_name, chunk_duration, delay_between_chunks,request_queue ,block_until_playback_is_finished=True, stream_interruptions=True):
     """
     Pushes audio in chunks sequentially via PushAudioStreamRequest().
     """
@@ -171,7 +171,7 @@ def push_audio_track_stream(url, audio_data, samplerate, instance_name, chunk_du
             total_len = len(audio_data)
             idx = 0
             while idx < total_len:
-                if allow_interruptions and not request_queue.empty():
+                if stream_interruptions and not request_queue.empty():
                     print("Streaming stopped due to user interruption.")
                     return
                 time.sleep(sleep_between_chunks)
@@ -215,7 +215,8 @@ class TTSWorker(QThread):
         chunk_duration=10,
         delay_between_chunks=0.04 ,
         parent=None,
-        allow_interruptions=True # Allow user input to stop current answer
+        allow_interruptions=True, # Allow user input to stop current answer
+        stream_interruptions=False
     ):
         """
         :param tts_engine: An object implementing BaseTTSEngine
@@ -242,7 +243,8 @@ class TTSWorker(QThread):
         self.is_processing = False
 
         # Logic to support interrupting TTS speech to make the agent seem more fluent in its answering behavior
-        self.allow_interruptions=allow_interruptions
+        self.allow_interruptions = allow_interruptions
+        self.stream_interruptions = stream_interruptions
 
     def run(self):
         """
@@ -324,7 +326,7 @@ class TTSWorker(QThread):
                     self.delay_between_chunks,
                     request_queue = self.request_queue,
                     block_until_playback_is_finished=self.block_until_playback_is_finished,
-                    allow_interruptions = self.allow_interruptions
+                    stream_interruptions = self.stream_interruptions
                 )
             else:
                 push_audio_track(

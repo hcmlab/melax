@@ -3,7 +3,8 @@ import os
 import speech_recognition as sr
 import openai
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton, QLineEdit, QFileDialog
-from PySide6.QtCore import QThread, Signal, Slot
+from PySide6.QtCore import QThread, Signal, Slot, QFile
+from PySide6.QtUiTools import QUiLoader
 from ui_form import Ui_MainWindow
 from local_logger import ThreadSafeLogger
 from pathlib import Path
@@ -12,6 +13,7 @@ import json
 from llm_modules import OpenAIWorker, OllamaWorker
 from tts_modules import TTSWorker, GoogleTTSEngine, CoquiTTSEngine
 from asr_vad_modules import WhisperTranscriptionThread, GoogleASRTranscriptionThread
+
 #from behaviour_module import Audio2FaceHeadlessThread
 
 
@@ -39,6 +41,7 @@ class MainWindow(QMainWindow):
         # ----------------------------------------------------
         # UI Setup
         # ----------------------------------------------------
+
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -718,6 +721,7 @@ class MainWindow(QMainWindow):
         # Block until finish
         block_until = self.ui.blockUntilFinish.isChecked()
         allow_interruptions = self.ui.allowInterruptions.isChecked()
+        stream_interruptions = self.ui.streamInterruptions.isChecked()
 
         # Chunk + delay
         chunk_dur = self.ui.ttsChunkDuration.value()
@@ -734,7 +738,8 @@ class MainWindow(QMainWindow):
             block_until_playback_is_finished=block_until,
             chunk_duration=chunk_dur,
             delay_between_chunks=delay_chunks,
-            allow_interruptions=allow_interruptions
+            allow_interruptions=allow_interruptions,
+            stream_interruptions=stream_interruptions
         )
         self.tts_worker.ttsFinished.connect(self.handle_tts_finished)
         self.tts_worker.ttsError.connect(self.handle_tts_error)
@@ -933,14 +938,14 @@ class MainWindow(QMainWindow):
             # Reset the context with the new developer message
             self.context = [
                 {
-                    "role": "developer",
+                    "role": "user",
                     "content": [{"type": "text", "text": new_prompt}]
                 }
             ]
 
             # Clear UI to reflect the reset
             self.ui.contextBrowserOpenAI.clear()
-            self.ui.contextBrowserOpenAI.append(f"<b>Developer:</b> {new_prompt}")
+            self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {new_prompt}")
         else:
             # Default prompt in case the field is empty
             default_prompt = "You are a helpful and knowledgeable assistant that answers questions short and clear."
@@ -949,14 +954,14 @@ class MainWindow(QMainWindow):
 
             self.context = [
                 {
-                    "role": "developer",
+                    "role": "user",
                     "content": [{"type": "text", "text": default_prompt}]
                 }
             ]
 
             # Update UI
             self.ui.contextBrowserOpenAI.clear()
-            self.ui.contextBrowserOpenAI.append(f"<b>Developer:</b> {default_prompt}")
+            self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {default_prompt}")
 
 
     # ----------------------------------------------------
