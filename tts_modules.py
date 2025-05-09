@@ -147,7 +147,7 @@ def push_audio_track(url, audio_data, samplerate, instance_name, block_until_pla
             print(f"ERROR: {response.message}")
     print("Closed channel for single push")
 
-def push_audio_track_stream(url, audio_data, samplerate, instance_name, chunk_duration, delay_between_chunks,block_until_playback_is_finished=True):
+def push_audio_track_stream(url, audio_data, samplerate, instance_name, chunk_duration, delay_between_chunks,request_queue ,block_until_playback_is_finished=True, allow_interruptions=True):
     """
     Pushes audio in chunks sequentially via PushAudioStreamRequest().
     """
@@ -171,6 +171,9 @@ def push_audio_track_stream(url, audio_data, samplerate, instance_name, chunk_du
             total_len = len(audio_data)
             idx = 0
             while idx < total_len:
+                if allow_interruptions and not request_queue.empty():
+                    print("Streaming stopped due to user interruption.")
+                    return
                 time.sleep(sleep_between_chunks)
                 chunk = audio_data[idx : idx + chunk_size]
                 idx += chunk_size
@@ -319,7 +322,9 @@ class TTSWorker(QThread):
                     self.instance_name,
                     self.chunk_duration,
                     self.delay_between_chunks,
+                    request_queue = self.request_queue,
                     block_until_playback_is_finished=self.block_until_playback_is_finished,
+                    allow_interruptions = self.allow_interruptions
                 )
             else:
                 push_audio_track(
