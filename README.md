@@ -42,7 +42,7 @@
    - On first run, allow access on **Public**, **Private**, and **Domain** networks.
 
 4. **Download Ollama**
-   - Ensure it is installed on your system.
+   - Ensure it is installed on your system. https://ollama.com/download/windows
 
 ---
 
