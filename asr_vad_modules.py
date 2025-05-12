@@ -75,6 +75,7 @@ class GoogleASRTranscriptionThread(QThread):
         self.logger = logger
 
     def run(self):
+        import pydevd;pydevd.settrace(suspend=False)
         try:
             self.logger.log_info("Starting Google ASR Transcription Thread")
             recorder = sr.Recognizer()
@@ -88,7 +89,7 @@ class GoogleASRTranscriptionThread(QThread):
             def record_callback(_, audio: sr.AudioData):
                 if not self.running:
                     return
-
+                
                 audio_data = audio.get_wav_data()
                 headers = {
                     "Content-Type": "audio/l16; rate=16000",
@@ -142,8 +143,9 @@ class GoogleASRTranscriptionThread(QThread):
             self.logger.log_info("Google ASR Transcription Thread Stopped")
 
         except Exception as e:
-            self.logger.log_error(f"Error in Google ASR Transcription Thread: {e}")
-            self.transcription_signal.emit(f"Error: {e}")
+            self.logger.log_error(f"Error in Google ASR Transcription Thread: {e}. This error occurs e.g. when the wrong microphone input is selected.")
+            # Stop the ASR if an error occurs as it would be called over and over again
+            self.stop() 
 
     def stop(self):
         self.logger.log_debug("Stopping Google ASR Transcription Thread")
