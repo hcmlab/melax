@@ -46,10 +46,12 @@
 
 ---
 
+
 ## 🐍 Running `mainwindow.py`
 
 1. **Install Python Packages**
    - From `requirements_python3_11.txt` (for Python 3.11)
+  
 
 2. **Install `ffmpeg`** if not already installed
 
@@ -57,3 +59,17 @@
    ```bash
    python gui.py
    ```
+
+---
+## Download Cora
+Download the character developed in Unreal Engine 5.3: https://uniaugsburg-my.sharepoint.com/:f:/g/personal/daksitha_withanage_don_uni-a_de/EnzWciX1_OJHkfvTXJhz4Z0BQl1aWLAdLkRg-tJZsKZ04w?e=PE9Ao0
+The GUI and Audio2Face server must be running. 
+
+---
+
+Once everything is running: 
+In the GUI load the a2f model: select 'female.usd' and press load button.
+Select your microphone and choices of AST, LLM, TTS. 
+The press play button on the GUI.
+
+You should be able to speak to the character in an interactive manner.
