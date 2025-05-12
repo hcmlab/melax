@@ -36,12 +36,16 @@
 1. **clone from** https://github.com/hcmlab/melax.git
 
 2. **Run Installer**
+   Download Cora
+   - Download the character developed in Unreal Engine 5.3: https://uniaugsburg-my.sharepoint.com/:f:/g/personal/daksitha_withanage_don_uni-a_de/EnzWciX1_OJHkfvTXJhz4Z0BQl1aWLAdLkRg-tJZsKZ04w?e=PE9Ao0
+     The GUI and Audio2Face server must be running. 
    - Execute `MeLaX_ACE_A2F_Only.exe`
+   - 
 
-3. **Network Permissions**
+4. **Network Permissions**
    - On first run, allow access on **Public**, **Private**, and **Domain** networks.
 
-4. **Download Ollama**
+5. **Download Ollama**
    - Ensure it is installed on your system. https://ollama.com/download/windows
 
 ---
@@ -59,11 +63,6 @@
    ```bash
    python gui.py
    ```
-
----
-## Download Cora
-Download the character developed in Unreal Engine 5.3: https://uniaugsburg-my.sharepoint.com/:f:/g/personal/daksitha_withanage_don_uni-a_de/EnzWciX1_OJHkfvTXJhz4Z0BQl1aWLAdLkRg-tJZsKZ04w?e=PE9Ao0
-The GUI and Audio2Face server must be running. 
 
 ---
 
