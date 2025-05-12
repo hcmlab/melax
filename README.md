@@ -46,7 +46,7 @@
 
 ---
 
-## 🐍 Running `gui.py`
+## 🐍 Running `mainwindow.py`
 
 1. **Install Python Packages**
    - From `requirements_python3_11.txt` (for Python 3.11)
