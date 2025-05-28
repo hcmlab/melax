@@ -989,7 +989,7 @@ class MainWindow(QMainWindow):
 
     @Slot(str)
     def handle_tts_error(self, error_message):
-        QMessageBox.critical(self, "TTS Error", error_message)
+        # QMessageBox.critical(self, "TTS Error", error_message)
         self.logger.log_info(f"TTS error: {error_message}")
 
     # ----------------------------------------------------

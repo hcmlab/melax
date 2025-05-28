@@ -6,6 +6,7 @@ from queue import Queue
 import openai
 from ollama import chat
 from ollama import Client
+
 class OpenAIWorker(QObject):
     responseReady = Signal(str)
     errorOccurred = Signal(str)

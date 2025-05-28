@@ -79,7 +79,8 @@ class AffectWorker:
 
         seconds_loop = time.time() - time_loop_start
         # print(seconds_loop)
-        self.read_loop = threading.Timer(self.samplerate_s, self.start)
+        loop_timer = 1.0 / float(self.samplerate_s) - seconds_loop
+        self.read_loop = threading.Timer(loop_timer, self.start)
         self.read_loop.start()
 
     def stop(self):
