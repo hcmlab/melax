@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
         # Initialize OpenAI settings
         #self.API_MESSAGE = "Enter here or set as OPENAI_API_KEY variable"
         self.api_key = self.API_MESSAGE_DEFAULT
-        self.context = [{"role": "system", "content": "You are a helpful assistant."}]
+        self.context = [{"role": "developer", "content": "You are a helpful assistant."}]
         self.models = ["gpt-4o-mini", "gpt-3.5-turbo"]  # Add more models as required
 
         # Populate model combo box
@@ -112,7 +112,7 @@ class MainWindow(QMainWindow):
 
         if self.context is None:
             self.system_prompt = self.ui.systemPromptEdit.toPlainText().strip()
-            self.context = [{"role": "system", "content": self.system_prompt}]
+            self.context = [{"role": "developer", "content": self.system_prompt}]
 
     def test_connection(self):
         """
@@ -142,12 +142,12 @@ class MainWindow(QMainWindow):
         #self.api_key = os.getenv('OPENAI_API_KEY') or "enter your api"
 
         #self.ui.systemPromptEdit.setText("You are a helpful assistant")
-        #self.context = [{"role": "system", "content": self.system_prompt}]
+        #self.context = [{"role": "developer", "content": self.system_prompt}]
         self.ui.temperatureOpenAI.setValue(70)
         self.ui.maxTokenOpenAI.setValue(1024)
         self.ui.contextBrowserOpenAI.clear()
         self.ui.llmMBOX.setCurrentText("gpt-4o-mini")
-        self.context = [{"role": "system", "content": self.system_prompt}]
+        self.context = [{"role": "developer", "content": self.system_prompt}]
 
         QMessageBox.information(self, "Defaults Reset", "All settings have been reset to defaults.")
 
@@ -158,7 +158,7 @@ class MainWindow(QMainWindow):
         if self.system_prompt is None:
             self.initialise_openai()
         else:
-            self.context = [{"role": "system", "content": self.system_prompt}]
+            self.context = [{"role": "developer", "content": self.system_prompt}]
             self.ui.contextBrowserOpenAI.clear()
         QMessageBox.information(self, "Context Reset", "Conversation context has been reset.")
 

@@ -309,7 +309,7 @@ class TTSWorker(QThread):
                 delimiter = " "
                 spoken_sentences = delimiter.join(sentences[:idx-1])
                 interrupted_sentences = delimiter.join(sentences[idx-1:])
-                self.ttsFinished.emit(f"User interruption occured. \n Spoken sentences: {spoken_sentences}.\n Interrupted sentences: {interrupted_sentences}")
+                self.ttsFinished.emit(f"User interruption occured. \n Spoken sentences: {spoken_sentences}\n Interrupted sentences: {interrupted_sentences}")
                 return
 
             # 1) Synthesize

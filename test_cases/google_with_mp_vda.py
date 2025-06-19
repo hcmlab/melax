@@ -130,7 +130,8 @@ class RealTimeSpeakingTranscriberGoogleAPI:
                                 self._transcribe(speaking_buffer)
                                 speaking_buffer = np.empty((0,), dtype=np.float32)
                             is_speaking = False
-
+                        audio_clip.close()
+                    
                 except queue.Empty:
                     continue
                 except Exception as e:

@@ -35,6 +35,10 @@ class MainWindow(QMainWindow):
     API_MESSAGE_DEFAULT = "Enter here or set as OPENAI_API_KEY variable"
     API_MESSAGE_FOUND_ENV = "Found it in env variables"
     API_MESSAGE_MISSING = "Please enter your key here or set OPENAI_API_KEY as an environment variable."
+    
+    INITIAL_CONTEXT_CONTENT = "You are a helpful assistant and your name is Cora."
+    INITIAL_CONTEXT = [{"role": "developer", "content": INITIAL_CONTEXT_CONTENT}]
+
 
     def __init__(self):
         super().__init__()
@@ -74,13 +78,6 @@ class MainWindow(QMainWindow):
         self.setup_ui()
         self.populate_microphones()
         self.populate_languages()
-
-        # Initialize system prompt if empty
-        # system_prompt_text = self.ui.systemPromptEdit.toPlainText().strip()
-        # if not system_prompt_text:
-        #     system_prompt_text = "You are a helpful assistant."
-        #     self.ui.systemPromptEdit.setText(system_prompt_text)
-        # self.context = [{"role": "system", "content": system_prompt_text}]
 
 
         #self.load_selected_usd()
@@ -354,9 +351,8 @@ class MainWindow(QMainWindow):
         self.ui.contextBrowserOpenAI.clear()
 
         # Reset system prompt
-        self.ui.systemPromptEdit.setText("You are a helpful assistant.")
-        self.context = [{"role": "system", "content": "You are a helpful assistant."}]
-
+        self.ui.systemPromptEdit.setText(self.INITIAL_CONTEXT_CONTENT)
+        self.context = self.INITIAL_CONTEXT
         # Reset TTS combos
         self.ui.ttsEngineCombo.setCurrentIndex(0)
         self.ui.ttslanguage.setCurrentIndex(0)
@@ -522,8 +518,9 @@ class MainWindow(QMainWindow):
 
         if self.ui.openai_group.isVisible():
             selected_model = self.ui.llmMBOX.currentText()
-            context = [{"role": "user", "content": user_input}]
-            self.llm_worker.add_request(selected_model, context, max_tokens, temperature)
+            new_message = {"role": "user", "content": user_input}
+            self.context.append(new_message)
+            self.llm_worker.add_request(selected_model, self.context, max_tokens, temperature)
         elif self.ui.llama_group.isVisible():
             #selected_model = self.ui.llmMBOX_Llama.currentText()
             messages = [{"role": "user", "content": user_input}]
@@ -930,10 +927,10 @@ class MainWindow(QMainWindow):
         Updates the system prompt as a developer role and resets the context.
         """
         new_prompt = self.ui.systemPromptEdit.toPlainText().strip()
-
+        
         if new_prompt:
             # Log the prompt update
-            self.logger.log_info(f"System prompt updated: {new_prompt}")
+            self.logger.log_info(f"System prompt updated (Conversation reset): {new_prompt}")
 
             # Reset the context with the new developer message
             self.context = [
@@ -948,13 +945,13 @@ class MainWindow(QMainWindow):
             self.ui.contextBrowserOpenAI.append(f"<b>User:</b> {new_prompt}")
         else:
             # Default prompt in case the field is empty
-            default_prompt = "You are a helpful and knowledgeable assistant that answers questions short and clear."
+            default_prompt = self.INITIAL_CONTEXT_CONTENT
             self.ui.systemPromptEdit.setText(default_prompt)
             self.logger.log_info("System prompt was empty. Resetting to default.")
 
             self.context = [
                 {
-                    "role": "user",
+                    "role": "developer",
                     "content": [{"type": "text", "text": default_prompt}]
                 }
             ]

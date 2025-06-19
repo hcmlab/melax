@@ -198,7 +198,7 @@ class MainWindow(QMainWindow):
 
     @Slot(str)
     def send_to_openai(self, user_input):
-        context = [{"role": "system", "content": "You are a helpful assistant."},
+        context = [{"role": "developer", "content": "You are a helpful assistant."},
                    {"role": "user", "content": user_input}]
         self.ui.asrTextBrowser.append(f"User: {user_input}")
         self.openai_worker.process_request("gpt-3.5-turbo", context, max_tokens=150, temperature=0.7)

@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
         temperature = self.ui.temperatureOpenAI.value() / 100.0
         max_tokens = self.ui.maxTokenOpenAI.value()
         context = [
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "developer", "content": "You are a helpful assistant."},
             {"role": "user", "content": user_input},
         ]
 
@@ -109,7 +109,7 @@ class MainWindow(QMainWindow):
     def test_connection(self):
         model = "gpt-3.5-turbo"
         context = [
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "developer", "content": "You are a helpful assistant."},
             {"role": "user", "content": "Hello"},
         ]
         max_tokens = 10
