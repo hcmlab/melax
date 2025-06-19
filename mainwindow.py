@@ -171,7 +171,7 @@ class MainWindow(QMainWindow):
 
         # TTS combos
         self.ui.ttsEngineCombo.addItems(["Google", "Coqui", "VoiceX"])
-        self.ui.ttslanguage.addItems(["en", "en-US", "en-GB", "es", "fr"])
+        self.ui.ttslanguage.addItems(["en", "en-US", "en-GB", "es", "fr","de-DE","cmn‑CN","ja-JP"])
         self.ui.a2fUrl.setText("localhost:50051")
         self.ui.a2fInstanceName.setText("/World/audio2face/PlayerStreaming")
 
@@ -292,7 +292,7 @@ class MainWindow(QMainWindow):
             self.ui.whisperLanguage.addItem(lang_name, lang_key)
 
         self.ui.googleLanguage.clear()
-        google_languages = ["en-US", "es-ES", "fr-FR", "de-DE"]
+        google_languages = ["en-US", "es-ES", "fr-FR", "de-DE","cmn-Hans-CN","ja-JP"]
         self.ui.googleLanguage.addItems(google_languages)
 
     def on_audio_detection(self):
