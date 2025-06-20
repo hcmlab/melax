@@ -11,7 +11,7 @@ from pathlib import Path
 import requests
 import json
 from llm_modules import OpenAIWorker, OllamaWorker
-from tts_modules import TTSWorker, GoogleTTSEngine, CoquiTTSEngine
+from tts_modules import TTSWorker, GoogleTTSEngine, GoogleCloudTTSEngine, CoquiTTSEngine
 from asr_vad_modules import WhisperTranscriptionThread, GoogleASRTranscriptionThread
 
 #from behaviour_module import Audio2FaceHeadlessThread
@@ -170,8 +170,8 @@ class MainWindow(QMainWindow):
         self.toggle_asr_options("Google")
 
         # TTS combos
-        self.ui.ttsEngineCombo.addItems(["Google", "Coqui", "VoiceX"])
-        self.ui.ttslanguage.addItems(["en", "en-US", "en-GB", "es", "fr","de-DE","cmn‑CN","ja-JP"])
+        self.ui.ttsEngineCombo.addItems(["Google", "GoogleCloud", "Coqui", "VoiceX"])
+        self.ui.ttslanguage.addItems(["en", "en-US", "en-GB", "es", "fr","de-DE", "ja", "zh-CN"])
         self.ui.a2fUrl.setText("localhost:50051")
         self.ui.a2fInstanceName.setText("/World/audio2face/PlayerStreaming")
 
@@ -199,6 +199,7 @@ class MainWindow(QMainWindow):
         self.ui.googleAPI.setEchoMode(QLineEdit.PasswordEchoOnEdit)
         self.ui.googleAPI.setText("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw")
         self.ui.googleEndPoint.setText("http://www.google.com/speech-api/v2/recognize")
+        
 
         # Connect menu actions for dark/light
         self.ui.actiondark.triggered.connect(self.apply_dark_theme)
@@ -700,6 +701,8 @@ class MainWindow(QMainWindow):
 
         if engine_choice == "Google":
             tts_engine = GoogleTTSEngine()
+        elif engine_choice == "GoogleCloud":
+            tts_engine = GoogleCloudTTSEngine()
         else:
             tts_engine = CoquiTTSEngine()
 

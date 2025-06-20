@@ -11,6 +11,9 @@ from TTS.api import TTS
 import numpy as np
 from nltk.tokenize import sent_tokenize
 
+from google.cloud import texttospeech
+
+
 from PySide6.QtCore import QThread, Signal, Slot
 from streaming_server.proto.old import audio2face_pb2_grpc, audio2face_pb2
 
@@ -33,11 +36,15 @@ class BaseTTSEngine(ABC):
         Synthesize `text` into audio data (float32 array) and return (audio_data, sample_rate).
         """
         pass
+class GoogleCloudTTSEngine(BaseTTSEngine):
+    pass
 
 class GoogleTTSEngine(BaseTTSEngine):
     def synthesize(self, text: str,language:str ) -> (np.ndarray, int):
         # 1) Generate MP3 in memory
         mp3_buffer = io.BytesIO()
+    
+        
         tts = gTTS(text=text, lang=language, tld=self.get_tld_for_language(language))
         tts.write_to_fp(mp3_buffer)
         mp3_buffer.seek(0)
@@ -277,6 +284,13 @@ class TTSWorker(QThread):
         """
         if self.should_exit:
             return
+
+        # Google TTS doesnt support Japanese lettering
+        if(self.language == "ja"):
+            kks = pykakasi.kakasi()
+            result = kks.convert(text)
+            text = ' '.join([item['hira'] for item in result])
+        
         self.request_queue.put(text)
 
     def stop(self):
