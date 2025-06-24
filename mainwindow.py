@@ -11,7 +11,7 @@ from pathlib import Path
 import requests
 import json
 from llm_modules import OpenAIWorker, OllamaWorker
-from tts_modules import TTSWorker, GoogleTTSEngine, GoogleCloudTTSEngine, CoquiTTSEngine
+from tts_modules import TTSWorker, GoogleTTSEngine, GoogleApiTTSEngine, CoquiTTSEngine
 from asr_vad_modules import WhisperTranscriptionThread, GoogleASRTranscriptionThread
 
 #from behaviour_module import Audio2FaceHeadlessThread
@@ -170,7 +170,7 @@ class MainWindow(QMainWindow):
         self.toggle_asr_options("Google")
 
         # TTS combos
-        self.ui.ttsEngineCombo.addItems(["Google", "GoogleCloud", "Coqui", "VoiceX"])
+        self.ui.ttsEngineCombo.addItems(["GoogleAPI", "Google",  "Coqui", "VoiceX"])
         self.ui.ttslanguage.addItems(["en", "en-US", "en-GB", "es", "fr","de-DE", "ja", "zh-CN"])
         self.ui.a2fUrl.setText("localhost:50051")
         self.ui.a2fInstanceName.setText("/World/audio2face/PlayerStreaming")
@@ -701,8 +701,8 @@ class MainWindow(QMainWindow):
 
         if engine_choice == "Google":
             tts_engine = GoogleTTSEngine()
-        elif engine_choice == "GoogleCloud":
-            tts_engine = GoogleCloudTTSEngine()
+        elif engine_choice == "GoogleAPI":
+            tts_engine = GoogleApiTTSEngine()
         else:
             tts_engine = CoquiTTSEngine()
 

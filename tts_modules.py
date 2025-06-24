@@ -10,6 +10,8 @@ import re
 from TTS.api import TTS
 import numpy as np
 from nltk.tokenize import sent_tokenize
+import os
+import soundfile as sf
 
 from google.cloud import texttospeech
 
@@ -27,7 +29,7 @@ LANGUAGE_TLD_MAP = {
     "de": "de",         # German
     "ru": "ru",         # Russian
     "it": "it",         # Italian
-    # ...
+    "ja": "ja"
 }
 class BaseTTSEngine(ABC):
     @abstractmethod
@@ -36,8 +38,6 @@ class BaseTTSEngine(ABC):
         Synthesize `text` into audio data (float32 array) and return (audio_data, sample_rate).
         """
         pass
-class GoogleCloudTTSEngine(BaseTTSEngine):
-    pass
 
 class GoogleTTSEngine(BaseTTSEngine):
     def synthesize(self, text: str,language:str ) -> (np.ndarray, int):
@@ -68,6 +68,48 @@ class GoogleTTSEngine(BaseTTSEngine):
         If the language code isn't in the map, fallback to 'com'.
         """
         return LANGUAGE_TLD_MAP.get(lang, "com")
+
+class GoogleApiTTSEngine(BaseTTSEngine):
+    def synthesize(self, text: str, language: str) -> (np.ndarray, int):
+        # This engine uses Google Cloud Text-to-Speech API.
+        # It reads configuration directly from environment variables.
+        credentials = os.getenv('GOOGLE_API_TTS_CREDENTIALS')
+        if credentials and "GOOGLE_APPLICATION_CREDENTIALS" not in os.environ:
+            os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials
+
+        client = texttospeech.TextToSpeechClient()
+        # Determine voice parameters based on language
+        if language.startswith("de"):
+            language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "de-DE")
+            voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", "de-DE-Standard-A")
+        elif language.startswith("ja"):
+            language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "ja-JP")
+            voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", "ja-JP-Standard-B")
+        else:
+            language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "en-US")
+            voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", "en-US-Standard-B")
+        synthesis_input = texttospeech.SynthesisInput(text=text)
+        voice = texttospeech.VoiceSelectionParams(
+            language_code=language_code,
+            name=voice_name,
+            ssml_gender=texttospeech.SsmlVoiceGender.FEMALE
+        )
+        audio_config = texttospeech.AudioConfig(
+            audio_encoding=texttospeech.AudioEncoding.MP3
+        )
+        response = client.synthesize_speech(
+            input=synthesis_input, voice=voice, audio_config=audio_config
+        )
+        audio_stream = io.BytesIO(response.audio_content)
+        # Convert the MP3 stream to WAV using pydub, then read the audio data using soundfile.
+        audio_segment = AudioSegment.from_file(audio_stream, format="mp3")
+        wav_buffer = io.BytesIO()
+        audio_segment.export(wav_buffer, format="wav")
+        wav_buffer.seek(0)
+        audio_data, sample_rate = sf.read(wav_buffer, dtype="float32")
+        if audio_data.ndim > 1:
+            audio_data = np.mean(audio_data, axis=1)
+        return audio_data, sample_rate
 
 class CoquiTTSEngine(BaseTTSEngine):
     def __init__(self, model_name="tts_models/en/ljspeech/tacotron2-DDC"):
@@ -118,7 +160,7 @@ def regex_sentence_split(text: str):
     cleaned_text = re.sub(r'[\#\*]', '', text)
 
     # Split the cleaned text into sentences
-    parts = re.split(r'([.!?])', cleaned_text)
+    parts = re.split(r'([.!?！？。])', cleaned_text)
     sentences = []
     for i in range(0, len(parts) - 1, 2):
         sentence = parts[i].strip()
@@ -284,12 +326,6 @@ class TTSWorker(QThread):
         """
         if self.should_exit:
             return
-
-        # Google TTS doesnt support Japanese lettering
-        if(self.language == "ja"):
-            kks = pykakasi.kakasi()
-            result = kks.convert(text)
-            text = ' '.join([item['hira'] for item in result])
         
         self.request_queue.put(text)
 
