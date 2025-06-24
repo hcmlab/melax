@@ -731,6 +731,7 @@ class MainWindow(QMainWindow):
         self.tts_worker = TTSWorker(
             tts_engine=tts_engine,
             language=lang_choice,
+            gender="female",
             url=a2f_url,
             instance_name=a2f_inst,
             use_nlp_split=use_nlp,

@@ -31,16 +31,25 @@ LANGUAGE_TLD_MAP = {
     "it": "it",         # Italian
     "ja": "ja"
 }
+
+VOICE_GERMAN_MALE = "de-DE-Standard-B"
+VOICE_GERMAN_FEMALE = "de-DE-Standard-A"
+VOICE_ENGLISH_MALE_US = "en-US-Standard-B"
+VOICE_ENGLISH_FEMALE_US = "en-US-Standard-D"
+VOICE_JAPANESE_MALE = "ja-JP-Standard-D"
+VOICE_JAPANESE_FEMALE = "ja-JP-Standard-B"
+
+
 class BaseTTSEngine(ABC):
     @abstractmethod
-    def synthesize(self, text: str, language:str) -> (np.ndarray, int):
+    def synthesize(self, text: str, language:str, gender:str) -> (np.ndarray, int):
         """
         Synthesize `text` into audio data (float32 array) and return (audio_data, sample_rate).
         """
         pass
 
 class GoogleTTSEngine(BaseTTSEngine):
-    def synthesize(self, text: str,language:str ) -> (np.ndarray, int):
+    def synthesize(self, text: str,language:str, gender:str) -> (np.ndarray, int):
         # 1) Generate MP3 in memory
         mp3_buffer = io.BytesIO()
     
@@ -70,7 +79,7 @@ class GoogleTTSEngine(BaseTTSEngine):
         return LANGUAGE_TLD_MAP.get(lang, "com")
 
 class GoogleApiTTSEngine(BaseTTSEngine):
-    def synthesize(self, text: str, language: str) -> (np.ndarray, int):
+    def synthesize(self, text: str, language: str, gender:str) -> (np.ndarray, int):
         # This engine uses Google Cloud Text-to-Speech API.
         # It reads configuration directly from environment variables.
         credentials = os.getenv('GOOGLE_API_TTS_CREDENTIALS')
@@ -78,16 +87,26 @@ class GoogleApiTTSEngine(BaseTTSEngine):
             os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials
 
         client = texttospeech.TextToSpeechClient()
+        
         # Determine voice parameters based on language
         if language.startswith("de"):
             language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "de-DE")
-            voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", "de-DE-Standard-A")
+            if gender=="male":
+                voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_GERMAN_MALE)
+            else:
+                voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_GERMAN_FEMALE)
         elif language.startswith("ja"):
             language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "ja-JP")
-            voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", "ja-JP-Standard-B")
+            if gender=="male":
+                voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_JAPANESE_MALE)
+            else:
+                voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_JAPANESE_FEMALE)
         else:
             language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "en-US")
-            voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", "en-US-Standard-B")
+            if gender=="male":
+                voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_ENGLISH_FEMALE_US)
+            else:
+                voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_ENGLISH_FEMALE_US)
         synthesis_input = texttospeech.SynthesisInput(text=text)
         voice = texttospeech.VoiceSelectionParams(
             language_code=language_code,
@@ -116,7 +135,7 @@ class CoquiTTSEngine(BaseTTSEngine):
         # Initialize the Coqui TTS model once
         self._tts = TTS(model_name)
 
-    def synthesize(self, text: str, language: str) -> (np.ndarray, int):
+    def synthesize(self, text: str, language: str, gender:str) -> (np.ndarray, int):
         """
         Generate audio in memory using Coqui TTS.
         Coqui TTS may return a Python list, so we convert that to a NumPy array.
@@ -256,6 +275,7 @@ class TTSWorker(QThread):
         self,
         tts_engine,
         language="en",
+        gender="female",
         url="localhost:50051",
         instance_name="/World/audio2face/PlayerStreaming",
         use_nlp_split=False,        # If True => NLP-based splitting, else regex
@@ -279,6 +299,7 @@ class TTSWorker(QThread):
 
         self.tts_engine = tts_engine
         self.language = language
+        self.gender = gender
         self.url = url
         self.instance_name = instance_name
         self.use_nlp_split = use_nlp_split
@@ -363,7 +384,7 @@ class TTSWorker(QThread):
                 return
 
             # 1) Synthesize
-            audio_data, samplerate = self.tts_engine.synthesize(sentence, language=self.language)
+            audio_data, samplerate = self.tts_engine.synthesize(sentence, language=self.language, gender=self.gender)
 
             # 2) Push to A2F
             if self.use_streaming:
