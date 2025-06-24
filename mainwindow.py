@@ -172,6 +172,7 @@ class MainWindow(QMainWindow):
         # TTS combos
         self.ui.ttsEngineCombo.addItems(["GoogleAPI", "Google",  "Coqui", "VoiceX"])
         self.ui.ttslanguage.addItems(["en", "en-US", "en-GB", "es", "fr","de-DE", "ja", "zh-CN"])
+        self.ui.ttsGender.addItems(["Female", "Male", "Other"])
         self.ui.a2fUrl.setText("localhost:50051")
         self.ui.a2fInstanceName.setText("/World/audio2face/PlayerStreaming")
 
@@ -357,6 +358,7 @@ class MainWindow(QMainWindow):
         # Reset TTS combos
         self.ui.ttsEngineCombo.setCurrentIndex(0)
         self.ui.ttslanguage.setCurrentIndex(0)
+        self.ui.ttsGender.setCurrentIndex(0)
         self.ui.a2fUrl.setText("localhost:50051")
         self.ui.a2fInstanceName.setText("/World/audio2face/PlayerStreaming")
         self.ui.ttsSentenceSplit.setCurrentIndex(0)  # Regex
@@ -698,6 +700,7 @@ class MainWindow(QMainWindow):
         # TTS engine choice
         engine_choice = self.ui.ttsEngineCombo.currentText()  # "Google" / "Coqui"
         lang_choice = self.ui.ttslanguage.currentText()       # e.g. "en-US", "en"
+        gender_choice = self.ui.ttsGender.currentText()  
 
         if engine_choice == "Google":
             tts_engine = GoogleTTSEngine()
@@ -731,7 +734,7 @@ class MainWindow(QMainWindow):
         self.tts_worker = TTSWorker(
             tts_engine=tts_engine,
             language=lang_choice,
-            gender="female",
+            gender=gender_choice,
             url=a2f_url,
             instance_name=a2f_inst,
             use_nlp_split=use_nlp,

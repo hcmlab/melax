@@ -699,7 +699,7 @@
        <x>10</x>
        <y>30</y>
        <width>160</width>
-       <height>80</height>
+       <height>85</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_9">
@@ -736,14 +736,20 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="ttslanguage">
+      <item row="2" column="0">
+       <widget class="QLabel" name="genderLabel">
         <property name="font">
          <font>
           <pointsize>9</pointsize>
          </font>
         </property>
+        <property name="text">
+         <string>Gender</string>
+        </property>
        </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="ttsGender"/>
       </item>
      </layout>
     </widget>
