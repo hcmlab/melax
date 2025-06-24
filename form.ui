@@ -698,8 +698,8 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>160</width>
-       <height>85</height>
+       <width>172</width>
+       <height>118</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_9">
@@ -725,18 +725,6 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_7">
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Language</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
        <widget class="QLabel" name="genderLabel">
         <property name="font">
          <font>
@@ -748,8 +736,35 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="ttsGender">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="ttsLanguageLabel">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Language</string>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="ttsGender"/>
+       <widget class="QComboBox" name="ttsLanguage">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -1250,7 +1265,7 @@
      <x>0</x>
      <y>0</y>
      <width>1374</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

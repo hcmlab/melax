@@ -34,8 +34,8 @@ LANGUAGE_TLD_MAP = {
 
 VOICE_GERMAN_MALE = "de-DE-Standard-B"
 VOICE_GERMAN_FEMALE = "de-DE-Standard-A"
-VOICE_ENGLISH_MALE_US = "en-US-Standard-B"
-VOICE_ENGLISH_FEMALE_US = "en-US-Standard-D"
+VOICE_ENGLISH_MALE_US = "en-US-Standard-D"
+VOICE_ENGLISH_FEMALE_US = "en-US-Standard-C"
 VOICE_JAPANESE_MALE = "ja-JP-Standard-D"
 VOICE_JAPANESE_FEMALE = "ja-JP-Standard-B"
 
@@ -87,24 +87,23 @@ class GoogleApiTTSEngine(BaseTTSEngine):
             os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials
 
         client = texttospeech.TextToSpeechClient()
-        
         # Determine voice parameters based on language
         if language.startswith("de"):
             language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "de-DE")
-            if gender=="male":
+            if gender=="Male":
                 voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_GERMAN_MALE)
             else:
                 voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_GERMAN_FEMALE)
         elif language.startswith("ja"):
             language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "ja-JP")
-            if gender=="male":
+            if gender=="Male":
                 voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_JAPANESE_MALE)
             else:
                 voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_JAPANESE_FEMALE)
         else:
             language_code = os.getenv("GOOGLE_API_TTS_LANGUAGE_CODE", "en-US")
-            if gender=="male":
-                voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_ENGLISH_FEMALE_US)
+            if gender=="Male":
+                voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_ENGLISH_MALE_US)
             else:
                 voice_name = os.getenv("GOOGLE_API_TTS_VOICE_NAME", VOICE_ENGLISH_FEMALE_US)
         synthesis_input = texttospeech.SynthesisInput(text=text)

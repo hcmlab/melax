@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'form.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.9.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -56,13 +56,13 @@ class Ui_MainWindow(object):
         font1.setPointSize(9)
         self.label_2.setFont(font1)
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label_2)
+        self.formLayout.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_2)
 
         self.googleLanguage = QComboBox(self.formLayoutWidget)
         self.googleLanguage.setObjectName(u"googleLanguage")
         self.googleLanguage.setFont(font1)
 
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.googleLanguage)
+        self.formLayout.setWidget(0, QFormLayout.ItemRole.FieldRole, self.googleLanguage)
 
         self.formLayoutWidget_2 = QWidget(self.googleGroupBox)
         self.formLayoutWidget_2.setObjectName(u"formLayoutWidget_2")
@@ -75,25 +75,25 @@ class Ui_MainWindow(object):
         self.label_3.setFont(font1)
         self.label_3.setTextFormat(Qt.TextFormat.AutoText)
 
-        self.formLayout_2.setWidget(0, QFormLayout.LabelRole, self.label_3)
+        self.formLayout_2.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_3)
 
         self.googleAPI = QLineEdit(self.formLayoutWidget_2)
         self.googleAPI.setObjectName(u"googleAPI")
         self.googleAPI.setFont(font1)
 
-        self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.googleAPI)
+        self.formLayout_2.setWidget(0, QFormLayout.ItemRole.FieldRole, self.googleAPI)
 
         self.label_4 = QLabel(self.formLayoutWidget_2)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setFont(font1)
 
-        self.formLayout_2.setWidget(1, QFormLayout.LabelRole, self.label_4)
+        self.formLayout_2.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_4)
 
         self.googleEndPoint = QLineEdit(self.formLayoutWidget_2)
         self.googleEndPoint.setObjectName(u"googleEndPoint")
         self.googleEndPoint.setFont(font1)
 
-        self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.googleEndPoint)
+        self.formLayout_2.setWidget(1, QFormLayout.ItemRole.FieldRole, self.googleEndPoint)
 
         self.whisperGroupBox = QGroupBox(self.groupBox)
         self.whisperGroupBox.setObjectName(u"whisperGroupBox")
@@ -109,37 +109,37 @@ class Ui_MainWindow(object):
         self.label_12.setObjectName(u"label_12")
         self.label_12.setFont(font1)
 
-        self.formLayout_3.setWidget(0, QFormLayout.LabelRole, self.label_12)
+        self.formLayout_3.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_12)
 
         self.whisperModel = QComboBox(self.formLayoutWidget_3)
         self.whisperModel.setObjectName(u"whisperModel")
         self.whisperModel.setFont(font1)
 
-        self.formLayout_3.setWidget(0, QFormLayout.FieldRole, self.whisperModel)
+        self.formLayout_3.setWidget(0, QFormLayout.ItemRole.FieldRole, self.whisperModel)
 
         self.label_13 = QLabel(self.formLayoutWidget_3)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setFont(font1)
 
-        self.formLayout_3.setWidget(1, QFormLayout.LabelRole, self.label_13)
+        self.formLayout_3.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_13)
 
         self.whisperDevice = QComboBox(self.formLayoutWidget_3)
         self.whisperDevice.setObjectName(u"whisperDevice")
         self.whisperDevice.setFont(font1)
 
-        self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.whisperDevice)
+        self.formLayout_3.setWidget(1, QFormLayout.ItemRole.FieldRole, self.whisperDevice)
 
         self.label_14 = QLabel(self.formLayoutWidget_3)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setFont(font1)
 
-        self.formLayout_3.setWidget(2, QFormLayout.LabelRole, self.label_14)
+        self.formLayout_3.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_14)
 
         self.whisperLanguage = QComboBox(self.formLayoutWidget_3)
         self.whisperLanguage.setObjectName(u"whisperLanguage")
         self.whisperLanguage.setFont(font1)
 
-        self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.whisperLanguage)
+        self.formLayout_3.setWidget(2, QFormLayout.ItemRole.FieldRole, self.whisperLanguage)
 
         self.formLayoutWidget_11 = QWidget(self.groupBox)
         self.formLayoutWidget_11.setObjectName(u"formLayoutWidget_11")
@@ -151,25 +151,25 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName(u"label_6")
         self.label_6.setFont(font1)
 
-        self.formLayout_11.setWidget(0, QFormLayout.LabelRole, self.label_6)
+        self.formLayout_11.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_6)
 
         self.recognizerMBOX = QComboBox(self.formLayoutWidget_11)
         self.recognizerMBOX.setObjectName(u"recognizerMBOX")
         self.recognizerMBOX.setFont(font1)
 
-        self.formLayout_11.setWidget(0, QFormLayout.FieldRole, self.recognizerMBOX)
+        self.formLayout_11.setWidget(0, QFormLayout.ItemRole.FieldRole, self.recognizerMBOX)
 
         self.label_27 = QLabel(self.formLayoutWidget_11)
         self.label_27.setObjectName(u"label_27")
         self.label_27.setFont(font1)
 
-        self.formLayout_11.setWidget(1, QFormLayout.LabelRole, self.label_27)
+        self.formLayout_11.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_27)
 
         self.microphoneMBox = QComboBox(self.formLayoutWidget_11)
         self.microphoneMBox.setObjectName(u"microphoneMBox")
         self.microphoneMBox.setFont(font1)
 
-        self.formLayout_11.setWidget(1, QFormLayout.FieldRole, self.microphoneMBox)
+        self.formLayout_11.setWidget(1, QFormLayout.ItemRole.FieldRole, self.microphoneMBox)
 
         self.groupBox_6 = QGroupBox(self.centralwidget)
         self.groupBox_6.setObjectName(u"groupBox_6")
@@ -185,13 +185,13 @@ class Ui_MainWindow(object):
         self.label_24.setObjectName(u"label_24")
         self.label_24.setFont(font1)
 
-        self.formLayout_4.setWidget(0, QFormLayout.LabelRole, self.label_24)
+        self.formLayout_4.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_24)
 
         self.LLMChoice = QComboBox(self.formLayoutWidget_4)
         self.LLMChoice.setObjectName(u"LLMChoice")
         self.LLMChoice.setFont(font1)
 
-        self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.LLMChoice)
+        self.formLayout_4.setWidget(0, QFormLayout.ItemRole.FieldRole, self.LLMChoice)
 
         self.formLayoutWidget_7 = QWidget(self.groupBox_6)
         self.formLayoutWidget_7.setObjectName(u"formLayoutWidget_7")
@@ -203,7 +203,7 @@ class Ui_MainWindow(object):
         self.systemPromptEdit.setObjectName(u"systemPromptEdit")
         self.systemPromptEdit.setFont(font1)
 
-        self.formLayout_7.setWidget(0, QFormLayout.FieldRole, self.systemPromptEdit)
+        self.formLayout_7.setWidget(0, QFormLayout.ItemRole.FieldRole, self.systemPromptEdit)
 
         self.label_18 = QLabel(self.formLayoutWidget_7)
         self.label_18.setObjectName(u"label_18")
@@ -212,7 +212,7 @@ class Ui_MainWindow(object):
         font2.setPointSize(9)
         self.label_18.setFont(font2)
 
-        self.formLayout_7.setWidget(0, QFormLayout.LabelRole, self.label_18)
+        self.formLayout_7.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_18)
 
         self.openai_group = QGroupBox(self.groupBox_6)
         self.openai_group.setObjectName(u"openai_group")
@@ -228,13 +228,13 @@ class Ui_MainWindow(object):
         self.label_19.setObjectName(u"label_19")
         self.label_19.setFont(font2)
 
-        self.formLayout_5.setWidget(0, QFormLayout.LabelRole, self.label_19)
+        self.formLayout_5.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_19)
 
         self.openaiAPIKey = QLineEdit(self.formLayoutWidget_5)
         self.openaiAPIKey.setObjectName(u"openaiAPIKey")
         self.openaiAPIKey.setFont(font1)
 
-        self.formLayout_5.setWidget(0, QFormLayout.FieldRole, self.openaiAPIKey)
+        self.formLayout_5.setWidget(0, QFormLayout.ItemRole.FieldRole, self.openaiAPIKey)
 
         self.formLayoutWidget_6 = QWidget(self.openai_group)
         self.formLayoutWidget_6.setObjectName(u"formLayoutWidget_6")
@@ -246,7 +246,7 @@ class Ui_MainWindow(object):
         self.label_21.setObjectName(u"label_21")
         self.label_21.setFont(font2)
 
-        self.formLayout_6.setWidget(2, QFormLayout.LabelRole, self.label_21)
+        self.formLayout_6.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_21)
 
         self.maxTokenOpenAI = QSpinBox(self.formLayoutWidget_6)
         self.maxTokenOpenAI.setObjectName(u"maxTokenOpenAI")
@@ -255,13 +255,13 @@ class Ui_MainWindow(object):
         self.maxTokenOpenAI.setMaximum(4096)
         self.maxTokenOpenAI.setValue(1024)
 
-        self.formLayout_6.setWidget(2, QFormLayout.FieldRole, self.maxTokenOpenAI)
+        self.formLayout_6.setWidget(2, QFormLayout.ItemRole.FieldRole, self.maxTokenOpenAI)
 
         self.label_22 = QLabel(self.formLayoutWidget_6)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setFont(font2)
 
-        self.formLayout_6.setWidget(1, QFormLayout.LabelRole, self.label_22)
+        self.formLayout_6.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_22)
 
         self.temperatureOpenAI = QSlider(self.formLayoutWidget_6)
         self.temperatureOpenAI.setObjectName(u"temperatureOpenAI")
@@ -273,19 +273,19 @@ class Ui_MainWindow(object):
         self.temperatureOpenAI.setValue(70)
         self.temperatureOpenAI.setOrientation(Qt.Orientation.Horizontal)
 
-        self.formLayout_6.setWidget(1, QFormLayout.FieldRole, self.temperatureOpenAI)
+        self.formLayout_6.setWidget(1, QFormLayout.ItemRole.FieldRole, self.temperatureOpenAI)
 
         self.label_23 = QLabel(self.formLayoutWidget_6)
         self.label_23.setObjectName(u"label_23")
         self.label_23.setFont(font2)
 
-        self.formLayout_6.setWidget(0, QFormLayout.LabelRole, self.label_23)
+        self.formLayout_6.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_23)
 
         self.llmMBOX = QComboBox(self.formLayoutWidget_6)
         self.llmMBOX.setObjectName(u"llmMBOX")
         self.llmMBOX.setFont(font1)
 
-        self.formLayout_6.setWidget(0, QFormLayout.FieldRole, self.llmMBOX)
+        self.formLayout_6.setWidget(0, QFormLayout.ItemRole.FieldRole, self.llmMBOX)
 
         self.llmTemperatureLable = QLabel(self.openai_group)
         self.llmTemperatureLable.setObjectName(u"llmTemperatureLable")
@@ -305,7 +305,7 @@ class Ui_MainWindow(object):
         self.label_29.setObjectName(u"label_29")
         self.label_29.setFont(font2)
 
-        self.formLayout_13.setWidget(2, QFormLayout.LabelRole, self.label_29)
+        self.formLayout_13.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_29)
 
         self.maxTokenLlama = QSpinBox(self.formLayoutWidget_13)
         self.maxTokenLlama.setObjectName(u"maxTokenLlama")
@@ -314,13 +314,13 @@ class Ui_MainWindow(object):
         self.maxTokenLlama.setMaximum(4096)
         self.maxTokenLlama.setValue(1024)
 
-        self.formLayout_13.setWidget(2, QFormLayout.FieldRole, self.maxTokenLlama)
+        self.formLayout_13.setWidget(2, QFormLayout.ItemRole.FieldRole, self.maxTokenLlama)
 
         self.label_30 = QLabel(self.formLayoutWidget_13)
         self.label_30.setObjectName(u"label_30")
         self.label_30.setFont(font2)
 
-        self.formLayout_13.setWidget(1, QFormLayout.LabelRole, self.label_30)
+        self.formLayout_13.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_30)
 
         self.temperatureLlama = QSlider(self.formLayoutWidget_13)
         self.temperatureLlama.setObjectName(u"temperatureLlama")
@@ -330,19 +330,19 @@ class Ui_MainWindow(object):
         self.temperatureLlama.setValue(70)
         self.temperatureLlama.setOrientation(Qt.Orientation.Horizontal)
 
-        self.formLayout_13.setWidget(1, QFormLayout.FieldRole, self.temperatureLlama)
+        self.formLayout_13.setWidget(1, QFormLayout.ItemRole.FieldRole, self.temperatureLlama)
 
         self.label_31 = QLabel(self.formLayoutWidget_13)
         self.label_31.setObjectName(u"label_31")
         self.label_31.setFont(font2)
 
-        self.formLayout_13.setWidget(0, QFormLayout.LabelRole, self.label_31)
+        self.formLayout_13.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_31)
 
         self.llmMBOX_Llama = QComboBox(self.formLayoutWidget_13)
         self.llmMBOX_Llama.setObjectName(u"llmMBOX_Llama")
         self.llmMBOX_Llama.setFont(font1)
 
-        self.formLayout_13.setWidget(0, QFormLayout.FieldRole, self.llmMBOX_Llama)
+        self.formLayout_13.setWidget(0, QFormLayout.ItemRole.FieldRole, self.llmMBOX_Llama)
 
         self.TemperatureLablellama = QLabel(self.llama_group)
         self.TemperatureLablellama.setObjectName(u"TemperatureLablellama")
@@ -354,7 +354,7 @@ class Ui_MainWindow(object):
         self.groupBox_3.setFont(font)
         self.formLayoutWidget_9 = QWidget(self.groupBox_3)
         self.formLayoutWidget_9.setObjectName(u"formLayoutWidget_9")
-        self.formLayoutWidget_9.setGeometry(QRect(10, 30, 160, 80))
+        self.formLayoutWidget_9.setGeometry(QRect(10, 30, 172, 118))
         self.formLayout_9 = QFormLayout(self.formLayoutWidget_9)
         self.formLayout_9.setObjectName(u"formLayout_9")
         self.formLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -362,25 +362,37 @@ class Ui_MainWindow(object):
         self.label_5.setObjectName(u"label_5")
         self.label_5.setFont(font1)
 
-        self.formLayout_9.setWidget(0, QFormLayout.LabelRole, self.label_5)
+        self.formLayout_9.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_5)
 
         self.ttsEngineCombo = QComboBox(self.formLayoutWidget_9)
         self.ttsEngineCombo.setObjectName(u"ttsEngineCombo")
         self.ttsEngineCombo.setFont(font1)
 
-        self.formLayout_9.setWidget(0, QFormLayout.FieldRole, self.ttsEngineCombo)
+        self.formLayout_9.setWidget(0, QFormLayout.ItemRole.FieldRole, self.ttsEngineCombo)
 
-        self.label_7 = QLabel(self.formLayoutWidget_9)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font1)
+        self.genderLabel = QLabel(self.formLayoutWidget_9)
+        self.genderLabel.setObjectName(u"genderLabel")
+        self.genderLabel.setFont(font1)
 
-        self.formLayout_9.setWidget(1, QFormLayout.LabelRole, self.label_7)
+        self.formLayout_9.setWidget(1, QFormLayout.ItemRole.LabelRole, self.genderLabel)
 
-        self.ttslanguage = QComboBox(self.formLayoutWidget_9)
-        self.ttslanguage.setObjectName(u"ttslanguage")
-        self.ttslanguage.setFont(font1)
+        self.ttsGender = QComboBox(self.formLayoutWidget_9)
+        self.ttsGender.setObjectName(u"ttsGender")
+        self.ttsGender.setFont(font1)
 
-        self.formLayout_9.setWidget(1, QFormLayout.FieldRole, self.ttslanguage)
+        self.formLayout_9.setWidget(1, QFormLayout.ItemRole.FieldRole, self.ttsGender)
+
+        self.ttsLanguageLabel = QLabel(self.formLayoutWidget_9)
+        self.ttsLanguageLabel.setObjectName(u"ttsLanguageLabel")
+        self.ttsLanguageLabel.setFont(font1)
+
+        self.formLayout_9.setWidget(2, QFormLayout.ItemRole.LabelRole, self.ttsLanguageLabel)
+
+        self.ttsLanguage = QComboBox(self.formLayoutWidget_9)
+        self.ttsLanguage.setObjectName(u"ttsLanguage")
+        self.ttsLanguage.setFont(font1)
+
+        self.formLayout_9.setWidget(2, QFormLayout.ItemRole.FieldRole, self.ttsLanguage)
 
         self.chatOutpuTab = QTabWidget(self.centralwidget)
         self.chatOutpuTab.setObjectName(u"chatOutpuTab")
@@ -412,94 +424,94 @@ class Ui_MainWindow(object):
         self.label_26.setObjectName(u"label_26")
         self.label_26.setFont(font1)
 
-        self.formLayout_8.setWidget(0, QFormLayout.LabelRole, self.label_26)
+        self.formLayout_8.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_26)
 
         self.emotionsQCombo = QComboBox(self.formLayoutWidget_8)
         self.emotionsQCombo.setObjectName(u"emotionsQCombo")
         self.emotionsQCombo.setFont(font1)
 
-        self.formLayout_8.setWidget(0, QFormLayout.FieldRole, self.emotionsQCombo)
+        self.formLayout_8.setWidget(0, QFormLayout.ItemRole.FieldRole, self.emotionsQCombo)
 
         self.label_8 = QLabel(self.formLayoutWidget_8)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setFont(font1)
 
-        self.formLayout_8.setWidget(1, QFormLayout.LabelRole, self.label_8)
+        self.formLayout_8.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_8)
 
         self.ttsSentenceSplit = QComboBox(self.formLayoutWidget_8)
         self.ttsSentenceSplit.setObjectName(u"ttsSentenceSplit")
         self.ttsSentenceSplit.setFont(font1)
 
-        self.formLayout_8.setWidget(1, QFormLayout.FieldRole, self.ttsSentenceSplit)
+        self.formLayout_8.setWidget(1, QFormLayout.ItemRole.FieldRole, self.ttsSentenceSplit)
 
         self.label_9 = QLabel(self.formLayoutWidget_8)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setFont(font1)
 
-        self.formLayout_8.setWidget(2, QFormLayout.LabelRole, self.label_9)
+        self.formLayout_8.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_9)
 
         self.ttsPlayback = QComboBox(self.formLayoutWidget_8)
         self.ttsPlayback.setObjectName(u"ttsPlayback")
         self.ttsPlayback.setFont(font1)
 
-        self.formLayout_8.setWidget(2, QFormLayout.FieldRole, self.ttsPlayback)
+        self.formLayout_8.setWidget(2, QFormLayout.ItemRole.FieldRole, self.ttsPlayback)
 
         self.label_10 = QLabel(self.formLayoutWidget_8)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setFont(font1)
 
-        self.formLayout_8.setWidget(3, QFormLayout.LabelRole, self.label_10)
+        self.formLayout_8.setWidget(3, QFormLayout.ItemRole.LabelRole, self.label_10)
 
         self.blockUntilFinish = QCheckBox(self.formLayoutWidget_8)
         self.blockUntilFinish.setObjectName(u"blockUntilFinish")
 
-        self.formLayout_8.setWidget(3, QFormLayout.FieldRole, self.blockUntilFinish)
+        self.formLayout_8.setWidget(3, QFormLayout.ItemRole.FieldRole, self.blockUntilFinish)
 
         self.label_15 = QLabel(self.formLayoutWidget_8)
         self.label_15.setObjectName(u"label_15")
         self.label_15.setFont(font1)
 
-        self.formLayout_8.setWidget(7, QFormLayout.LabelRole, self.label_15)
+        self.formLayout_8.setWidget(7, QFormLayout.ItemRole.LabelRole, self.label_15)
 
         self.ttsDelayBetweenChunks = QDial(self.formLayoutWidget_8)
         self.ttsDelayBetweenChunks.setObjectName(u"ttsDelayBetweenChunks")
 
-        self.formLayout_8.setWidget(7, QFormLayout.FieldRole, self.ttsDelayBetweenChunks)
+        self.formLayout_8.setWidget(7, QFormLayout.ItemRole.FieldRole, self.ttsDelayBetweenChunks)
 
         self.label_11 = QLabel(self.formLayoutWidget_8)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setFont(font1)
 
-        self.formLayout_8.setWidget(6, QFormLayout.LabelRole, self.label_11)
+        self.formLayout_8.setWidget(6, QFormLayout.ItemRole.LabelRole, self.label_11)
 
         self.ttsChunkDuration = QSlider(self.formLayoutWidget_8)
         self.ttsChunkDuration.setObjectName(u"ttsChunkDuration")
         self.ttsChunkDuration.setMinimum(1)
         self.ttsChunkDuration.setOrientation(Qt.Orientation.Horizontal)
 
-        self.formLayout_8.setWidget(6, QFormLayout.FieldRole, self.ttsChunkDuration)
+        self.formLayout_8.setWidget(6, QFormLayout.ItemRole.FieldRole, self.ttsChunkDuration)
 
         self.label_28 = QLabel(self.formLayoutWidget_8)
         self.label_28.setObjectName(u"label_28")
         self.label_28.setFont(font1)
 
-        self.formLayout_8.setWidget(4, QFormLayout.LabelRole, self.label_28)
+        self.formLayout_8.setWidget(4, QFormLayout.ItemRole.LabelRole, self.label_28)
 
         self.allowInterruptions = QCheckBox(self.formLayoutWidget_8)
         self.allowInterruptions.setObjectName(u"allowInterruptions")
 
-        self.formLayout_8.setWidget(4, QFormLayout.FieldRole, self.allowInterruptions)
+        self.formLayout_8.setWidget(4, QFormLayout.ItemRole.FieldRole, self.allowInterruptions)
 
         self.label_32 = QLabel(self.formLayoutWidget_8)
         self.label_32.setObjectName(u"label_32")
         self.label_32.setFont(font1)
 
-        self.formLayout_8.setWidget(5, QFormLayout.LabelRole, self.label_32)
+        self.formLayout_8.setWidget(5, QFormLayout.ItemRole.LabelRole, self.label_32)
 
         self.streamInterruptions = QCheckBox(self.formLayoutWidget_8)
         self.streamInterruptions.setObjectName(u"streamInterruptions")
 
-        self.formLayout_8.setWidget(5, QFormLayout.FieldRole, self.streamInterruptions)
+        self.formLayout_8.setWidget(5, QFormLayout.ItemRole.FieldRole, self.streamInterruptions)
 
         self.formLayoutWidget_10 = QWidget(self.groupBox_4)
         self.formLayoutWidget_10.setObjectName(u"formLayoutWidget_10")
@@ -511,25 +523,25 @@ class Ui_MainWindow(object):
         self.label_16.setObjectName(u"label_16")
         self.label_16.setFont(font1)
 
-        self.formLayout_10.setWidget(0, QFormLayout.LabelRole, self.label_16)
+        self.formLayout_10.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_16)
 
         self.a2fUrl = QLineEdit(self.formLayoutWidget_10)
         self.a2fUrl.setObjectName(u"a2fUrl")
         self.a2fUrl.setFont(font1)
 
-        self.formLayout_10.setWidget(0, QFormLayout.FieldRole, self.a2fUrl)
+        self.formLayout_10.setWidget(0, QFormLayout.ItemRole.FieldRole, self.a2fUrl)
 
         self.label_17 = QLabel(self.formLayoutWidget_10)
         self.label_17.setObjectName(u"label_17")
         self.label_17.setFont(font1)
 
-        self.formLayout_10.setWidget(1, QFormLayout.LabelRole, self.label_17)
+        self.formLayout_10.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_17)
 
         self.a2fInstanceName = QLineEdit(self.formLayoutWidget_10)
         self.a2fInstanceName.setObjectName(u"a2fInstanceName")
         self.a2fInstanceName.setFont(font1)
 
-        self.formLayout_10.setWidget(1, QFormLayout.FieldRole, self.a2fInstanceName)
+        self.formLayout_10.setWidget(1, QFormLayout.ItemRole.FieldRole, self.a2fInstanceName)
 
         self.verticalLayoutWidget = QWidget(self.groupBox_4)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
@@ -598,7 +610,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1374, 22))
+        self.menubar.setGeometry(QRect(0, 0, 1374, 21))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuView = QMenu(self.menubar)
@@ -655,7 +667,8 @@ class Ui_MainWindow(object):
         self.TemperatureLablellama.setText(QCoreApplication.translate("MainWindow", u"1", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Voice Synthesis", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"TTS Engine", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Language", None))
+        self.genderLabel.setText(QCoreApplication.translate("MainWindow", u"Gender", None))
+        self.ttsLanguageLabel.setText(QCoreApplication.translate("MainWindow", u"Language", None))
         self.chatOutpuTab.setTabText(self.chatOutpuTab.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Conversation", None))
         self.chatOutpuTab.setTabText(self.chatOutpuTab.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Log", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"Behavior Generator", None))
